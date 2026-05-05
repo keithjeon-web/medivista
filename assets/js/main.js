@@ -1,4 +1,4 @@
-const MEDIVISTA_WHATSAPP_NUMBER = 'REPLACE_WITH_MEDIVISTA_WHATSAPP_NUMBER';
+const MEDIVISTA_WHATSAPP_NUMBER = '821059066768';
 const MEDIVISTA_WHATSAPP_MESSAGE = 'Hello MEDIVISTA, I would like to inquire about your products.';
 
 function buildWhatsAppUrl(productName) {
