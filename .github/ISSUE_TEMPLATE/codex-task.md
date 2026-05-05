@@ -1,8 +1,8 @@
 ---
 name: Codex Task
-about: Task template for Codex implementation
+about: Create a task for Codex implementation
 title: "[Codex] "
-labels: codex, medivista
+labels: codex-ready, medivista
 assignees: ""
 ---
 
@@ -20,50 +20,85 @@ keithjeon-web/medivista
 medivista
 ```
 
-## Branch Name
+## Recommended Branch
 
 ```text
-feature/
+feature/issue-[issue-number]-[short-task-name]
 ```
 
 ## Objective
 
-<!-- Write the task objective here -->
+<!-- 작업 목적 작성 -->
 
 ## Scope
 
-- [ ] Page structure
-- [ ] CSS / responsive
+- [ ] Home
+- [ ] About
+- [ ] Products
+- [ ] Brands
+- [ ] Blogs
+- [ ] Contact
+- [ ] CSS / Responsive
 - [ ] JavaScript
-- [ ] WordPress theme starter
-- [ ] Content update
-- [ ] Compliance review
-- [ ] Contact / WhatsApp
+- [ ] WordPress Starter
 - [ ] SEO
+- [ ] Compliance Review
 
 ## Requirements
 
 ```text
-Write detailed requirements here.
+작업 요구사항 작성
 ```
 
 ## Do Not
 
 ```text
-Do not add price.
-Do not add cart.
-Do not add checkout.
+Do not add prices.
+Do not add Add to Cart.
+Do not add Cart page.
+Do not add Checkout.
 Do not add payment.
 Do not use unverified medical claims.
+Do not modify DNS.
+Do not modify Google Workspace records.
 ```
 
 ## Acceptance Criteria
 
-- [ ] Frontend is English
+- [ ] AGENTS.md was read
+- [ ] Frontend copy is English-first
 - [ ] Main website remains catalog-only
 - [ ] No prices
-- [ ] No cart
-- [ ] No checkout
+- [ ] No Add to Cart
+- [ ] No Cart
+- [ ] No Checkout
 - [ ] No payment
-- [ ] Responsive layout works
-- [ ] PR summary is included
+- [ ] Brand Shop links to [https://shop.medivista.co.kr](https://shop.medivista.co.kr)
+- [ ] PRODUCTS categories are complete if related
+- [ ] WhatsApp inquiry works if related
+- [ ] Responsive layout checked
+- [ ] Risky medical claims avoided
+- [ ] PR summary included
+
+## Codex Prompt
+
+```text
+Work on this GitHub Issue.
+
+Repository:
+keithjeon-web/medivista
+
+Base branch:
+medivista
+
+Create a new feature branch.
+
+Read AGENTS.md first.
+Implement only the scope described in this Issue.
+
+After implementation:
+- Run basic checks
+- Summarize changed files
+- Open a pull request
+- Reference this Issue in the PR description
+```
