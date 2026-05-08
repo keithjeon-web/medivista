@@ -2,7 +2,11 @@ const MEDIVISTA_WHATSAPP_NUMBER = '821059066768';
 const MEDIVISTA_WHATSAPP_MESSAGE = 'Hello MEDIVISTA, I would like to inquire about your products.';
 
 function buildWhatsAppUrl(productName, customMessage) {
-  const message = customMessage || (productName ? `${MEDIVISTA_WHATSAPP_MESSAGE} Product: ${productName}.` : MEDIVISTA_WHATSAPP_MESSAGE);
+  const message = customMessage || (
+    productName
+      ? `${MEDIVISTA_WHATSAPP_MESSAGE} Product: ${productName}.`
+      : MEDIVISTA_WHATSAPP_MESSAGE
+  );
   return `https://wa.me/${MEDIVISTA_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
@@ -16,15 +20,51 @@ document.querySelectorAll('.site-header').forEach((header) => {
   const toggle = header.querySelector('.nav-toggle');
   const nav = header.querySelector('.main-nav');
   if (!toggle || !nav) return;
+
   toggle.addEventListener('click', () => {
     const isOpen = header.classList.toggle('nav-open');
     toggle.setAttribute('aria-expanded', String(isOpen));
   });
+
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       header.classList.remove('nav-open');
       toggle.setAttribute('aria-expanded', 'false');
     });
+  });
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 980) {
+    document.querySelectorAll('.site-header.nav-open').forEach((header) => {
+      header.classList.remove('nav-open');
+      header.querySelector('.nav-toggle')?.setAttribute('aria-expanded', 'false');
+    });
+  }
+});
+
+document.querySelectorAll('.contact-form').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const data = new FormData(form);
+    const lines = [
+      'Hello MEDIVISTA, I would like to send a B2B inquiry.',
+      `Name: ${data.get('first-name') || ''}`,
+      `Email: ${data.get('email') || ''}`,
+      `Contact Number: ${data.get('contact-number') || ''}`,
+      `Country: ${data.get('country') || ''}`,
+      `Business Type: ${data.get('business-type') || 'Not specified'}`,
+      `Product Type: ${data.get('product-type') || 'Not specified'}`,
+      data.get('message') ? `Message: ${data.get('message')}` : '',
+    ].filter(Boolean);
+
+    window.open(buildWhatsAppUrl(null, lines.join('\n')), '_blank', 'noopener,noreferrer');
   });
 });
 
@@ -43,6 +83,69 @@ document.querySelectorAll('.product-image').forEach((visual) => {
   const label = title || meta || 'MEDIVISTA Catalog';
   visual.dataset.label = label;
   visual.dataset.tone = inferVisualTone(`${label} ${meta || ''}`);
+
+  if (visual.dataset.image && visual.dataset.imageStatus !== 'pending') {
+    const img = document.createElement('img');
+    img.src = visual.dataset.image;
+    img.alt = label;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.addEventListener('error', () => {
+      visual.classList.remove('has-photo');
+      img.remove();
+    });
+    visual.classList.add('has-photo');
+    visual.appendChild(img);
+  }
+});
+
+document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
+  const section = toolbar.closest('.section');
+  const searchInput = toolbar.querySelector('[data-product-search]');
+  const categoryFilter = toolbar.querySelector('[data-product-filter]');
+  const resetButton = toolbar.querySelector('[data-product-reset]');
+  const countNode = toolbar.querySelector('[data-product-count]');
+  const emptyNode = section?.querySelector('[data-product-empty]');
+  const cards = Array.from(section?.querySelectorAll('.product-card') || []);
+  const blocks = Array.from(section?.querySelectorAll('.product-category-block') || []);
+
+  function normalize(value) {
+    return (value || '').toLowerCase().trim();
+  }
+
+  function updateCatalog() {
+    const query = normalize(searchInput?.value);
+    const selectedCategory = categoryFilter?.value || 'all';
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const block = card.closest('.product-category-block');
+      const matchesCategory = selectedCategory === 'all' || block?.id === selectedCategory;
+      const matchesSearch = !query || normalize(card.textContent).includes(query);
+      const isVisible = matchesCategory && matchesSearch;
+      card.classList.toggle('is-hidden', !isVisible);
+      if (isVisible) visibleCount += 1;
+    });
+
+    blocks.forEach((block) => {
+      const hasVisibleCards = Boolean(block.querySelector('.product-card:not(.is-hidden)'));
+      block.classList.toggle('is-hidden', !hasVisibleCards);
+    });
+
+    if (countNode) countNode.textContent = String(visibleCount);
+    if (emptyNode) emptyNode.hidden = visibleCount !== 0;
+  }
+
+  searchInput?.addEventListener('input', updateCatalog);
+  categoryFilter?.addEventListener('change', updateCatalog);
+  resetButton?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    if (categoryFilter) categoryFilter.value = 'all';
+    updateCatalog();
+    searchInput?.focus();
+  });
+
+  updateCatalog();
 });
 
 document.querySelectorAll('.blog-thumb').forEach((visual) => {
@@ -56,14 +159,14 @@ document.querySelectorAll('.brand-visual').forEach((visual) => {
 });
 
 const MEDIVISTA_MARKETS = {
-  840: { zone: 'Zone 1' },
-  156: { zone: 'Zone 3' },
-  554: { zone: 'Zone 2' },
-  36: { zone: 'Zone 2' },
-  458: { zone: 'Zone 3' },
-  608: { zone: 'Zone 3' },
-  764: { zone: 'Zone 3' },
-  704: { zone: 'Zone 3' },
+  840: { name: 'United States', region: 'North America', zone: 'Zone 1' },
+  156: { name: 'China', region: 'East Asia', zone: 'Zone 3' },
+  554: { name: 'New Zealand', region: 'Oceania', zone: 'Zone 2' },
+  36: { name: 'Australia', region: 'Oceania', zone: 'Zone 2' },
+  458: { name: 'Malaysia', region: 'Southeast Asia', zone: 'Zone 3' },
+  608: { name: 'Philippines', region: 'Southeast Asia', zone: 'Zone 3' },
+  764: { name: 'Thailand', region: 'Southeast Asia', zone: 'Zone 3' },
+  704: { name: 'Vietnam', region: 'Southeast Asia', zone: 'Zone 3' },
 };
 
 const MEDIVISTA_MAP_PINS = [
@@ -79,32 +182,33 @@ function marketColor(zone) {
   return 'rgba(255,255,255,0.06)';
 }
 
-async function loadScriptOnce(globalName, src) {
-  if (window[globalName]) return true;
-  await new Promise((resolve, reject) => {
-    const existing = document.querySelector(`script[src="${src}"]`);
-    if (existing) {
-      existing.addEventListener('load', resolve, { once: true });
-      existing.addEventListener('error', reject, { once: true });
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = true;
-    script.addEventListener('load', resolve, { once: true });
-    script.addEventListener('error', reject, { once: true });
-    document.head.appendChild(script);
-  });
-  return Boolean(window[globalName]);
-}
-
 async function initWorldMap(mapNode) {
+  async function ensureMapLibrary(globalName, src) {
+    if (window[globalName]) return true;
+    await new Promise((resolve, reject) => {
+      const existing = document.querySelector(`script[src="${src}"]`);
+      if (existing) {
+        existing.addEventListener('load', resolve, { once: true });
+        existing.addEventListener('error', reject, { once: true });
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.addEventListener('load', resolve, { once: true });
+      script.addEventListener('error', reject, { once: true });
+      document.head.appendChild(script);
+    });
+    return Boolean(window[globalName]);
+  }
+
   try {
-    await loadScriptOnce('d3', 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js');
-    await loadScriptOnce('topojson', 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js');
+    await ensureMapLibrary('d3', 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js');
+    await ensureMapLibrary('topojson', 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js');
   } catch (error) {
     console.warn('MEDIVISTA world map library fallback active:', error);
   }
+
   if (!window.d3 || !window.topojson) return;
 
   const svg = mapNode.querySelector('svg');
@@ -131,17 +235,46 @@ async function initWorldMap(mapNode) {
     const borders = topojson.mesh(world, world.objects.countries, (a, b) => a !== b);
 
     root.append('rect').attr('width', width).attr('height', height).attr('fill', '#07111f');
-    root.append('path').datum(d3.geoGraticule10()).attr('d', path).attr('fill', 'none').attr('stroke', 'rgba(42,155,212,0.08)').attr('stroke-width', 0.45);
-    root.append('g').selectAll('path').data(countries.features).join('path').attr('d', path).attr('fill', (country) => marketColor(MEDIVISTA_MARKETS[Number(country.id)]?.zone)).attr('stroke', 'rgba(255,255,255,0.08)').attr('stroke-width', 0.35);
-    root.append('path').datum(borders).attr('d', path).attr('fill', 'none').attr('stroke', 'rgba(255,255,255,0.13)').attr('stroke-width', 0.4);
+    root.append('path')
+      .datum(d3.geoGraticule10())
+      .attr('d', path)
+      .attr('fill', 'none')
+      .attr('stroke', 'rgba(42,155,212,0.08)')
+      .attr('stroke-width', 0.45);
+
+    root.append('g')
+      .selectAll('path')
+      .data(countries.features)
+      .join('path')
+      .attr('d', path)
+      .attr('fill', (country) => marketColor(MEDIVISTA_MARKETS[Number(country.id)]?.zone))
+      .attr('stroke', 'rgba(255,255,255,0.08)')
+      .attr('stroke-width', 0.35);
+
+    root.append('path')
+      .datum(borders)
+      .attr('d', path)
+      .attr('fill', 'none')
+      .attr('stroke', 'rgba(255,255,255,0.13)')
+      .attr('stroke-width', 0.4);
 
     const pinGroup = root.append('g').attr('class', 'actual-map-pins');
     MEDIVISTA_MAP_PINS.forEach((pin) => {
       const point = projection([pin.lon, pin.lat]);
       if (!point) return;
       const [x, y] = point;
-      pinGroup.append('circle').attr('cx', x).attr('cy', y).attr('r', 8).attr('fill', 'rgba(201,168,76,0.26)');
-      pinGroup.append('circle').attr('cx', x).attr('cy', y).attr('r', 4).attr('fill', '#c9a84c').attr('stroke', '#ffffff').attr('stroke-width', 2);
+      pinGroup.append('circle')
+        .attr('cx', x)
+        .attr('cy', y)
+        .attr('r', 8)
+        .attr('fill', 'rgba(201,168,76,0.26)');
+      pinGroup.append('circle')
+        .attr('cx', x)
+        .attr('cy', y)
+        .attr('r', 4)
+        .attr('fill', '#c9a84c')
+        .attr('stroke', '#ffffff')
+        .attr('stroke-width', 2);
     });
 
     mapNode.classList.add('is-actual-map');
