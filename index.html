@@ -1,72 +1,170 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MEDIVISTA | Products</title>
+  <title>MEDIVISTA | Global Aesthetic B2B</title>
+  <meta name="description" content="MEDIVISTA is a global B2B aesthetic company website for product information, brand introduction, and professional inquiry." />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <a class="logo" href="index.html">MEDIVISTA</a>
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="MEDIVISTA home">
+        <img src="medivista_logo_gold.png" alt="MEDIVISTA">
+        <span class="logo-fallback">MEDIVISTA</span>
+      </a>
       <nav class="main-nav" aria-label="Main menu">
+        <a href="about/index.html">ABOUT</a>
         <a href="products/index.html">PRODUCTS</a>
         <a href="brands/index.html">BRANDS</a>
-        <a class="btn-brand-shop" href="brands/index.html">Brand Shop</a>
+        <a href="blogs/index.html">BLOGS</a>
+        <a href="contact/index.html">CONTACT US</a>
+        <a class="nav-pill" href="https://shop.medivista.co.kr">BRAND SHOP</a>
+        <span class="nav-utility"><a href="index.html">EN</a><a href="#ko">KO</a></span>
+        <a href="#instagram" aria-label="Instagram">Instagram</a>
+        <a href="#facebook" aria-label="Facebook">Facebook</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero container">
-      <h1>안전성과 품질 중심의 메디컬 에스테틱 제품</h1>
-      <p>의료진과 파트너가 제품 정보를 명확히 확인할 수 있도록 구성했습니다.</p>
+    <section class="hero-banner">
+      <div class="container hero-content">
+        <p class="eyebrow">Global Medical Aesthetic B2B</p>
+        <h1>Professional aesthetic solutions for global partners.</h1>
+        <p class="lead">MEDIVISTA connects clinics, distributors, and brand partners with carefully curated Korean aesthetic product information and inquiry-first support.</p>
+        <div class="button-row">
+          <a class="btn primary" href="products/index.html">View Products</a>
+          <a class="btn secondary" href="contact/index.html">Request Inquiry</a>
+        </div>
+      </div>
     </section>
 
-    <section class="container">
-      <h2>Categories</h2>
-      <div class="categories">
-        <a href="#dermal-fillers">Dermal Fillers</a>
-        <a href="#body-fillers">Body Fillers</a>
-        <a href="#cosmetics">Cosmetics</a>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Popular Products</p>
+            <h2>Catalog highlights for professional review</h2>
+          </div>
+          <p>Browse representative products and request details through the inquiry flow prepared for international B2B communication.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="product-card">
+            <div class="product-image"></div>
+            <p class="card-meta">Own Brand</p>
+            <h3>Cellexor Re:Tone</h3>
+            <p>Designed for premium aesthetic care with an exosome and NAD+ inspired concept.</p>
+            <a class="btn whatsapp" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a>
+          </article>
+          <article class="product-card">
+            <div class="product-image"></div>
+            <p class="card-meta">Skin Boosters</p>
+            <h3>Rejuran Healer</h3>
+            <p>Professional aesthetic solution information for partner consultation and product review.</p>
+            <a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran Healer">Inquire via WhatsApp</a>
+          </article>
+          <article class="product-card">
+            <div class="product-image"></div>
+            <p class="card-meta">Dermal Fillers</p>
+            <h3>The Chaeum</h3>
+            <p>Formulated for professional aesthetic use and presented through a catalog-only inquiry path.</p>
+            <a class="btn whatsapp" href="#" data-whatsapp data-product="The Chaeum">Inquire via WhatsApp</a>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="product-list" id="dermal-fillers">
-        <article class="product-card">
-          <h3>Cellexor Soft</h3>
-          <p>시술 목적과 환자 상태에 따라 사용이 달라질 수 있습니다.</p>
-        </article>
-        <article class="product-card">
-          <h3>Cellexor Deep</h3>
-          <p>전문가 상담 후 적절한 사용 계획을 권장합니다.</p>
-        </article>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Product Categories</p>
+            <h2>Structured product information</h2>
+          </div>
+          <p>Categories are organized for scanning, comparison, and professional inquiry without direct consumer purchase flow on the main site.</p>
+        </div>
+        <div class="category-tabs">
+          <a href="products/index.html#botulinum-toxins">Botulinum Toxins</a>
+          <a href="products/index.html#dermal-fillers">Dermal Fillers</a>
+          <a href="products/index.html#body-fillers">Body Fillers</a>
+          <a href="products/index.html#skin-boosters">Skin Boosters</a>
+          <a href="products/index.html#lipolysis">Lipolysis</a>
+          <a href="products/index.html#exosomes">Exosomes</a>
+          <a href="products/index.html#biostimulators">Biostimulators</a>
+          <a href="products/index.html#hair-treatment">Hair Treatment</a>
+          <a href="products/index.html#others">Others</a>
+          <a href="products/index.html#cosmetics">Cosmetics</a>
+        </div>
       </div>
+    </section>
 
-      <div class="product-list" id="body-fillers">
-        <article class="product-card">
-          <h3>BodyLine Plus</h3>
-          <p>제품별 사용 가이드는 의료 전문가 안내를 참고하세요.</p>
-        </article>
+    <section class="section">
+      <div class="container grid grid-2">
+        <div>
+          <p class="eyebrow">Global Network</p>
+          <h2>Connecting aesthetic partners across key markets</h2>
+          <p>MEDIVISTA prepares English-first communication for distributors and professional partners across the United States, China, Oceania, and Southeast Asia.</p>
+        </div>
+        <div class="network-list">
+          <span>United States</span>
+          <span>China</span>
+          <span>New Zealand</span>
+          <span>Australia</span>
+          <span>Malaysia</span>
+          <span>Philippines</span>
+          <span>Thailand</span>
+          <span>Vietnam</span>
+        </div>
       </div>
+    </section>
 
-      <div class="product-list" id="cosmetics">
-        <article class="product-card">
-          <h3>Derma Calm Serum</h3>
-          <p>개인 피부 상태에 따라 체감이 다를 수 있습니다.</p>
-        </article>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Partners</p>
+            <h2>Built for long-term B2B relationships</h2>
+          </div>
+          <p>Our partner approach focuses on product clarity, responsive inquiry handling, and a clean professional catalog experience.</p>
+        </div>
+        <div class="grid grid-4 values">
+          <article class="info-card value-card"><strong>TECHNOLOGY</strong><p>Advanced beauty science and product information.</p></article>
+          <article class="info-card value-card"><strong>TRUST</strong><p>Clear communication for international partners.</p></article>
+          <article class="info-card value-card"><strong>QUALITY</strong><p>Curated catalog presentation for professional review.</p></article>
+          <article class="info-card value-card"><strong>BEAUTY</strong><p>Premium aesthetic care with a global brand tone.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="inquiry-band">
+      <div class="container">
+        <p class="eyebrow">Inquiry CTA</p>
+        <h2>Ready to discuss MEDIVISTA products?</h2>
+        <p>Send your inquiry and our team will follow up with product information prepared for professional B2B review.</p>
+        <div class="button-row">
+          <a class="btn primary" href="contact/index.html">Contact Us</a>
+          <a class="btn secondary" href="#" data-whatsapp>Inquire via WhatsApp</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <a class="floating-whatsapp" href="https://wa.me/820000000000" aria-label="WhatsApp 문의" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <a class="floating-whatsapp" href="#" data-whatsapp aria-label="WhatsApp inquiry">WhatsApp</a>
 
   <footer class="site-footer">
-    <div class="container footer-links">
-      <a href="products/index.html#dermal-fillers">Dermal Fillers</a>
-      <a href="brands/index.html">Brands</a>
-      <a href="cellexor/index.html">Cellexor</a>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">MEDIVISTA</div>
+        <p>Global medical aesthetic B2B website for catalog information, brand introduction, and professional inquiry.</p>
+      </div>
+      <div><div class="footer-title">Company</div><a href="about/index.html">About</a><a href="contact/index.html">Contact Us</a></div>
+      <div><div class="footer-title">Catalog</div><a href="products/index.html">Products</a><a href="brands/index.html">Brands</a></div>
+      <div><div class="footer-title">Connect</div><a href="https://shop.medivista.co.kr">Brand Shop</a><a href="#instagram">Instagram</a><a href="#facebook">Facebook</a></div>
     </div>
+    <div class="container footer-bottom">© <span data-year></span> MEDIVISTA. All rights reserved.</div>
   </footer>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
