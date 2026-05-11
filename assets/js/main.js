@@ -21,6 +21,15 @@ document.querySelectorAll('.site-header').forEach((header) => {
   const nav = header.querySelector('.main-nav');
   if (!toggle || !nav) return;
 
+  if (!nav.id) nav.id = 'primary-nav';
+  toggle.setAttribute('aria-controls', nav.id);
+
+  function closeNav({ returnFocus } = {}) {
+    header.classList.remove('nav-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (returnFocus) toggle.focus();
+  }
+
   toggle.addEventListener('click', () => {
     const isOpen = header.classList.toggle('nav-open');
     toggle.setAttribute('aria-expanded', String(isOpen));
@@ -28,9 +37,20 @@ document.querySelectorAll('.site-header').forEach((header) => {
 
   nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      header.classList.remove('nav-open');
-      toggle.setAttribute('aria-expanded', 'false');
+      closeNav();
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!header.classList.contains('nav-open')) return;
+    if (header.contains(event.target)) return;
+    closeNav();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!header.classList.contains('nav-open')) return;
+    if (event.key !== 'Escape') return;
+    closeNav({ returnFocus: true });
   });
 });
 
