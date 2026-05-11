@@ -32,8 +32,8 @@ a { color: inherit; }
   backdrop-filter: blur(18px);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 96px; gap: 24px; padding: 12px 0; }
-.logo { display: inline-flex; align-items: center; justify-content: flex-start; width: 260px; height: 70px; text-decoration: none; overflow: visible; }
-.logo img { display: block; width: auto; height: 54px; max-width: 260px; max-height: none; object-fit: contain; object-position: left center; }
+.logo { display: inline-flex; align-items: center; justify-content: flex-start; width: 300px; height: 72px; text-decoration: none; overflow: visible; }
+.logo img { display: block; width: 280px; height: auto; max-width: 100%; max-height: none; object-fit: contain; object-position: left center; }
 .logo-fallback { display: none; }
 .main-nav { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 700; color: var(--navy); }
 .main-nav a { text-decoration: none; white-space: nowrap; }
