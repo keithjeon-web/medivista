@@ -15,7 +15,8 @@ dist/medivista-wp-theme-starter-20260511-wp.zip
 - Brand Shop links route to `https://shop.medivista.co.kr`.
 - WhatsApp inquiry is connected in `assets/js/main.js`.
 - Header uses `assets/images/medivista_logo_header.png`.
-- Product image slots are prepared for 1200 x 900 px WebP images.
+- Product images are inserted for 114 ready catalog items as 1200 x 900 px WebP assets.
+- `Cosmetic Line Coming Soon` remains the only expected pending placeholder.
 
 ## Expected WordPress Pages
 
@@ -31,7 +32,6 @@ Create pages with these slugs so WordPress can load the matching templates:
 
 ## Before Production
 
-- Insert final product WebP images under `assets/images/products/`.
 - Confirm Instagram and Facebook URLs before turning icons into links.
-- Run PHP syntax checks in the hosting or local WordPress environment.
+- Run native PHP syntax checks in the hosting or local WordPress environment when PHP CLI is available.
 - Verify PC/mobile header, product filters, world map, and contact form.
