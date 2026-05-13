@@ -128,9 +128,31 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
   const emptyNode = section?.querySelector('[data-product-empty]');
   const cards = Array.from(section?.querySelectorAll('.product-card') || []);
   const blocks = Array.from(section?.querySelectorAll('.product-category-block') || []);
+  const tabs = section?.querySelector('.category-tabs');
 
   function normalize(value) {
     return (value || '').toLowerCase().trim();
+  }
+
+  function scrollToBlock(block) {
+    if (!block) return;
+
+    const header = document.querySelector('.site-header');
+    const headerHeight = header?.getBoundingClientRect().height || 0;
+    const offset = headerHeight + 18;
+    const top = block.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  function setActiveTab(blockId) {
+    if (!tabs) return;
+    const activeHref = `#${blockId}`;
+    tabs.querySelectorAll('a').forEach((link) => {
+      const isActive = link.getAttribute('href') === activeHref;
+      if (isActive) link.setAttribute('aria-current', 'true');
+      else link.removeAttribute('aria-current');
+    });
   }
 
   function updateCatalog() {
@@ -157,7 +179,18 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
   }
 
   searchInput?.addEventListener('input', updateCatalog);
-  categoryFilter?.addEventListener('change', updateCatalog);
+  categoryFilter?.addEventListener('change', () => {
+    updateCatalog();
+
+    const selectedCategory = categoryFilter?.value || 'all';
+    if (selectedCategory !== 'all') {
+      const target = section?.querySelector(`#${CSS.escape(selectedCategory)}`);
+      if (target) {
+        setActiveTab(selectedCategory);
+        scrollToBlock(target);
+      }
+    }
+  });
   resetButton?.addEventListener('click', () => {
     if (searchInput) searchInput.value = '';
     if (categoryFilter) categoryFilter.value = 'all';
@@ -166,6 +199,34 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
   });
 
   updateCatalog();
+
+  if (tabs) {
+    tabs.querySelectorAll('a[href^=\"#\"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const id = href.slice(1);
+        const target = section?.querySelector(`#${CSS.escape(id)}`);
+        if (!target) return;
+
+        event.preventDefault();
+        setActiveTab(id);
+        scrollToBlock(target);
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        const id = visible?.target?.id;
+        if (id) setActiveTab(id);
+      }, { rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.1, 0.25, 0.4, 0.6] });
+
+      blocks.forEach((block) => observer.observe(block));
+    }
+  }
 });
 
 document.querySelectorAll('.blog-thumb').forEach((visual) => {
