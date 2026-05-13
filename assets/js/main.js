@@ -234,23 +234,25 @@ async function initWorldMap(mapNode) {
   const svg = mapNode.querySelector('svg');
   if (!svg) return;
 
-  const width = Math.max(720, Math.round(mapNode.getBoundingClientRect().width || 960));
-  const height = Math.round(width * 0.5);
-  svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-  svg.setAttribute('width', String(width));
-  svg.setAttribute('height', String(height));
-  svg.innerHTML = '<title id="world-map-title">Actual MEDIVISTA global network map by market zone</title>';
-
   const d3 = window.d3;
   const topojson = window.topojson;
-  const projection = d3.geoNaturalEarth1().scale(width / 6.2).translate([width / 2, height / 2 + height * 0.04]);
-  const path = d3.geoPath(projection);
-  const root = d3.select(svg);
 
   try {
     const response = await fetch('https://unpkg.com/world-atlas@2/countries-110m.json');
     if (!response.ok) throw new Error(`World atlas request failed: ${response.status}`);
     const world = await response.json();
+
+    const width = Math.max(720, Math.round(mapNode.getBoundingClientRect().width || 960));
+    const height = Math.round(width * 0.5);
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('width', String(width));
+    svg.setAttribute('height', String(height));
+    svg.innerHTML = '<title id="world-map-title">Actual MEDIVISTA global network map by market zone</title>';
+
+    const projection = d3.geoNaturalEarth1().scale(width / 6.2).translate([width / 2, height / 2 + height * 0.04]);
+    const path = d3.geoPath(projection);
+    const root = d3.select(svg);
+
     const countries = topojson.feature(world, world.objects.countries);
     const borders = topojson.mesh(world, world.objects.countries, (a, b) => a !== b);
 
