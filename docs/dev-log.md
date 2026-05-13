@@ -338,3 +338,12 @@
 - Error recovery closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` regenerated `docs/error-report-latest.md` (`2026-05-14 04:49:33 +09:00`): PASS for JS + WP ZIP/XML + product images; WARN remains for push/public parity due to network limits.
 - Deploy note: `git` in `.deploy-medivista-github` requires `git -c safe.directory=...` per command in this environment.
 - Next: from a network-enabled environment, run the recovery script with `-PushDeploy`, then verify the public preview with `v=20260514a` cache-busted URLs (Products category tabs + Global Reach on mobile).
+
+## 2026-05-14 - Production cycle: commit deploy parity + remove PHP BOM
+
+- Fix: removed a UTF-8 BOM from `wp-theme-starter/functions.php` (prevents intermittent PHP/header output quirks) and synced the exact no-BOM file into `.deploy-medivista-github` for publish parity.
+- Deploy: committed the current parity set to `.deploy-medivista-github` `gh-pages` as `14314aa chore: sync site parity (20260514a)` (ahead of `origin/gh-pages` by 1, pending push).
+- Checks: `node --check` passed for root + deploy JS bundles; prohibited-commerce scan only matched the allowed phrase `no checkout flow` on Contact; risky-claim scan returned no matches in runtime files.
+- Visual: recovery script started the local preview server; `http://127.0.0.1:4173/index.html` returns HTTP 200.
+- Closeout: due to sandbox process limits, ran the required recovery script in-process with `Set-ExecutionPolicy -Scope Process Bypass` and then `tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 06:52:04 +09:00`): PASS for preview + WP ZIP/XML + product images; WARN remains for push/public parity (network blocked). Logged non-blocking warning: ScheduledJobs adapter access denied.
+- Next: from a network-enabled environment, run the recovery script with `-PushDeploy` to publish `14314aa`, then re-verify public preview parity using the `v=20260514a` cache-busted URLs on desktop + mobile.
