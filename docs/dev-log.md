@@ -444,6 +444,14 @@
 - Guardrail: keep the main site Brand Shop button pointed to `https://shop.medivista.co.kr`; do not add checkout/payment UI to `www.medivista.co.kr`.
 - Next: when shop WordPress admin is available, install WooCommerce on `shop.medivista.co.kr`, let it create the payment pages, choose the payment gateway, and test checkout before live payments.
 
+## 2026-05-14 - Workflow update: WordPress Multisite operating model
+
+- Decision: adopt a WordPress Multisite operating model for MEDIVISTA.
+- Site roles: `www.medivista.co.kr` is the main B2B catalog site; `shop.medivista.co.kr` is the Brand Shop / WooCommerce site.
+- Change: added `docs/wordpress-multisite-operations.md` and updated WooCommerce, insertion, pre-deploy, automation, and README guidance.
+- Guardrail: WooCommerce can be installed through the network/admin flow, but it must be active only on the shop site. Main-site commerce UI remains prohibited.
+- Next: confirm WordPress Multisite availability, map the main and shop domains, apply the MEDIVISTA Starter theme to the main site, and configure WooCommerce on the shop site only.
+
 ## 2026-05-14 - Production cycle: recovery public-parity cache-bust alignment
 
 - Focus: make `tools/medivista-error-recovery.ps1` public-preview parity checks align with the current cache-bust token (instead of a stale fixed value).

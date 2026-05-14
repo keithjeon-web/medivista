@@ -49,6 +49,15 @@ The current workflow is a semi-automated routine. It prepares the Codex executio
 - Avoid unverified medical or efficacy claims.
 - Do not modify DNS or Google Workspace records unless explicitly requested.
 
+## WordPress Multisite Operating Model
+
+MEDIVISTA uses a separated site-role model:
+
+- `www.medivista.co.kr`: main B2B catalog site.
+- `shop.medivista.co.kr`: Brand Shop / WooCommerce site.
+
+WooCommerce, cart, checkout, payment, and order handling belong only on the shop site. The main site keeps the Brand Shop button as a route to `https://shop.medivista.co.kr`.
+
 ## Current Development Phases
 
 ```text

@@ -20,7 +20,8 @@ Public preview:
 https://keithjeon-web.github.io/medivista/
 
 WordPress policy:
-Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, then apply directly to the live WordPress site after final preview QA and local/GitHub project backup.
+Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, then apply directly to the live WordPress Multisite network after final preview QA and local/GitHub project backup.
+Use the Multisite split: `www.medivista.co.kr` is the main catalog site, and `shop.medivista.co.kr` is the WooCommerce Brand Shop site.
 Do not require a WordPress backup plugin for now; the active backup method is local project files plus GitHub history.
 
 Read first:
@@ -34,6 +35,7 @@ Hard rules:
 - Do not add prices, cart, checkout, payment, or Add to Cart.
 - Keep frontend copy English-first.
 - Brand Shop must link to https://shop.medivista.co.kr.
+- WooCommerce belongs only on the shop site in the Multisite network.
 - Avoid unverified medical, clinical, FDA, KFDA, or guaranteed efficacy claims.
 - Do not modify DNS or Google Workspace records.
 - Do not delete user work or reset history.

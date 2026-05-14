@@ -36,10 +36,13 @@
 - Upload static files or move the WordPress starter into the active theme workflow.
 - Confirm HTTPS, `www.medivista.co.kr`, and Brand Shop subdomain routing.
 - Recheck WhatsApp number: `+82 10 5906 6768`.
+- If using WordPress Multisite, confirm the main site and shop site are separated before applying WooCommerce.
 
 ## Brand Shop WooCommerce
 
-- WooCommerce is configured on `shop.medivista.co.kr`, not the main catalog site.
+- WooCommerce is configured on the Multisite shop site `shop.medivista.co.kr`, not the main catalog site.
 - Brand Shop button remains `https://shop.medivista.co.kr`.
 - WooCommerce-created Shop, Cart, Checkout, and My Account pages remain on the shop subdomain.
+- WooCommerce is not activated for the main `www.medivista.co.kr` catalog site.
+- Follow `docs/wordpress-multisite-operations.md` for the site-role split.
 - Follow `docs/brand-shop-woocommerce-setup.md` before enabling live payment.

@@ -6,7 +6,12 @@ Local workspace: current project root in Codex Desktop
 GitHub repository: `keithjeon-web/medivista`
 Public preview: `https://keithjeon-web.github.io/medivista/`
 
-WordPress application note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review, then apply directly to the live WordPress site after the static public preview is final and the production files are preserved locally and on GitHub.
+WordPress application note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review, then apply directly to the live WordPress Multisite network after the static public preview is final and the production files are preserved locally and on GitHub.
+
+Multisite role split:
+
+- `www.medivista.co.kr`: main catalog site, no commerce UI.
+- `shop.medivista.co.kr`: Brand Shop site, WooCommerce only here.
 
 WordPress backup plugins are deferred for now. Do not require a backup plugin during the automation cycle unless the user changes this decision.
 
@@ -86,7 +91,7 @@ Work in this order unless the user gives a newer instruction:
 9. WordPress starter sync
 10. GitHub/public preview sync
 
-WordPress starter sync means keeping the export package ready for direct live WordPress application, not uploading to a paid preview environment.
+WordPress starter sync means keeping the export package ready for the main site in the WordPress Multisite network, not uploading to a paid preview environment.
 
 ### Phase 3 - Checks
 

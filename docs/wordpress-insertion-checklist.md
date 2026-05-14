@@ -9,7 +9,7 @@ Paid WordPress staging is not part of the MEDIVISTA workflow.
 MEDIVISTA uses this direct path:
 
 ```text
-GitHub Pages final QA -> local/GitHub project backup -> direct live WordPress application -> live QA
+GitHub Pages final QA -> local/GitHub project backup -> WordPress Multisite direct application -> live QA
 ```
 
 Continue design, content, SEO, product, and mobile QA on the free GitHub Pages public preview first:
@@ -18,7 +18,7 @@ Continue design, content, SEO, product, and mobile QA on the free GitHub Pages p
 https://keithjeon-web.github.io/medivista/
 ```
 
-Move directly to the live WordPress site after the public preview is final and the current project files are preserved locally and on GitHub.
+Move directly to the live WordPress Multisite network after the public preview is final and the current project files are preserved locally and on GitHub.
 
 WordPress backup plugins are deferred for now. Local files and GitHub history are the active backup method for MEDIVISTA production files.
 
@@ -74,21 +74,23 @@ The theme includes matching templates:
 - `page-cellexor.php`
 - `page-contact.php`
 
-## Direct Live WordPress Application Steps
+## Multisite Direct Application Steps
 
 Use these steps when the static public preview is final. There is no staging step.
 
-1. Confirm the current project files exist locally in `C:\Users\jhj13\OneDrive\문서\New project`.
+1. Confirm the current project files exist locally in the MEDIVISTA project root.
 2. Confirm the latest deploy checkout has been committed and pushed to GitHub.
 3. Confirm `dist/medivista-wp-theme-starter-20260511-wp.zip` and `dist/medivista-wp-pages-20260511.xml` exist locally.
 4. Keep the GitHub Pages preview open as the visual reference.
-5. In live WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
-6. Upload `dist/medivista-wp-theme-starter-20260511-wp.zip`.
-7. Activate `MEDIVISTA Starter`.
-8. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress.
-9. Go to Settings > Reading and set the static front page to Home.
+5. Confirm the WordPress network has separate sites for `www.medivista.co.kr` and `shop.medivista.co.kr`.
+6. Apply `dist/medivista-wp-theme-starter-20260511-wp.zip` to the main site.
+7. Activate `MEDIVISTA Starter` on the main site.
+8. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress on the main site.
+9. Go to Settings > Reading and set the static front page to Home on the main site.
 10. Go to Settings > Permalinks and save the permalink settings once.
-11. Open each live page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
+11. Configure WooCommerce only on the shop site by following [wordpress-multisite-operations.md](wordpress-multisite-operations.md) and [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md).
+12. Open each live main-site page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
+13. Open the shop site and verify Shop, Cart, Checkout, My Account, payment test mode, and Brand Shop routing.
 
 ## Menu Setup
 
@@ -103,8 +105,10 @@ Create a primary menu with this order:
 
 ## Brand Shop WooCommerce
 
+- MEDIVISTA uses a WordPress Multisite model with `www.medivista.co.kr` for the catalog site and `shop.medivista.co.kr` for WooCommerce.
 - WooCommerce payment and checkout belong only on `shop.medivista.co.kr`.
 - Keep the main site Brand Shop button linked to `https://shop.medivista.co.kr`.
+- Use [wordpress-multisite-operations.md](wordpress-multisite-operations.md) for the multisite operating model.
 - Use [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md) when configuring WooCommerce pages and payment on the shop WordPress admin.
 
 ## Safety Checks
