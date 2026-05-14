@@ -20,7 +20,7 @@ Public preview:
 https://keithjeon-web.github.io/medivista/
 
 WordPress policy:
-Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, and move to live WordPress transfer only after final approval and backup.
+Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, then apply directly to the live WordPress site after final preview QA and backup.
 
 Read first:
 - AGENTS.md
@@ -96,7 +96,7 @@ Do:
 - Comment progress on Issue #11.
 - Prefer full push when GitHub CLI auth is available.
 - Use connector fallback for small public preview fixes when full push is blocked.
-- Do not require paid WordPress staging; use GitHub Pages for preview QA and keep WordPress starter ready for approved production transfer.
+- Do not require paid WordPress staging; use GitHub Pages for preview QA and keep WordPress starter ready for direct live WordPress application.
 
 Do not:
 - Add price/cart/checkout/payment.
@@ -128,5 +128,5 @@ Use the one-cycle automation process:
 If local preview or GitHub push fails, log the error and continue file-level work.
 If a screenshot shows a visual defect, document discovery/inference/fix/verification in docs/dev-log.md before ending the cycle.
 Run tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip before final summary. Use -PushDeploy when publishing is intended and safe.
-Do not add WordPress staging as a required next step; use GitHub Pages preview QA until live WordPress transfer is approved.
+Do not add WordPress staging as a required next step; use GitHub Pages preview QA until direct live WordPress application begins.
 ```

@@ -300,7 +300,7 @@
 - Checks: `node --check assets/js/main.js`, `node --check wp-theme-starter/assets/js/main.js`, and `tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` all passed; latest report generated at `2026-05-13 20:43:56 +09:00`.
 - Logged minor automation note: QA Chrome temporary profiles under `docs/qa-screenshots/chrome-profile-*` can create locked files during broad `rg`; future scans should exclude those folders or clean them after Chrome exits.
 - Remaining sync note: `.deploy-medivista-github/docs/dev-log.md` was updated locally, but the follow-up commit/push was blocked by the current Codex usage limit. Commit it next with `docs: sync production dev log`.
-- Next: continue GitHub Pages public preview QA first; use the WordPress ZIP/XML only after final approval for production transfer.
+- Next: continue GitHub Pages public preview QA first; use the WordPress ZIP/XML only during direct live WordPress application after backup.
 
 ## 2026-05-13 - Production cycle: stabilize public visual QA artifacts
 
@@ -386,8 +386,8 @@
 - Rebuilt `dist/medivista-wp-theme-starter-20260511-wp.zip`; verified the ZIP header contains `20260514a` and includes 114 product WebP assets.
 - Published deploy commit `ed8614a wp: align header logo cache bust` to `gh-pages`.
 - Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:28:26 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
-- Remaining blocker: live WordPress transfer requires final approval, a current live-site backup, and an admin login session.
-- Next: keep GitHub Pages as the free preview, then upload the ZIP/import XML only when production transfer is approved.
+- Remaining blocker: direct live WordPress application requires a current live-site backup and an admin login session.
+- Next: keep GitHub Pages as the free preview, then upload the ZIP/import XML directly to live WordPress after backup.
 
 ## 2026-05-14 - Production cycle: enable official social links
 
@@ -411,15 +411,22 @@
 - Deploy: synced the deploy checkout and pushed `gh-pages` commit `9e7d013 seo: add cosmetic discovery optimization`.
 - Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:55:31 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
 - Public verification: cache-busted public Home contains `Product Discovery` and `20260514c`; public Products contains `Quick Answers`, `FAQPage`, and `medical aesthetic cosmetics`.
-- Next: visually verify public Home + Products in the browser at normal desktop and mobile widths, then keep WordPress starter ready for approved production transfer.
+- Next: visually verify public Home + Products in the browser at normal desktop and mobile widths, then keep WordPress starter ready for direct live WordPress application.
 
 ## 2026-05-14 - Workflow update: remove paid WordPress staging step
 
 - Decision: paid WordPress staging is removed from the MEDIVISTA workflow.
 - Change: updated the production cycle, automation prompts, and WordPress insertion checklist so GitHub Pages remains the free preview/client-review path.
-- Recovery script: updated WordPress ZIP/XML next-step wording so generated reports say to keep files ready for approved live WordPress transfer, not a test or staging site.
+- Recovery script: updated WordPress ZIP/XML next-step wording so generated reports say to keep files ready for direct live WordPress application after backup.
 - WordPress direction: keep the theme ZIP and XML ready, but do not plan staging upload/import as an automatic next step.
 - Next: continue public GitHub Pages QA; move to live WordPress only after final approval and backup.
+
+## 2026-05-14 - Workflow update: direct live WordPress application
+
+- Decision: after GitHub Pages final QA, apply directly to the live WordPress site without a paid staging step.
+- Required guardrail: back up the live WordPress site and database before uploading the theme ZIP or importing pages.
+- Change: updated WordPress insertion checklist, automation prompts, production cycle docs, and recovery-script wording to say direct live WordPress application after backup.
+- Next: continue GitHub Pages visual QA; when ready, open the live WordPress admin and apply the theme ZIP/XML directly with backup completed first.
 
 ## 2026-05-14 - Production cycle: recovery public-parity cache-bust alignment
 

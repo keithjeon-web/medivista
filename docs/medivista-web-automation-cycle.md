@@ -6,7 +6,7 @@ Local workspace: current project root in Codex Desktop
 GitHub repository: `keithjeon-web/medivista`
 Public preview: `https://keithjeon-web.github.io/medivista/`
 
-WordPress staging note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review. Transfer to live WordPress only after the static public preview is approved and a live-site backup exists.
+WordPress application note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review, then apply directly to the live WordPress site after the static public preview is final and a live-site backup exists.
 
 ## Purpose
 
@@ -84,7 +84,7 @@ Work in this order unless the user gives a newer instruction:
 9. WordPress starter sync
 10. GitHub/public preview sync
 
-WordPress starter sync means keeping the export package ready, not uploading to a paid staging site.
+WordPress starter sync means keeping the export package ready for direct live WordPress application, not uploading to a paid preview environment.
 
 ### Phase 3 - Checks
 
@@ -164,7 +164,7 @@ At the end of each cycle:
 - Write the next-cycle priority.
 - Leave a follow-up comment.
 
-Do not set "WordPress staging upload" as the next-cycle priority. If WordPress work is next, phrase it as "prepare for approved live WordPress transfer" or "keep WordPress starter package in sync."
+Do not set any paid WordPress preview environment as the next-cycle priority. If WordPress work is next, phrase it as "prepare direct live WordPress application" or "keep WordPress starter package in sync."
 
 ### Error Resolution Automation
 

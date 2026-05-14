@@ -6,13 +6,19 @@ Updated: 2026-05-14
 
 Paid WordPress staging is not part of the MEDIVISTA workflow.
 
+MEDIVISTA uses this direct path:
+
+```text
+GitHub Pages final QA -> live WordPress backup -> direct live WordPress application -> live QA
+```
+
 Continue design, content, SEO, product, and mobile QA on the free GitHub Pages public preview first:
 
 ```text
 https://keithjeon-web.github.io/medivista/
 ```
 
-Move to WordPress only after the public preview is approved for production transfer.
+Move directly to the live WordPress site after the public preview is final and the current live site is backed up.
 
 ## Theme Package
 
@@ -66,18 +72,19 @@ The theme includes matching templates:
 - `page-cellexor.php`
 - `page-contact.php`
 
-## Production Transfer Steps
+## Direct Live WordPress Application Steps
 
-Use these steps only when the static public preview is final and the live WordPress transfer is approved.
+Use these steps when the static public preview is final. There is no staging step.
 
 1. Back up the current live WordPress site and database.
-2. In WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
-2. Upload `dist/medivista-wp-theme-starter-20260511-wp.zip`.
-3. Activate `MEDIVISTA Starter`.
-4. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress.
-5. Go to Settings > Reading and set the static front page to Home.
-6. Go to Settings > Permalinks and save the permalink settings once.
-7. Open each page and verify header, footer, hero, product cards, contact form, and world map.
+2. Keep the GitHub Pages preview open as the visual reference.
+3. In live WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
+4. Upload `dist/medivista-wp-theme-starter-20260511-wp.zip`.
+5. Activate `MEDIVISTA Starter`.
+6. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress.
+7. Go to Settings > Reading and set the static front page to Home.
+8. Go to Settings > Permalinks and save the permalink settings once.
+9. Open each live page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
 
 ## Menu Setup
 
@@ -103,7 +110,7 @@ Create a primary menu with this order:
 
 ## Free Public Preview QA
 
-- Use GitHub Pages as the client-review preview before any WordPress transfer.
+- Use GitHub Pages as the client-review preview before direct live WordPress application.
 - Verify Home, Products, About, Brands, Blogs, Cellexor, and Contact from `https://keithjeon-web.github.io/medivista/`.
 - Verify the header logo at 100% browser zoom on desktop and mobile.
 - Verify Products desktop grid, Products mobile 1-column card rhythm, and product image whitespace.
@@ -114,5 +121,5 @@ Create a primary menu with this order:
 
 ## Known Remaining Work
 
-- Native `php -l` still requires PHP CLI in the local or production-transfer environment. The project fallback structural PHP lint currently passes.
+- Native `php -l` still requires PHP CLI in the local or live WordPress application environment. The project fallback structural PHP lint currently passes.
 - Confirm final cosmetic product image if the `Cosmetic Line Coming Soon` placeholder should be replaced.
