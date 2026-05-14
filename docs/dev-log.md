@@ -347,3 +347,44 @@
 - Visual: recovery script started the local preview server; `http://127.0.0.1:4173/index.html` returns HTTP 200.
 - Closeout: due to sandbox process limits, ran the required recovery script in-process with `Set-ExecutionPolicy -Scope Process Bypass` and then `tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 06:52:04 +09:00`): PASS for preview + WP ZIP/XML + product images; WARN remains for push/public parity (network blocked). Logged non-blocking warning: ScheduledJobs adapter access denied.
 - Next: from a network-enabled environment, run the recovery script with `-PushDeploy` to publish `14314aa`, then re-verify public preview parity using the `v=20260514a` cache-busted URLs on desktop + mobile.
+
+## 2026-05-14 - Production cycle: add robots.txt + sitemap.xml
+
+- Task: add basic crawler entry points for the GitHub Pages public preview (robots + sitemap) while keeping the catalog-only and inquiry-only constraints.
+- Change: added `robots.txt` and `sitemap.xml` to the root workspace and `.deploy-medivista-github` with 7 URLs (home + 6 subpages). Sitemap/robots point to the current public preview base `https://keithjeon-web.github.io/medivista/`.
+- Deploy: committed the deploy checkout addition as `dc63096 seo: add robots.txt and sitemap` (deploy is now ahead of `origin/gh-pages` by 3; push is still blocked here).
+- Checks: `node --check` passed for static/WP/deploy JS; risky-claim scan found no matches in runtime files; commerce scan hits were limited to the allowed phrase `no checkout flow` in Contact and the WP starter README note.
+- Error recovery closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report generated at `2026-05-14 08:52:35 +09:00`): PASS for local preview + WP ZIP/XML + product images; WARN for push/public parity due to network failure to `github.com:443`.
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then verify the public preview returns HTTP 200 for `/robots.txt` and `/sitemap.xml` (and re-verify Home + Products on mobile with `v=20260514a`).
+
+## 2026-05-14 - Production cycle: make OG image URLs relative
+
+- Task: make OpenGraph/Twitter preview images work on both `www.medivista.co.kr` and the GitHub Pages public preview by switching absolute OG image URLs to relative paths.
+- Change: updated `og:image` and `twitter:image` to `assets/images/og-medivista.png` (or `../assets/images/og-medivista.png` for subpages) across 7 static pages, and mirrored the same change into `.deploy-medivista-github`.
+- Checks: `node --check` passed for static/WP/deploy JS; prohibited-commerce and risky-claim scans returned no runtime matches; Brand Shop links remain `https://shop.medivista.co.kr`.
+- Visual check note: `Invoke-WebRequest http://127.0.0.1:4173/index.html` fails outside the recovery script because the preview server started inside a one-off PowerShell process does not persist across runs in this sandbox.
+- Error recovery closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 10:53:44 +09:00`): PASS for JS + WP ZIP/XML + images; WARN remains for push/public parity (network blocked).
+- Deploy blocker: `.deploy-medivista-github` git writes failed (`Permission denied` creating `.git/index.lock`) because `.git` is a OneDrive/cloud reparse point; commits/push are blocked until `.git` is writable (pin offline or move deploy checkout out of OneDrive).
+- Next: fix `.deploy-medivista-github/.git` writability, then commit and push the OG-image change to `gh-pages` from a network-enabled environment and re-verify public preview social previews.
+
+## 2026-05-14 - Production cycle: remove commerce keyword from Contact copy
+
+- Task: remove the runtime keyword `checkout` from Contact page copy while keeping the catalog-only inquiry intent (helps avoid false-positive commerce scans).
+- Change: updated Contact static page + WordPress starter (`Catalog-only inquiry, no online ordering`) and mirrored the same update into `.deploy-medivista-github`.
+- Checks: `node --check assets/js/main.js` and `node --check wp-theme-starter/assets/js/main.js` passed; prohibited-commerce scan returned zero runtime matches; risky-claim scan returned zero runtime matches; Brand Shop links remain `https://shop.medivista.co.kr`.
+- Deploy: committed `.deploy-medivista-github` `gh-pages` updates as:
+  - `2f366c5 deploy: remove commerce keyword from contact copy`
+  - `f7a86c5 deploy: use relative social preview images` (previously mirrored but not committed due to `.git` writability concerns; commits work again now).
+- Error recovery closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 12:54:38 +09:00`): PASS for preview + JS + WP ZIP/XML + product images; WARN remains for push/public parity due to network limits (plus a non-blocking ScheduledJobs access-denied warning).
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages` (now ahead by 5) and re-verify the public preview (Home + Contact + Products on mobile) with `v=20260514a`.
+
+## 2026-05-14 - WordPress staging readiness: publish parity and logo cache-bust
+
+- Pushed the pending `.deploy-medivista-github` `gh-pages` commits through `f7a86c5`, bringing public preview back in sync with the local/deploy checkout.
+- Found WordPress starter header logo cache-bust lagging behind the current `20260514a` asset version (`wp-theme-starter/header.php` was `20260513b`, deploy copy was `20260508c`).
+- Fixed root and deploy `wp-theme-starter/header.php` so the header logo now uses `medivista_logo_header.png?v=20260514a`.
+- Rebuilt `dist/medivista-wp-theme-starter-20260511-wp.zip`; verified the ZIP header contains `20260514a` and includes 114 product WebP assets.
+- Published deploy commit `ed8614a wp: align header logo cache bust` to `gh-pages`.
+- Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:28:26 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
+- Remaining blocker: actual WordPress staging upload/import requires a staging WordPress admin URL and login session/credentials from the user.
+- Next: open the staging WordPress admin, upload the ZIP, import the XML, assign Home as static front page, save permalinks, then run Products/Global Network/Contact QA in the WordPress environment.
