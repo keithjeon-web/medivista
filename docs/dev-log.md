@@ -452,6 +452,14 @@
 - Guardrail: WooCommerce can be installed through the network/admin flow, but it must be active only on the shop site. Main-site commerce UI remains prohibited.
 - Next: confirm WordPress Multisite availability, map the main and shop domains, apply the MEDIVISTA Starter theme to the main site, and configure WooCommerce on the shop site only.
 
+## 2026-05-14 - Workflow update: Whois DNS for Multisite
+
+- Decision: use the subdomain Multisite model for MEDIVISTA production (`www.medivista.co.kr` main site and `shop.medivista.co.kr` shop site).
+- DNS baseline: the domain uses Whois nameserver management.
+- Change: updated `docs/wordpress-multisite-operations.md`, `docs/wordpress-insertion-checklist.md`, and `docs/pre-deploy-checklist.md` with Whois DNS notes, explicit `www`/`shop` record guidance, wildcard DNS guidance, and Local WP/free-hosting practice notes.
+- Guardrail: Codex must not modify DNS, MX, TXT, SSL, or Google Workspace records without explicit user confirmation.
+- Next: confirm the hosting target for the Multisite server, then set explicit Whois DNS records for `www` and `shop` when production mapping begins.
+
 ## 2026-05-14 - Production cycle: recovery public-parity cache-bust alignment
 
 - Focus: make `tools/medivista-error-recovery.ps1` public-preview parity checks align with the current cache-bust token (instead of a stale fixed value).

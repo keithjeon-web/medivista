@@ -83,14 +83,15 @@ Use these steps when the static public preview is final. There is no staging ste
 3. Confirm `dist/medivista-wp-theme-starter-20260511-wp.zip` and `dist/medivista-wp-pages-20260511.xml` exist locally.
 4. Keep the GitHub Pages preview open as the visual reference.
 5. Confirm the WordPress network has separate sites for `www.medivista.co.kr` and `shop.medivista.co.kr`.
-6. Apply `dist/medivista-wp-theme-starter-20260511-wp.zip` to the main site.
-7. Activate `MEDIVISTA Starter` on the main site.
-8. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress on the main site.
-9. Go to Settings > Reading and set the static front page to Home on the main site.
-10. Go to Settings > Permalinks and save the permalink settings once.
-11. Configure WooCommerce only on the shop site by following [wordpress-multisite-operations.md](wordpress-multisite-operations.md) and [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md).
-12. Open each live main-site page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
-13. Open the shop site and verify Shop, Cart, Checkout, My Account, payment test mode, and Brand Shop routing.
+6. Confirm Whois DNS records are ready for `www.medivista.co.kr` and `shop.medivista.co.kr`.
+7. Apply `dist/medivista-wp-theme-starter-20260511-wp.zip` to the main site.
+8. Activate `MEDIVISTA Starter` on the main site.
+9. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress on the main site.
+10. Go to Settings > Reading and set the static front page to Home on the main site.
+11. Go to Settings > Permalinks and save the permalink settings once.
+12. Configure WooCommerce only on the shop site by following [wordpress-multisite-operations.md](wordpress-multisite-operations.md) and [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md).
+13. Open each live main-site page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
+14. Open the shop site and verify Shop, Cart, Checkout, My Account, payment test mode, and Brand Shop routing.
 
 ## Menu Setup
 

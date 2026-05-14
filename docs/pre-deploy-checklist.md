@@ -46,3 +46,11 @@
 - WooCommerce is not activated for the main `www.medivista.co.kr` catalog site.
 - Follow `docs/wordpress-multisite-operations.md` for the site-role split.
 - Follow `docs/brand-shop-woocommerce-setup.md` before enabling live payment.
+
+## Whois DNS / Multisite Domain Check
+
+- Whois nameserver is the DNS management baseline.
+- Confirm explicit DNS records exist for `www.medivista.co.kr` and `shop.medivista.co.kr`.
+- Use wildcard `*.medivista.co.kr` only if many arbitrary subdomain sites will be created.
+- Confirm SSL covers both `www.medivista.co.kr` and `shop.medivista.co.kr`.
+- Do not change DNS, MX, TXT, or Google Workspace records without explicit confirmation.
