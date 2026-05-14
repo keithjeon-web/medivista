@@ -16,7 +16,7 @@
         <div class="contact-summary">
           <span><strong>WhatsApp</strong> +82 10 5906 6768</span>
           <span><strong>Response focus</strong> Product category, market, and B2B partner type</span>
-          <span><strong>Main site</strong> Catalog-only inquiry, no checkout flow</span>
+          <span><strong>Main site</strong> Catalog-only inquiry, no online ordering</span>
         </div>
         <div class="button-row"><a class="btn primary" href="#" data-whatsapp>Open WhatsApp Directly</a></div>
       </div>
