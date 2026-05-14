@@ -101,6 +101,12 @@ Create a primary menu with this order:
 5. CONTACT US -> `/contact/`
 6. BRAND SHOP -> `https://shop.medivista.co.kr`
 
+## Brand Shop WooCommerce
+
+- WooCommerce payment and checkout belong only on `shop.medivista.co.kr`.
+- Keep the main site Brand Shop button linked to `https://shop.medivista.co.kr`.
+- Use [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md) when configuring WooCommerce pages and payment on the shop WordPress admin.
+
 ## Safety Checks
 
 - Main website remains catalog-only.

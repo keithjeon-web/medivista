@@ -436,6 +436,14 @@
 - Note: this preserves the MEDIVISTA production files and deployment history; existing live WordPress database/content backups are not handled by a plugin in this phase.
 - Next: continue GitHub Pages final QA, confirm latest GitHub push, then apply the WordPress ZIP/XML directly to live WordPress when ready.
 
+## 2026-05-14 - Brand Shop WooCommerce payment setup scope
+
+- Decision: WooCommerce payment and checkout belong on `shop.medivista.co.kr`, not the main MEDIVISTA catalog site.
+- Change: added `docs/brand-shop-woocommerce-setup.md` with the WooCommerce setup flow for Shop, Cart, Checkout, My Account, payment gateway, and test-order checks.
+- Change: linked the WooCommerce setup guide from `docs/wordpress-insertion-checklist.md` and `docs/pre-deploy-checklist.md`.
+- Guardrail: keep the main site Brand Shop button pointed to `https://shop.medivista.co.kr`; do not add checkout/payment UI to `www.medivista.co.kr`.
+- Next: when shop WordPress admin is available, install WooCommerce on `shop.medivista.co.kr`, let it create the payment pages, choose the payment gateway, and test checkout before live payments.
+
 ## 2026-05-14 - Production cycle: recovery public-parity cache-bust alignment
 
 - Focus: make `tools/medivista-error-recovery.ps1` public-preview parity checks align with the current cache-bust token (instead of a stale fixed value).

@@ -36,3 +36,10 @@
 - Upload static files or move the WordPress starter into the active theme workflow.
 - Confirm HTTPS, `www.medivista.co.kr`, and Brand Shop subdomain routing.
 - Recheck WhatsApp number: `+82 10 5906 6768`.
+
+## Brand Shop WooCommerce
+
+- WooCommerce is configured on `shop.medivista.co.kr`, not the main catalog site.
+- Brand Shop button remains `https://shop.medivista.co.kr`.
+- WooCommerce-created Shop, Cart, Checkout, and My Account pages remain on the shop subdomain.
+- Follow `docs/brand-shop-woocommerce-setup.md` before enabling live payment.
