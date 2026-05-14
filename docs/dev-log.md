@@ -417,6 +417,7 @@
 
 - Decision: paid WordPress staging is removed from the MEDIVISTA workflow.
 - Change: updated the production cycle, automation prompts, and WordPress insertion checklist so GitHub Pages remains the free preview/client-review path.
+- Recovery script: updated WordPress ZIP/XML next-step wording so generated reports say to keep files ready for approved live WordPress transfer, not a test or staging site.
 - WordPress direction: keep the theme ZIP and XML ready, but do not plan staging upload/import as an automatic next step.
 - Next: continue public GitHub Pages QA; move to live WordPress only after final approval and backup.
 
