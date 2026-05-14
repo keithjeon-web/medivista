@@ -9,7 +9,7 @@ Paid WordPress staging is not part of the MEDIVISTA workflow.
 MEDIVISTA uses this direct path:
 
 ```text
-GitHub Pages final QA -> live WordPress backup -> direct live WordPress application -> live QA
+GitHub Pages final QA -> local/GitHub project backup -> direct live WordPress application -> live QA
 ```
 
 Continue design, content, SEO, product, and mobile QA on the free GitHub Pages public preview first:
@@ -18,7 +18,9 @@ Continue design, content, SEO, product, and mobile QA on the free GitHub Pages p
 https://keithjeon-web.github.io/medivista/
 ```
 
-Move directly to the live WordPress site after the public preview is final and the current live site is backed up.
+Move directly to the live WordPress site after the public preview is final and the current project files are preserved locally and on GitHub.
+
+WordPress backup plugins are deferred for now. Local files and GitHub history are the active backup method for MEDIVISTA production files.
 
 ## Theme Package
 
@@ -76,15 +78,17 @@ The theme includes matching templates:
 
 Use these steps when the static public preview is final. There is no staging step.
 
-1. Back up the current live WordPress site and database.
-2. Keep the GitHub Pages preview open as the visual reference.
-3. In live WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
-4. Upload `dist/medivista-wp-theme-starter-20260511-wp.zip`.
-5. Activate `MEDIVISTA Starter`.
-6. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress.
-7. Go to Settings > Reading and set the static front page to Home.
-8. Go to Settings > Permalinks and save the permalink settings once.
-9. Open each live page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
+1. Confirm the current project files exist locally in `C:\Users\jhj13\OneDrive\문서\New project`.
+2. Confirm the latest deploy checkout has been committed and pushed to GitHub.
+3. Confirm `dist/medivista-wp-theme-starter-20260511-wp.zip` and `dist/medivista-wp-pages-20260511.xml` exist locally.
+4. Keep the GitHub Pages preview open as the visual reference.
+5. In live WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
+6. Upload `dist/medivista-wp-theme-starter-20260511-wp.zip`.
+7. Activate `MEDIVISTA Starter`.
+8. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress.
+9. Go to Settings > Reading and set the static front page to Home.
+10. Go to Settings > Permalinks and save the permalink settings once.
+11. Open each live page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
 
 ## Menu Setup
 
@@ -123,3 +127,4 @@ Create a primary menu with this order:
 
 - Native `php -l` still requires PHP CLI in the local or live WordPress application environment. The project fallback structural PHP lint currently passes.
 - Confirm final cosmetic product image if the `Cosmetic Line Coming Soon` placeholder should be replaced.
+- WordPress backup plugins are intentionally deferred; this workflow preserves production files through the local project folder and GitHub.

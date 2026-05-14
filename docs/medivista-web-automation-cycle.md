@@ -6,7 +6,9 @@ Local workspace: current project root in Codex Desktop
 GitHub repository: `keithjeon-web/medivista`
 Public preview: `https://keithjeon-web.github.io/medivista/`
 
-WordPress application note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review, then apply directly to the live WordPress site after the static public preview is final and a live-site backup exists.
+WordPress application note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review, then apply directly to the live WordPress site after the static public preview is final and the production files are preserved locally and on GitHub.
+
+WordPress backup plugins are deferred for now. Do not require a backup plugin during the automation cycle unless the user changes this decision.
 
 ## Purpose
 

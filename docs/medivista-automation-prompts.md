@@ -20,7 +20,8 @@ Public preview:
 https://keithjeon-web.github.io/medivista/
 
 WordPress policy:
-Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, then apply directly to the live WordPress site after final preview QA and backup.
+Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, then apply directly to the live WordPress site after final preview QA and local/GitHub project backup.
+Do not require a WordPress backup plugin for now; the active backup method is local project files plus GitHub history.
 
 Read first:
 - AGENTS.md
