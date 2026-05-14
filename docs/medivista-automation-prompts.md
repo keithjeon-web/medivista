@@ -1,6 +1,6 @@
 # MEDIVISTA Automation Prompts
 
-Updated: 2026-05-08
+Updated: 2026-05-12
 
 ## Primary Recurring Prompt
 
@@ -18,6 +18,9 @@ keithjeon-web/medivista
 
 Public preview:
 https://keithjeon-web.github.io/medivista/
+
+WordPress policy:
+Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, and move to live WordPress transfer only after final approval and backup.
 
 Read first:
 - AGENTS.md
@@ -44,7 +47,9 @@ Cycle order:
    - If GitHub CLI is authenticated, push the full static build or deployment branch.
    - If GitHub CLI is not authenticated, use the GitHub connector only for small public-preview or issue-log updates.
 6. Log every error in docs/dev-log.md and continue to the next phase when safe.
-7. At cycle end, record changed files, checks, unresolved errors, and the next-cycle priority.
+7. Before closeout, run tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip. Add -PushDeploy when gh-pages has intended commits and publishing is part of the cycle.
+8. At cycle end, record changed files, checks, unresolved errors, and the next-cycle priority.
+   Do not set WordPress staging upload/import as the next priority.
 
 Error handling:
 - Ignore phase-level errors only after logging them.
@@ -53,6 +58,7 @@ Error handling:
 - For visual defects, use a discovery -> inference -> fix -> verification loop. Record the visible symptom, likely cause, exact correction, and cache-busted verification URL.
 - If CI/logo clipping continues after CSS changes, inspect the image bounding box and use a header-specific trimmed asset instead of repeating max-height tweaks.
 - If public preview differs from local, bump CSS/asset query versions and verify the public URL directly.
+- For recurring errors 1-6, use docs/error-resolution-automation.md and tools/medivista-error-recovery.ps1. Keep docs/error-report-latest.md current.
 - Do not ignore compliance risks, destructive action risks, credential exposure, or user-data loss risks.
 
 Output expectation:
@@ -85,10 +91,12 @@ Do:
 - Continue one focused website task per cycle.
 - Run basic checks.
 - Run visual anomaly checks for header/logo, navigation, world map, mobile wrapping, and public/local mismatch.
+- Run tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip before closeout. Use -PushDeploy when publishing is intended and safe.
 - Update docs/dev-log.md.
 - Comment progress on Issue #11.
 - Prefer full push when GitHub CLI auth is available.
 - Use connector fallback for small public preview fixes when full push is blocked.
+- Do not require paid WordPress staging; use GitHub Pages for preview QA and keep WordPress starter ready for approved production transfer.
 
 Do not:
 - Add price/cart/checkout/payment.
@@ -119,4 +127,6 @@ Use the one-cycle automation process:
 
 If local preview or GitHub push fails, log the error and continue file-level work.
 If a screenshot shows a visual defect, document discovery/inference/fix/verification in docs/dev-log.md before ending the cycle.
+Run tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip before final summary. Use -PushDeploy when publishing is intended and safe.
+Do not add WordPress staging as a required next step; use GitHub Pages preview QA until live WordPress transfer is approved.
 ```

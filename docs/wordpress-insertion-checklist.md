@@ -1,6 +1,18 @@
-# MEDIVISTA WordPress Insertion Checklist
+# MEDIVISTA WordPress Production Insertion Checklist
 
-Updated: 2026-05-13
+Updated: 2026-05-14
+
+## Current Decision
+
+Paid WordPress staging is not part of the MEDIVISTA workflow.
+
+Continue design, content, SEO, product, and mobile QA on the free GitHub Pages public preview first:
+
+```text
+https://keithjeon-web.github.io/medivista/
+```
+
+Move to WordPress only after the public preview is approved for production transfer.
 
 ## Theme Package
 
@@ -54,9 +66,12 @@ The theme includes matching templates:
 - `page-cellexor.php`
 - `page-contact.php`
 
-## Upload Steps
+## Production Transfer Steps
 
-1. In WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
+Use these steps only when the static public preview is final and the live WordPress transfer is approved.
+
+1. Back up the current live WordPress site and database.
+2. In WordPress admin, go to Appearance > Themes > Add New > Upload Theme.
 2. Upload `dist/medivista-wp-theme-starter-20260511-wp.zip`.
 3. Activate `MEDIVISTA Starter`.
 4. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress.
@@ -86,19 +101,18 @@ Create a primary menu with this order:
 - `Cosmetic Line Coming Soon` remains the only expected pending placeholder.
 - Instagram and Facebook icons link to the official MEDIVISTA social channels.
 
-## Staging QA
+## Free Public Preview QA
 
-- Upload and activate `dist/medivista-wp-theme-starter-20260511-wp.zip` on a staging WordPress site.
-- Import `dist/medivista-wp-pages-20260511.xml`, or manually create the 7 required pages with the listed slugs.
-- Assign Home as the static front page in Settings > Reading.
-- Save Settings > Permalinks once after page setup.
+- Use GitHub Pages as the client-review preview before any WordPress transfer.
+- Verify Home, Products, About, Brands, Blogs, Cellexor, and Contact from `https://keithjeon-web.github.io/medivista/`.
 - Verify the header logo at 100% browser zoom on desktop and mobile.
 - Verify Products desktop grid, Products mobile 1-column card rhythm, and product image whitespace.
 - Verify Home Global Network world map and the mobile zone labels.
 - Verify Contact form fields and WhatsApp inquiry handoff.
 - Confirm Brand Shop opens `https://shop.medivista.co.kr`.
+- Confirm SEO/AEO blocks on Home and Products remain visible and English-first.
 
 ## Known Remaining Work
 
-- Native `php -l` still requires PHP CLI in the staging/local environment. The project fallback structural PHP lint currently passes.
+- Native `php -l` still requires PHP CLI in the local or production-transfer environment. The project fallback structural PHP lint currently passes.
 - Confirm final cosmetic product image if the `Cosmetic Line Coming Soon` placeholder should be replaced.

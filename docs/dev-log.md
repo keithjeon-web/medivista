@@ -288,19 +288,19 @@
 - Improved `tools/capture-public-visual-qa.mjs` so automated visual QA uses unique Chrome ports/profiles, scrolls pages before capture, forces QA-only eager image loading, and reports full-card `ready/pending/loaded` counts instead of only the first 12 cards.
 - Public QA result: no horizontal overflow; Products desktop and mobile both load 114/114 ready product images; 1 cosmetic placeholder remains expected pending.
 - Closeout: `tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` reports PASS for JS syntax, WordPress PHP fallback lint, local preview, GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
-- Next: review the public Products page manually at normal browser zoom for final product-card readability, then continue WordPress staging import/theme upload readiness.
+- Next: review the public Products page manually at normal browser zoom for final product-card readability, then keep WordPress transfer files ready without using paid staging.
 
-## 2026-05-13 - WordPress staging readiness update
+## 2026-05-13 - WordPress transfer readiness update
 
 - Attempted in-app browser manual Products QA, but the Codex in-app browser backend was unavailable in this session (`iab` backend not discovered); kept the public screenshot/metric QA as the current visual evidence.
 - Verified the WordPress upload package `dist/medivista-wp-theme-starter-20260511-wp.zip` contains required theme files and 114 product WebP assets.
 - Verified `dist/medivista-wp-pages-20260511.xml` parses and contains 7 starter pages: Home, About, Products, Brands, Blogs, Cellexor, and Contact.
-- Updated `docs/wordpress-insertion-checklist.md` and `wp-theme-starter/README.md` to remove stale placeholder/PHP-warning language and add staging QA steps for upload, import, static front page, permalinks, logo, product grid, map, contact, and Brand Shop.
-- Mirrored the same documentation updates into `.deploy-medivista-github` and published commit `c5ae3a9 docs: update wordpress staging checklist` to `gh-pages`.
+- Updated `docs/wordpress-insertion-checklist.md` and `wp-theme-starter/README.md` to remove stale placeholder/PHP-warning language and add WordPress transfer QA steps for upload, import, static front page, permalinks, logo, product grid, map, contact, and Brand Shop.
+- Mirrored the same documentation updates into `.deploy-medivista-github` and published commit `c5ae3a9 docs: update wordpress transfer checklist` to `gh-pages`.
 - Checks: `node --check assets/js/main.js`, `node --check wp-theme-starter/assets/js/main.js`, and `tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` all passed; latest report generated at `2026-05-13 20:43:56 +09:00`.
 - Logged minor automation note: QA Chrome temporary profiles under `docs/qa-screenshots/chrome-profile-*` can create locked files during broad `rg`; future scans should exclude those folders or clean them after Chrome exits.
 - Remaining sync note: `.deploy-medivista-github/docs/dev-log.md` was updated locally, but the follow-up commit/push was blocked by the current Codex usage limit. Commit it next with `docs: sync production dev log`.
-- Next: upload the WordPress ZIP to a staging WordPress install, import the page XML, assign Home as the static front page, then perform the real WordPress browser QA pass.
+- Next: continue GitHub Pages public preview QA first; use the WordPress ZIP/XML only after final approval for production transfer.
 
 ## 2026-05-13 - Production cycle: stabilize public visual QA artifacts
 
@@ -378,7 +378,7 @@
 - Error recovery closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 12:54:38 +09:00`): PASS for preview + JS + WP ZIP/XML + product images; WARN remains for push/public parity due to network limits (plus a non-blocking ScheduledJobs access-denied warning).
 - Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages` (now ahead by 5) and re-verify the public preview (Home + Contact + Products on mobile) with `v=20260514a`.
 
-## 2026-05-14 - WordPress staging readiness: publish parity and logo cache-bust
+## 2026-05-14 - WordPress transfer readiness: publish parity and logo cache-bust
 
 - Pushed the pending `.deploy-medivista-github` `gh-pages` commits through `f7a86c5`, bringing public preview back in sync with the local/deploy checkout.
 - Found WordPress starter header logo cache-bust lagging behind the current `20260514a` asset version (`wp-theme-starter/header.php` was `20260513b`, deploy copy was `20260508c`).
@@ -386,8 +386,8 @@
 - Rebuilt `dist/medivista-wp-theme-starter-20260511-wp.zip`; verified the ZIP header contains `20260514a` and includes 114 product WebP assets.
 - Published deploy commit `ed8614a wp: align header logo cache bust` to `gh-pages`.
 - Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:28:26 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
-- Remaining blocker: actual WordPress staging upload/import requires a staging WordPress admin URL and login session/credentials from the user.
-- Next: open the staging WordPress admin, upload the ZIP, import the XML, assign Home as static front page, save permalinks, then run Products/Global Network/Contact QA in the WordPress environment.
+- Remaining blocker: live WordPress transfer requires final approval, a current live-site backup, and an admin login session.
+- Next: keep GitHub Pages as the free preview, then upload the ZIP/import XML only when production transfer is approved.
 
 ## 2026-05-14 - Production cycle: enable official social links
 
@@ -411,4 +411,29 @@
 - Deploy: synced the deploy checkout and pushed `gh-pages` commit `9e7d013 seo: add cosmetic discovery optimization`.
 - Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:55:31 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
 - Public verification: cache-busted public Home contains `Product Discovery` and `20260514c`; public Products contains `Quick Answers`, `FAQPage`, and `medical aesthetic cosmetics`.
-- Next: visually verify public Home + Products in the browser at normal desktop and mobile widths, then proceed with WordPress staging upload/import.
+- Next: visually verify public Home + Products in the browser at normal desktop and mobile widths, then keep WordPress starter ready for approved production transfer.
+
+## 2026-05-14 - Workflow update: remove paid WordPress staging step
+
+- Decision: paid WordPress staging is removed from the MEDIVISTA workflow.
+- Change: updated the production cycle, automation prompts, and WordPress insertion checklist so GitHub Pages remains the free preview/client-review path.
+- WordPress direction: keep the theme ZIP and XML ready, but do not plan staging upload/import as an automatic next step.
+- Next: continue public GitHub Pages QA; move to live WordPress only after final approval and backup.
+
+## 2026-05-14 - Production cycle: recovery public-parity cache-bust alignment
+
+- Focus: make `tools/medivista-error-recovery.ps1` public-preview parity checks align with the current cache-bust token (instead of a stale fixed value).
+- Change: recovery script now extracts the `?v=` token from `index.html` and uses it when fetching the public preview (`/` and `/index.html`) so the parity check tests the current build (currently `20260514c`).
+- Change (note): recovery script attempts a detached preview `Start-Process` first; if it falls back to `Start-Job`, the report warns that a job started inside the one-off PowerShell process will not persist after script exit.
+- Checks: `node --check assets/js/main.js` and `node --check wp-theme-starter/assets/js/main.js` passed; `rg` runtime commerce/claim scan returned no hits; Brand Shop links remain `https://shop.medivista.co.kr`.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 19:30:09 +09:00`): PASS for JS + ZIP/XML + images + safety scan; WARN for public parity due to current environment failing `Invoke-WebRequest` to the public URL.
+- Logged defect: `Invoke-WebRequest http://127.0.0.1:4173/index.html` still fails outside the recovery run, even when the report says preview PASS; treat preview PASS as an in-script health check until the environment supports a persistent local server process.
+- Next: when network is available, re-run the recovery script with `-PushDeploy` only if `gh-pages` has intended new commits, then do browser-based public visual QA (Home + Products desktop/mobile) using the current cache token (`20260514c`).
+
+## 2026-05-14 - Production cycle: preview persistence fallback hardening
+
+- Focus: make preview startup diagnostics more explicit and attempt a more persistent preview start method when `Start-Process` fails due to duplicate environment keys.
+- Change: `tools/medivista-error-recovery.ps1` now attempts a persistent preview start via WMI (`Win32_Process.Create`) and records failures to `docs/preview-server.err.log`; if WMI is blocked it falls back to the existing `Start-Job` path (in-script HTTP check only).
+- Result: in this environment, WMI process creation is blocked (`Access is denied`), so preview still only passes inside the recovery run and does not persist after the script exits.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 21:33:12 +09:00`): PASS for JS + ZIP/XML + images + safety scan; WARN remains for push/public parity (network blocked).
+- Next: if persistent local preview is required for browser QA on this PC, run `node tools/local-static-server.mjs` manually in a long-lived terminal session; otherwise continue trusting the recovery report for local checks and do visual QA from a network-enabled environment.

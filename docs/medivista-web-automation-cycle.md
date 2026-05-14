@@ -1,10 +1,12 @@
 # MEDIVISTA Web Production Automation Cycle
 
-Updated: 2026-05-08
+Updated: 2026-05-12
 Project: MEDIVISTA global B2B website
 Local workspace: current project root in Codex Desktop
 GitHub repository: `keithjeon-web/medivista`
 Public preview: `https://keithjeon-web.github.io/medivista/`
+
+WordPress staging note: paid WordPress staging is removed from the MEDIVISTA workflow. Use GitHub Pages for free public preview and client review. Transfer to live WordPress only after the static public preview is approved and a live-site backup exists.
 
 ## Purpose
 
@@ -82,6 +84,8 @@ Work in this order unless the user gives a newer instruction:
 9. WordPress starter sync
 10. GitHub/public preview sync
 
+WordPress starter sync means keeping the export package ready, not uploading to a paid staging site.
+
 ### Phase 3 - Checks
 
 Run the lightest checks that apply:
@@ -96,6 +100,7 @@ public preview HTTP check if network/GitHub access is available
 visual anomaly check from user screenshots or browser preview
 asset bounding-box check for logo/image clipping when a visual defect is reported
 cache-busted public URL check after public preview fixes
+tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip
 ```
 
 ### Visual Defect Loop
@@ -151,11 +156,30 @@ Destructive action risk -> do not proceed without explicit user request.
 
 At the end of each cycle:
 
+- Run `tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip`.
+- If the deployment checkout has intended `gh-pages` commits and publishing is part of the cycle, run it again with `-PushDeploy` or include `-PushDeploy` in the closeout run.
 - Summarize changed files briefly.
 - Record checks passed or skipped.
 - Record unresolved errors.
 - Write the next-cycle priority.
 - Leave a follow-up comment.
+
+Do not set "WordPress staging upload" as the next-cycle priority. If WordPress work is next, phrase it as "prepare for approved live WordPress transfer" or "keep WordPress starter package in sync."
+
+### Error Resolution Automation
+
+The six recurring error classes are automated in `tools/medivista-error-recovery.ps1` and documented in `docs/error-resolution-automation.md`.
+
+Each cycle must check:
+
+1. PHP lint availability and WordPress theme PHP files.
+2. Local preview server availability.
+3. GitHub Pages deploy checkout and push readiness.
+4. Public preview parity risk.
+5. WordPress ZIP and page-import XML readiness.
+6. Product image insertion status.
+
+The script writes `docs/error-report-latest.md`. If an item cannot be fixed in the current environment, log it as a blocker with the next exact command or environment required.
 
 ## Cycle Completion Definition
 
