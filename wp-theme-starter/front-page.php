@@ -38,7 +38,7 @@
     <div class="container">
       <div class="section-head">
         <div><p class="eyebrow">Product Categories</p><h2>Structured product information</h2></div>
-        <p>Categories are organized for scanning, comparison, and professional inquiry without direct consumer purchase flow on the main site.</p>
+        <p>Categories are organized for scanning, comparison, and professional inquiry without direct online ordering or transactions on the main site.</p>
       </div>
       <div class="category-tabs">
         <a href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>">Botulinum Toxins</a>
