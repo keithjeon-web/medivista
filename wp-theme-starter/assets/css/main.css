@@ -59,6 +59,15 @@ a { color: inherit; }
   opacity: 0.72;
   cursor: default;
 }
+a.social-icon {
+  cursor: pointer;
+}
+a.social-icon:hover,
+a.social-icon:focus-visible {
+  color: var(--gold);
+  border-color: rgba(201, 168, 76, 0.58);
+  opacity: 1;
+}
 .social-instagram::before {
   content: "";
   width: 14px;

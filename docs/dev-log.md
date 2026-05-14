@@ -388,3 +388,14 @@
 - Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:28:26 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
 - Remaining blocker: actual WordPress staging upload/import requires a staging WordPress admin URL and login session/credentials from the user.
 - Next: open the staging WordPress admin, upload the ZIP, import the XML, assign Home as static front page, save permalinks, then run Products/Global Network/Contact QA in the WordPress environment.
+
+## 2026-05-14 - Production cycle: enable official social links
+
+- Task: enable the official MEDIVISTA social channels after receiving the confirmed URLs.
+- Change: replaced disabled Instagram/Facebook `span` icons with accessible outbound `a` links in all static headers/footers, WordPress starter header/footer, and the deploy checkout.
+- URLs: Instagram `https://www.instagram.com/medivista.global?igsh=M21lN3Q3dDl5NGx0&utm_source=qr`; Facebook `https://www.facebook.com/share/1DRDDT62yZ/?mibextid=wwXIfr`.
+- UX: added pointer/hover/focus styling for linked social icons in static, WordPress starter, and deploy CSS.
+- Cache-bust parity: bumped static/deploy HTML and WordPress starter asset versions to `20260514b`.
+- Docs: updated WordPress insertion and pre-deploy checklist language so social icons are documented as live official channels, not pending placeholders.
+- Checks: social URLs appear 32 times each across root/static, WordPress starter, and deploy checkout; no `Instagram pending` or `Facebook pending` runtime markup remains; JS syntax checks passed for static, WordPress starter, and deploy JS; prohibited-commerce/risky-claim runtime scans returned no matches.
+- Next: rebuild the WordPress ZIP, push the deploy checkout, then visually verify the header/footer social icons on public Home and one subpage.

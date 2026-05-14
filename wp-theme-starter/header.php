@@ -10,7 +10,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="MEDIVISTA home">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260514a'); ?>" alt="MEDIVISTA">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260514b'); ?>" alt="MEDIVISTA">
       
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
@@ -22,8 +22,8 @@
       <a href="<?php echo esc_url(home_url('/contact/')); ?>">CONTACT US</a>
       <a class="nav-pill" href="https://shop.medivista.co.kr">BRAND SHOP</a>
       <span class="nav-utility"><a href="<?php echo esc_url(home_url('/')); ?>">EN</a><span class="nav-disabled" aria-disabled="true">KO</span></span>
-      <span class="social-icon social-instagram" aria-label="Instagram pending" aria-disabled="true"></span>
-      <span class="social-icon social-facebook" aria-label="Facebook pending" aria-disabled="true"></span>
+      <a class="social-icon social-instagram" href="https://www.instagram.com/medivista.global?igsh=M21lN3Q3dDl5NGx0&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"></a>
+      <a class="social-icon social-facebook" href="https://www.facebook.com/share/1DRDDT62yZ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"></a>
     </nav>
   </div>
 </header>

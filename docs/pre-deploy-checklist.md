@@ -22,7 +22,7 @@
 
 - Each static page has title, description, canonical, OG title, OG description, OG URL, and OG image.
 - Shared OG image path is `assets/images/og-medivista.png`.
-- Prepare final social URLs before enabling Instagram and Facebook icons.
+- Confirm Instagram and Facebook icons open the official MEDIVISTA social channels.
 
 ## Device QA
 

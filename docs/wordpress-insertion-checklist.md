@@ -28,7 +28,7 @@ Current readiness snapshot:
 - Page import XML parses successfully and contains 7 starter pages.
 - Product assets are inserted: 114 final WebP product images are included in both the static site and WordPress starter.
 - Product image standard is `1200 x 900 px`, WebP, white-background catalog photography.
-- Current asset cache version for the static and WordPress starter build is `20260513b`.
+- Current asset cache version for the static and WordPress starter build is `20260514b`.
 
 ## Required WordPress Pages
 
@@ -84,7 +84,7 @@ Create a primary menu with this order:
 - WhatsApp links use `+82 10 5906 6768`.
 - Product images are inserted for 114 ready catalog items.
 - `Cosmetic Line Coming Soon` remains the only expected pending placeholder.
-- Instagram and Facebook icons stay disabled until official URLs are confirmed.
+- Instagram and Facebook icons link to the official MEDIVISTA social channels.
 
 ## Staging QA
 
@@ -101,5 +101,4 @@ Create a primary menu with this order:
 ## Known Remaining Work
 
 - Native `php -l` still requires PHP CLI in the staging/local environment. The project fallback structural PHP lint currently passes.
-- Confirm official Instagram and Facebook URLs before turning the icons into live outbound links.
 - Confirm final cosmetic product image if the `Cosmetic Line Coming Soon` placeholder should be replaced.
