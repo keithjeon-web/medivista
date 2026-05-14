@@ -408,4 +408,7 @@
 - Cache-bust parity: bumped static pages and WordPress starter asset versions to `20260514c`.
 - Checks: `node --check assets/js/main.js` and `node --check wp-theme-starter/assets/js/main.js` passed; prohibited-commerce and risky-claim runtime scans returned zero matches.
 - Logged warning: PHP CLI is still unavailable on this PC, so PHP lint remains covered by the project recovery fallback rather than native `php -l`.
-- Next: sync the deploy checkout, rebuild the WordPress ZIP, push `gh-pages`, then visually verify public Home + Products for the new SEO/AEO blocks and logo/header spacing.
+- Deploy: synced the deploy checkout and pushed `gh-pages` commit `9e7d013 seo: add cosmetic discovery optimization`.
+- Closeout: `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` generated `docs/error-report-latest.md` at `2026-05-14 17:55:31 +09:00`; all checks PASS including GitHub Pages push, public preview parity, WordPress ZIP/XML, product images, and safety scan.
+- Public verification: cache-busted public Home contains `Product Discovery` and `20260514c`; public Products contains `Quick Answers`, `FAQPage`, and `medical aesthetic cosmetics`.
+- Next: visually verify public Home + Products in the browser at normal desktop and mobile widths, then proceed with WordPress staging upload/import.
