@@ -28,7 +28,7 @@ Current readiness snapshot:
 - Page import XML parses successfully and contains 7 starter pages.
 - Product assets are inserted: 114 final WebP product images are included in both the static site and WordPress starter.
 - Product image standard is `1200 x 900 px`, WebP, white-background catalog photography.
-- Current asset cache version for the static and WordPress starter build is `20260514b`.
+- Current asset cache version for the static and WordPress starter build is `20260514c`.
 
 ## Required WordPress Pages
 

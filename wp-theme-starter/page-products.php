@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: MEDIVISTA Products
+*/
+get_header();
+?>
 <main>
   <section class="page-banner">
     <div class="container">
@@ -9,6 +14,27 @@
   </section>
   <section class="section">
     <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Quick Answers</p><h2>Cosmetic and aesthetic product discovery</h2></div>
+        <p>Answer-ready information for partners searching Korean cosmetics, professional cosmetics, and medical aesthetic cosmetic catalog categories.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="info-card">
+          <p class="card-meta">What categories?</p>
+          <h3>Professional cosmetic support</h3>
+          <p>MEDIVISTA can organize professional cosmetics, Korean cosmetics, medical aesthetic cosmetics, clinic-facing cosmetic catalog items, and cosmetic science-inspired beauty concepts after source details are confirmed.</p>
+        </article>
+        <article class="info-card">
+          <p class="card-meta">How to inquire?</p>
+          <h3>Catalog-only B2B flow</h3>
+          <p>The MEDIVISTA main website is a catalog-only information site. Product questions move through WhatsApp or the contact inquiry flow.</p>
+        </article>
+        <article class="info-card">
+          <p class="card-meta">How presented?</p>
+          <h3>English-first review format</h3>
+          <p>Products are presented with English names, category context, white-background imagery, and careful B2B descriptions for partner review.</p>
+        </article>
+      </div>
       <div class="catalog-toolbar" data-product-catalog>
         <label class="catalog-search">
           <span>Search products</span>

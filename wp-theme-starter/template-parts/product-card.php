@@ -35,7 +35,7 @@ $product_categories = array(
       array('name' => 'Revolax Deep', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'Revolax Fine', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'Dermalax Implant Plus', 'type' => '', 'spec' => '1.1ml x 2Syringes'),
-      array('name' => 'Dermala Deep Plus', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
+      array('name' => 'Dermalax Deep Plus', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'Dermalax Plus', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'Bellast Ultra Plus', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'Bellast Ultra L', 'type' => '', 'spec' => '1ml x 1Syringe'),
@@ -45,7 +45,7 @@ $product_categories = array(
       array('name' => 'VOM Light', 'type' => '', 'spec' => '1ml x 2Syringes'),
       array('name' => 'EPTQ S500', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'EPTQ S300', 'type' => '', 'spec' => '1ml x 1Syringe'),
-      array('name' => 'ETPQ S100', 'type' => '', 'spec' => '1ml x 1Syringe'),
+      array('name' => 'EPTQ S100', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'REGENOVUE Sub-Q Plus', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'REGENOVUE Deep Plus', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'REGENOVUE Fine Plus', 'type' => '', 'spec' => '1ml x 1Syringe'),
@@ -69,8 +69,8 @@ $product_categories = array(
       array('name' => 'Restylan Defyne', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'Restylan Refyne', 'type' => '', 'spec' => '1ml x 1Syringe'),
       array('name' => 'Restylan Kysee', 'type' => '', 'spec' => '1ml x 1Syringe'),
-      array('name' => 'Lip Soom', 'type' => '', 'spec' => '1.2ml x 1Syringe'),
-      array('name' => 'DermArcane Grey', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
+      array('name' => 'Lipssom', 'type' => '', 'spec' => '1.2ml x 1Syringe'),
+      array('name' => 'DermArcane Implant', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'DermArcane Shape', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'DermArcane Deep', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'DermArcane Fine', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
@@ -133,13 +133,13 @@ $product_categories = array(
       array('name' => 'Cartin', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'L-car', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'Vitamo', 'type' => '', 'spec' => '2ml x 50Vials'),
-      array('name' => 'GC Arginine', 'type' => '', 'spec' => '25ml x 10Vials'),
-      array('name' => 'GC Arginine', 'type' => '', 'spec' => '10ml x 10Vials'),
+      array('name' => 'GC Arginine 2510', 'type' => '', 'spec' => '25ml x 10Vials'),
+      array('name' => 'GC Arginine 1010', 'type' => '', 'spec' => '10ml x 10Vials'),
       array('name' => 'Jeil High B', 'type' => '', 'spec' => '10ml x 10Vials'),
-      array('name' => 'DAI HAN Sterile Water', 'type' => '', 'spec' => '20ml x 50Amps'),
+      array('name' => 'DAIHAN Sterile Water', 'type' => '', 'spec' => '20ml x 50Amps'),
     ),
   ),  'cosmetics' => array(
-    'label' => 'Cosmetics',
+    'label' => 'Cosmetics and medical aesthetic cosmetics',
     'items' => array(
       array('name' => 'Cosmetic Line Coming Soon', 'type' => '', 'spec' => ''),
     ),
@@ -169,14 +169,18 @@ $product_image_slug_counts = array();
           }
         ?>
         <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/' . $image_slug . '.webp'); ?>" data-image-status="pending"></div>
+          <?php
+            $image_file = $image_slug . '.webp';
+            $image_status = file_exists(get_template_directory() . '/assets/images/products/' . $image_file) ? 'ready' : 'pending';
+          ?>
+          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/' . $image_file); ?>" data-image-status="<?php echo esc_attr($image_status); ?>"></div>
           <p class="card-meta"><?php echo esc_html($category['label']); ?></p>
           <h3><?php echo esc_html($product['name']); ?></h3>
           <div class="product-details">
             <?php if (!empty($product['type'])) : ?><p class="product-detail"><strong>Type</strong><span><?php echo esc_html($product['type']); ?></span></p><?php endif; ?>
             <?php if (!empty($product['spec'])) : ?><p class="product-detail"><strong>Spec</strong><span><?php echo esc_html($product['spec']); ?></span></p><?php endif; ?>
           </div>
-          <p>Catalog-only product information for professional B2B review.</p>
+          <p><?php echo $category_id === 'cosmetics' ? 'Cosmetic and medical aesthetic cosmetic details are being prepared for catalog-only B2B review.' : 'Catalog-only product information for professional B2B review.'; ?></p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="<?php echo esc_attr($product['name']); ?>">Inquire via WhatsApp</a>
         </article>
       <?php endforeach; ?>

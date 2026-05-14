@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 <main>
   <?php get_template_part('template-parts/hero'); ?>
 
@@ -10,21 +10,21 @@
       </div>
       <div class="grid grid-3">
         <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>" data-image-status="pending"></div>
+          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>" data-image-status="ready"></div>
           <p class="card-meta">Own Brand</p>
           <h3>Cellexor Re:Tone</h3>
           <p>Designed for premium aesthetic care with an exosome and NAD+ inspired concept.</p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a>
         </article>
         <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/rejuran-healer.webp'); ?>" data-image-status="pending"></div>
+          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/rejuran-healer.webp'); ?>" data-image-status="ready"></div>
           <p class="card-meta">Skin Boosters</p>
           <h3>Rejuran Healer</h3>
           <p>Professional aesthetic solution information for partner consultation and product review.</p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran Healer">Inquire via WhatsApp</a>
         </article>
         <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/the-chaeum-premium-no-3.webp'); ?>" data-image-status="pending"></div>
+          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/the-chaeum-premium-no-3.webp'); ?>" data-image-status="ready"></div>
           <p class="card-meta">Dermal Fillers</p>
           <h3>The Chaeum Premium No.3</h3>
           <p>Formulated for professional aesthetic use and presented through a catalog-only inquiry path.</p>
@@ -48,6 +48,32 @@
         <a href="<?php echo esc_url(home_url('/products/#biostimulators')); ?>">Biostimulators</a>
         <a href="<?php echo esc_url(home_url('/products/#cosmetics')); ?>">Cosmetics</a>
         <a href="<?php echo esc_url(home_url('/products/#others')); ?>">Others</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><p class="eyebrow">Product Discovery</p><h2>Aesthetic and cosmetic catalog focus</h2></div>
+        <p>MEDIVISTA organizes English-first B2B information for Korean aesthetic products, professional cosmetics, cosmetic science concepts, and medical aesthetic cosmetic categories.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="info-card">
+          <p class="card-meta">Professional cosmetics</p>
+          <h3>Catalog-ready beauty information</h3>
+          <p>Product naming and category context prepared for professional beauty partners, clinics, distributors, and brand teams.</p>
+        </article>
+        <article class="info-card">
+          <p class="card-meta">Medical aesthetic cosmetics</p>
+          <h3>Inquiry-first category language</h3>
+          <p>Cosmetic product information positioned around professional aesthetic care, partner review, and careful B2B communication.</p>
+        </article>
+        <article class="info-card">
+          <p class="card-meta">Korean cosmetic catalog</p>
+          <h3>English-first partner review</h3>
+          <p>English product naming, white-background image standards, and market-ready catalog structure for international inquiries.</p>
+        </article>
       </div>
     </div>
   </section>

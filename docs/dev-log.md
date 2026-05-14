@@ -399,3 +399,13 @@
 - Docs: updated WordPress insertion and pre-deploy checklist language so social icons are documented as live official channels, not pending placeholders.
 - Checks: social URLs appear 32 times each across root/static, WordPress starter, and deploy checkout; no `Instagram pending` or `Facebook pending` runtime markup remains; JS syntax checks passed for static, WordPress starter, and deploy JS; prohibited-commerce/risky-claim runtime scans returned no matches.
 - Next: rebuild the WordPress ZIP, push the deploy checkout, then visually verify the header/footer social icons on public Home and one subpage.
+
+## 2026-05-14 - Production cycle: SEO/GEO/AEO cosmetic discovery optimization
+
+- Task: add safe English-first SEO, GEO, and answer-ready AEO wording for cosmetics, professional cosmetics, Korean cosmetics, and medical aesthetic cosmetics.
+- Change: updated Home and Products meta descriptions/titles, added Organization and FAQ structured data, added visible Home product-discovery cards, and added Products quick-answer cards for cosmetic partner searches.
+- WordPress parity: mirrored the discovery/quick-answer content into `wp-theme-starter/front-page.php`, `wp-theme-starter/page-products.php`, `wp-theme-starter/functions.php`, and the product-card cosmetics copy.
+- Cache-bust parity: bumped static pages and WordPress starter asset versions to `20260514c`.
+- Checks: `node --check assets/js/main.js` and `node --check wp-theme-starter/assets/js/main.js` passed; prohibited-commerce and risky-claim runtime scans returned zero matches.
+- Logged warning: PHP CLI is still unavailable on this PC, so PHP lint remains covered by the project recovery fallback rather than native `php -l`.
+- Next: sync the deploy checkout, rebuild the WordPress ZIP, push `gh-pages`, then visually verify public Home + Products for the new SEO/AEO blocks and logo/header spacing.
