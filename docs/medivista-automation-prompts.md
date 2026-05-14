@@ -49,7 +49,7 @@ Cycle order:
 6. Log every error in docs/dev-log.md and continue to the next phase when safe.
 7. Before closeout, run tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip. Add -PushDeploy when gh-pages has intended commits and publishing is part of the cycle.
 8. At cycle end, record changed files, checks, unresolved errors, and the next-cycle priority.
-   Do not set WordPress staging upload/import as the next priority.
+   Do not set any paid WordPress preview environment as the next priority.
 
 Error handling:
 - Ignore phase-level errors only after logging them.
