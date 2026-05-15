@@ -33,6 +33,7 @@ Use this flow when the shop WordPress admin is available.
 9. Add CELLEXOR or own-brand products only after product names, images, price policy, and shipping/payment policy are confirmed.
 10. Test the checkout page with a safe test payment mode before accepting live payments.
 11. Keep the main site Brand Shop URL as `https://shop.medivista.co.kr`.
+12. Confirm the shop site blocks China IP traffic through the available hosting/CDN/security layer.
 
 ## Payment Page Target
 
@@ -64,5 +65,6 @@ https://shop.medivista.co.kr
 - Brand Shop button points only to the shop subdomain.
 - WooCommerce checkout exists only on `shop.medivista.co.kr`.
 - WooCommerce is not activated for the main catalog site.
+- China IP is blocked on the shop site only.
 - Test order flow is checked before live payment is enabled.
 - Local/GitHub MEDIVISTA production files remain preserved before direct WordPress changes.

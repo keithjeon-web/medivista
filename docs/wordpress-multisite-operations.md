@@ -33,11 +33,17 @@ Subdirectory Multisite can be used for practice or content sections, but it is n
 medivista.co.kr/site-name/
 ```
 
-## Whois Nameserver And DNS Notes
+## WordPress.com Nameserver And DNS Notes
 
-The domain currently uses Whois nameserver management.
+Domain/hosting management remains at Whois, but the active nameservers have been moved to WordPress.com:
 
-For MEDIVISTA production, configure DNS records in the Whois DNS/zone management screen or through the hosting DNS tool connected to the Whois nameservers.
+```text
+ns1.wordpress.com
+ns2.wordpress.com
+ns3.wordpress.com
+```
+
+For MEDIVISTA production, configure DNS records in the WordPress.com DNS management screen because WordPress.com nameservers are authoritative for the domain.
 
 Minimum subdomain records:
 
@@ -69,7 +75,7 @@ Before applying production DNS, Multisite can be practiced with:
 - A free hosting environment that supports WordPress Multisite.
 - A temporary hosting subdomain provided by the hosting company.
 
-For Local WP practice, DNS changes at Whois are not required. Production DNS is only needed when mapping real domains such as `www.medivista.co.kr` and `shop.medivista.co.kr`.
+For Local WP practice, DNS changes are not required. Production DNS is only needed when mapping real domains such as `www.medivista.co.kr` and `shop.medivista.co.kr`.
 
 ## WordPress Configuration Notes
 
@@ -120,6 +126,36 @@ Role:
 - Order/customer management
 - Shipping, refund, privacy, and terms policies
 
+## China IP Policy
+
+Main site:
+
+```text
+www.medivista.co.kr
+```
+
+- Do not block China IP traffic.
+- Keep the B2B catalog accessible for China-based viewers and partners.
+
+Shop site:
+
+```text
+shop.medivista.co.kr
+```
+
+- Block China IP traffic.
+- Apply the block only to the shop site, not the main site.
+- DNS alone does not perform IP blocking. Use the hosting, CDN, WAF, security plugin, or WordPress.com/host-level access control available for the shop site.
+
+## Shared Theme / Different Purpose
+
+Use the same MEDIVISTA visual theme direction on both sites, but keep the site behavior different:
+
+- Main site: catalog, product discovery, inquiry, WhatsApp, no payment.
+- Shop site: product detail and payment flow only.
+
+The shop site may copy the main theme styling, header, logo, and brand tone, but WooCommerce product, cart, checkout, and account templates should replace inquiry-first catalog behavior.
+
 ## Multisite Plugin Policy
 
 - Install WooCommerce from the Network Admin plugin screen if using Multisite plugin management.
@@ -168,6 +204,8 @@ This preserves MEDIVISTA production files. WordPress database backup plugins can
 9. Configure payment, shipping, tax, refund, privacy, and terms settings on the shop site.
 10. Test the shop checkout flow before enabling live payments.
 11. Verify the main site Brand Shop button opens `https://shop.medivista.co.kr`.
+12. Confirm China IP is not blocked on the main site.
+13. Confirm China IP is blocked on the shop site through the available hosting/CDN/security layer.
 
 ## Safety Checks
 
@@ -175,3 +213,4 @@ This preserves MEDIVISTA production files. WordPress database backup plugins can
 - WooCommerce checkout exists only on the shop site.
 - Brand Shop button points to the shop subdomain.
 - Local/GitHub project backup is current before direct WordPress changes.
+- China IP policy is split correctly: main open, shop blocked.

@@ -452,13 +452,23 @@
 - Guardrail: WooCommerce can be installed through the network/admin flow, but it must be active only on the shop site. Main-site commerce UI remains prohibited.
 - Next: confirm WordPress Multisite availability, map the main and shop domains, apply the MEDIVISTA Starter theme to the main site, and configure WooCommerce on the shop site only.
 
-## 2026-05-14 - Workflow update: Whois DNS for Multisite
+## 2026-05-14 - Workflow update: superseded Whois DNS assumption for Multisite
 
 - Decision: use the subdomain Multisite model for MEDIVISTA production (`www.medivista.co.kr` main site and `shop.medivista.co.kr` shop site).
-- DNS baseline: the domain uses Whois nameserver management.
-- Change: updated `docs/wordpress-multisite-operations.md`, `docs/wordpress-insertion-checklist.md`, and `docs/pre-deploy-checklist.md` with Whois DNS notes, explicit `www`/`shop` record guidance, wildcard DNS guidance, and Local WP/free-hosting practice notes.
+- Superseded DNS assumption: this entry originally assumed Whois nameserver management.
+- Current correction: hosting/domain account remains with Whois, but active nameservers are WordPress.com. See the 2026-05-15 entry below.
+- Change: updated `docs/wordpress-multisite-operations.md`, `docs/wordpress-insertion-checklist.md`, and `docs/pre-deploy-checklist.md` with explicit `www`/`shop` record guidance, wildcard DNS guidance, and Local WP/free-hosting practice notes.
 - Guardrail: Codex must not modify DNS, MX, TXT, SSL, or Google Workspace records without explicit user confirmation.
-- Next: confirm the hosting target for the Multisite server, then set explicit Whois DNS records for `www` and `shop` when production mapping begins.
+- Next: confirm the hosting target for the Multisite server, then manage explicit `www` and `shop` records through WordPress.com DNS when production mapping begins.
+
+## 2026-05-15 - Workflow update: WordPress.com nameservers and China IP split
+
+- Correction: hosting/domain account remains with Whois, but active nameservers are WordPress.com (`ns1.wordpress.com`, `ns2.wordpress.com`, `ns3.wordpress.com`).
+- Decision: keep China IP traffic open on `www.medivista.co.kr`; block China IP traffic only on `shop.medivista.co.kr`.
+- Decision: copy the same MEDIVISTA visual theme direction to the shop site, but operate the shop as product/payment-only through WooCommerce.
+- Change: updated Multisite, WooCommerce, insertion, pre-deploy, automation, and README docs with WordPress.com DNS and China IP access policy.
+- Guardrail: DNS records do not perform country/IP blocking by themselves; use available hosting/CDN/WAF/security controls for the shop-site China block.
+- Next: confirm WordPress.com DNS records, Multisite site mapping, and the available shop-site IP blocking control before enabling WooCommerce live payments.
 
 ## 2026-05-14 - Production cycle: recovery public-parity cache-bust alignment
 
@@ -477,3 +487,13 @@
 - Result: in this environment, WMI process creation is blocked (`Access is denied`), so preview still only passes inside the recovery run and does not persist after the script exits.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-14 21:33:12 +09:00`): PASS for JS + ZIP/XML + images + safety scan; WARN remains for push/public parity (network blocked).
 - Next: if persistent local preview is required for browser QA on this PC, run `node tools/local-static-server.mjs` manually in a long-lived terminal session; otherwise continue trusting the recovery report for local checks and do visual QA from a network-enabled environment.
+
+## 2026-05-14 - Production cycle: remove commerce-adjacent "purchase" wording
+
+- Focus: eliminate remaining runtime "purchase" wording while keeping the main site inquiry-only, catalog-only intent.
+- Change: replaced "purchase flow/language" with "online ordering or transactions" / "direct-to-consumer transaction language" on Home and Brands, and mirrored the same copy into the WordPress starter.
+- Deploy: committed the mirrored change to `.deploy-medivista-github` as `45ab5ae deploy: remove purchase wording from catalog copy`; push failed (`github.com:443` connect failure).
+- Checks: `node --check assets/js/main.js` and `node --check wp-theme-starter/assets/js/main.js` passed; runtime prohibited-commerce scan returned zero matches; runtime risky-claim scan returned zero matches; Brand Shop links remain `https://shop.medivista.co.kr`.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report generated at `2026-05-14 23:30:33 +09:00`): PASS for JS + ZIP/XML + images + safety scan; WARN for GitHub push + public preview parity because this environment could not connect to `github.com:443`.
+- Files: `index.html`, `brands/index.html`, `wp-theme-starter/front-page.php`, `.deploy-medivista-github/index.html`, `.deploy-medivista-github/brands/index.html`, `.deploy-medivista-github/wp-theme-starter/front-page.php`.
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages` (includes `45ab5ae`) and re-run the recovery script with `-PushDeploy`, then visually verify the public preview with `v=20260514c` (Home + Products desktop/mobile).

@@ -58,6 +58,13 @@ MEDIVISTA uses a separated site-role model:
 
 WooCommerce, cart, checkout, payment, and order handling belong only on the shop site. The main site keeps the Brand Shop button as a route to `https://shop.medivista.co.kr`.
 
+Access policy:
+
+- Main site: do not block China IP traffic.
+- Shop site: block China IP traffic.
+
+DNS is managed through WordPress.com nameservers; Whois remains the domain/hosting account baseline.
+
 ## Current Development Phases
 
 ```text

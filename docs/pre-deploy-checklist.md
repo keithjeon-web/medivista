@@ -47,10 +47,17 @@
 - Follow `docs/wordpress-multisite-operations.md` for the site-role split.
 - Follow `docs/brand-shop-woocommerce-setup.md` before enabling live payment.
 
-## Whois DNS / Multisite Domain Check
+## WordPress.com DNS / Multisite Domain Check
 
-- Whois nameserver is the DNS management baseline.
+- Whois remains the domain/hosting account baseline, but active nameservers are WordPress.com (`ns1.wordpress.com`, `ns2.wordpress.com`, `ns3.wordpress.com`).
 - Confirm explicit DNS records exist for `www.medivista.co.kr` and `shop.medivista.co.kr`.
 - Use wildcard `*.medivista.co.kr` only if many arbitrary subdomain sites will be created.
 - Confirm SSL covers both `www.medivista.co.kr` and `shop.medivista.co.kr`.
 - Do not change DNS, MX, TXT, or Google Workspace records without explicit confirmation.
+
+## China IP Policy
+
+- Main site `www.medivista.co.kr`: do not block China IP traffic.
+- Shop site `shop.medivista.co.kr`: block China IP traffic.
+- Apply IP blocking through hosting, CDN, WAF, security plugin, or WordPress.com/host-level controls. DNS records alone do not block country traffic.
+- Confirm the two sites use the same visual theme direction but different behavior: main catalog/inquiry, shop product/payment.

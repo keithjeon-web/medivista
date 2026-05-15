@@ -83,7 +83,7 @@ Use these steps when the static public preview is final. There is no staging ste
 3. Confirm `dist/medivista-wp-theme-starter-20260511-wp.zip` and `dist/medivista-wp-pages-20260511.xml` exist locally.
 4. Keep the GitHub Pages preview open as the visual reference.
 5. Confirm the WordPress network has separate sites for `www.medivista.co.kr` and `shop.medivista.co.kr`.
-6. Confirm Whois DNS records are ready for `www.medivista.co.kr` and `shop.medivista.co.kr`.
+6. Confirm WordPress.com DNS records are ready for `www.medivista.co.kr` and `shop.medivista.co.kr`.
 7. Apply `dist/medivista-wp-theme-starter-20260511-wp.zip` to the main site.
 8. Activate `MEDIVISTA Starter` on the main site.
 9. Create the required pages manually, or import `dist/medivista-wp-pages-20260511.xml` through Tools > Import > WordPress on the main site.
@@ -92,6 +92,7 @@ Use these steps when the static public preview is final. There is no staging ste
 12. Configure WooCommerce only on the shop site by following [wordpress-multisite-operations.md](wordpress-multisite-operations.md) and [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md).
 13. Open each live main-site page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
 14. Open the shop site and verify Shop, Cart, Checkout, My Account, payment test mode, and Brand Shop routing.
+15. Confirm China IP remains open on the main site and blocked only on the shop site.
 
 ## Menu Setup
 
@@ -111,6 +112,7 @@ Create a primary menu with this order:
 - Keep the main site Brand Shop button linked to `https://shop.medivista.co.kr`.
 - Use [wordpress-multisite-operations.md](wordpress-multisite-operations.md) for the multisite operating model.
 - Use [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md) when configuring WooCommerce pages and payment on the shop WordPress admin.
+- Copy the MEDIVISTA theme direction to the shop site, but keep shop behavior product/payment-only instead of inquiry-first catalog behavior.
 
 ## Safety Checks
 
@@ -133,6 +135,8 @@ Create a primary menu with this order:
 - Verify Contact form fields and WhatsApp inquiry handoff.
 - Confirm Brand Shop opens `https://shop.medivista.co.kr`.
 - Confirm SEO/AEO blocks on Home and Products remain visible and English-first.
+- Confirm China IP is not blocked on the main site.
+- Confirm China IP blocking is configured only for the shop site.
 
 ## Known Remaining Work
 

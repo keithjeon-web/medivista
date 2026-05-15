@@ -22,6 +22,8 @@ https://keithjeon-web.github.io/medivista/
 WordPress policy:
 Do not plan or require paid WordPress staging. Use GitHub Pages as the free public preview. Keep WordPress starter files ready, then apply directly to the live WordPress Multisite network after final preview QA and local/GitHub project backup.
 Use the Multisite split: `www.medivista.co.kr` is the main catalog site, and `shop.medivista.co.kr` is the WooCommerce Brand Shop site.
+Nameservers are WordPress.com (`ns1.wordpress.com`, `ns2.wordpress.com`, `ns3.wordpress.com`), while Whois remains the domain/hosting account baseline.
+Do not block China IP on the main site. Block China IP only on the shop site using available hosting/CDN/WAF/security controls.
 Do not require a WordPress backup plugin for now; the active backup method is local project files plus GitHub history.
 
 Read first:
@@ -36,6 +38,7 @@ Hard rules:
 - Keep frontend copy English-first.
 - Brand Shop must link to https://shop.medivista.co.kr.
 - WooCommerce belongs only on the shop site in the Multisite network.
+- China IP access remains open on the main site and blocked on the shop site only.
 - Avoid unverified medical, clinical, FDA, KFDA, or guaranteed efficacy claims.
 - Do not modify DNS or Google Workspace records.
 - Do not delete user work or reset history.
