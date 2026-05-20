@@ -46,6 +46,23 @@ Each cycle should:
 - Do not modify DNS or Google Workspace unless explicitly requested.
 - Do not delete user work or reset history.
 
+## Reference Expression Mapping
+
+Keep the MEDIVISTA site structure and borrow only the expression style from external references.
+
+| Reference | MEDIVISTA role | Borrow | Exclude |
+|---|---|---|---|
+| JD BIO | Overall tone and B2B presentation | white space, premium medical aesthetic B2B tone, large product visuals, product/global/partner metrics | shop, discount, first-order, cart, account, or storefront purchase cues |
+| HJ Corporations | Products and Global Network structure | product category hierarchy, corporate product grid rhythm, global map and market-zone framing | replacing MEDIVISTA navigation or page order |
+| Cellexor | CELLEXOR brand expression | black/white/gold mood, large typography, scroll/action feeling, image-led premium brand sections | unverified regeneration, clinical data, certification, guaranteed efficacy, or medical claim language |
+
+Apply this as:
+
+1. Home keeps the required section order, but product/category blocks may use stronger product visuals, metrics, and B2B cards.
+2. Products and Global Network may use HJ-style category and map organization while preserving MEDIVISTA categories.
+3. CELLEXOR may use a darker, more cinematic brand layer, but copy must stay in the safe-language set: `Advanced beauty science`, `Designed for professional aesthetic care`, `Science-based beauty solution`, and similar wording.
+4. 3D/action effects are allowed only when they improve the first-screen or section experience without adding commerce flow or unverifiable claims.
+
 ## Local And GitHub Exchange Model
 
 The desired flow is bidirectional:

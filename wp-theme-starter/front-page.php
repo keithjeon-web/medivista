@@ -40,14 +40,16 @@
         <div><p class="eyebrow">Product Categories</p><h2>Structured product information</h2></div>
         <p>Categories are organized for scanning, comparison, and professional inquiry without direct online ordering or transactions on the main site.</p>
       </div>
-      <div class="category-tabs">
-        <a href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>">Botulinum Toxins</a>
-        <a href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>">Dermal Fillers</a>
-        <a href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>">Skin Boosters</a>
-        <a href="<?php echo esc_url(home_url('/products/#lipolysis')); ?>">Lipolysis</a>
-        <a href="<?php echo esc_url(home_url('/products/#biostimulators')); ?>">Biostimulators</a>
-        <a href="<?php echo esc_url(home_url('/products/#cosmetics')); ?>">Cosmetics</a>
-        <a href="<?php echo esc_url(home_url('/products/#others')); ?>">Others</a>
+      <div class="category-showcase" aria-label="MEDIVISTA product category overview">
+        <article class="category-card"><span>01</span><p class="card-meta">Core catalog</p><h3>Botulinum Toxins</h3><p>Professional product information prepared for international partner review.</p><a href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>">Request Information</a></article>
+        <article class="category-card"><span>02</span><p class="card-meta">HA category</p><h3>Dermal Fillers</h3><p>Curated Korean aesthetic catalog entries for distributor comparison.</p><a href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>">Request Information</a></article>
+        <article class="category-card"><span>03</span><p class="card-meta">Volume concept</p><h3>Body Fillers</h3><p>Organized category language for B2B product discovery and inquiry.</p><a href="<?php echo esc_url(home_url('/products/#body-fillers')); ?>">Request Information</a></article>
+        <article class="category-card"><span>04</span><p class="card-meta">Beauty science</p><h3>Skin Boosters</h3><p>Premium aesthetic care information with safe, inquiry-first copy.</p><a href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>">Request Information</a></article>
+        <article class="category-card"><span>05</span><p class="card-meta">Body care</p><h3>Lipolysis</h3><p>Catalog-only product context for professional market conversations.</p><a href="<?php echo esc_url(home_url('/products/#lipolysis')); ?>">Request Information</a></article>
+        <article class="category-card"><span>06</span><p class="card-meta">Advanced concept</p><h3>Exosomes</h3><p>Science-based beauty positioning written without unverified claims.</p><a href="<?php echo esc_url(home_url('/products/#exosomes')); ?>">Request Information</a></article>
+        <article class="category-card"><span>07</span><p class="card-meta">Professional care</p><h3>Biostimulators</h3><p>Structured category information for clinics, distributors, and partners.</p><a href="<?php echo esc_url(home_url('/products/#biostimulators')); ?>">Request Information</a></article>
+        <article class="category-card"><span>08</span><p class="card-meta">Hair category</p><h3>Hair Treatment</h3><p>Partner-ready product naming and catalog navigation for review.</p><a href="<?php echo esc_url(home_url('/products/#hair-treatment')); ?>">Request Information</a></article>
+        <article class="category-card"><span>09</span><p class="card-meta">Additional lines</p><h3>Others</h3><p>Supplementary product groups kept organized for fast inquiry routing.</p><a href="<?php echo esc_url(home_url('/products/#others')); ?>">Request Information</a></article>
       </div>
     </div>
   </section>

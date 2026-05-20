@@ -43,6 +43,12 @@ Hard rules:
 - Do not modify DNS or Google Workspace records.
 - Do not delete user work or reset history.
 
+Reference expression rule:
+- Preserve MEDIVISTA structure and borrow expression style only.
+- Use JD BIO as an overall premium B2B tone reference, but exclude shop, discount, cart, account, and first-order sales cues.
+- Use HJ Corporations for product category and global map organization, while keeping MEDIVISTA navigation and page order.
+- Use Cellexor for CELLEXOR brand mood, black/white/gold contrast, large typography, and action/image-led feel, but replace risky wording with safe claims such as Advanced beauty science, Designed for professional aesthetic care, and Science-based beauty solution.
+
 Cycle order:
 1. Intake latest logs, local state, GitHub state, and public preview state.
 2. Select the next highest-impact website task from the documented phase order.

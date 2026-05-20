@@ -497,3 +497,22 @@
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report generated at `2026-05-14 23:30:33 +09:00`): PASS for JS + ZIP/XML + images + safety scan; WARN for GitHub push + public preview parity because this environment could not connect to `github.com:443`.
 - Files: `index.html`, `brands/index.html`, `wp-theme-starter/front-page.php`, `.deploy-medivista-github/index.html`, `.deploy-medivista-github/brands/index.html`, `.deploy-medivista-github/wp-theme-starter/front-page.php`.
 - Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages` (includes `45ab5ae`) and re-run the recovery script with `-PushDeploy`, then visually verify the public preview with `v=20260514c` (Home + Products desktop/mobile).
+
+## 2026-05-20 - Production cycle: mobile header logo sizing + cache-bust
+
+- Focus: reduce mobile header/logo clipping risk by making logo sizing responsive across breakpoints.
+- Change: updated `.logo` / `.logo img` sizing in `assets/css/styles.css` and `wp-theme-starter/assets/css/main.css` (and mirrored to `.deploy-medivista-github`) with responsive `clamp()` plus breakpoint max-width/max-height constraints.
+- Change: bumped cache-bust token from `20260514c` -> `20260520a` across all static pages + deploy pages, and updated WordPress starter enqueue/logo references (`wp-theme-starter/functions.php`, `wp-theme-starter/header.php`) to keep parity.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; runtime commerce/claim scans found no prohibited matches; Brand Shop links remain `https://shop.medivista.co.kr`.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-20 16:00:27 +09:00`): PASS for JS + ZIP/XML + images + safety scan; WARN for push/public parity (environment cannot fetch public URL; push not attempted without `-PushDeploy`).
+- Next: commit and push `.deploy-medivista-github` `gh-pages` from a network-enabled environment, then do browser-based public visual QA for header/logo on mobile/desktop using `v=20260520a`.
+
+## 2026-05-20 - Production cycle: reference expression mapping + Home category cards
+
+- Focus: preserve MEDIVISTA structure while applying the user's reference rule: borrow expression style only from JD BIO, HJ Corporations, and Cellexor.
+- Change: added the reference expression mapping to `docs/medivista-web-automation-cycle.md` and `docs/medivista-automation-prompts.md` so future cycles keep JD BIO as tone reference, HJ as category/map structure reference, and Cellexor as brand-action mood reference without importing commerce UI or risky claims.
+- Change: replaced the simple Home `Product Categories` pills with a B2B category-card grid covering Botulinum Toxins, Dermal Fillers, Body Fillers, Skin Boosters, Lipolysis, Exosomes, Biostimulators, Hair Treatment, and Others. CTAs remain inquiry-only as `Request Information`.
+- Change: mirrored Home and CSS updates into the WordPress starter and `.deploy-medivista-github`, then bumped static/WP asset token from `20260520a` -> `20260520b` for public-cache safety.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; runtime commerce/claim scan returned no prohibited matches; cache token `20260520b` confirmed across static pages and WordPress starter.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-20 16:34:23 +09:00`): PASS for JS + WordPress fallback lint + local preview + ZIP/XML + product images + safety scan; WARN for GitHub push/public preview parity until the deploy checkout is committed and pushed.
+- Next: commit and push `.deploy-medivista-github` with the reference/category-card update, then verify the category-card layout on desktop/mobile before continuing with the next reference-driven visual pass on Global Network or CELLEXOR.
