@@ -527,5 +527,7 @@
 - Change: added shared slider controls, dots, autoplay/pause behavior, responsive sizing, and cache-bust token `20260522a` across static and WordPress starter files.
 - Safety: removed the visible `checkout` word from the main-site hero and kept all product CTAs as inquiry/WhatsApp, not commerce.
 - Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; product slide image reference check PASS; runtime commerce/claim scan returned no prohibited matches.
-- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-22`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains for GitHub push/public parity until deploy checkout is pushed.
-- Next: push `.deploy-medivista-github` and verify public Home hero/product slider behavior at desktop and mobile widths.
+- Deploy: committed and pushed `.deploy-medivista-github` `gh-pages` as `f70ee36 feat: add home action sliders`.
+- Public verification: fetched `https://keithjeon-web.github.io/medivista/index.html?check=20260522a2` after GitHub Pages propagation and confirmed `20260522a`, `hero-slide`, `product-slider`, and `product-slide` are present.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report generated at `2026-05-22 16:22:00 +09:00`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains inside the script for GitHub/public fetch due to its network path, but separate git push and public URL verification succeeded.
+- Next: perform visual QA on the public Home hero/product sliders at desktop and mobile widths, then tune timing/copy/images if the motion feels too fast or too dense.
