@@ -22,11 +22,13 @@ Draft product CSV:
 docs/brand-shop-product-import-template.csv
 ```
 
-Bundled product image:
+Bundled product images:
 
 ```text
-wp-theme-shop/assets/images/products/cellexor-re-tone.webp
+wp-theme-shop/assets/images/products/
 ```
+
+The shop theme currently includes the full `완성이미지\WebP` product image set: 114 WebP files.
 
 ## Multisite Setup
 
@@ -52,10 +54,10 @@ wp-theme-shop/assets/images/products/cellexor-re-tone.webp
 ## Product Setup
 
 1. Import `docs/brand-shop-product-import-template.csv`.
-2. Keep imported product unpublished first because `Published` is `0`.
-3. Confirm product image loads from the shop theme asset URL.
+2. Keep imported products unpublished first because `Published` is `0`.
+3. Confirm product images load from the shop theme asset URLs.
 4. Fill confirmed price, stock, shipping, refund, privacy, terms, and compliant copy.
-5. Publish only after the product page and checkout flow are reviewed.
+5. Publish only after product pages and checkout flow are reviewed.
 
 ## Test Order QA
 

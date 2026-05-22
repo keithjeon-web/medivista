@@ -555,3 +555,22 @@
 - Check: verified `dist/medivista-wp-theme-shop-20260522-wp.zip` contains `page-cart.php`, `page-checkout.php`, `assets/css/shop.css`, and `assets/images/products/cellexor-re-tone.webp`.
 - Change: added `docs/brand-shop-live-application-steps.md` for the exact shop WordPress upload, WooCommerce, CSV import, test-order QA, and China-IP split checklist.
 - Next: use `docs/brand-shop-live-application-steps.md` during WordPress Network Admin work; after upload, run test-mode checkout before enabling live payment.
+
+## 2026-05-22 - Follow-up: Full product image set for main and shop
+
+- Focus: apply the full `완성이미지\WebP` product image set to both the main WordPress catalog theme and the shop WooCommerce theme.
+- Change: copied all 114 WebP product images from `완성이미지\WebP` into `assets/images/products/`, `wp-theme-starter/assets/images/products/`, and `wp-theme-shop/assets/images/products/` using normalized slug filenames.
+- Change: regenerated `docs/brand-shop-product-import-template.csv` with 114 WooCommerce draft product rows, using each photo filename as the product name source, `Published=0`, blank price, category inference, and shop theme asset image URLs.
+- Change: updated Brand Shop application docs to state that the shop ZIP includes all 114 product images and that product publication remains blocked until price, stock, shipping, refund, privacy, terms, and compliant copy are confirmed.
+- Checks: main WordPress ZIP contains 114 product images; shop WordPress ZIP contains 114 product images; recovery closeout PASS for main ZIP, shop ZIP, image count, JS, fallback PHP lint, and safety scan.
+- Next: import the CSV into WooCommerce on `shop.medivista.co.kr`, keep all products unpublished, then selectively fill commercial details and publish only approved shop products.
+
+## 2026-05-22 - Production cycle: reduced-motion slider autoplay
+
+- Focus: improve Home hero/product slider UX by respecting reduced-motion preferences and avoiding autoplay churn when the tab is hidden.
+- Change: updated the shared action-slider logic to disable autoplay when `prefers-reduced-motion: reduce` is enabled, and stop/start autoplay on `visibilitychange` (static + WordPress starter + deploy parity).
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; `node --check wp-theme-shop/assets/js/shop.js` PASS.
+- Scans: main-site commerce keywords remain absent from runtime pages (shop theme contains Cart/Checkout by design); risky-claim scan PASS (note: `Hair Treatment` category name contains the word "Treatment" but is not a medical-claim sentence).
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-05-22 22:09:22 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIP/XML + product images + safety scan; WARN for public preview fetch and deploy push (network/auth needed).
+- Deploy: committed `.deploy-medivista-github` as `d01c658 feat: respect reduced motion for sliders` (not pushed from this environment).
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then verify public Home slider behavior and header/logo on mobile/desktop using `v=20260522a`.

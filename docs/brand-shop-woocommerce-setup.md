@@ -74,10 +74,10 @@ Draft import template:
 docs/brand-shop-product-import-template.csv
 ```
 
-The template keeps `Published` as `0` and leaves price blank. It includes the first bundled CELLEXOR image URL:
+The template keeps `Published` as `0` and leaves price blank. It now includes all 114 product rows generated from `완성이미지\WebP`, with image URLs pointing to:
 
 ```text
-https://shop.medivista.co.kr/wp-content/themes/wp-theme-shop/assets/images/products/cellexor-re-tone.webp
+https://shop.medivista.co.kr/wp-content/themes/wp-theme-shop/assets/images/products/{product-slug}.webp
 ```
 
 Fill confirmed price, stock, shipping class, refund policy, and compliant product copy before publishing any product.
