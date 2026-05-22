@@ -518,3 +518,14 @@
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report generated at `2026-05-20 17:27:45 +09:00`): PASS for JS + WordPress fallback lint + local preview + ZIP/XML + product images + safety scan; WARN remains inside the script for GitHub/public fetch due to its network path, but separate public URL verification succeeded.
 - Public verification: fetched `https://keithjeon-web.github.io/medivista/index.html?check=20260520b` and confirmed `20260520b`, `category-showcase`, and `Request Information` are present.
 - Next: verify the category-card layout visually on desktop/mobile before continuing with the next reference-driven visual pass on Global Network or CELLEXOR.
+
+## 2026-05-22 - Production cycle: Home hero and product action sliders
+
+- Focus: convert the two requested main-site areas into action banners while preserving catalog-only behavior.
+- Change: replaced the Home hero with a 5-slide action slider covering global B2B, Korean aesthetic catalog, CELLEXOR, Global Network, and inquiry-first support.
+- Change: converted Popular Products into a 5-slide product carousel with 3 product cards per slide, using final WebP product imagery and WhatsApp inquiry CTAs only.
+- Change: added shared slider controls, dots, autoplay/pause behavior, responsive sizing, and cache-bust token `20260522a` across static and WordPress starter files.
+- Safety: removed the visible `checkout` word from the main-site hero and kept all product CTAs as inquiry/WhatsApp, not commerce.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; product slide image reference check PASS; runtime commerce/claim scan returned no prohibited matches.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-22`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains for GitHub push/public parity until deploy checkout is pushed.
+- Next: push `.deploy-medivista-github` and verify public Home hero/product slider behavior at desktop and mobile widths.

@@ -2,34 +2,46 @@
 <main>
   <?php get_template_part('template-parts/hero'); ?>
 
-  <section class="section">
+  <section class="section product-action-section">
     <div class="container">
       <div class="section-head">
         <div><p class="eyebrow">Popular Products</p><h2>Catalog highlights for professional review</h2></div>
         <p>Browse representative products and request details through the inquiry flow prepared for international B2B communication.</p>
       </div>
-      <div class="grid grid-3">
-        <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>" data-image-status="ready"></div>
-          <p class="card-meta">Own Brand</p>
-          <h3>Cellexor Re:Tone</h3>
-          <p>Designed for premium aesthetic care with an exosome and NAD+ inspired concept.</p>
-          <a class="btn whatsapp" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a>
-        </article>
-        <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/rejuran-healer.webp'); ?>" data-image-status="ready"></div>
-          <p class="card-meta">Skin Boosters</p>
-          <h3>Rejuran Healer</h3>
-          <p>Professional aesthetic solution information for partner consultation and product review.</p>
-          <a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran Healer">Inquire via WhatsApp</a>
-        </article>
-        <article class="product-card">
-          <div class="product-image" data-image="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/the-chaeum-premium-no-3.webp'); ?>" data-image-status="ready"></div>
-          <p class="card-meta">Dermal Fillers</p>
-          <h3>The Chaeum Premium No.3</h3>
-          <p>Formulated for professional aesthetic use and presented through a catalog-only inquiry path.</p>
-          <a class="btn whatsapp" href="#" data-whatsapp data-product="The Chaeum Premium No.3">Inquire via WhatsApp</a>
-        </article>
+      <?php $img_base = get_template_directory_uri() . '/assets/images/products/'; ?>
+      <div class="product-slider action-slider" data-action-slider data-autoplay="7200" aria-label="Popular product slides">
+        <div class="action-slides">
+          <div class="action-slide product-slide is-active" data-slide><div class="grid grid-3">
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'cellexor-re-tone.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Own Brand</p><h3>Cellexor Re:Tone</h3><p>Designed for premium aesthetic care with an exosome and NAD+ inspired concept.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'rejuran-healer.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Skin Boosters</p><h3>Rejuran Healer</h3><p>Professional aesthetic solution information for partner consultation and product review.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran Healer">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'the-chaeum-premium-no-3.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Dermal Fillers</p><h3>The Chaeum Premium No.3</h3><p>Formulated for professional aesthetic use and presented through a catalog-only inquiry path.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="The Chaeum Premium No.3">Inquire via WhatsApp</a></article>
+          </div></div>
+          <div class="action-slide product-slide" data-slide><div class="grid grid-3">
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'botulax-100units.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Botulinum Toxins</p><h3>Botulax 100 Units</h3><p>Catalog-ready product information for professional B2B review and partner inquiry.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Botulax 100 Units">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'revolax-deep.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Dermal Fillers</p><h3>Revolax Deep</h3><p>Structured filler category information prepared for international product comparison.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Revolax Deep">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'elravie-premier-ultra-volume-l.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Dermal Fillers</p><h3>Elravie Ultra Volume</h3><p>Premium catalog presentation for partner review and professional inquiry routing.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Elravie Ultra Volume">Inquire via WhatsApp</a></article>
+          </div></div>
+          <div class="action-slide product-slide" data-slide><div class="grid grid-3">
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'nabota-100units.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Botulinum Toxins</p><h3>Nabota 100 Units</h3><p>English-first product naming and category context for global B2B partners.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Nabota 100 Units">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'rejuran-hb-plus.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Skin Boosters</p><h3>Rejuran HB Plus</h3><p>Professional aesthetic care information presented without unverified efficacy claims.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran HB Plus">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'sculptra.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Biostimulators</p><h3>Sculptra</h3><p>Category-led product information organized for professional partner discussion.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Sculptra">Inquire via WhatsApp</a></article>
+          </div></div>
+          <div class="action-slide product-slide" data-slide><div class="grid grid-3">
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'innotox-100units.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Botulinum Toxins</p><h3>Innotox 100 Units</h3><p>Professional catalog entry prepared for clinics, distributors, and brand partners.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Innotox 100 Units">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'revs-pro-32.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Skin Boosters</p><h3>REVS Pro 32</h3><p>Beauty science-oriented product context with an inquiry-first communication path.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="REVS Pro 32">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'kabelline.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Lipolysis</p><h3>Kabelline</h3><p>Organized product information for professional market review and follow-up.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Kabelline">Inquire via WhatsApp</a></article>
+          </div></div>
+          <div class="action-slide product-slide" data-slide><div class="grid grid-3">
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'liporase.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Others</p><h3>Liporase</h3><p>Supplementary product catalog information for targeted partner inquiry.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Liporase">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'gouri.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Biostimulators</p><h3>Gouri</h3><p>Product overview written for careful B2B evaluation and information requests.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Gouri">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'guthion-1200mg.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Vitamin Injections</p><h3>Guthion 1200mg</h3><p>Catalog entry prepared with clear naming, category context, and inquiry routing.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Guthion 1200mg">Inquire via WhatsApp</a></article>
+          </div></div>
+        </div>
+        <div class="slider-controls product-controls" aria-label="Popular products slider controls">
+          <button type="button" data-slider-prev aria-label="Previous product slide">Prev</button>
+          <div class="slider-dots" data-slider-dots></div>
+          <button type="button" data-slider-next aria-label="Next product slide">Next</button>
+        </div>
       </div>
     </div>
   </section>

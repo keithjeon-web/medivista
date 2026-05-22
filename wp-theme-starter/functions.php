@@ -1,9 +1,9 @@
 ﻿<?php
 function medivista_enqueue_assets() {
-    wp_enqueue_style('medivista-main', get_template_directory_uri() . '/assets/css/main.css', array(), '20260520b');
+    wp_enqueue_style('medivista-main', get_template_directory_uri() . '/assets/css/main.css', array(), '20260522a');
     wp_enqueue_script('medivista-d3', 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js', array(), '7.8.5', true);
     wp_enqueue_script('medivista-topojson', 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js', array('medivista-d3'), '3.0.2', true);
-    wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260520b', true);
+    wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260522a', true);
 }
 add_action('wp_enqueue_scripts', 'medivista_enqueue_assets');
 

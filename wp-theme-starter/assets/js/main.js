@@ -63,6 +63,72 @@ window.addEventListener('resize', () => {
   }
 });
 
+document.querySelectorAll('[data-action-slider]').forEach((slider) => {
+  const slides = Array.from(slider.querySelectorAll('[data-slide]')).slice(0, 5);
+  const prev = slider.querySelector('[data-slider-prev]');
+  const next = slider.querySelector('[data-slider-next]');
+  const dotsWrap = slider.querySelector('[data-slider-dots]');
+  const intervalMs = Number(slider.dataset.autoplay || 0);
+  let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
+  let timer = null;
+
+  if (slides.length <= 1) return;
+
+  function setSlide(index) {
+    activeIndex = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeIndex;
+      slide.classList.toggle('is-active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+    });
+    dotsWrap?.querySelectorAll('button').forEach((dot, dotIndex) => {
+      dot.classList.toggle('is-active', dotIndex === activeIndex);
+      dot.setAttribute('aria-current', dotIndex === activeIndex ? 'true' : 'false');
+    });
+  }
+
+  function stop() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  }
+
+  function start() {
+    stop();
+    if (!intervalMs) return;
+    timer = window.setInterval(() => setSlide(activeIndex + 1), intervalMs);
+  }
+
+  if (dotsWrap) {
+    dotsWrap.innerHTML = '';
+    slides.forEach((_, dotIndex) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Go to slide ${dotIndex + 1}`);
+      dot.addEventListener('click', () => {
+        setSlide(dotIndex);
+        start();
+      });
+      dotsWrap.appendChild(dot);
+    });
+  }
+
+  prev?.addEventListener('click', () => {
+    setSlide(activeIndex - 1);
+    start();
+  });
+  next?.addEventListener('click', () => {
+    setSlide(activeIndex + 1);
+    start();
+  });
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', start);
+
+  setSlide(activeIndex);
+  start();
+});
+
 document.querySelectorAll('.contact-form').forEach((form) => {
   form.addEventListener('submit', (event) => {
     event.preventDefault();

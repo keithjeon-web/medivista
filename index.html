@@ -39,13 +39,13 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260520b" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260522a" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html" aria-label="MEDIVISTA home">
-        <img src="medivista_logo_header.png?v=20260520b" alt="MEDIVISTA">
+        <img src="medivista_logo_header.png?v=20260522a" alt="MEDIVISTA">
       </a>
       <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <nav id="primary-nav" class="main-nav" aria-label="Main menu">
@@ -63,24 +63,97 @@
   </header>
 
   <main>
-    <section class="hero-banner">
-      <div class="container hero-content">
-        <p class="eyebrow">Global Medical Aesthetic B2B</p>
-        <h1>Professional aesthetic solutions for global partners.</h1>
-        <p class="lead">MEDIVISTA connects clinics, distributors, and brand partners with carefully curated Korean aesthetic product information and inquiry-first support.</p>
-        <div class="button-row">
-          <a class="btn primary" href="products/index.html">View Products</a>
-          <a class="btn secondary" href="contact/index.html">Request Inquiry</a>
-        </div>
-        <div class="hero-metrics" aria-label="MEDIVISTA site highlights">
-          <span><strong>115</strong> catalog items</span>
-          <span><strong>8</strong> target markets</span>
-          <span><strong>3</strong> distribution zones</span>
-        </div>
+    <section class="hero-banner action-slider" data-action-slider data-autoplay="6500" aria-label="MEDIVISTA main highlights">
+      <div class="action-slides">
+        <article class="action-slide hero-slide is-active" data-slide>
+          <div class="container hero-content">
+            <p class="eyebrow">Global Medical Aesthetic B2B</p>
+            <h1>Professional aesthetic solutions for global partners.</h1>
+            <p class="lead">MEDIVISTA connects clinics, distributors, and brand partners with carefully curated Korean aesthetic product information and inquiry-first support.</p>
+            <div class="button-row">
+              <a class="btn primary" href="products/index.html">View Products</a>
+              <a class="btn secondary" href="contact/index.html">Request Inquiry</a>
+            </div>
+            <div class="hero-metrics" aria-label="MEDIVISTA site highlights">
+              <span><strong>115</strong> catalog items</span>
+              <span><strong>8</strong> target markets</span>
+              <span><strong>3</strong> distribution zones</span>
+            </div>
+          </div>
+        </article>
+        <article class="action-slide hero-slide hero-slide-gold" data-slide>
+          <div class="container hero-content">
+            <p class="eyebrow">Korean Aesthetic Catalog</p>
+            <h1>Organized product intelligence for B2B decisions.</h1>
+            <p class="lead">Explore category-led information for toxins, fillers, boosters, biostimulators, lipolysis, exosomes, and professional cosmetic concepts.</p>
+            <div class="button-row">
+              <a class="btn primary" href="products/index.html">Browse Catalog</a>
+              <a class="btn secondary" href="contact/index.html">Request Information</a>
+            </div>
+            <div class="hero-metrics" aria-label="Catalog highlights">
+              <span><strong>9</strong> product categories</span>
+              <span><strong>114</strong> product images</span>
+              <span><strong>EN</strong> first copy</span>
+            </div>
+          </div>
+        </article>
+        <article class="action-slide hero-slide hero-slide-brand" data-slide>
+          <div class="container hero-content">
+            <p class="eyebrow">CELLEXOR Re:Tone</p>
+            <h1>Own-brand beauty science with premium presentation.</h1>
+            <p class="lead">CELLEXOR is positioned through safe, professional aesthetic care language and a brand-focused inquiry path for global partners.</p>
+            <div class="button-row">
+              <a class="btn primary" href="brands/index.html">View Brand</a>
+              <a class="btn secondary" href="contact/index.html">Brand Inquiry</a>
+            </div>
+            <div class="hero-metrics" aria-label="Brand highlights">
+              <span><strong>01</strong> own brand</span>
+              <span><strong>B2B</strong> partner focus</span>
+              <span><strong>Care</strong> safe wording</span>
+            </div>
+          </div>
+        </article>
+        <article class="action-slide hero-slide hero-slide-network" data-slide>
+          <div class="container hero-content">
+            <p class="eyebrow">Global Network</p>
+            <h1>Market-ready communication across key regions.</h1>
+            <p class="lead">The site supports partner discovery across the United States, China, Oceania, and Southeast Asia with clear product and contact routes.</p>
+            <div class="button-row">
+              <a class="btn primary" href="#global-network">View Network</a>
+              <a class="btn secondary" href="contact/index.html">Contact Us</a>
+            </div>
+            <div class="hero-metrics" aria-label="Network highlights">
+              <span><strong>8</strong> target markets</span>
+              <span><strong>3</strong> distribution zones</span>
+              <span><strong>4</strong> regions</span>
+            </div>
+          </div>
+        </article>
+        <article class="action-slide hero-slide hero-slide-inquiry" data-slide>
+          <div class="container hero-content">
+            <p class="eyebrow">Inquiry-First Support</p>
+            <h1>From product review to professional follow-up.</h1>
+            <p class="lead">Partners can scan categories, select product interests, and open a prepared WhatsApp or contact-form inquiry for fast communication.</p>
+            <div class="button-row">
+              <a class="btn primary" href="contact/index.html">Start Inquiry</a>
+              <a class="btn secondary" href="#" data-whatsapp>WhatsApp</a>
+            </div>
+            <div class="hero-metrics" aria-label="Inquiry highlights">
+              <span><strong>Form</strong> ready</span>
+              <span><strong>WA</strong> connected</span>
+              <span><strong>Inquiry</strong> only</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="slider-controls hero-controls" aria-label="Hero slider controls">
+        <button type="button" data-slider-prev aria-label="Previous hero slide">Prev</button>
+        <div class="slider-dots" data-slider-dots></div>
+        <button type="button" data-slider-next aria-label="Next hero slide">Next</button>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section product-action-section">
       <div class="container">
         <div class="section-head">
           <div>
@@ -89,28 +162,49 @@
           </div>
           <p>Browse representative products and request details through the inquiry flow prepared for international B2B communication.</p>
         </div>
-        <div class="grid grid-3">
-          <article class="product-card">
-            <div class="product-image" data-image="assets/images/products/cellexor-re-tone.webp" data-image-status="ready"></div>
-            <p class="card-meta">Own Brand</p>
-            <h3>Cellexor Re:Tone</h3>
-            <p>Designed for premium aesthetic care with an exosome and NAD+ inspired concept.</p>
-            <a class="btn whatsapp" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a>
-          </article>
-          <article class="product-card">
-            <div class="product-image" data-image="assets/images/products/rejuran-healer.webp" data-image-status="ready"></div>
-            <p class="card-meta">Skin Boosters</p>
-            <h3>Rejuran Healer</h3>
-            <p>Professional aesthetic solution information for partner consultation and product review.</p>
-            <a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran Healer">Inquire via WhatsApp</a>
-          </article>
-          <article class="product-card">
-            <div class="product-image" data-image="assets/images/products/the-chaeum-premium-no-3.webp" data-image-status="ready"></div>
-            <p class="card-meta">Dermal Fillers</p>
-            <h3>The Chaeum Premium No.3</h3>
-            <p>Formulated for professional aesthetic use and presented through a catalog-only inquiry path.</p>
-            <a class="btn whatsapp" href="#" data-whatsapp data-product="The Chaeum Premium No.3">Inquire via WhatsApp</a>
-          </article>
+        <div class="product-slider action-slider" data-action-slider data-autoplay="7200" aria-label="Popular product slides">
+          <div class="action-slides">
+            <div class="action-slide product-slide is-active" data-slide>
+              <div class="grid grid-3">
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/cellexor-re-tone.webp" data-image-status="ready"></div><p class="card-meta">Own Brand</p><h3>Cellexor Re:Tone</h3><p>Designed for premium aesthetic care with an exosome and NAD+ inspired concept.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/rejuran-healer.webp" data-image-status="ready"></div><p class="card-meta">Skin Boosters</p><h3>Rejuran Healer</h3><p>Professional aesthetic solution information for partner consultation and product review.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran Healer">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/the-chaeum-premium-no-3.webp" data-image-status="ready"></div><p class="card-meta">Dermal Fillers</p><h3>The Chaeum Premium No.3</h3><p>Formulated for professional aesthetic use and presented through a catalog-only inquiry path.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="The Chaeum Premium No.3">Inquire via WhatsApp</a></article>
+              </div>
+            </div>
+            <div class="action-slide product-slide" data-slide>
+              <div class="grid grid-3">
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/botulax-100units.webp" data-image-status="ready"></div><p class="card-meta">Botulinum Toxins</p><h3>Botulax 100 Units</h3><p>Catalog-ready product information for professional B2B review and partner inquiry.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Botulax 100 Units">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/revolax-deep.webp" data-image-status="ready"></div><p class="card-meta">Dermal Fillers</p><h3>Revolax Deep</h3><p>Structured filler category information prepared for international product comparison.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Revolax Deep">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/elravie-premier-ultra-volume-l.webp" data-image-status="ready"></div><p class="card-meta">Dermal Fillers</p><h3>Elravie Ultra Volume</h3><p>Premium catalog presentation for partner review and professional inquiry routing.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Elravie Ultra Volume">Inquire via WhatsApp</a></article>
+              </div>
+            </div>
+            <div class="action-slide product-slide" data-slide>
+              <div class="grid grid-3">
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/nabota-100units.webp" data-image-status="ready"></div><p class="card-meta">Botulinum Toxins</p><h3>Nabota 100 Units</h3><p>English-first product naming and category context for global B2B partners.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Nabota 100 Units">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/rejuran-hb-plus.webp" data-image-status="ready"></div><p class="card-meta">Skin Boosters</p><h3>Rejuran HB Plus</h3><p>Professional aesthetic care information presented without unverified efficacy claims.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Rejuran HB Plus">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/sculptra.webp" data-image-status="ready"></div><p class="card-meta">Biostimulators</p><h3>Sculptra</h3><p>Category-led product information organized for professional partner discussion.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Sculptra">Inquire via WhatsApp</a></article>
+              </div>
+            </div>
+            <div class="action-slide product-slide" data-slide>
+              <div class="grid grid-3">
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/innotox-100units.webp" data-image-status="ready"></div><p class="card-meta">Botulinum Toxins</p><h3>Innotox 100 Units</h3><p>Professional catalog entry prepared for clinics, distributors, and brand partners.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Innotox 100 Units">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/revs-pro-32.webp" data-image-status="ready"></div><p class="card-meta">Skin Boosters</p><h3>REVS Pro 32</h3><p>Beauty science-oriented product context with an inquiry-first communication path.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="REVS Pro 32">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/kabelline.webp" data-image-status="ready"></div><p class="card-meta">Lipolysis</p><h3>Kabelline</h3><p>Organized product information for professional market review and follow-up.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Kabelline">Inquire via WhatsApp</a></article>
+              </div>
+            </div>
+            <div class="action-slide product-slide" data-slide>
+              <div class="grid grid-3">
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/liporase.webp" data-image-status="ready"></div><p class="card-meta">Others</p><h3>Liporase</h3><p>Supplementary product catalog information for targeted partner inquiry.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Liporase">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/gouri.webp" data-image-status="ready"></div><p class="card-meta">Biostimulators</p><h3>Gouri</h3><p>Product overview written for careful B2B evaluation and information requests.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Gouri">Inquire via WhatsApp</a></article>
+                <article class="product-card"><div class="product-image" data-image="assets/images/products/guthion-1200mg.webp" data-image-status="ready"></div><p class="card-meta">Vitamin Injections</p><h3>Guthion 1200mg</h3><p>Catalog entry prepared with clear naming, category context, and inquiry routing.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Guthion 1200mg">Inquire via WhatsApp</a></article>
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls product-controls" aria-label="Popular products slider controls">
+            <button type="button" data-slider-prev aria-label="Previous product slide">Prev</button>
+            <div class="slider-dots" data-slider-dots></div>
+            <button type="button" data-slider-next aria-label="Next product slide">Next</button>
+          </div>
         </div>
       </div>
     </section>
@@ -357,6 +451,6 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
-  <script src="assets/js/main.js?v=20260520b"></script>
+  <script src="assets/js/main.js?v=20260522a"></script>
 </body>
 </html>
