@@ -542,4 +542,5 @@
 - Change: updated `tools/medivista-error-recovery.ps1` so `-RebuildWordPressZip` also builds and checks `dist/medivista-wp-theme-shop-20260522-wp.zip`.
 - Checks: `node --check wp-theme-shop/assets/js/shop.js` PASS; recovery closeout PASS for WordPress shop ZIP readiness and existing main-site safety scan.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-22`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains for push/public parity until deploy checkout sync is committed and pushed.
+- Deploy: committed `.deploy-medivista-github` locally as `429925e feat: add brand shop woocommerce theme`; push was blocked by the current Codex usage limit and should be retried after the limit resets.
 - Next: upload `dist/medivista-wp-theme-shop-20260522-wp.zip` only to `shop.medivista.co.kr`, activate WooCommerce on the shop site only, create Shop/Cart/Checkout/My Account pages, then run test-mode checkout before live payment.
