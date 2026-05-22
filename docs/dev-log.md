@@ -574,3 +574,11 @@
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-05-22 22:09:22 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIP/XML + product images + safety scan; WARN for public preview fetch and deploy push (network/auth needed).
 - Deploy: committed `.deploy-medivista-github` as `d01c658 feat: respect reduced motion for sliders` (not pushed from this environment).
 - Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then verify public Home slider behavior and header/logo on mobile/desktop using `v=20260522a`.
+
+## 2026-05-22 - Follow-up: Full product image deploy closeout
+
+- Focus: finish public deployment for the full `완성이미지\WebP` product image set across the main catalog and shop package.
+- Deploy: pushed `.deploy-medivista-github` `gh-pages` through `0a01ef6 feat: add full starter product image set`, including the earlier slider, shop image, and starter image commits.
+- Checks: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy`; PASS for JS, fallback PHP lint, local preview, GitHub Pages push, public preview parity, main ZIP, shop ZIP, XML, product images, and commerce/claim safety scan.
+- Result: all 114 WebP product images are available in `assets/images/products/`, `wp-theme-starter/assets/images/products/`, and `wp-theme-shop/assets/images/products/`; the shop import CSV remains draft/unpublished with blank prices.
+- Next: import `docs/brand-shop-product-import-template.csv` into WooCommerce on `shop.medivista.co.kr`, keep products unpublished, then fill price, stock, shipping, refund, privacy, terms, and compliant copy only for approved shop products.
