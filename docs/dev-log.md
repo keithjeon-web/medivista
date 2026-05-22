@@ -546,3 +546,12 @@
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-22`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains for push/public parity until deploy checkout sync is committed and pushed.
 - Deploy: committed `.deploy-medivista-github` locally as `429925e feat: add brand shop woocommerce theme`; push was blocked by the current Codex usage limit and should be retried after the limit resets.
 - Next: upload `dist/medivista-wp-theme-shop-20260522-wp.zip` only to `shop.medivista.co.kr`, activate WooCommerce on the shop site only, create Shop/Cart/Checkout/My Account pages, then run test-mode checkout before live payment.
+
+## 2026-05-22 - Follow-up: Brand Shop GitHub sync and live checklist
+
+- Focus: complete the previously blocked GitHub sync for Brand Shop work and create a compact live-application checklist.
+- Deploy: pushed `.deploy-medivista-github` `gh-pages` through `e7e36f5 feat: prepare shop product image import`; deploy checkout is now aligned with `origin/gh-pages`.
+- Check: confirmed remote `gh-pages` points to `e7e36f5e4d0f5e1bd4ef9c55330a7937c90dd0c9`.
+- Check: verified `dist/medivista-wp-theme-shop-20260522-wp.zip` contains `page-cart.php`, `page-checkout.php`, `assets/css/shop.css`, and `assets/images/products/cellexor-re-tone.webp`.
+- Change: added `docs/brand-shop-live-application-steps.md` for the exact shop WordPress upload, WooCommerce, CSV import, test-order QA, and China-IP split checklist.
+- Next: use `docs/brand-shop-live-application-steps.md` during WordPress Network Admin work; after upload, run test-mode checkout before enabling live payment.

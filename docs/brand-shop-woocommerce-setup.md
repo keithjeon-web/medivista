@@ -14,6 +14,8 @@ The main MEDIVISTA website stays catalog-only. Do not add prices, cart, checkout
 
 Follow [wordpress-multisite-operations.md](wordpress-multisite-operations.md) for the domain-role split between the main site and shop site.
 
+For the short live-application checklist, use [brand-shop-live-application-steps.md](brand-shop-live-application-steps.md).
+
 ## Direct Setup Flow
 
 Use this flow when the shop WordPress admin is available.
