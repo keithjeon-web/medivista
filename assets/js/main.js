@@ -68,7 +68,9 @@ document.querySelectorAll('[data-action-slider]').forEach((slider) => {
   const prev = slider.querySelector('[data-slider-prev]');
   const next = slider.querySelector('[data-slider-next]');
   const dotsWrap = slider.querySelector('[data-slider-dots]');
-  const intervalMs = Number(slider.dataset.autoplay || 0);
+  let intervalMs = Number(slider.dataset.autoplay || 0);
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+  if (intervalMs && prefersReducedMotion) intervalMs = 0;
   let activeIndex = Math.max(0, slides.findIndex((slide) => slide.classList.contains('is-active')));
   let timer = null;
 
@@ -124,6 +126,10 @@ document.querySelectorAll('[data-action-slider]').forEach((slider) => {
   slider.addEventListener('mouseleave', start);
   slider.addEventListener('focusin', stop);
   slider.addEventListener('focusout', start);
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
 
   setSlide(activeIndex);
   start();
