@@ -582,3 +582,13 @@
 - Checks: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy`; PASS for JS, fallback PHP lint, local preview, GitHub Pages push, public preview parity, main ZIP, shop ZIP, XML, product images, and commerce/claim safety scan.
 - Result: all 114 WebP product images are available in `assets/images/products/`, `wp-theme-starter/assets/images/products/`, and `wp-theme-shop/assets/images/products/`; the shop import CSV remains draft/unpublished with blank prices.
 - Next: import `docs/brand-shop-product-import-template.csv` into WooCommerce on `shop.medivista.co.kr`, keep products unpublished, then fill price, stock, shipping, refund, privacy, terms, and compliant copy only for approved shop products.
+
+## 2026-05-22 - Production cycle: CELLEXOR-inspired Brands page
+
+- Focus: redesign the Brands page using CELLEXOR reference expression while preserving MEDIVISTA's safe B2B communication rules.
+- Reference: reviewed `https://cellexor.com/`, `https://cellexor.com/cellexor/`, and `https://cellexor.com/cellexor-retone/` for visual direction only: black/white/gold palette, large typography, key-point blocks, V1/V2-style product architecture, and final brand action.
+- Change: rebuilt `brands/index.html` and `wp-theme-starter/page-brands.php` with a dark premium CELLEXOR hero, Re:Tone product visual, four brand architecture cards, Exosome + NAD+ concept section, and external CTA links to `https://cellexor.com/`.
+- Change: added responsive brand-specific CSS in `assets/css/styles.css` and `wp-theme-starter/assets/css/main.css`, then bumped the main/static and WordPress starter cache token to `20260522b`.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; recovery closeout PASS for JS, fallback PHP lint, local preview, WordPress ZIPs, XML, product images, and commerce/claim safety scan.
+- Note: local in-app browser automation was unavailable because the browser bridge was not trusted in this session; file-level and recovery-script checks were used instead.
+- Next: push `.deploy-medivista-github` `gh-pages`, then visually QA the public Brands page at desktop and mobile widths before expanding the dedicated CELLEXOR product page.
