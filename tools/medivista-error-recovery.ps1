@@ -486,7 +486,8 @@ $requiredShopZip = @(
   "wp-theme-shop/woocommerce.php",
   "wp-theme-shop/assets/css/shop.css",
   "wp-theme-shop/assets/js/shop.js",
-  "wp-theme-shop/assets/images/medivista_logo_header.png"
+  "wp-theme-shop/assets/images/medivista_logo_header.png",
+  "wp-theme-shop/assets/images/products/cellexor-re-tone.webp"
 )
 $shopZipCheck = Test-ZipContains $WpShopZip $requiredShopZip
 if ($shopZipCheck.Ok) {

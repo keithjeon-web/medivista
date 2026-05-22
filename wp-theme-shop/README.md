@@ -42,6 +42,18 @@ The theme also includes page templates for these slugs:
 
 Use `docs/brand-shop-product-import-template.csv` as a draft product import template. Keep imported products unpublished until price, image, stock, shipping, refund, and product copy are confirmed.
 
+The first draft product image is bundled at:
+
+```text
+wp-theme-shop/assets/images/products/cellexor-re-tone.webp
+```
+
+After the theme is active on `shop.medivista.co.kr`, the CSV image URL points to:
+
+```text
+https://shop.medivista.co.kr/wp-content/themes/wp-theme-shop/assets/images/products/cellexor-re-tone.webp
+```
+
 ## Main Site Separation
 
 The main MEDIVISTA site remains catalog-only. Price, cart, checkout, and payment flow must stay inside this shop theme/site only.

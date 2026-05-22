@@ -72,7 +72,13 @@ Draft import template:
 docs/brand-shop-product-import-template.csv
 ```
 
-The template keeps `Published` as `0` and leaves price blank. Fill confirmed price, product image URL, stock, shipping class, and compliant product copy before publishing any product.
+The template keeps `Published` as `0` and leaves price blank. It includes the first bundled CELLEXOR image URL:
+
+```text
+https://shop.medivista.co.kr/wp-content/themes/wp-theme-shop/assets/images/products/cellexor-re-tone.webp
+```
+
+Fill confirmed price, stock, shipping class, refund policy, and compliant product copy before publishing any product.
 
 ## Payment Page Target
 
