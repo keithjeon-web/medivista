@@ -21,19 +21,58 @@ Use this flow when the shop WordPress admin is available.
 1. Confirm the main site Brand Shop button opens `https://shop.medivista.co.kr`.
 2. Log in to the WordPress Multisite admin.
 3. Confirm the shop site is mapped to `shop.medivista.co.kr`.
-4. Install WooCommerce from Network Admin or from the shop site plugin screen.
-5. Activate WooCommerce on the shop site only.
-6. Run the WooCommerce setup wizard on the shop site.
-7. Let WooCommerce create these pages on the shop site:
+4. Upload `dist/medivista-wp-theme-shop-20260522-wp.zip` to the shop site.
+5. Activate the `MEDIVISTA Shop` theme on `shop.medivista.co.kr` only.
+6. Install WooCommerce from Network Admin or from the shop site plugin screen.
+7. Activate WooCommerce on the shop site only.
+8. Run the WooCommerce setup wizard on the shop site.
+9. Let WooCommerce create these pages on the shop site:
    - Shop
    - Cart
    - Checkout
    - My Account
-8. Set currency, store country, tax/shipping policy, and payment method.
-9. Add CELLEXOR or own-brand products only after product names, images, price policy, and shipping/payment policy are confirmed.
-10. Test the checkout page with a safe test payment mode before accepting live payments.
-11. Keep the main site Brand Shop URL as `https://shop.medivista.co.kr`.
-12. Confirm the shop site blocks China IP traffic through the available hosting/CDN/security layer.
+10. Set currency, store country, tax/shipping policy, and payment method.
+11. Add CELLEXOR or own-brand products only after product names, images, price policy, and shipping/payment policy are confirmed.
+12. Test the checkout page with a safe test payment mode before accepting live payments.
+13. Keep the main site Brand Shop URL as `https://shop.medivista.co.kr`.
+14. Confirm the shop site blocks China IP traffic through the available hosting/CDN/security layer.
+
+## Prepared Shop Theme Package
+
+Theme source:
+
+```text
+wp-theme-shop/
+```
+
+Upload package:
+
+```text
+dist/medivista-wp-theme-shop-20260522-wp.zip
+```
+
+Included commerce templates:
+
+```text
+front-page.php
+woocommerce.php
+page-shop.php
+page-cart.php
+page-checkout.php
+page-my-account.php
+```
+
+The theme supports WooCommerce gallery features, product grids, cart, checkout, and account pages. If WooCommerce is not active, the theme shows a safe setup notice instead of failing.
+
+## Draft Product Import Template
+
+Draft import template:
+
+```text
+docs/brand-shop-product-import-template.csv
+```
+
+The template keeps `Published` as `0` and leaves price blank. Fill confirmed price, product image URL, stock, shipping class, and compliant product copy before publishing any product.
 
 ## Payment Page Target
 

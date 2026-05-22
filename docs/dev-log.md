@@ -531,3 +531,15 @@
 - Public verification: fetched `https://keithjeon-web.github.io/medivista/index.html?check=20260522a2` after GitHub Pages propagation and confirmed `20260522a`, `hero-slide`, `product-slider`, and `product-slide` are present.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report generated at `2026-05-22 16:22:00 +09:00`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains inside the script for GitHub/public fetch due to its network path, but separate git push and public URL verification succeeded.
 - Next: perform visual QA on the public Home hero/product sliders at desktop and mobile widths, then tune timing/copy/images if the motion feels too fast or too dense.
+
+## 2026-05-22 - Production cycle: Brand Shop theme and WooCommerce package
+
+- Focus: prepare `shop.medivista.co.kr` as the separated WooCommerce Brand Shop site while keeping `www.medivista.co.kr` catalog-only.
+- Change: created `wp-theme-shop/` as a shop-only WordPress theme with WooCommerce support, MEDIVISTA header/footer, Shop, Cart, Checkout, My Account navigation, product grid styling, checkout/cart form styling, and safe notices when WooCommerce is not active.
+- Change: added commerce page templates: `page-shop.php`, `page-cart.php`, `page-checkout.php`, `page-my-account.php`, plus `woocommerce.php`.
+- Change: added `docs/brand-shop-product-import-template.csv` as a draft WooCommerce product import template with `Published` set to `0` and blank price until product, image, stock, shipping, refund, and compliance copy are confirmed.
+- Change: updated `docs/brand-shop-woocommerce-setup.md` and `docs/wordpress-insertion-checklist.md` with the shop theme ZIP target and direct setup order.
+- Change: updated `tools/medivista-error-recovery.ps1` so `-RebuildWordPressZip` also builds and checks `dist/medivista-wp-theme-shop-20260522-wp.zip`.
+- Checks: `node --check wp-theme-shop/assets/js/shop.js` PASS; recovery closeout PASS for WordPress shop ZIP readiness and existing main-site safety scan.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report generated at `2026-05-22`): PASS for JS + WordPress fallback lint + local preview + main ZIP + shop ZIP + XML + product images + safety scan; WARN remains for push/public parity until deploy checkout sync is committed and pushed.
+- Next: upload `dist/medivista-wp-theme-shop-20260522-wp.zip` only to `shop.medivista.co.kr`, activate WooCommerce on the shop site only, create Shop/Cart/Checkout/My Account pages, then run test-mode checkout before live payment.

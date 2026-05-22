@@ -110,6 +110,8 @@ Create a primary menu with this order:
 - MEDIVISTA uses a WordPress Multisite model with `www.medivista.co.kr` for the catalog site and `shop.medivista.co.kr` for WooCommerce.
 - WooCommerce payment and checkout belong only on `shop.medivista.co.kr`.
 - Keep the main site Brand Shop button linked to `https://shop.medivista.co.kr`.
+- Upload `dist/medivista-wp-theme-shop-20260522-wp.zip` to the shop site only.
+- Activate `MEDIVISTA Shop` on `shop.medivista.co.kr` only.
 - Use [wordpress-multisite-operations.md](wordpress-multisite-operations.md) for the multisite operating model.
 - Use [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md) when configuring WooCommerce pages and payment on the shop WordPress admin.
 - Copy the MEDIVISTA theme direction to the shop site, but keep shop behavior product/payment-only instead of inquiry-first catalog behavior.

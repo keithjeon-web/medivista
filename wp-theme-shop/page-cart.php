@@ -1,0 +1,21 @@
+<?php get_header(); ?>
+<main>
+  <section class="shop-page-title">
+    <div class="shop-container">
+      <p class="shop-eyebrow">Brand Shop</p>
+      <h1>Cart</h1>
+    </div>
+  </section>
+  <section class="shop-section">
+    <div class="shop-container shop-commerce-frame">
+      <?php
+      if (class_exists('WooCommerce')) {
+          echo do_shortcode('[woocommerce_cart]');
+      } else {
+          echo '<article class="shop-notice"><h2>WooCommerce is not active yet</h2><p>Activate WooCommerce on the shop site only to enable the cart.</p></article>';
+      }
+      ?>
+    </div>
+  </section>
+</main>
+<?php get_footer(); ?>
