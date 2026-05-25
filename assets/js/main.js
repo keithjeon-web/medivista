@@ -11,9 +11,13 @@ function buildWhatsAppUrl(productName, customMessage) {
 }
 
 document.querySelectorAll('[data-whatsapp]').forEach((link) => {
-  link.setAttribute('href', buildWhatsAppUrl(link.dataset.product));
+  const productName = link.dataset.product?.trim();
+  link.setAttribute('href', buildWhatsAppUrl(productName));
   link.setAttribute('target', '_blank');
   link.setAttribute('rel', 'noopener noreferrer');
+  const label = productName ? `Inquire via WhatsApp about ${productName}` : 'Inquire via WhatsApp';
+  link.setAttribute('aria-label', label);
+  link.setAttribute('title', label);
 });
 
 document.querySelectorAll('.site-header').forEach((header) => {
