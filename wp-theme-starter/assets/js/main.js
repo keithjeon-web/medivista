@@ -369,11 +369,11 @@ async function initWorldMap(mapNode) {
     if (!response.ok) throw new Error(`World atlas request failed: ${response.status}`);
     const world = await response.json();
 
-    const width = Math.max(720, Math.round(mapNode.getBoundingClientRect().width || 960));
-    const height = Math.round(width * 0.5);
+    const width = 960;
+    const height = 500;
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-    svg.setAttribute('width', String(width));
-    svg.setAttribute('height', String(height));
+    svg.removeAttribute('width');
+    svg.removeAttribute('height');
     svg.innerHTML = '<title id="world-map-title">Actual MEDIVISTA global network map by market zone</title>';
 
     const projection = d3.geoNaturalEarth1().scale(width / 6.2).translate([width / 2, height / 2 + height * 0.04]);
