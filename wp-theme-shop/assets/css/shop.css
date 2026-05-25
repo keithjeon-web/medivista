@@ -8,6 +8,27 @@
   --shop-surface: #ffffff;
   --shop-mist: #f6f9fc;
 }
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(42, 155, 212, 0.35);
+  box-shadow: 0 10px 28px rgba(14, 18, 22, 0.12);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+  z-index: 1001;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: none;
+}
 
 * { box-sizing: border-box; }
 body {

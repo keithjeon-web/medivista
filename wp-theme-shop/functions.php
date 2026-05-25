@@ -14,8 +14,8 @@ function medivista_shop_setup() {
 add_action('after_setup_theme', 'medivista_shop_setup');
 
 function medivista_shop_enqueue_assets() {
-    wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array(), '20260522a');
-    wp_enqueue_script('medivista-shop', get_template_directory_uri() . '/assets/js/shop.js', array(), '20260522a', true);
+    wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array(), '20260525a');
+    wp_enqueue_script('medivista-shop', get_template_directory_uri() . '/assets/js/shop.js', array(), '20260525a', true);
 }
 add_action('wp_enqueue_scripts', 'medivista_shop_enqueue_assets');
 

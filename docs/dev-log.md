@@ -602,3 +602,12 @@
 - Result: network package contains `wp-theme-starter/` and `wp-theme-shop/` at ZIP top level; main site should activate `MEDIVISTA Starter`, shop site should activate `MEDIVISTA Shop`.
 - Checks: recovery closeout PASS for JS, fallback PHP lint, local preview, main ZIP, shop ZIP, network themes ZIP, XML, product images, and commerce/claim safety scan.
 - Next: upload/extract `dist/medivista-wp-network-themes-20260525.zip` through hosting file manager or SFTP into `wp-content/themes/`, then network-enable both themes and activate the correct theme per subdomain.
+
+## 2026-05-25 - Production cycle: skip link + cache-bust parity
+
+- Focus: improve accessibility and keyboard navigation with a global Skip to content link, aligned across static pages + WordPress starter + WordPress shop theme.
+- Change: added `.skip-link` + `id="main-content"` anchors across the main static pages and both WordPress themes.
+- Cache-bust parity: bumped static pages + WordPress starter + WordPress shop asset versions to `20260525a`.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; `node --check wp-theme-shop/assets/js/shop.js` PASS; commerce/claim scans PASS; Brand Shop URL scan PASS.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report `2026-05-25 14:38:30 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIPs/XML + product images + safety scan; WARN for GitHub Pages push and public preview parity due to network connectivity (GitHub port 443 connect failed).
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then verify public preview with `v=20260525a` and visually QA Skip to content on desktop + mobile.

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main>
+<main id="main-content">
   <section class="shop-page-title">
     <div class="shop-container">
       <p class="shop-eyebrow">Secure Checkout</p>

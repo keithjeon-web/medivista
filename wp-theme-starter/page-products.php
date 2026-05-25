@@ -4,7 +4,7 @@ Template Name: MEDIVISTA Products
 */
 get_header();
 ?>
-<main>
+<main id="main-content">
   <section class="page-banner">
     <div class="container">
       <p class="eyebrow">Products</p>

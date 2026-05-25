@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main>
+<main id="main-content">
   <section class="shop-section">
     <div class="shop-container">
       <?php if (have_posts()) : ?>

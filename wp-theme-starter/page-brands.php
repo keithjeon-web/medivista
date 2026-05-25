@@ -4,7 +4,7 @@ Template Name: MEDIVISTA Brands
 */
 get_header();
 ?>
-<main>
+<main id="main-content">
   <section class="brand-dark-hero">
     <div class="container">
       <div class="brand-hero-grid">

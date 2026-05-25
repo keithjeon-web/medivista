@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main>
+<main id="main-content">
   <section class="shop-hero">
     <div class="shop-container shop-hero-grid">
       <div>

@@ -31,6 +31,27 @@ a { color: inherit; }
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(18px);
 }
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(42, 155, 212, 0.35);
+  box-shadow: 0 10px 28px rgba(14, 18, 22, 0.12);
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transform: translateY(-160%);
+  transition: transform 160ms ease;
+  z-index: 1001;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: none;
+}
 .header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 96px; gap: 24px; padding: 12px 0; }
 .logo { display: inline-flex; align-items: center; justify-content: flex-start; width: auto; max-width: 300px; height: 72px; text-decoration: none; overflow: visible; }
 .logo img { display: block; width: clamp(180px, 28vw, 280px); height: auto; max-width: 100%; max-height: none; object-fit: contain; object-position: left center; }
