@@ -169,7 +169,7 @@ a.social-icon:focus-visible {
   align-items: center;
   color: var(--gold-type);
   background:
-    url("../images/hero-gold-field.svg") center / cover no-repeat,
+    url("../images/hero-gold-bg.jpg") center / cover no-repeat,
     #f8f3e6;
 }
 .hero-slide.is-active {
@@ -178,7 +178,7 @@ a.social-icon:focus-visible {
 .hero-slide-blue {
   color: var(--blue-type);
   background:
-    url("../images/hero-blue-field.svg") center / cover no-repeat,
+    url("../images/hero-blue-bg.jpg") center / cover no-repeat,
     #eef4ff;
 }
 .hero-slide-gold,
@@ -186,7 +186,7 @@ a.social-icon:focus-visible {
 .hero-slide-network,
 .hero-slide-inquiry {
   background:
-    url("../images/hero-gold-field.svg") center / cover no-repeat,
+    url("../images/hero-gold-bg.jpg") center / cover no-repeat,
     #f8f3e6;
 }
 .hero-layout {

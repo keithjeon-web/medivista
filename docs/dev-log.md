@@ -614,6 +614,15 @@
 - Note: no user-supplied A/B banner image files were present in the project folder, so the implementation uses existing product WebP visuals plus prepared background assets.
 - Next: visually QA the public Home hero at desktop/mobile widths, then replace the prepared background assets with the supplied A/B image files if they are added to the project.
 
+## 2026-05-25 - Follow-up: supplied A/B hero backgrounds
+
+- Focus: replace the temporary hero background SVGs with the user-supplied A/B banner background files.
+- Source: `KakaoTalk_20260524_130527916.png` used as the blue A-option background; `BannerBG_Gold.png` used as the gold B-option background.
+- Change: generated web-ready compressed hero assets `assets/images/hero-blue-bg.jpg` and `assets/images/hero-gold-bg.jpg`, then mirrored them into `wp-theme-starter/assets/images/`.
+- Change: updated static and WordPress starter CSS to use the supplied A/B background assets and bumped cache token to `20260525c`.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; recovery closeout PASS for JS, fallback PHP lint, local preview, WordPress ZIPs, network themes ZIP, XML, product images, and safety scan.
+- Next: visually QA the public Home hero and decide whether all five slides should use the gold B background or keep the first slide as blue A and the remaining slides as gold B.
+
 ## 2026-05-25 - Production cycle: skip link + cache-bust parity
 
 - Focus: improve accessibility and keyboard navigation with a global Skip to content link, aligned across static pages + WordPress starter + WordPress shop theme.
@@ -622,3 +631,23 @@
 - Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; `node --check wp-theme-shop/assets/js/shop.js` PASS; commerce/claim scans PASS; Brand Shop URL scan PASS.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report `2026-05-25 14:38:30 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIPs/XML + product images + safety scan; WARN for GitHub Pages push and public preview parity due to network connectivity (GitHub port 443 connect failed).
 - Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then verify public preview with `v=20260525a` and visually QA Skip to content on desktop + mobile.
+
+## 2026-05-25 - Production cycle: responsive actual world map SVG
+
+- Focus: reduce mobile/embedded overflow risk by keeping the D3-rendered world map SVG responsive (scale by `viewBox`, not fixed `width`/`height` attributes).
+- Change: updated the world map initializer in `assets/js/main.js` and `wp-theme-starter/assets/js/main.js` (and mirrored into `.deploy-medivista-github`) to render at `960x500` via `viewBox` and explicitly remove SVG `width`/`height` attributes after render.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS.
+- Safety: commerce scan flagged only documentation mentions (no commerce UI); risky-claim scan (FDA/KFDA/clinically proven/guaranteed) returned no runtime matches; Brand Shop links remain `https://shop.medivista.co.kr`.
+- Error: direct script invocation `.\tools\medivista-error-recovery.ps1 ...` was blocked by PowerShell execution policy; recovered by using `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip`.
+- Closeout: ran the recovery script (report `2026-05-25 16:31:10 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIPs/XML + images + safety scan; WARN for public preview parity fetch (remote connect blocked) and `gh-pages` push not executed without `-PushDeploy`.
+- Deploy: committed `.deploy-medivista-github` `gh-pages` as `ad851b2 fix: make world map SVG responsive` (local branch is ahead 1; push pending).
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then visually QA the Global Network map on public Home at desktop/mobile widths using `v=20260525b`.
+
+## 2026-05-25 - Production cycle: reduce product image layout shift (CLS)
+
+- Focus: reduce layout shift while product images lazy-load by providing explicit `width`/`height` on the JS-inserted `<img>` inside `.product-image`.
+- Change: set `img.width = 1200` and `img.height = 900` in `assets/js/main.js`, mirrored into `wp-theme-starter/assets/js/main.js` and `.deploy-medivista-github/assets/js/main.js`.
+- Checks: `node --check` PASS for all three JS files; Brand Shop URL scan OK.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-05-25 18:31:44 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIPs/XML + product images + safety scan; WARN for public preview parity fetch and deploy push (network blocked).
+- Note: the prohibited-commerce keyword scan returned expected matches in the shop theme and the product name `Cartin`; no commerce UI was added to the main catalog pages.
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then visually QA Products cards (desktop + mobile) for any cropping/letterboxing changes and confirm the public preview shows `v=20260525b`.
