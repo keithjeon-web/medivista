@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="920" viewBox="0 0 1800 920" role="img" aria-label="light blue brand background">
+  <rect width="1800" height="920" fill="#eef4ff"/>
+  <circle cx="1470" cy="130" r="390" fill="#dbeafe" opacity=".74"/>
+  <circle cx="1180" cy="680" r="460" fill="#ffffff" opacity=".68"/>
+  <path d="M0 730 C 320 650 530 805 850 720 C 1150 640 1410 610 1800 680 L1800 920 L0 920 Z" fill="#dbeafe" opacity=".52"/>
+  <path d="M120 130 L760 130" stroke="#2563eb" stroke-width="2" opacity=".2"/>
+  <path d="M1040 210 L1680 210" stroke="#c9a84c" stroke-width="2" opacity=".18"/>
+  <path d="M1230 0 L1800 0 L1800 920 L1560 920 C1660 690 1570 420 1230 0Z" fill="#2563eb" opacity=".08"/>
+</svg>

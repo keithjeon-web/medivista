@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="920" viewBox="0 0 1800 920" role="img" aria-label="warm gold brand background">
+  <rect width="1800" height="920" fill="#f8f3e6"/>
+  <circle cx="1480" cy="150" r="390" fill="#f1dfad" opacity=".42"/>
+  <circle cx="1220" cy="680" r="460" fill="#ffffff" opacity=".58"/>
+  <path d="M0 720 C 320 650 530 805 850 720 C 1150 640 1410 610 1800 680 L1800 920 L0 920 Z" fill="#eadba9" opacity=".36"/>
+  <path d="M120 130 L760 130" stroke="#c9a84c" stroke-width="2" opacity=".28"/>
+  <path d="M1040 210 L1680 210" stroke="#c9a84c" stroke-width="2" opacity=".18"/>
+  <path d="M1220 0 L1800 0 L1800 920 L1540 920 C1640 690 1560 420 1220 0Z" fill="#c9a84c" opacity=".08"/>
+</svg>

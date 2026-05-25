@@ -603,6 +603,17 @@
 - Checks: recovery closeout PASS for JS, fallback PHP lint, local preview, main ZIP, shop ZIP, network themes ZIP, XML, product images, and commerce/claim safety scan.
 - Next: upload/extract `dist/medivista-wp-network-themes-20260525.zip` through hosting file manager or SFTP into `wp-content/themes/`, then network-enable both themes and activate the correct theme per subdomain.
 
+## 2026-05-25 - Production cycle: brand palette and hero banner refinement
+
+- Focus: apply design feedback that gold should lead the palette while blue stays limited to functional accents and selected supporting surfaces.
+- Change: updated core palette variables to use button blue `#2563EB`, blue typography `#073772`, and gold typography `#5F524A`; reduced the large blue hero surface in favor of gold/neutral banner backgrounds.
+- Change: replaced the old full-surface blue linear hero treatment with image-backed action slides using product visuals, subtle gold/blue background image fields, and a two-column hero layout.
+- Change: added `assets/images/hero-gold-field.svg` and `assets/images/hero-blue-field.svg`, mirrored them into the WordPress starter, and updated the WordPress hero template.
+- Change: bumped static and WordPress starter asset token to `20260525b` for cache parity.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; recovery closeout PASS for JS, fallback PHP lint, local preview, WordPress ZIPs, network themes ZIP, XML, product images, and safety scan.
+- Note: no user-supplied A/B banner image files were present in the project folder, so the implementation uses existing product WebP visuals plus prepared background assets.
+- Next: visually QA the public Home hero at desktop/mobile widths, then replace the prepared background assets with the supplied A/B image files if they are added to the project.
+
 ## 2026-05-25 - Production cycle: skip link + cache-bust parity
 
 - Focus: improve accessibility and keyboard navigation with a global Skip to content link, aligned across static pages + WordPress starter + WordPress shop theme.
