@@ -592,3 +592,13 @@
 - Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; recovery closeout PASS for JS, fallback PHP lint, local preview, WordPress ZIPs, XML, product images, and commerce/claim safety scan.
 - Note: local in-app browser automation was unavailable because the browser bridge was not trusted in this session; file-level and recovery-script checks were used instead.
 - Next: push `.deploy-medivista-github` `gh-pages`, then visually QA the public Brands page at desktop and mobile widths before expanding the dedicated CELLEXOR product page.
+
+## 2026-05-25 - Production cycle: subdomain network theme package
+
+- Focus: prepare one combined package that includes both the main WordPress theme and the shop subdomain theme while keeping each site activated separately in WordPress Multisite.
+- Reference: checked WordPress Multisite guidance confirming themes are installed network-wide but activated per site; a combined ZIP is therefore for hosting/SFTP extraction into `wp-content/themes/`, not for single-theme admin upload.
+- Change: updated `tools/medivista-error-recovery.ps1` to generate and verify `dist/medivista-wp-network-themes-20260525.zip`.
+- Change: added `docs/subdomain-theme-package-guide.md` and updated `docs/wordpress-multisite-operations.md` plus `docs/brand-shop-live-application-steps.md` with the exact extraction and activation flow.
+- Result: network package contains `wp-theme-starter/` and `wp-theme-shop/` at ZIP top level; main site should activate `MEDIVISTA Starter`, shop site should activate `MEDIVISTA Shop`.
+- Checks: recovery closeout PASS for JS, fallback PHP lint, local preview, main ZIP, shop ZIP, network themes ZIP, XML, product images, and commerce/claim safety scan.
+- Next: upload/extract `dist/medivista-wp-network-themes-20260525.zip` through hosting file manager or SFTP into `wp-content/themes/`, then network-enable both themes and activate the correct theme per subdomain.

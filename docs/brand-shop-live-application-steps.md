@@ -16,6 +16,14 @@ Theme ZIP:
 dist/medivista-wp-theme-shop-20260522-wp.zip
 ```
 
+Combined Multisite theme package:
+
+```text
+dist/medivista-wp-network-themes-20260525.zip
+```
+
+Use the combined package only when extracting through hosting file manager, SFTP, or server-side unzip into `wp-content/themes/`. For WordPress admin theme upload, upload the single theme ZIPs separately.
+
 Draft product CSV:
 
 ```text
@@ -36,8 +44,10 @@ The shop theme currently includes the full `완성이미지\WebP` product image 
 2. Confirm `shop.medivista.co.kr` exists as a separate site.
 3. Confirm `www.medivista.co.kr` remains the main catalog site.
 4. Confirm DNS/subdomain mapping is complete for `shop.medivista.co.kr`.
-5. Network-enable the `MEDIVISTA Shop` theme after upload.
-6. Activate `MEDIVISTA Shop` only inside the shop site dashboard.
+5. If using the combined package, extract `dist/medivista-wp-network-themes-20260525.zip` into `wp-content/themes/`.
+6. Network-enable both `MEDIVISTA Starter` and `MEDIVISTA Shop`.
+7. Activate `MEDIVISTA Starter` inside the main `www.medivista.co.kr` site dashboard.
+8. Activate `MEDIVISTA Shop` only inside the shop site dashboard.
 
 ## WooCommerce Setup
 

@@ -176,6 +176,40 @@ Use the same MEDIVISTA visual theme direction on both sites, but keep the site b
 
 The shop site may copy the main theme styling, header, logo, and brand tone, but WooCommerce product, cart, checkout, and account templates should replace inquiry-first catalog behavior.
 
+## Theme Package Strategy
+
+WordPress Multisite can use different active themes per subdomain site while sharing the same WordPress core/theme/plugin files. The practical MEDIVISTA package strategy is:
+
+```text
+dist/medivista-wp-theme-starter-20260511-wp.zip   -> single main-site theme upload
+dist/medivista-wp-theme-shop-20260522-wp.zip      -> single shop-site theme upload
+dist/medivista-wp-network-themes-20260525.zip     -> combined network package
+```
+
+The combined network package contains both theme folders at the ZIP top level:
+
+```text
+wp-theme-starter/
+wp-theme-shop/
+```
+
+Use the combined package when installing through hosting file manager, SFTP, or a server-side unzip workflow into:
+
+```text
+wp-content/themes/
+```
+
+Do not upload the combined package through `Appearance > Themes > Add New`, because WordPress theme upload expects one theme folder per ZIP. For WordPress admin upload, use the single theme ZIPs separately.
+
+After the combined package is extracted:
+
+1. Go to `Network Admin > Themes`.
+2. Network-enable `MEDIVISTA Starter`.
+3. Network-enable `MEDIVISTA Shop`.
+4. In the `www.medivista.co.kr` site dashboard, activate `MEDIVISTA Starter`.
+5. In the `shop.medivista.co.kr` site dashboard, activate `MEDIVISTA Shop`.
+6. Activate WooCommerce only inside the shop site.
+
 ## Multisite Plugin Policy
 
 - Install WooCommerce from the Network Admin plugin screen if using Multisite plugin management.
