@@ -140,6 +140,79 @@ document.querySelectorAll('[data-action-slider]').forEach((slider) => {
 });
 
 document.querySelectorAll('.contact-form').forEach((form) => {
+  const presetButtons = Array.from(document.querySelectorAll('[data-inquiry-preset]'));
+  const previewNode = form.querySelector('[data-contact-preview-text]');
+  const fields = {
+    firstName: form.elements['first-name'],
+    email: form.elements.email,
+    contactNumber: form.elements['contact-number'],
+    country: form.elements.country,
+    businessType: form.elements['business-type'],
+    productType: form.elements['product-type'],
+    message: form.elements.message,
+  };
+  const presets = {
+    distributor: {
+      businessType: 'Distributor',
+      productType: 'Botulinum Toxins',
+      message: 'We are reviewing distribution opportunities and would like to discuss market coverage, preferred product categories, and supply process.'
+    },
+    clinic: {
+      businessType: 'Clinic',
+      productType: 'Skin Boosters',
+      message: 'We would like to review suitable product categories for clinic use and receive guidance on the best inquiry path for our market.'
+    },
+    brand: {
+      businessType: 'Brand Partner',
+      productType: 'Cosmetics',
+      message: 'We have a CELLEXOR-related brand inquiry and would like to discuss positioning, product interest, and partner communication.'
+    },
+    market: {
+      businessType: 'Distributor',
+      productType: 'Others',
+      message: 'We are exploring a new market request and would like to share our country, business model, and current product interest for review.'
+    }
+  };
+
+  function buildInquiryLines() {
+    return [
+      'Hello MEDIVISTA, I would like to send a B2B inquiry.',
+      `Name: ${fields.firstName?.value?.trim() || ''}`,
+      `Email: ${fields.email?.value?.trim() || ''}`,
+      `Contact Number: ${fields.contactNumber?.value?.trim() || ''}`,
+      `Country: ${fields.country?.value?.trim() || ''}`,
+      `Business Type: ${fields.businessType?.value || 'Not specified'}`,
+      `Product Type: ${fields.productType?.value || 'Not specified'}`,
+      fields.message?.value?.trim() ? `Message: ${fields.message.value.trim()}` : '',
+    ].filter(Boolean);
+  }
+
+  function updatePreview() {
+    if (previewNode) previewNode.textContent = buildInquiryLines().join('\n');
+  }
+
+  presetButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const preset = presets[button.dataset.inquiryPreset];
+      if (!preset) return;
+
+      if (fields.businessType) fields.businessType.value = preset.businessType;
+      if (fields.productType) fields.productType.value = preset.productType;
+      if (fields.message && !fields.message.value.trim()) fields.message.value = preset.message;
+
+      presetButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+      updatePreview();
+      fields.country?.focus();
+    });
+  });
+
+  Object.values(fields).forEach((field) => {
+    field?.addEventListener('input', updatePreview);
+    field?.addEventListener('change', updatePreview);
+  });
+
+  updatePreview();
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -148,19 +221,7 @@ document.querySelectorAll('.contact-form').forEach((form) => {
       return;
     }
 
-    const data = new FormData(form);
-    const lines = [
-      'Hello MEDIVISTA, I would like to send a B2B inquiry.',
-      `Name: ${data.get('first-name') || ''}`,
-      `Email: ${data.get('email') || ''}`,
-      `Contact Number: ${data.get('contact-number') || ''}`,
-      `Country: ${data.get('country') || ''}`,
-      `Business Type: ${data.get('business-type') || 'Not specified'}`,
-      `Product Type: ${data.get('product-type') || 'Not specified'}`,
-      data.get('message') ? `Message: ${data.get('message')}` : '',
-    ].filter(Boolean);
-
-    window.open(buildWhatsAppUrl(null, lines.join('\n')), '_blank', 'noopener,noreferrer');
+    window.open(buildWhatsAppUrl(null, buildInquiryLines().join('\n')), '_blank', 'noopener,noreferrer');
   });
 });
 
