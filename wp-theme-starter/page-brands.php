@@ -69,7 +69,7 @@ get_header();
       </div>
       <div class="grid grid-3">
         <article class="info-card"><p class="card-meta">Brand Philosophy</p><h3>Premium aesthetic care</h3><p>A polished brand environment for professional review, distributor conversation, and product education.</p></article>
-        <article class="info-card"><p class="card-meta">Product Philosophy</p><h3>Designed for Re:Tone review</h3><p>Product communication focuses on formula concept, presentation, and partner inquiry without price or transaction flow.</p></article>
+        <article class="info-card"><p class="card-meta">Product Philosophy</p><h3>Designed for Re:Tone review</h3><p>Product communication focuses on formula concept, presentation, and partner inquiry without sales or ordering flow.</p></article>
         <article class="info-card"><p class="card-meta">External CTA</p><h3>Official brand site connection</h3><p>Visitors can move from the MEDIVISTA B2B overview to the CELLEXOR brand site for deeper brand browsing.</p><a class="btn primary" href="https://cellexor.com/" target="_blank" rel="noopener">Visit Brand Site</a></article>
       </div>
     </div>

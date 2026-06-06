@@ -38,9 +38,9 @@
           </div></div>
         </div>
         <div class="slider-controls product-controls" aria-label="Popular products slider controls">
-          <button type="button" data-slider-prev aria-label="Previous product slide">Prev</button>
+          <button type="button" data-slider-prev aria-label="Previous product slide"><span class="slider-control-icon" aria-hidden="true">&lt;</span><span class="sr-only">Previous product slide</span></button>
           <div class="slider-dots" data-slider-dots></div>
-          <button type="button" data-slider-next aria-label="Next product slide">Next</button>
+          <button type="button" data-slider-next aria-label="Next product slide"><span class="slider-control-icon" aria-hidden="true">&gt;</span><span class="sr-only">Next product slide</span></button>
         </div>
       </div>
     </div>

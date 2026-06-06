@@ -62,8 +62,8 @@
     </article>
   </div>
   <div class="slider-controls hero-controls" aria-label="Hero slider controls">
-    <button type="button" data-slider-prev aria-label="Previous hero slide">Prev</button>
+    <button type="button" data-slider-prev aria-label="Previous hero slide"><span class="slider-control-icon" aria-hidden="true">&lt;</span><span class="sr-only">Previous hero slide</span></button>
     <div class="slider-dots" data-slider-dots></div>
-    <button type="button" data-slider-next aria-label="Next hero slide">Next</button>
+    <button type="button" data-slider-next aria-label="Next hero slide"><span class="slider-control-icon" aria-hidden="true">&gt;</span><span class="sr-only">Next hero slide</span></button>
   </div>
 </section>
