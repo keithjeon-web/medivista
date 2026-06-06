@@ -651,3 +651,34 @@
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-05-25 18:31:44 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIPs/XML + product images + safety scan; WARN for public preview parity fetch and deploy push (network blocked).
 - Note: the prohibited-commerce keyword scan returned expected matches in the shop theme and the product name `Cartin`; no commerce UI was added to the main catalog pages.
 - Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages`, then visually QA Products cards (desktop + mobile) for any cropping/letterboxing changes and confirm the public preview shows `v=20260525b`.
+
+## 2026-05-25 - Production cycle: WhatsApp CTA accessibility labels
+
+- Focus: improve accessibility for product inquiry CTAs by ensuring WhatsApp buttons have descriptive accessible labels (screen readers / tooltips) while keeping catalog-only behavior.
+- Change: updated the `[data-whatsapp]` initializer to add `aria-label` and `title` using the product name when available (static + WordPress starter + deploy checkout parity).
+- Files: `assets/js/main.js`, `wp-theme-starter/assets/js/main.js`, `.deploy-medivista-github/assets/js/main.js`.
+- Deploy: committed `.deploy-medivista-github` `gh-pages` as `0f166bb deploy: add WhatsApp CTA labels` (push pending).
+- Checks: `node --check` PASS (all three JS files); prohibited-commerce scan PASS; risky-claim scan PASS; Brand Shop URL scan PASS.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-05-25 20:32:03 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIP/XML + product images + safety scan; WARN for deploy push not executed (no `-PushDeploy`) and public preview fetch failing in this environment.
+- Next: from a network-enabled environment, run recovery with `-PushDeploy` if publishing is intended, then verify public preview (Home + Products + Contact) and confirm WhatsApp CTAs announce the product name correctly with keyboard/screen-reader navigation.
+
+## 2026-05-25 - Production cycle: wp-theme-shop cache-bust parity
+
+- Focus: reduce stale-cache and parity drift by aligning the WordPress shop theme asset versions with the current site cache-bust token (`20260525c`).
+- Change: bumped `wp-theme-shop` enqueue versions and header logo query token from `20260525a` -> `20260525c`.
+- Files: `wp-theme-shop/functions.php`, `wp-theme-shop/header.php`.
+- Checks: `node --check` PASS (`assets/js/main.js`, `wp-theme-starter/assets/js/main.js`, `wp-theme-shop/assets/js/shop.js`); compliance scans found no prohibited commerce UI or risky claim keywords in runtime pages (expected matches only in `AGENTS.md` and the category label `Hair Treatment`).
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-05-25 22:31:20 +09:00`): PASS for JS + fallback PHP lint + local preview + ZIP/XML + product images + safety scan; WARN for deploy push (not executed without `-PushDeploy`) and public preview parity fetch (network blocked here).
+- Next: from a network-enabled environment, run recovery with `-PushDeploy` (or push `.deploy-medivista-github` `gh-pages`) and verify the public preview uses `v=20260525c` (Home + Products + Contact + header/logo on mobile/desktop).
+
+## 2026-06-06 - Production cycle: compact slider controls + cache-bust parity
+
+- Focus: improve mobile Home QA by replacing visible `Prev`/`Next` slider-control text with compact symbolic controls while retaining accessible labels for the Home hero and Popular Products sliders.
+- Change: added shared `.slider-control-icon` and `.sr-only` CSS, updated static Home slider buttons, and mirrored the same controls into the WordPress starter hero/product slider templates.
+- Change: bumped main static and WordPress starter cache token from `20260525c` to `20260606a` across static pages and WordPress starter enqueue/header references.
+- Change: compliance cleanup replaced an existing Brands page mention of `price` with inquiry-only wording so the main runtime commerce scan has no prohibited commerce text matches.
+- Deploy: mirrored touched files into `.deploy-medivista-github` and committed `de4ed82 fix: tighten slider controls for mobile`; branch is ahead of `origin/gh-pages` by 1 because push failed from this environment.
+- Checks: `node --check` PASS for `assets/js/main.js`, `wp-theme-starter/assets/js/main.js`, and `wp-theme-shop/assets/js/shop.js`; prohibited commerce scan PASS for main runtime files; risky-claim scan PASS; Brand Shop URL scan PASS; old cache token `20260525c` absent from main static/WordPress starter/deploy runtime files.
+- Visual defect check: file-level QA confirms smaller slider controls reduce mobile wrapping risk; local preview started inside recovery and returned HTTP 200, but persistent browser visual QA was not available after the recovery process exited.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip -PushDeploy` (report `2026-06-06 12:26:26 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIPs/XML + product images + safety scan; WARN for GitHub Pages push and public preview parity because `github.com:443` / public fetch are blocked in this environment.
+- Next: from a network-enabled environment, push `.deploy-medivista-github` `gh-pages` commit `de4ed82`, then verify public Home slider controls, header/logo, Products, Contact, and Global Reach at desktop/mobile widths with `v=20260606a`.
