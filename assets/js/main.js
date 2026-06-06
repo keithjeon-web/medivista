@@ -203,6 +203,7 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
   const categoryFilter = toolbar.querySelector('[data-product-filter]');
   const resetButton = toolbar.querySelector('[data-product-reset]');
   const countNode = toolbar.querySelector('[data-product-count]');
+  const summaryNode = section?.querySelector('[data-product-summary]');
   const emptyNode = section?.querySelector('[data-product-empty]');
   const cards = Array.from(section?.querySelectorAll('.product-card') || []);
   const blocks = Array.from(section?.querySelectorAll('.product-category-block') || []);
@@ -231,11 +232,15 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
       if (isActive) link.setAttribute('aria-current', 'true');
       else link.removeAttribute('aria-current');
     });
+
+    const activeLink = tabs.querySelector(`a[href="${activeHref}"]`);
+    activeLink?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   }
 
   function updateCatalog() {
     const query = normalize(searchInput?.value);
     const selectedCategory = categoryFilter?.value || 'all';
+    const categoryLabel = categoryFilter?.selectedOptions?.[0]?.textContent?.trim() || 'All categories';
     let visibleCount = 0;
 
     cards.forEach((card) => {
@@ -254,6 +259,14 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
 
     if (countNode) countNode.textContent = String(visibleCount);
     if (emptyNode) emptyNode.hidden = visibleCount !== 0;
+    if (summaryNode) {
+      const summaryParts = [];
+      if (selectedCategory === 'all') summaryParts.push('Showing all MEDIVISTA catalog categories');
+      else summaryParts.push(`Showing ${categoryLabel}`);
+      if (query) summaryParts.push(`matching "${query}"`);
+      summaryNode.textContent = `${summaryParts.join(' ')} for professional partner review.`;
+    }
+    if (selectedCategory === 'all') setActiveTab('');
   }
 
   searchInput?.addEventListener('input', updateCatalog);
@@ -288,6 +301,8 @@ document.querySelectorAll('[data-product-catalog]').forEach((toolbar) => {
         if (!target) return;
 
         event.preventDefault();
+        if (categoryFilter) categoryFilter.value = id;
+        updateCatalog();
         setActiveTab(id);
         scrollToBlock(target);
       });
