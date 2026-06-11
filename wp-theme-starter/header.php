@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
@@ -11,13 +11,26 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="MEDIVISTA home">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260611b'); ?>" alt="MEDIVISTA">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260611c'); ?>" alt="MEDIVISTA">
       
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
     <nav id="primary-nav" class="main-nav" aria-label="Main menu">
       <a href="<?php echo esc_url(home_url('/about/')); ?>">ABOUT</a>
-      <a href="<?php echo esc_url(home_url('/products/')); ?>">PRODUCTS</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/products/')); ?>" aria-haspopup="true">PRODUCTS</a>
+        <div class="nav-dropdown-menu">
+          <a href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>">Botulinum Toxins</a>
+          <a href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>">Dermal Fillers</a>
+          <a href="<?php echo esc_url(home_url('/products/#body-fillers')); ?>">Body Fillers</a>
+          <a href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>">Skin Boosters</a>
+          <a href="<?php echo esc_url(home_url('/products/#lipolysis')); ?>">Lipolysis</a>
+          <a href="<?php echo esc_url(home_url('/products/#exosomes')); ?>">Exosomes</a>
+          <a href="<?php echo esc_url(home_url('/products/#biostimulators')); ?>">Biostimulators</a>
+          <a href="<?php echo esc_url(home_url('/products/#hair-treatment')); ?>">Hair Treatment</a>
+          <a href="<?php echo esc_url(home_url('/products/#others')); ?>">Others</a>
+        </div>
+      </div>
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/brands/')); ?>" aria-haspopup="true">BRANDS</a>
         <div class="nav-dropdown-menu">
@@ -33,5 +46,6 @@
     </nav>
   </div>
 </header>
+
 
 

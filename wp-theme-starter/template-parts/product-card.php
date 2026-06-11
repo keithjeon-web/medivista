@@ -75,6 +75,11 @@ $product_categories = array(
       array('name' => 'DermArcane Deep', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
       array('name' => 'DermArcane Fine', 'type' => '', 'spec' => '1.1ml x 1Syringe'),
     ),
+  ),  'body-fillers' => array(
+    'label' => 'Body Fillers',
+    'items' => array(
+      array('name' => 'Body Filler Line Coming Soon', 'type' => '', 'spec' => ''),
+    ),
   ),  'skin-boosters' => array(
     'label' => 'Skin Boosters',
     'items' => array(
@@ -110,6 +115,11 @@ $product_categories = array(
       array('name' => 'V line A Solution Face', 'type' => '', 'spec' => '10ml x 5Vials'),
       array('name' => 'V line A Solution Body', 'type' => '', 'spec' => '30ml x 3Vials'),
     ),
+  ),  'exosomes' => array(
+    'label' => 'Exosomes',
+    'items' => array(
+      array('name' => 'Exosome Line Coming Soon', 'type' => '', 'spec' => ''),
+    ),
   ),  'biostimulators' => array(
     'label' => 'Biostimulators',
     'items' => array(
@@ -117,6 +127,11 @@ $product_categories = array(
       array('name' => 'Sculptra', 'type' => 'PLLA', 'spec' => ''),
       array('name' => 'Olidia', 'type' => 'PLLA', 'spec' => '365mg x 1vial'),
       array('name' => 'Radiesse', 'type' => 'CaHA', 'spec' => ''),
+    ),
+  ),  'hair-treatment' => array(
+    'label' => 'Hair Treatment',
+    'items' => array(
+      array('name' => 'Hair Care Line Coming Soon', 'type' => '', 'spec' => ''),
     ),
   ),  'others' => array(
     'label' => 'Others',
@@ -180,7 +195,7 @@ $product_image_slug_counts = array();
             <?php if (!empty($product['type'])) : ?><p class="product-detail"><strong>Type</strong><span><?php echo esc_html($product['type']); ?></span></p><?php endif; ?>
             <?php if (!empty($product['spec'])) : ?><p class="product-detail"><strong>Spec</strong><span><?php echo esc_html($product['spec']); ?></span></p><?php endif; ?>
           </div>
-          <p><?php echo $category_id === 'cosmetics' ? 'Cosmetic and medical aesthetic cosmetic details are being prepared for catalog-only B2B review.' : 'Catalog-only product information for professional B2B review.'; ?></p>
+          <p><?php echo in_array($category_id, array('body-fillers', 'exosomes', 'hair-treatment', 'cosmetics'), true) ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="<?php echo esc_attr($product['name']); ?>">Inquire via WhatsApp</a>
         </article>
       <?php endforeach; ?>

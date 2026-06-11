@@ -773,3 +773,15 @@
 - Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; risky-claim/mojibake spot scan PASS after removing `guaranteed outcome`; main runtime commerce scan has no new commerce UI.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-06-11 23:08:11 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIPs/XML + product images + safety scan; WARN for deploy push not executed without `-PushDeploy` and public preview fetch blocked in this environment.
 - Next: from a network/browser-enabled environment, push `.deploy-medivista-github` `gh-pages`, then visually verify the Brands dropdown hover/focus and CELLEXOR detail page on desktop and mobile with `v=20260611b`.
+
+## 2026-06-11 - Production cycle: Products submenu operation and WordPress ZIP refresh
+
+- Focus: align the Products category operation with the reference structure at `https://hjcorporations.kr/index` while preserving MEDIVISTA catalog-only rules.
+- Reference: reviewed the reference site's navigation pattern where PRODUCTS exposes category-level child links and the product area uses category labels plus product cards.
+- Change: converted `PRODUCTS` in the static navigation and WordPress starter header into a category dropdown for Botulinum Toxins, Dermal Fillers, Body Fillers, Skin Boosters, Lipolysis, Exosomes, Biostimulators, Hair Treatment, and Others.
+- Change: added Body Fillers, Exosomes, and Hair Treatment to the Products page filter and quick-jump operation, with catalog-only coming-soon inquiry cards where detailed product data is not yet confirmed.
+- Change: adjusted dropdown menu sizing for longer category menus and bumped static/WordPress starter runtime references to `20260611c`.
+- Package: regenerated `dist/medivista-wp-theme-starter-20260511-wp.zip`, `dist/medivista-wp-theme-shop-20260522-wp.zip`, `dist/medivista-wp-network-themes-20260525.zip`, and the direct upload copy `wp-theme-starter.zip`.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; ZIP inspection confirmed `PRODUCTS` dropdown and Body Fillers / Exosomes / Hair Treatment filters are included in `wp-theme-starter.zip`.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-06-11 23:29:11 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIPs/XML + product images + safety scan; WARN for deploy push not executed without `-PushDeploy` and public preview fetch blocked in this environment.
+- Next: upload `wp-theme-starter.zip` or `dist/medivista-wp-theme-starter-20260511-wp.zip` to the main WordPress site, then verify the Products dropdown and Products page category filters on desktop and mobile.
