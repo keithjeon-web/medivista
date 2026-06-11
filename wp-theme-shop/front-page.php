@@ -43,5 +43,29 @@
       <article><span>03</span><strong>Checkout</strong><p>Payment, shipping, tax, privacy, and terms are configured in WooCommerce.</p></article>
     </div>
   </section>
+
+  <section class="shop-section">
+    <div class="shop-container shop-policy-grid">
+      <article class="shop-card shop-policy-card">
+        <p class="shop-eyebrow">Launch Offer</p>
+        <h2>First order benefit and international shipping</h2>
+        <ul>
+          <li>First transaction discount: 10% coupon prepared in WooCommerce.</li>
+          <li>Orders over USD 300: free international shipping.</li>
+          <li>Orders under USD 300: USD 50 customer-paid shipping.</li>
+          <li>B2B and bulk orders: please contact MEDIVISTA through WhatsApp.</li>
+        </ul>
+      </article>
+      <article class="shop-card shop-policy-card">
+        <p class="shop-eyebrow">Product Set</p>
+        <h2>CELLEXOR Re:Tone package options</h2>
+        <ul>
+          <li>1 Set small box / inner box: regular USD 120, sale USD 99.90.</li>
+          <li>5 Set large box / outer box: regular USD 500, sale USD 489.80.</li>
+          <li>Keep product, stock, payment, and shipping updates inside WooCommerce admin.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 </main>
 <?php get_footer(); ?>

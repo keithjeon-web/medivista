@@ -11,7 +11,7 @@
 <header class="shop-header">
   <div class="shop-container shop-header-inner">
     <a class="shop-logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="MEDIVISTA Brand Shop home">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260525a'); ?>" alt="MEDIVISTA Brand Shop">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260525c'); ?>" alt="MEDIVISTA Brand Shop">
     </a>
     <nav class="shop-nav" aria-label="Brand Shop menu">
       <a href="<?php echo esc_url(home_url('/')); ?>">Shop</a>

@@ -81,8 +81,9 @@ The shop theme currently includes the full `완성이미지\WebP` product image 
 
 ## Access Policy
 
-- Do not block China IP traffic on `www.medivista.co.kr`.
-- Block China IP traffic only on `shop.medivista.co.kr`.
+- Do not block Korea IP traffic on `www.medivista.co.kr`.
+- Block Korea IP traffic only on `shop.medivista.co.kr` for non-admin visitors.
+- Keep admin users exempt so the shop can still be managed from Korea.
 - DNS alone does not block countries. Use the available hosting, CDN, WAF, security plugin, or WordPress.com/host-level controls.
 
 ## Guardrails

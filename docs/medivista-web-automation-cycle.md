@@ -15,8 +15,9 @@ Multisite role split:
 
 Access policy:
 
-- Do not block China IP traffic on `www.medivista.co.kr`.
-- Block China IP traffic on `shop.medivista.co.kr` only.
+- Do not block Korea IP traffic on `www.medivista.co.kr`.
+- Block Korea IP traffic on `shop.medivista.co.kr` only for non-admin visitors.
+- Keep shop admin users exempt.
 - DNS is managed through WordPress.com nameservers; country/IP blocking must be handled by the available hosting, CDN, WAF, security plugin, or WordPress.com/host-level controls.
 
 WordPress backup plugins are deferred for now. Do not require a backup plugin during the automation cycle unless the user changes this decision.

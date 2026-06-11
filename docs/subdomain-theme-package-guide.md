@@ -54,5 +54,4 @@ shop.medivista.co.kr -> MEDIVISTA Shop / wp-theme-shop
 - Main site does not show price, cart, checkout, or payment flow.
 - Shop site is the only site with WooCommerce sales flow.
 - Brand Shop links from the main site go to `https://shop.medivista.co.kr`.
-- China IP blocking applies only to the shop site, not the main site.
-
+- Korea IP blocking applies only to the shop site for non-admin visitors, not the main site.

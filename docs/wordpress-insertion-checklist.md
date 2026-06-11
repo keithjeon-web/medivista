@@ -92,7 +92,7 @@ Use these steps when the static public preview is final. There is no staging ste
 12. Configure WooCommerce only on the shop site by following [wordpress-multisite-operations.md](wordpress-multisite-operations.md) and [brand-shop-woocommerce-setup.md](brand-shop-woocommerce-setup.md).
 13. Open each live main-site page and verify header, footer, hero, product cards, contact form, world map, social links, and WhatsApp.
 14. Open the shop site and verify Shop, Cart, Checkout, My Account, payment test mode, and Brand Shop routing.
-15. Confirm China IP remains open on the main site and blocked only on the shop site.
+15. Confirm Korea IP remains open on the main site and blocked only for non-admin visitors on the shop site.
 
 ## Menu Setup
 
@@ -137,8 +137,9 @@ Create a primary menu with this order:
 - Verify Contact form fields and WhatsApp inquiry handoff.
 - Confirm Brand Shop opens `https://shop.medivista.co.kr`.
 - Confirm SEO/AEO blocks on Home and Products remain visible and English-first.
-- Confirm China IP is not blocked on the main site.
-- Confirm China IP blocking is configured only for the shop site.
+- Confirm Korea IP is not blocked on the main site.
+- Confirm Korea IP blocking is configured only for non-admin visitors on the shop site.
+- Confirm admin users remain exempt.
 
 ## Known Remaining Work
 

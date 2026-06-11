@@ -38,9 +38,23 @@ The theme also includes page templates for these slugs:
 4. Create/import CELLEXOR or own-brand products.
 5. Configure payment gateway, tax, shipping, privacy, terms, refund, and exchange policy.
 6. Enable test payment mode and complete a test order.
-7. Confirm China IP blocking applies only to `shop.medivista.co.kr`.
+7. Confirm Korea IP blocking applies only to `shop.medivista.co.kr`, with admin users exempt.
 
 Use `docs/brand-shop-product-import-template.csv` as a draft product import template. Keep imported products unpublished until price, image, stock, shipping, refund, and product copy are confirmed.
+
+For the CELLEXOR Re:Tone launch packages, use:
+
+```text
+docs/brand-shop-cellexor-retone-woocommerce-import.csv
+```
+
+Configured launch package policy:
+
+- 1 Set small box / inner box: regular USD 120, sale USD 99.90.
+- 5 Set large box / outer box: regular USD 500, sale USD 489.80.
+- First transaction coupon: 10% discount.
+- International shipping: free over USD 300; USD 50 below USD 300.
+- B2B / bulk orders: WhatsApp inquiry.
 
 The first draft product image is bundled at:
 
@@ -57,3 +71,9 @@ https://shop.medivista.co.kr/wp-content/themes/wp-theme-shop/assets/images/produ
 ## Main Site Separation
 
 The main MEDIVISTA site remains catalog-only. Price, cart, checkout, and payment flow must stay inside this shop theme/site only.
+
+## Shop Access Control
+
+The theme includes `inc/access-control.php`, which blocks visitors with country code `KR` when a CDN, WAF, host, or security plugin provides a country header such as `CF-IPCountry`. WordPress core alone cannot identify a visitor country without one of those GeoIP sources.
+
+Administrators with `manage_options`, `/wp-admin/`, `/wp-login.php`, AJAX, and cron are exempt so the admin account can still manage the shop.

@@ -1,6 +1,6 @@
 # MEDIVISTA Brand Shop WooCommerce Setup
 
-Updated: 2026-05-14
+Updated: 2026-06-11
 
 ## Scope
 
@@ -37,7 +37,8 @@ Use this flow when the shop WordPress admin is available.
 11. Add CELLEXOR or own-brand products only after product names, images, price policy, and shipping/payment policy are confirmed.
 12. Test the checkout page with a safe test payment mode before accepting live payments.
 13. Keep the main site Brand Shop URL as `https://shop.medivista.co.kr`.
-14. Confirm the shop site blocks China IP traffic through the available hosting/CDN/security layer.
+14. Confirm the shop site blocks Korea IP traffic for non-admin visitors through the available hosting/CDN/security layer.
+15. Follow [brand-shop-wordpress-admin-manual-ko.md](brand-shop-wordpress-admin-manual-ko.md) for the Korean WordPress-admin-only operating manual.
 
 ## Prepared Shop Theme Package
 
@@ -82,6 +83,24 @@ https://shop.medivista.co.kr/wp-content/themes/wp-theme-shop/assets/images/produ
 
 Fill confirmed price, stock, shipping class, refund policy, and compliant product copy before publishing any product.
 
+CELLEXOR Re:Tone launch package import:
+
+```text
+docs/brand-shop-cellexor-retone-woocommerce-import.csv
+```
+
+Launch package pricing:
+
+- 1 Set small box / inner box: regular USD 120, sale USD 99.90.
+- 5 Set large box / outer box: regular USD 500, sale USD 489.80.
+
+Recommended WooCommerce setup:
+
+- Currency: USD.
+- First transaction coupon: `FIRST10`, percentage discount `10`, usage limit per user `1`.
+- Shipping: free shipping for orders over USD 300; flat rate USD 50 below USD 300.
+- B2B / bulk orders: route to WhatsApp inquiry.
+
 ## Payment Page Target
 
 WooCommerce normally creates the checkout page here:
@@ -112,6 +131,6 @@ https://shop.medivista.co.kr
 - Brand Shop button points only to the shop subdomain.
 - WooCommerce checkout exists only on `shop.medivista.co.kr`.
 - WooCommerce is not activated for the main catalog site.
-- China IP is blocked on the shop site only.
+- Korea IP is blocked on the shop site only, with admin users exempt.
 - Test order flow is checked before live payment is enabled.
 - Local/GitHub MEDIVISTA production files remain preserved before direct WordPress changes.

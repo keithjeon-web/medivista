@@ -146,7 +146,7 @@ Role:
 - Order/customer management
 - Shipping, refund, privacy, and terms policies
 
-## China IP Policy
+## Korea IP Policy
 
 Main site:
 
@@ -154,8 +154,8 @@ Main site:
 www.medivista.co.kr
 ```
 
-- Do not block China IP traffic.
-- Keep the B2B catalog accessible for China-based viewers and partners.
+- Do not block Korea IP traffic on the main catalog site.
+- Keep the B2B catalog accessible while commerce stays separated on the shop subdomain.
 
 Shop site:
 
@@ -163,9 +163,10 @@ Shop site:
 shop.medivista.co.kr
 ```
 
-- Block China IP traffic.
+- Block Korea IP traffic for non-admin visitors.
 - Apply the block only to the shop site, not the main site.
 - DNS alone does not perform IP blocking. Use the hosting, CDN, WAF, security plugin, or WordPress.com/host-level access control available for the shop site.
+- Admin users must remain exempt so the shop can still be managed from Korea.
 
 ## Shared Theme / Different Purpose
 
@@ -258,8 +259,8 @@ This preserves MEDIVISTA production files. WordPress database backup plugins can
 9. Configure payment, shipping, tax, refund, privacy, and terms settings on the shop site.
 10. Test the shop checkout flow before enabling live payments.
 11. Verify the main site Brand Shop button opens `https://shop.medivista.co.kr`.
-12. Confirm China IP is not blocked on the main site.
-13. Confirm China IP is blocked on the shop site through the available hosting/CDN/security layer.
+12. Confirm Korea IP is not blocked on the main site.
+13. Confirm Korea IP is blocked for non-admin visitors on the shop site through the available hosting/CDN/security layer.
 
 ## Safety Checks
 
@@ -267,4 +268,4 @@ This preserves MEDIVISTA production files. WordPress database backup plugins can
 - WooCommerce checkout exists only on the shop site.
 - Brand Shop button points to the shop subdomain.
 - Local/GitHub project backup is current before direct WordPress changes.
-- China IP policy is split correctly: main open, shop blocked.
+- Korea IP policy is split correctly: main open, shop blocked for non-admin visitors.

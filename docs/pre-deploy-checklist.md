@@ -55,9 +55,10 @@
 - Confirm SSL covers both `www.medivista.co.kr` and `shop.medivista.co.kr`.
 - Do not change DNS, MX, TXT, or Google Workspace records without explicit confirmation.
 
-## China IP Policy
+## Korea IP Policy
 
-- Main site `www.medivista.co.kr`: do not block China IP traffic.
-- Shop site `shop.medivista.co.kr`: block China IP traffic.
+- Main site `www.medivista.co.kr`: do not block Korea IP traffic.
+- Shop site `shop.medivista.co.kr`: block Korea IP traffic for non-admin visitors.
+- Admin users remain exempt for shop management.
 - Apply IP blocking through hosting, CDN, WAF, security plugin, or WordPress.com/host-level controls. DNS records alone do not block country traffic.
 - Confirm the two sites use the same visual theme direction but different behavior: main catalog/inquiry, shop product/payment.
