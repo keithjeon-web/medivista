@@ -11,14 +11,19 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="MEDIVISTA home">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260611a'); ?>" alt="MEDIVISTA">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260611b'); ?>" alt="MEDIVISTA">
       
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
     <nav id="primary-nav" class="main-nav" aria-label="Main menu">
       <a href="<?php echo esc_url(home_url('/about/')); ?>">ABOUT</a>
       <a href="<?php echo esc_url(home_url('/products/')); ?>">PRODUCTS</a>
-      <a href="<?php echo esc_url(home_url('/brands/')); ?>">BRANDS</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/brands/')); ?>" aria-haspopup="true">BRANDS</a>
+        <div class="nav-dropdown-menu">
+          <a href="<?php echo esc_url(home_url('/cellexor/')); ?>">CELLEXOR</a>
+        </div>
+      </div>
       <a href="<?php echo esc_url(home_url('/blogs/')); ?>">BLOGS</a>
       <a href="<?php echo esc_url(home_url('/contact/')); ?>">CONTACT US</a>
       <a class="nav-pill" href="https://shop.medivista.co.kr">BRAND SHOP</a>

@@ -1,10 +1,19 @@
-<?php get_header(); ?>
+﻿<?php
+/*
+Template Name: MEDIVISTA Cellexor
+*/
+get_header();
+?>
 <main id="main-content">
   <section class="page-banner">
     <div class="container">
-      <p class="eyebrow">CELLEXOR Re:Tone</p>
-      <h1>CELLEXOR brand concept for professional partners.</h1>
-      <p>An ingredient-inspired premium aesthetic care concept prepared for responsible beauty science communication and partner inquiry.</p>
+      <p class="eyebrow">CELLEXOR</p>
+      <h1>Cellular reverse-aging-inspired beauty, translated for professional partners.</h1>
+      <p>CELLEXOR presents a premium vision for awakening youthful energy from within, using exosome-inspired brand storytelling and responsible beauty-science communication.</p>
+      <div class="button-row">
+        <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Brand Inquiry</a>
+        <a class="btn secondary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official CELLEXOR Site</a>
+      </div>
     </div>
   </section>
 
@@ -14,10 +23,12 @@
       <div>
         <p class="eyebrow">Brand Philosophy</p>
         <h2>Glow Beyond Expectations</h2>
-        <p>Re:Tone presents CELLEXOR's premium product philosophy through clear concept framing, polished visuals, and inquiry-first professional storytelling.</p>
+        <p>As the starting point of a reverse-aging-inspired brand vision, CELLEXOR frames youthful energy, refined radiance, and science-based beauty storytelling for professional aesthetic partners.</p>
+        <p><strong>Original brand message:</strong> 리버스 에이징의 시작점으로서, 피부 본연에 내재된 젊은 에너지를 깨우는 혁신적 비전과 과학적 솔루션.</p>
         <div class="button-row">
           <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Inquiry</a>
           <a class="btn secondary" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a>
+          <a class="btn secondary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official Site</a>
         </div>
       </div>
     </div>
@@ -28,25 +39,25 @@
       <div class="section-head">
         <div>
           <p class="eyebrow">Brand Story</p>
-          <h2>Ingredient-inspired care positioning for professional review</h2>
+          <h2>From youthful energy to premium beauty science</h2>
         </div>
-        <p>Product communication uses careful, responsible language for professional aesthetic review.</p>
+        <p>MEDIVISTA presents the official CELLEXOR themes as brand concepts for B2B review, using careful partner-focused language.</p>
       </div>
       <div class="grid grid-3">
         <article class="info-card">
           <p class="card-meta">Brand Story</p>
-          <h3>Premium visual language with a clear partner focus</h3>
-          <p>Positions CELLEXOR as a polished professional concept for clinics, distributors, and global aesthetic partners.</p>
+          <h3>Awakening youthful energy from within</h3>
+          <p>The brand narrative focuses on inner vitality, refined glow, and premium partner communication for global markets.</p>
         </article>
         <article class="info-card">
           <p class="card-meta">Core Technology</p>
-          <h3>Concept-led ingredient framing</h3>
-          <p>Exosome and NAD+ references are presented as formula concepts for review materials, not promised clinical outcomes.</p>
+          <h3>Exosome-inspired key concept</h3>
+          <p>The phrase "?묒냼醫, ?명룷 ?ъ깮???듭떖 ?댁뇿" is handled as official brand concept language for beauty-science storytelling.</p>
         </article>
         <article class="info-card">
           <p class="card-meta">Synergy Science</p>
-          <h3>Balanced two-part narrative</h3>
-          <p>The communication pairs clean presentation with science-based beauty positioning to support responsible product discussion.</p>
+          <h3>Exosome and active-ingredient synergy</h3>
+          <p>CELLEXOR's synergy theme is presented as a product-positioning concept for professional review and further inquiry.</p>
         </article>
       </div>
     </div>
@@ -54,10 +65,10 @@
 
   <section class="section">
     <div class="container grid grid-4">
-      <article class="info-card"><p class="card-meta">Product Philosophy</p><h3>Prepared for professional review</h3><p>Catalog information is organized for B2B evaluation, not direct purchase or consumer self-selection.</p></article>
-      <article class="info-card"><p class="card-meta">Brand Promise</p><h3>Clear and responsible communication</h3><p>MEDIVISTA keeps the premium tone while avoiding unsupported performance or efficacy wording.</p></article>
-      <article class="info-card"><p class="card-meta">Professional Use</p><h3>Guided partner discussion</h3><p>Use, care, and market-specific details should be reviewed with qualified professionals in each region.</p></article>
-      <article class="info-card"><p class="card-meta">Product CTA</p><h3>Inquiry-first information path</h3><p>Detailed materials are available through MEDIVISTA partner inquiry and WhatsApp follow-up.</p></article>
+      <article class="info-card"><p class="card-meta">Brand Promise</p><h3>Youth blooming from within</h3><p>?대㈃?먯꽌遺???쇱뼱?섎뒗 ?딆쓬 is presented as an emotional beauty message, supported by careful B2B wording.</p></article>
+      <article class="info-card"><p class="card-meta">Product Philosophy</p><h3>A new dimension of reverse-aging-inspired care</h3><p>The phrase 由щ쾭???먯씠吏뺤쓽 ?덈줈??李⑥썝 is used as brand positioning, not as a medical claim.</p></article>
+      <article class="info-card"><p class="card-meta">Professional Review</p><h3>Inquiry-led brand information</h3><p>Detailed product, market, and use-context materials should be reviewed through MEDIVISTA partner inquiry.</p></article>
+      <article class="info-card"><p class="card-meta">Official Link</p><h3>Continue to CELLEXOR</h3><p>Open the official CELLEXOR page for the full brand presentation and visual language.</p><a class="btn primary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official CELLEXOR Site</a></article>
     </div>
   </section>
 

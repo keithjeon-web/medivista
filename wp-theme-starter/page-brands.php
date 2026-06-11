@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 Template Name: MEDIVISTA Brands
 */
@@ -10,11 +10,11 @@ get_header();
       <div class="brand-hero-grid">
         <div class="brand-hero-copy">
           <p class="eyebrow">CELLEXOR</p>
-          <h1>The Science of Beauty, refined for professional partners.</h1>
-          <p>Inspired by CELLEXOR's black, white, and gold brand language, this MEDIVISTA page presents a safer English-first B2B brand story for clinics, distributors, and global partners.</p>
+          <h1>CELLEXOR, the beginning point of reverse-aging-inspired beauty science.</h1>
+          <p>CELLEXOR is introduced as a premium brand concept built around youthful energy, exosome-inspired storytelling, and refined professional aesthetic communication.</p>
           <div class="button-row">
-            <a class="btn primary" href="<?php echo esc_url(home_url('/cellexor/')); ?>">Explore Re:Tone</a>
-            <a class="btn secondary dark" href="https://cellexor.com/" target="_blank" rel="noopener">Visit Brand Site</a>
+            <a class="btn primary" href="<?php echo esc_url(home_url('/cellexor/')); ?>">Explore CELLEXOR</a>
+            <a class="btn secondary dark" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official CELLEXOR Site</a>
           </div>
         </div>
         <div class="brand-product-stage" aria-label="CELLEXOR Re:Tone product visual">
@@ -29,16 +29,16 @@ get_header();
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Reference-led structure</p>
-          <h2>Brand architecture translated into safe B2B communication</h2>
+          <p class="eyebrow">Brand Category</p>
+          <h2>CELLEXOR category for brand storytelling and partner review</h2>
         </div>
-        <p>CELLEXOR's original site uses large emotional typography, dark premium sections, key-point storytelling, and a final partner action. MEDIVISTA keeps that expression style while removing unsupported product-performance wording.</p>
+        <p>The Brands menu now routes to a dedicated CELLEXOR detail page. MEDIVISTA keeps the official brand mood while presenting the content as an English-first B2B brand concept.</p>
       </div>
       <div class="grid grid-4">
-        <article class="brand-panel brand-key"><span>01</span><p class="card-meta">Precision</p><h3>Clean visual order</h3><p>Minimal black surfaces, gold markers, and focused product staging create a premium professional first impression.</p></article>
-        <article class="brand-panel brand-key"><span>02</span><p class="card-meta">Science</p><h3>Careful beauty language</h3><p>Ingredient references stay within concept-level storytelling for partner review, not promised medical outcomes.</p></article>
-        <article class="brand-panel brand-key"><span>03</span><p class="card-meta">Beauty</p><h3>Glow-focused narrative</h3><p>The page emphasizes refined aesthetic care, radiance, and partner education in English-first wording.</p></article>
-        <article class="brand-panel brand-key"><span>04</span><p class="card-meta">Partner</p><h3>Inquiry-led flow</h3><p>CTAs guide visitors to product review, WhatsApp inquiry, or the external CELLEXOR brand site.</p></article>
+        <article class="brand-panel brand-key"><span>01</span><p class="card-meta">Vision</p><h3>Youthful energy concept</h3><p>Positioned around the idea of awakening the skin's inherent youthful energy as brand storytelling.</p></article>
+        <article class="brand-panel brand-key"><span>02</span><p class="card-meta">Science</p><h3>Exosome-inspired key</h3><p>Exosome language is presented as a beauty-science concept for brand review, without promised outcomes.</p></article>
+        <article class="brand-panel brand-key"><span>03</span><p class="card-meta">Beauty</p><h3>Glow from within</h3><p>The brand mood focuses on radiance, inner vitality, and premium professional presentation.</p></article>
+        <article class="brand-panel brand-key"><span>04</span><p class="card-meta">Detail Page</p><h3>CELLEXOR dropdown link</h3><p>Open the CELLEXOR submenu under Brands for the dedicated brand detail page and official site connection.</p></article>
       </div>
     </div>
   </section>
@@ -70,7 +70,7 @@ get_header();
       <div class="grid grid-3">
         <article class="info-card"><p class="card-meta">Brand Philosophy</p><h3>Premium aesthetic care</h3><p>A polished brand environment for professional review, distributor conversation, and product education.</p></article>
         <article class="info-card"><p class="card-meta">Product Philosophy</p><h3>Designed for Re:Tone review</h3><p>Product communication focuses on formula concept, presentation, and partner inquiry without sales or ordering flow.</p></article>
-        <article class="info-card"><p class="card-meta">External CTA</p><h3>Official brand site connection</h3><p>Visitors can move from the MEDIVISTA B2B overview to the CELLEXOR brand site for deeper brand browsing.</p><a class="btn primary" href="https://cellexor.com/" target="_blank" rel="noopener">Visit Brand Site</a></article>
+        <article class="info-card"><p class="card-meta">External CTA</p><h3>Official brand site connection</h3><p>Visitors can move from the MEDIVISTA B2B overview to the CELLEXOR brand site for deeper brand browsing.</p><a class="btn primary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Visit Brand Site</a></article>
       </div>
     </div>
   </section>
@@ -83,7 +83,7 @@ get_header();
       <div class="button-row">
         <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Brand Inquiry</a>
         <a class="btn secondary" href="#" data-whatsapp data-product="CELLEXOR">Inquire via WhatsApp</a>
-        <a class="btn secondary" href="https://cellexor.com/" target="_blank" rel="noopener">Visit Brand Site</a>
+        <a class="btn secondary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Visit Brand Site</a>
       </div>
     </div>
   </section>

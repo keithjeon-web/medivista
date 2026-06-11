@@ -760,3 +760,16 @@
 - Visual blocker: in-app browser verification was blocked by the browser URL policy for both `http://127.0.0.1:4173/index.html?v=20260611a` and local file URL access, so no browser screenshot was captured in this environment. File-level and recovery-script validation were used instead.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-06-11 22:50:53 +09:00`): PASS for local/package checks; WARN for deploy push not executed without `-PushDeploy` and public preview fetch blocked in this environment.
 - Next: from a network/browser-enabled environment, push `.deploy-medivista-github` `gh-pages`, then visually verify the public Home hero slide banner on desktop and mobile with `v=20260611a`.
+
+## 2026-06-11 - Production cycle: Brands dropdown and CELLEXOR detail page
+
+- Focus: add a CELLEXOR submenu under the Brands navigation category and strengthen the CELLEXOR detail page using the official CELLEXOR brand page as source context.
+- Source: reviewed `https://cellexor.com/cellexor/`, including its CELLEXOR brand structure, "Cell + Elixir" concept, exosome-inspired story, "Glow Beyond Expectations", and reverse-aging-inspired brand positioning.
+- Change: converted `BRANDS` in the shared static navigation and WordPress starter header into a dropdown with a `CELLEXOR` child link.
+- Change: updated `brands/index.html` and `wp-theme-starter/page-brands.php` to describe CELLEXOR as the active brand category and link to the dedicated CELLEXOR detail page plus the official CELLEXOR page.
+- Change: expanded `cellexor/index.html` and `wp-theme-starter/page-cellexor.php` into a fuller CELLEXOR detail page with brand philosophy, original Korean brand message, exosome-inspired key concept, brand promise, product philosophy, B2B inquiry CTAs, and official site links.
+- Safety: kept CELLEXOR content framed as brand vision and beauty-science concept language, avoiding medical, clinical, certification, or promised-efficacy wording.
+- Cache: bumped static and WordPress starter runtime references to `20260611b`.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; risky-claim/mojibake spot scan PASS after removing `guaranteed outcome`; main runtime commerce scan has no new commerce UI.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-06-11 23:08:11 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIPs/XML + product images + safety scan; WARN for deploy push not executed without `-PushDeploy` and public preview fetch blocked in this environment.
+- Next: from a network/browser-enabled environment, push `.deploy-medivista-github` `gh-pages`, then visually verify the Brands dropdown hover/focus and CELLEXOR detail page on desktop and mobile with `v=20260611b`.
