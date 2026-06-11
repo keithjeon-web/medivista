@@ -83,7 +83,6 @@ $product_categories = array(
   ),  'skin-boosters' => array(
     'label' => 'Skin Boosters',
     'items' => array(
-      array('name' => 'Cellexor Re:Tone', 'type' => 'EXOSOMES', 'spec' => '100mg x 1Vialx & 5ml x 5Vials'),
       array('name' => 'Kiara Reju', 'type' => 'PDRN', 'spec' => '2.2ml x 3Syringes'),
       array('name' => 'REVS PRO 32', 'type' => '', 'spec' => '2ml x 1Syringes'),
       array('name' => 'PINK DROP', 'type' => '', 'spec' => '5ml x 5Vials'),
@@ -118,7 +117,7 @@ $product_categories = array(
   ),  'exosomes' => array(
     'label' => 'Exosomes',
     'items' => array(
-      array('name' => 'Exosome Line Coming Soon', 'type' => '', 'spec' => ''),
+      array('name' => 'Cellexor Re:Tone', 'type' => 'EXOSOMES', 'spec' => '100mg x 1Vialx & 5ml x 5Vials'),
     ),
   ),  'biostimulators' => array(
     'label' => 'Biostimulators',
@@ -195,7 +194,7 @@ $product_image_slug_counts = array();
             <?php if (!empty($product['type'])) : ?><p class="product-detail"><strong>Type</strong><span><?php echo esc_html($product['type']); ?></span></p><?php endif; ?>
             <?php if (!empty($product['spec'])) : ?><p class="product-detail"><strong>Spec</strong><span><?php echo esc_html($product['spec']); ?></span></p><?php endif; ?>
           </div>
-          <p><?php echo in_array($category_id, array('body-fillers', 'exosomes', 'hair-treatment', 'cosmetics'), true) ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
+          <p><?php echo in_array($category_id, array('body-fillers', 'hair-treatment', 'cosmetics'), true) ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="<?php echo esc_attr($product['name']); ?>">Inquire via WhatsApp</a>
         </article>
       <?php endforeach; ?>

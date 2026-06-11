@@ -11,7 +11,7 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="MEDIVISTA home">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260611c'); ?>" alt="MEDIVISTA">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_header.png?v=20260611d'); ?>" alt="MEDIVISTA">
       
     </a>
     <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
@@ -46,6 +46,7 @@
     </nav>
   </div>
 </header>
+
 
 
 

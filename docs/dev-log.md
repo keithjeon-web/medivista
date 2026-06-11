@@ -785,3 +785,17 @@
 - Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; ZIP inspection confirmed `PRODUCTS` dropdown and Body Fillers / Exosomes / Hair Treatment filters are included in `wp-theme-starter.zip`.
 - Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-06-11 23:29:11 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIPs/XML + product images + safety scan; WARN for deploy push not executed without `-PushDeploy` and public preview fetch blocked in this environment.
 - Next: upload `wp-theme-starter.zip` or `dist/medivista-wp-theme-starter-20260511-wp.zip` to the main WordPress site, then verify the Products dropdown and Products page category filters on desktop and mobile.
+
+## 2026-06-11 - Production cycle: Finished product images and category classification
+
+- Focus: use the `완성이미지/WebP` folder as the product image source of truth and align product category classification for the static catalog and WordPress starter.
+- Change: re-ran `tools/import-finished-product-images.ps1 -SourceDirectory "완성이미지\WebP"`; 114 WebP product images were copied into `assets/images/products`, `wp-theme-starter/assets/images/products`, and the deploy static image folder.
+- Change: normalized product data category labels from `SKIN BOOSTERS` to `Skin Boosters` in static and WordPress starter data files.
+- Change: moved `Cellexor Re:Tone` from Skin Boosters to the Exosomes category because its product type is `EXOSOMES`, keeping the existing image `cellexor-re-tone.webp` as a ready product card.
+- Change: added `assets/data/product-category-classification.csv` and `wp-theme-starter/assets/data/product-category-classification.csv` as operating classification tables with category slug, product, type, spec, image file, image path, status, source folder, and WordPress asset path.
+- Result: classification counts are Botulinum Toxins 20, HA Dermal Fillers 47, Skin Boosters 19, Exosomes 1, Lipolysis 7, Biostimulators 4, Others 16, plus pending operating placeholders for Body Fillers, Hair Treatment, and Cosmetics.
+- Cache/package: bumped runtime references to `20260611d`; regenerated `wp-theme-starter.zip`, `dist/medivista-wp-theme-starter-20260511-wp.zip`, `dist/medivista-wp-theme-shop-20260522-wp.zip`, and `dist/medivista-wp-network-themes-20260525.zip`.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; commerce/claim scan PASS; recovery closeout PASS for WordPress ZIPs, network ZIP, page import XML, product images, and safety scan.
+- Visual blocker: the in-app browser rejected `http://127.0.0.1:4173/products/index.html?v=20260611d` with a client-side block, so visual browser verification was not completed in this environment.
+- Closeout: ran `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` (report `2026-06-11 23:45:11 +09:00`): PASS for JS + fallback PHP lint + local preview + WordPress ZIPs/XML + product images + safety scan; WARN for deploy push not executed without `-PushDeploy` and public preview fetch blocked in this environment.
+- Next: upload the refreshed WordPress ZIP and visually verify Products category filters, Exosomes/Cellexor card, and product image loading on the live or browser-enabled preview.
