@@ -153,6 +153,9 @@ a.social-icon:focus-visible {
   display: block;
   min-height: 650px;
 }
+.hero-banner-slider {
+  isolation: isolate;
+}
 .action-slider {
   position: relative;
 }
@@ -172,6 +175,28 @@ a.social-icon:focus-visible {
     url("../images/hero-gold-bg.jpg") center / cover no-repeat,
     #f8f3e6;
 }
+.hero-banner-slider .hero-slide {
+  min-height: clamp(640px, calc(100vh - 92px), 780px);
+}
+.hero-banner-slider .hero-slide::before,
+.hero-banner-slider .hero-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-banner-slider .hero-slide::before {
+  z-index: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.78) 42%, rgba(255,255,255,0.22) 72%, rgba(255,255,255,0.08) 100%),
+    var(--hero-product-image) right 7% center / min(46vw, 560px) auto no-repeat;
+}
+.hero-banner-slider .hero-slide::after {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.54), transparent 34%, rgba(7,31,48,0.08)),
+    radial-gradient(circle at 82% 48%, rgba(201,168,76,0.28), transparent 30%);
+}
 .hero-slide.is-active {
   display: flex;
 }
@@ -190,10 +215,18 @@ a.social-icon:focus-visible {
     #f8f3e6;
 }
 .hero-layout {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.72fr);
   align-items: center;
   gap: clamp(28px, 5vw, 72px);
+}
+.hero-banner-slider .hero-layout {
+  min-height: inherit;
+}
+.hero-banner-slider .hero-content {
+  padding: 112px 0 132px;
 }
 .hero-visual {
   position: relative;
@@ -201,6 +234,11 @@ a.social-icon:focus-visible {
   place-items: center;
   min-height: 390px;
   padding: 36px;
+}
+.hero-banner-slider .hero-visual {
+  align-self: end;
+  min-height: 480px;
+  opacity: 0;
 }
 .hero-visual::before {
   content: "";
@@ -253,6 +291,9 @@ a.social-icon:focus-visible {
   z-index: 5;
   transform: translateX(-50%);
   margin-top: 0;
+}
+.hero-banner-slider .hero-controls {
+  bottom: 42px;
 }
 .slider-controls button {
   min-width: 42px;
@@ -1471,12 +1512,28 @@ textarea { min-height: 132px; resize: vertical; }
     grid-template-columns: 1fr;
     gap: 0;
   }
+  .hero-banner-slider .hero-slide::before {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 48%, rgba(255,255,255,0.34) 76%, rgba(255,255,255,0.12) 100%),
+      var(--hero-product-image) center bottom 58px / min(70vw, 420px) auto no-repeat;
+  }
+  .hero-banner-slider .hero-slide::after {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.5), transparent 42%, rgba(7,31,48,0.08)),
+      radial-gradient(circle at 50% 82%, rgba(201,168,76,0.24), transparent 32%);
+  }
   .hero-content {
     padding: 72px 0 28px;
+  }
+  .hero-banner-slider .hero-content {
+    padding: 74px 0 300px;
   }
   .hero-visual {
     min-height: 260px;
     padding: 16px 24px 72px;
+  }
+  .hero-banner-slider .hero-visual {
+    display: none;
   }
   .hero-visual img {
     max-height: 220px;
@@ -1523,6 +1580,14 @@ textarea { min-height: 132px; resize: vertical; }
   .logo img { width: min(200px, 62vw); max-height: 44px; }
   .hero-banner.action-slider,
   .hero-slide { min-height: 620px; }
+  .hero-banner-slider .hero-slide {
+    min-height: 650px;
+  }
+  .hero-banner-slider .hero-slide::before {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.3) 78%, rgba(255,255,255,0.12) 100%),
+      var(--hero-product-image) center bottom 64px / min(86vw, 340px) auto no-repeat;
+  }
   .hero-controls {
     width: calc(100% - 28px);
     bottom: 18px;
@@ -1531,6 +1596,7 @@ textarea { min-height: 132px; resize: vertical; }
     min-width: 40px;
   }
   .hero-content { padding: 60px 0 20px; }
+  .hero-banner-slider .hero-content { padding: 58px 0 270px; }
   .hero-visual {
     min-height: 220px;
     padding-bottom: 78px;

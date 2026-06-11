@@ -1,14 +1,14 @@
 ﻿# MEDIVISTA Error Recovery Report
 
-Generated: 2026-06-11 21:05:57 +09:00
+Generated: 2026-06-11 22:50:53 +09:00
 
 | ID | Check | Status | Finding | Action | Next |
 |---|---|---|---|---|---|
 | 1 | JS syntax baseline | PASS | Static, WordPress main, and WordPress shop JS syntax checks passed. | No code change required. | Continue regular checks. |
 | 1 | WordPress PHP lint | PASS | PHP CLI is not available, but all theme PHP files passed the project structural fallback lint. | No code change required; install PHP later for native php -l parity. | Repeat fallback lint after PHP edits, or add tools/php/php.exe for native php -l. |
 | 2 | Local preview server | PASS | Started preview job and confirmed HTTP 200 (note: job does not persist after this PowerShell process exits). | Preview is available for QA. | Open http://127.0.0.1:4173/index.html and inspect header, map, products, and contact. |
-| 3 | GitHub Pages push | WARN | Deploy checkout status:<br>## gh-pages...origin/gh-pages [ahead 7]<br> M docs/brand-shop-live-application-steps.md<br> M docs/brand-shop-woocommerce-setup.md<br> M docs/medivista-automation-prompts.md<br> M docs/medivista-web-automation-cycle.md<br> M docs/pre-deploy-checklist.md<br> M docs/subdomain-theme-package-guide.md<br> M docs/wordpress-insertion-checklist.md<br> M docs/wordpress-multisite-operations.md<br> M wp-theme-shop/README.md<br> M wp-theme-shop/assets/css/shop.css<br> M wp-theme-shop/front-page.php<br> M wp-theme-shop/functions.php<br> M wp-theme-shop/header.php<br>?? docs/brand-shop-cellexor-retone-woocommerce-import.csv<br>?? docs/brand-shop-wordpress-admin-manual-ko.md<br>?? wp-theme-shop/inc/ | Push automation is prepared but not executed without -PushDeploy. | Use git -c safe.directory="C:\Users\jhj13\OneDrive\문서\New project\.deploy-medivista-github" -C "C:\Users\jhj13\OneDrive\문서\New project\.deploy-medivista-github" push origin gh-pages from a network-enabled environment. |
-| 4 | Public preview parity | WARN | Public preview (20260606d): Fetch failed. 원격 서버에 연결할 수 없습니다. | Verify after successful gh-pages push from a network-enabled environment. | Confirm logo, navigation, subpages, and mobile Global Reach. |
+| 3 | GitHub Pages push | WARN | Deploy checkout status:<br>## gh-pages...origin/gh-pages [ahead 8] | Push automation is prepared but not executed without -PushDeploy. | Use git -c safe.directory="C:\Users\jhj13\OneDrive\문서\New project\.deploy-medivista-github" -C "C:\Users\jhj13\OneDrive\문서\New project\.deploy-medivista-github" push origin gh-pages from a network-enabled environment. |
+| 4 | Public preview parity | WARN | Public preview (20260611a): Fetch failed. 원격 서버에 연결할 수 없습니다. | Verify after successful gh-pages push from a network-enabled environment. | Confirm logo, navigation, subpages, and mobile Global Reach. |
 | 5 | WordPress ZIP readiness | PASS | WordPress theme ZIP contains required files. | No package change required. | Keep ZIP ready for direct live WordPress application after local/GitHub backup. |
 | 5 | WordPress shop ZIP readiness | PASS | WordPress shop theme ZIP contains required WooCommerce-ready files. | Upload only to shop.medivista.co.kr. | Activate WooCommerce on the shop site only and test checkout in safe test mode. |
 | 5 | WordPress network themes ZIP readiness | PASS | Network themes ZIP contains both main and shop theme folders at the top level. | Extract into wp-content/themes/ or upload through hosting file manager, not Appearance > Themes. | Network-enable both themes, then activate starter on www and shop on shop subdomain. |

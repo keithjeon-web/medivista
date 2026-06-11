@@ -1,6 +1,6 @@
-<section class="hero-banner action-slider" data-action-slider data-autoplay="6500" aria-label="MEDIVISTA main highlights">
+<section class="hero-banner hero-banner-slider action-slider" data-action-slider data-autoplay="6500" aria-label="MEDIVISTA hero banner slides">
   <div class="action-slides">
-    <article class="action-slide hero-slide hero-slide-blue is-active" data-slide>
+    <article class="action-slide hero-slide hero-slide-blue is-active" data-slide style="--hero-product-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>');">
       <div class="container hero-layout">
         <div class="hero-content">
           <p class="eyebrow">Global Medical Aesthetic B2B</p>
@@ -12,7 +12,7 @@
         <figure class="hero-visual"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>" alt="CELLEXOR Re:Tone product"><span>MEDIVISTA B2B</span></figure>
       </div>
     </article>
-    <article class="action-slide hero-slide hero-slide-gold" data-slide>
+    <article class="action-slide hero-slide hero-slide-gold" data-slide style="--hero-product-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/rejuran-healer.webp'); ?>');">
       <div class="container hero-layout">
         <div class="hero-content">
           <p class="eyebrow">Korean Aesthetic Catalog</p>
@@ -24,7 +24,7 @@
         <figure class="hero-visual"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/rejuran-healer.webp'); ?>" alt="Rejuran Healer product"><span>Catalog Review</span></figure>
       </div>
     </article>
-    <article class="action-slide hero-slide hero-slide-brand" data-slide>
+    <article class="action-slide hero-slide hero-slide-brand" data-slide style="--hero-product-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>');">
       <div class="container hero-layout">
         <div class="hero-content">
           <p class="eyebrow">CELLEXOR Re:Tone</p>
@@ -36,7 +36,7 @@
         <figure class="hero-visual"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp'); ?>" alt="CELLEXOR Re:Tone product"><span>Own Brand</span></figure>
       </div>
     </article>
-    <article class="action-slide hero-slide hero-slide-network" data-slide>
+    <article class="action-slide hero-slide hero-slide-network" data-slide style="--hero-product-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/the-chaeum-premium-no-3.webp'); ?>');">
       <div class="container hero-layout">
         <div class="hero-content">
           <p class="eyebrow">Global Network</p>
@@ -48,7 +48,7 @@
         <figure class="hero-visual"><img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/the-chaeum-premium-no-3.webp'); ?>" alt="The Chaeum Premium No.3 product"><span>Key Markets</span></figure>
       </div>
     </article>
-    <article class="action-slide hero-slide hero-slide-inquiry" data-slide>
+    <article class="action-slide hero-slide hero-slide-inquiry" data-slide style="--hero-product-image: url('<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/botulax-100units.webp'); ?>');">
       <div class="container hero-layout">
         <div class="hero-content">
           <p class="eyebrow">Inquiry-First Support</p>
