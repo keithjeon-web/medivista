@@ -114,13 +114,13 @@
         <div><p class="eyebrow">Trusted Brands</p><h2>Our Partners</h2></div>
         <p>Representative product and brand lines are presented as logo-first signals for global B2B catalog review.</p>
       </div>
+      <?php $partner_img_base = get_template_directory_uri() . '/assets/images/partners/'; ?>
       <div class="partner-logos" aria-label="MEDIVISTA product and brand partner logos">
-        <span class="partner-logo">BOTULAX</span>
-        <span class="partner-logo">NABOTA</span>
-        <span class="partner-logo">THE CHAEUM</span>
-        <span class="partner-logo">REJURAN</span>
-        <span class="partner-logo">LIPORASE</span>
-        <span class="partner-logo partner-logo-featured">CELLEXOR <small>RE:TONE</small></span>
+        <span class="partner-logo"><img src="<?php echo esc_url($partner_img_base . 'botulax.png'); ?>" alt="Botulax"></span>
+        <span class="partner-logo"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt="Nabota"></span>
+        <span class="partner-logo"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt="The Chaeum"></span>
+        <span class="partner-logo"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt="Rejuran"></span>
+        <span class="partner-logo"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt="Liporase"></span>
       </div>
     </div>
   </section>
