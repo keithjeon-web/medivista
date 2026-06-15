@@ -34,7 +34,7 @@
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/brands/')); ?>" aria-haspopup="true">BRANDS</a>
         <div class="nav-dropdown-menu">
-          <a href="<?php echo esc_url(home_url('/cellexor/')); ?>">CELLEXOR</a>
+          <a href="<?php echo esc_url(home_url('/cellexor/')); ?>">Cellexor Re:Tone</a>
         </div>
       </div>
       <a href="<?php echo esc_url(home_url('/blogs/')); ?>">BLOGS</a>
