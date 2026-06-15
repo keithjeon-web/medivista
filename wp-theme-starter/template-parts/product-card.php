@@ -152,11 +152,6 @@ $product_categories = array(
       array('name' => 'Jeil High B', 'type' => '', 'spec' => '10ml x 10Vials'),
       array('name' => 'DAIHAN Sterile Water', 'type' => '', 'spec' => '20ml x 50Amps'),
     ),
-  ),  'cosmetics' => array(
-    'label' => 'Cosmetics and medical aesthetic cosmetics',
-    'items' => array(
-      array('name' => 'Cosmetic Line Coming Soon', 'type' => '', 'spec' => ''),
-    ),
   ),
 );
 if (!function_exists('medivista_product_image_slug')) {
@@ -194,7 +189,7 @@ $product_image_slug_counts = array();
             <?php if (!empty($product['type'])) : ?><p class="product-detail"><strong>Type</strong><span><?php echo esc_html($product['type']); ?></span></p><?php endif; ?>
             <?php if (!empty($product['spec'])) : ?><p class="product-detail"><strong>Spec</strong><span><?php echo esc_html($product['spec']); ?></span></p><?php endif; ?>
           </div>
-          <p><?php echo in_array($category_id, array('body-fillers', 'hair-treatment', 'cosmetics'), true) ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
+          <p><?php echo in_array($category_id, array('body-fillers', 'hair-treatment'), true) ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="<?php echo esc_attr($product['name']); ?>">Inquire via WhatsApp</a>
         </article>
       <?php endforeach; ?>
