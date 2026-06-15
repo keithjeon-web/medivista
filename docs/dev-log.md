@@ -869,6 +869,17 @@
 - Deployment checkout: committed `.deploy-medivista-github` as `2a6138a` (`deploy: add partner brand logos`); a network-enabled environment still needs to push `gh-pages`.
 - Next: push `.deploy-medivista-github` `gh-pages`, then visually verify the Home partner logo strip on desktop and mobile after public cache refresh.
 
+## 2026-06-15 - Partner logo action slider banner
+
+- Focus: adapt the Home `Trusted Brands / Our Partners` logo strip into a CELLEXOR-reference-style icon slider banner, using a dark background, white pill-shaped logo cards, brand labels, and continuous horizontal motion.
+- Reference: reviewed `https://cellexor.com/`, where the brand area uses repeated rounded white logo cards over a black band with labels underneath.
+- Change: replaced the static partner grid in `index.html`, `.deploy-medivista-github/index.html`, `wp-theme-starter/front-page.php`, and the deploy WordPress copy with a two-track `partner-action-banner` marquee. The visible track links to catalog/brand destinations; the duplicate track is `aria-hidden` with `tabindex="-1"`.
+- Change: updated `assets/css/styles.css`, `.deploy-medivista-github/assets/css/styles.css`, `wp-theme-starter/assets/css/main.css`, and the deploy WordPress CSS with dark-section styling, pill logo cards, hover/focus pause, responsive card sizing, and `prefers-reduced-motion` fallback.
+- Safety: links route to Products category anchors or Brands only; no price, cart, checkout, payment, or purchase function was added.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; root-vs-deploy hash parity PASS for touched HTML/CSS files; Brand Shop URL scan PASS; CSS feature scan confirmed marquee, dark section, pill shape, and reduced-motion rules.
+- Preview blocker: PowerShell HTTP checks intermittently returned HTTP 200 after starting the local static server, but the in-app browser plugin still reported `ERR_CONNECTION_REFUSED` for `http://127.0.0.1:4173/index.html?v=20260615-action-banner`, matching the local-preview persistence limitation seen in recent cycles.
+- Next: refresh the open local preview at `http://127.0.0.1:4173/index.html?v=20260615-action-banner` after starting the local server, then push `.deploy-medivista-github` `gh-pages` and verify the public Home partner action slider.
+
 ## 2026-06-15 - GitHub/local cross-check routine
 
 - Re-read `AGENTS.md`, `docs/dev-log.md`, `docs/github-client-preview.md`, `docs/medivista-web-automation-cycle.md`, `docs/medivista-automation-prompts.md`, `docs/error-resolution-automation.md`, and `docs/error-report-latest.md` before the routine check.
@@ -877,3 +888,19 @@
 - Focused maintenance fix: synced the stale deploy-only WordPress starter brand submenu label from `CELLEXOR` to `Cellexor Re:Tone` in `.deploy-medivista-github/wp-theme-starter/header.php`, then committed it as `d7549ac deploy: sync brand submenu label`.
 - `node --check` passed for `assets/js/main.js` and `wp-theme-starter/assets/js/main.js`; runtime commerce and risky-claim scans passed; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` passed with the standing WARNs for blocked public preview fetch and deferred deploy push.
 - The refreshed recovery report showed pre-existing uncommitted deploy-checkout drift in `.deploy-medivista-github/assets/css/styles.css`, `.deploy-medivista-github/index.html`, `.deploy-medivista-github/wp-theme-starter/assets/css/main.css`, and `.deploy-medivista-github/wp-theme-starter/front-page.php`; those files were preserved untouched in this run.
+
+## 2026-06-15 - Product list and finished image sync
+
+- Focus: cross-check `Product list(홈페이지용).zip` against `완성이미지/WebP` and ensure listed products are uploaded to the catalog product image surfaces.
+- Change: re-ran `tools/import-finished-product-images.ps1 -SourceDirectory "완성이미지\WebP"` so the 114 finished WebP product images were copied into `assets/images/products`, `wp-theme-starter/assets/images/products`, `.deploy-medivista-github/assets/images/products`, and `.deploy-medivista-github/wp-theme-starter/assets/images/products`.
+- Verification: `assets/data/medivista-products.csv`, `assets/data/product-image-manifest.csv`, and the WordPress starter copies each contain 114 product rows; all 114 manifest products have matching Products page cards and static image files.
+- Result: `products/index.html` now reports 114 ready product images from the uploaded list, with only the existing Body Fillers and Hair Treatment preparation placeholders remaining pending.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; Brand Shop URL scan PASS; catalog-only commerce scan PASS; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` PASS with standing WARNs for deferred deploy push and blocked public preview fetch.
+
+## 2026-06-15 - Products dropdown classification upload alignment
+
+- Focus: align Products page upload sources to the required Products dropdown taxonomy: Botulinum Toxins, Dermal Fillers, Body Fillers, Skin Boosters, Lipolysis, Exosomes, Biostimulators, Hair Treatment, and Others.
+- Change: removed the stale WordPress starter `Cosmetics` placeholder from the product-card template and deploy WordPress data so only the 9 dropdown categories remain.
+- Change: normalized source product names across root, WordPress starter, and deploy CSVs to match the uploaded image/product cards: Dermalax Deep Plus, EPTQ S100, Lipssom, DermArcane Implant, GC Arginine 2510, GC Arginine 1010, and DAIHAN Sterile Water.
+- Verification: all four `product-category-classification.csv` surfaces contain 116 rows with no missing or extra dropdown categories; all four product image manifests contain 114 ready images and no pending uploaded-product images.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; Products page has all 9 dropdown blocks; recovery closeout PASS with the standing WARNs for deferred deploy push and blocked public preview fetch.
