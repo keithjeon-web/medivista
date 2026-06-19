@@ -8,6 +8,7 @@
 - Checks run: `node --check` for all active JS; project PHP structural fallback lint; runtime `BRAND SHOP` and shop-subdomain scan; risky-claim scan; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -RebuildWordPressZip`; ZIP content inspection.
 - Result: unified WordPress ZIP readiness PASS; static commerce guardrail remains intact; live WordPress/WooCommerce behavior still requires installation-level testing with WooCommerce and a real trusted GeoIP country header.
 - Preserved drift: existing uncommitted `.deploy-medivista-github/assets/css/styles.css` and `.deploy-medivista-github/wp-theme-starter/assets/css/main.css` changes were not overwritten.
+- GitHub blocker: local commit `f731038` was created on `feature/unified-shop-integration`, but the push failed on GitHub port 443 and the elevated external upload was not approved, so no PR was opened.
 
 ## 2026-06-12 02:39:32 +09:00
 
