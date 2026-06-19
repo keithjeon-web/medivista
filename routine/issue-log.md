@@ -25,6 +25,7 @@
 - Home partners: strengthened title contrast and standardized all partner logo frames and image dimensions.
 - MCP/browser limitation: `cellexor.co.kr` returned DNS resolution failure and the reference site could not be inspected from this environment; local recovery preview passed, but the browser client could not reconnect after the preview process ended.
 - Checks: JS PASS, structural PHP lint PASS, risky-claim scan PASS, WordPress ZIP PASS, product images PASS.
+- Official reference verification: MCP browser inspection succeeded for the supplied CELLEXOR brand and Re:Tone URLs; the local brand and product heroes were refined to match their monochrome cellular and oversized ivory/gold product direction while excluding risky source claims.
 
 ## 2026-06-12 02:39:32 +09:00
 

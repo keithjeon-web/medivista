@@ -9,9 +9,9 @@ $cellexor_image = get_template_directory_uri() . '/assets/images/products/cellex
   <section class="cellexor-hero">
     <div class="container cellexor-hero-grid">
       <div class="cellexor-hero-copy">
-        <p class="cellexor-kicker">CELLEXOR · Re:Tone</p>
-        <h1>Glow Beyond<br><em>Expectations.</em></h1>
-        <p class="cellexor-lead">A refined professional beauty concept shaped around exosome-inspired storytelling, NAD+ positioning, and a luminous gold-on-black visual language.</p>
+        <p class="cellexor-kicker">Cellexor</p>
+        <h1><span>RE:</span>TONE</h1>
+        <p class="cellexor-lead">CELLEXOR Exosome × NAD+ — a premium two-part professional beauty concept presented through a bold black, ivory, and gold identity.</p>
         <div class="button-row">
           <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Brand Inquiry</a>
           <a class="btn secondary dark" href="#" data-whatsapp data-product="Cellexor Re:Tone">WhatsApp Inquiry</a>
@@ -20,7 +20,7 @@ $cellexor_image = get_template_directory_uri() . '/assets/images/products/cellex
       <figure class="cellexor-product-orbit">
         <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
         <img src="<?php echo esc_url($cellexor_image); ?>" alt="CELLEXOR Re:Tone product">
-        <figcaption>Professional aesthetic solution</figcaption>
+        <figcaption>V1 + V2 · Dual-System Concept</figcaption>
       </figure>
     </div>
   </section>
@@ -28,7 +28,7 @@ $cellexor_image = get_template_directory_uri() . '/assets/images/products/cellex
   <section class="cellexor-manifesto">
     <div class="container cellexor-manifesto-grid">
       <p class="cellexor-index">01 · Brand Philosophy</p>
-      <div><h2>Beauty science, expressed with restraint.</h2><p>CELLEXOR brings together a premium clinical-inspired atmosphere and carefully moderated beauty language. The experience is designed for international partners seeking a distinctive own-brand story without overstated efficacy claims.</p></div>
+      <div><h2>Premium reverse-aging-inspired beauty, carefully expressed.</h2><p>The official CELLEXOR direction pairs scientific visual cues with dramatic black space, precise typography, and gold accents. MEDIVISTA presents that identity with moderated professional wording for international partner review.</p></div>
     </div>
   </section>
 

@@ -1070,16 +1070,17 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .cellexor-page { background: #0a0907; color: rgba(255,255,255,0.78); }
 .cellexor-hero { position: relative; min-height: 760px; display: flex; align-items: center; overflow: hidden; background: radial-gradient(circle at 76% 38%, rgba(201,168,76,0.23), transparent 26%), radial-gradient(circle at 12% 82%, rgba(255,255,255,0.06), transparent 30%), linear-gradient(135deg, #050505, #15100a 58%, #090806); }
 .cellexor-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 120px 100%; opacity: 0.4; }
-.cellexor-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: center; gap: 64px; }
+.cellexor-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; align-items: center; gap: 18px; padding-top: 120px; text-align: center; }
 .cellexor-kicker, .cellexor-index { color: #d8b955; font-size: 12px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; }
-.cellexor-hero h1 { margin: 18px 0 26px; color: #fff; font-size: clamp(54px, 7vw, 96px); font-weight: 300; line-height: 0.98; letter-spacing: -0.045em; }
-.cellexor-hero h1 em { color: #d8b955; font-family: Georgia, serif; font-weight: 400; }
-.cellexor-lead { max-width: 650px; color: rgba(255,255,255,0.66); font-size: 18px; }
-.cellexor-product-orbit { position: relative; min-height: 520px; display: grid; place-items: center; margin: 0; }
-.cellexor-product-orbit img { position: relative; z-index: 2; width: min(470px, 90%); filter: drop-shadow(0 36px 54px rgba(0,0,0,0.55)); }
+.cellexor-hero h1 { margin: 0; color: #c5a45a; font-size: clamp(82px, 14vw, 180px); font-weight: 300; line-height: 0.82; letter-spacing: -0.06em; }
+.cellexor-hero h1 span { color: #f5efe5; }
+.cellexor-lead { max-width: 720px; margin: 12px auto 0; color: rgba(255,255,255,0.66); font-size: 18px; }
+.cellexor-hero-copy .button-row { justify-content: center; }
+.cellexor-product-orbit { position: relative; min-height: 400px; display: grid; place-items: center; margin: -20px 0 0; }
+.cellexor-product-orbit img { position: relative; z-index: 2; width: min(500px, 82%); filter: drop-shadow(0 36px 54px rgba(0,0,0,0.65)); }
 .cellexor-product-orbit figcaption { position: absolute; right: 0; bottom: 34px; color: rgba(255,255,255,0.48); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
 .orbit { position: absolute; border: 1px solid rgba(216,185,85,0.28); border-radius: 50%; }
-.orbit-one { width: 440px; height: 440px; }.orbit-two { width: 570px; height: 300px; transform: rotate(-18deg); }
+.orbit-one { width: 400px; height: 260px; }.orbit-two { width: 560px; height: 220px; transform: rotate(-12deg); }
 .cellexor-manifesto { padding: 110px 0; background: #f5f0e7; color: #17120b; }
 .cellexor-manifesto-grid { display: grid; grid-template-columns: 0.35fr 1fr; gap: 70px; }
 .cellexor-manifesto h2 { color: #17120b; font-size: clamp(38px, 5vw, 66px); font-weight: 350; }

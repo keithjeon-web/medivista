@@ -9,9 +9,9 @@ get_header();
     <div class="container">
       <div class="brand-hero-grid">
         <div class="brand-hero-copy">
-          <p class="eyebrow">CELLEXOR</p>
-          <h1>CELLEXOR, the beginning point of reverse-aging-inspired beauty science.</h1>
-          <p>CELLEXOR is introduced as a premium brand concept built around youthful energy, exosome-inspired storytelling, and refined professional aesthetic communication.</p>
+          <p class="eyebrow">Cell + Elixir = CELLEXOR</p>
+          <h1>Science defines a new standard of youthful beauty.</h1>
+          <p>A monochrome, cellular-inspired brand world shaped by precision, restrained confidence, and advanced beauty-science storytelling.</p>
           <div class="button-row">
             <a class="btn primary" href="<?php echo esc_url(home_url('/cellexor/')); ?>">Explore CELLEXOR</a>
             <a class="btn secondary dark" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official CELLEXOR Site</a>
