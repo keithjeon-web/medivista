@@ -4,6 +4,11 @@ function medivista_enqueue_assets() {
     wp_enqueue_script('medivista-d3', 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js', array(), '7.8.5', true);
     wp_enqueue_script('medivista-topojson', 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js', array('medivista-d3'), '3.0.2', true);
     wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260611d', true);
+
+    if (medivista_is_shop_request()) {
+        wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array('medivista-main'), '20260619a');
+        wp_enqueue_script('medivista-shop', get_template_directory_uri() . '/assets/js/shop.js', array(), '20260619a', true);
+    }
 }
 add_action('wp_enqueue_scripts', 'medivista_enqueue_assets');
 
@@ -75,10 +80,10 @@ function medivista_structured_data() {
                 ),
                 array(
                     '@type' => 'Question',
-                    'name' => 'Is the MEDIVISTA main website a shop?',
+                    'name' => 'Where are MEDIVISTA online orders handled?',
                     'acceptedAnswer' => array(
                         '@type' => 'Answer',
-                        'text' => 'The MEDIVISTA main website is a catalog-only B2B information site. Product questions move through WhatsApp or the contact inquiry flow.',
+                        'text' => 'Corporate and catalog pages remain inquiry-focused. Online ordering is available only through the integrated MEDIVISTA Shop and WooCommerce routes.',
                     ),
                 ),
                 array(
@@ -102,10 +107,72 @@ add_action('wp_head', 'medivista_structured_data', 20);
 function medivista_theme_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'medivista'),
     ));
 }
 add_action('after_setup_theme', 'medivista_theme_setup');
+
+function medivista_is_shop_request() {
+    if (function_exists('is_woocommerce') && is_woocommerce()) {
+        return true;
+    }
+
+    if (function_exists('is_cart') && is_cart()) {
+        return true;
+    }
+
+    if (function_exists('is_checkout') && is_checkout()) {
+        return true;
+    }
+
+    if (function_exists('is_account_page') && is_account_page()) {
+        return true;
+    }
+
+    return is_page(array('shop', 'cart', 'checkout', 'my-account'));
+}
+
+function medivista_shop_cart_count() {
+    if (!function_exists('WC') || !WC()->cart) {
+        return 0;
+    }
+
+    return WC()->cart->get_cart_contents_count();
+}
+
+function medivista_shop_cart_url() {
+    return function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
+}
+
+function medivista_shop_checkout_url() {
+    return function_exists('wc_get_checkout_url') ? wc_get_checkout_url() : home_url('/checkout/');
+}
+
+function medivista_shop_account_url() {
+    if (function_exists('wc_get_page_id')) {
+        $page_id = wc_get_page_id('myaccount');
+        if ($page_id && $page_id > 0) {
+            return get_permalink($page_id);
+        }
+    }
+
+    return home_url('/my-account/');
+}
+
+function medivista_shop_body_class($classes) {
+    if (medivista_is_shop_request()) {
+        $classes[] = 'medivista-shop-area';
+    }
+
+    return $classes;
+}
+add_filter('body_class', 'medivista_shop_body_class');
+
+require_once get_template_directory() . '/inc/shop-access-control.php';
 
 

@@ -1,93 +1,41 @@
-# MEDIVISTA Brand Shop Live Application Steps
+# MEDIVISTA Integrated Shop Live Application Steps
 
-Target site:
+Target:
 
 ```text
-shop.medivista.co.kr
+https://www.medivista.co.kr/shop/
 ```
-
-Use this checklist after the GitHub Pages/deploy checkout is synced and the local package exists.
 
 ## Prepared Files
 
-Theme ZIP:
+- Unified theme: `wp-theme-starter.zip`
+- Draft products: `docs/brand-shop-product-import-template.csv`
+- CELLEXOR launch product: `docs/brand-shop-cellexor-retone-woocommerce-import.csv`
 
-```text
-dist/medivista-wp-theme-shop-20260522-wp.zip
-```
+The separate `wp-theme-shop` package is legacy and must not be activated for new work.
 
-Combined Multisite theme package:
+## WordPress Setup
 
-```text
-dist/medivista-wp-network-themes-20260525.zip
-```
+1. Back up the live site and database.
+2. Upload and activate the unified `wp-theme-starter` package.
+3. Install and activate WooCommerce.
+4. Create or verify Shop, Cart, Checkout, and My Account pages.
+5. Confirm the main navigation shows `SHOP`, not `BRAND SHOP`.
+6. Import products as drafts.
+7. Configure payment, shipping, tax, coupon, privacy, terms, refund, and exchange settings.
+8. Complete a test-mode order.
 
-Use the combined package only when extracting through hosting file manager, SFTP, or server-side unzip into `wp-content/themes/`. For WordPress admin theme upload, upload the single theme ZIPs separately.
+## Geo-IP QA
 
-Draft product CSV:
+1. Confirm a trusted country header reaches WordPress.
+2. Test a Korean visitor against `/shop/`, a WooCommerce product, `/cart/`, `/checkout/`, and `/my-account/`; each must be blocked.
+3. Confirm the same Korean visitor can access Home, About, Products, Brands, Blogs, and Contact.
+4. Confirm Administrator and Shop Manager accounts bypass the restriction.
+5. Confirm South Korea is unavailable as a selling or shipping country.
 
-```text
-docs/brand-shop-product-import-template.csv
-```
+## Release Guardrails
 
-Bundled product images:
-
-```text
-wp-theme-shop/assets/images/products/
-```
-
-The shop theme currently includes the full `완성이미지\WebP` product image set: 114 WebP files.
-
-## Multisite Setup
-
-1. Log in to WordPress Network Admin.
-2. Confirm `shop.medivista.co.kr` exists as a separate site.
-3. Confirm `www.medivista.co.kr` remains the main catalog site.
-4. Confirm DNS/subdomain mapping is complete for `shop.medivista.co.kr`.
-5. If using the combined package, extract `dist/medivista-wp-network-themes-20260525.zip` into `wp-content/themes/`.
-6. Network-enable both `MEDIVISTA Starter` and `MEDIVISTA Shop`.
-7. Activate `MEDIVISTA Starter` inside the main `www.medivista.co.kr` site dashboard.
-8. Activate `MEDIVISTA Shop` only inside the shop site dashboard.
-
-## WooCommerce Setup
-
-1. Install WooCommerce from Network Admin or the shop site plugin screen.
-2. Activate WooCommerce only on `shop.medivista.co.kr`.
-3. Let WooCommerce create:
-   - Shop
-   - Cart
-   - Checkout
-   - My Account
-4. Set currency, store country, tax policy, shipping policy, and payment method.
-5. Keep payment gateway in test mode first.
-
-## Product Setup
-
-1. Import `docs/brand-shop-product-import-template.csv`.
-2. Keep imported products unpublished first because `Published` is `0`.
-3. Confirm product images load from the shop theme asset URLs.
-4. Fill confirmed price, stock, shipping, refund, privacy, terms, and compliant copy.
-5. Publish only after product pages and checkout flow are reviewed.
-
-## Test Order QA
-
-1. Add the CELLEXOR draft product to cart.
-2. Open Cart and verify product image, quantity, and totals.
-3. Open Checkout and verify billing/shipping fields.
-4. Complete a test-mode payment.
-5. Confirm order appears in WooCommerce > Orders.
-6. Confirm customer email/order email behavior.
-7. Disable test mode only after payment, refund, shipping, tax, and policy pages are final.
-
-## Access Policy
-
-- Do not block Korea IP traffic on `www.medivista.co.kr`.
-- Block Korea IP traffic only on `shop.medivista.co.kr` for non-admin visitors.
-- Keep admin users exempt so the shop can still be managed from Korea.
-- DNS alone does not block countries. Use the available hosting, CDN, WAF, security plugin, or WordPress.com/host-level controls.
-
-## Guardrails
-
-- Main site keeps no price, cart, checkout, payment, or Add to Cart UI.
-- Brand Shop button on the main site remains `https://shop.medivista.co.kr`.
-- WooCommerce stays active only on the shop site.
+- Do not add commerce controls to corporate or catalog templates.
+- Do not enable live payment until legal and operational policies are final.
+- Keep English-first public copy.
+- Avoid unverified medical, clinical, regulatory, or guaranteed-efficacy claims.

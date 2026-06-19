@@ -1,5 +1,7 @@
 # MEDIVISTA Web Production Automation Cycle
 
+> Current operating override (2026-06-19): use one WordPress site and `wp-theme-starter`. WooCommerce runs under the internal `/shop/` area. Do not deploy a separate shop subdomain. Korean IP blocking applies only to Shop/WooCommerce routes, with Administrator and Shop Manager exemptions.
+
 Updated: 2026-05-12
 Project: MEDIVISTA global B2B website
 Local workspace: current project root in Codex Desktop

@@ -1,4 +1,6 @@
-# MEDIVISTA Shop Theme
+# MEDIVISTA Shop Theme (Legacy)
+
+> Deprecated as of 2026-06-19. Do not activate this theme for new work. Its WooCommerce functions have been integrated into `wp-theme-starter`, and a separate shop site is no longer planned.
 
 Use this theme only on:
 

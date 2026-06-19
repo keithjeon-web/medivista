@@ -39,29 +39,22 @@ The current workflow is a semi-automated routine. It prepares the Codex executio
 
 ## Main Rules
 
-- Main website is catalog-only.
-- No prices.
-- No cart.
-- No checkout.
-- No payment.
+- Corporate and catalog pages remain inquiry-focused.
+- Prices, cart, checkout, account, and payment are limited to the integrated WooCommerce Shop area.
 - Frontend copy must be English-first.
-- Brand Shop must link to [https://shop.medivista.co.kr](https://shop.medivista.co.kr).
+- The main navigation uses an internal `SHOP` category at `/shop/`.
 - Avoid unverified medical or efficacy claims.
 - Do not modify DNS or Google Workspace records unless explicitly requested.
 
-## WordPress Multisite Operating Model
+## Unified WordPress Operating Model
 
-MEDIVISTA uses a separated site-role model:
+MEDIVISTA uses one WordPress site and the `wp-theme-starter` theme:
 
-- `www.medivista.co.kr`: main B2B catalog site.
-- `shop.medivista.co.kr`: Brand Shop / WooCommerce site.
+- `www.medivista.co.kr`: company, catalog, brand, blog, inquiry, and WooCommerce Shop.
+- `/shop/`, WooCommerce product, Cart, Checkout, and My Account routes: commerce area.
+- `shop.medivista.co.kr`: no longer used for the current implementation.
 
-WooCommerce, cart, checkout, payment, and order handling belong only on the shop site. The main site keeps the Brand Shop button as a route to `https://shop.medivista.co.kr`.
-
-Access policy:
-
-- Main site: do not block China IP traffic.
-- Shop site: block China IP traffic.
+Korean IP visitors may use corporate and catalog pages but are blocked from Shop/WooCommerce routes. Administrators and Shop Managers are exempt.
 
 DNS is managed through WordPress.com nameservers; Whois remains the domain/hosting account baseline.
 

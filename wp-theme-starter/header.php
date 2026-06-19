@@ -39,7 +39,15 @@
       </div>
       <a href="<?php echo esc_url(home_url('/blogs/')); ?>">BLOGS</a>
       <a href="<?php echo esc_url(home_url('/contact/')); ?>">CONTACT US</a>
-      <a class="nav-pill" href="https://shop.medivista.co.kr">BRAND SHOP</a>
+      <div class="nav-dropdown shop-nav-dropdown">
+        <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/shop/')); ?>" aria-haspopup="true">SHOP</a>
+        <div class="nav-dropdown-menu">
+          <a href="<?php echo esc_url(home_url('/shop/')); ?>">Shop</a>
+          <a href="<?php echo esc_url(medivista_shop_cart_url()); ?>">Cart (<?php echo esc_html(medivista_shop_cart_count()); ?>)</a>
+          <a href="<?php echo esc_url(medivista_shop_checkout_url()); ?>">Checkout</a>
+          <a href="<?php echo esc_url(medivista_shop_account_url()); ?>">My Account</a>
+        </div>
+      </div>
       <span class="nav-utility"><a href="<?php echo esc_url(home_url('/')); ?>">EN</a><span class="nav-disabled" aria-disabled="true">KO</span></span>
       <a class="social-icon social-instagram" href="https://www.instagram.com/medivista.global?igsh=M21lN3Q3dDl5NGx0&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"></a>
       <a class="social-icon social-facebook" href="https://www.facebook.com/share/1DRDDT62yZ/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"></a>

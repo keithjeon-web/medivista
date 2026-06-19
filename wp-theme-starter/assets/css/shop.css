@@ -1,0 +1,95 @@
+:root {
+  --shop-gold: #c9a84c;
+  --shop-sky: #2a9bd4;
+  --shop-ink: #102f46;
+  --shop-line: #dfe8ef;
+  --shop-mist: #f6f9fc;
+}
+
+.shop-page-title {
+  padding: clamp(70px, 9vw, 120px) 0;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(201, 168, 76, 0.2), transparent 28%),
+    linear-gradient(120deg, #071f30, #102f46 60%, #1f6f91);
+  color: #fff;
+}
+
+.shop-page-title h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(40px, 6vw, 72px);
+}
+
+.shop-page-title p:not(.shop-eyebrow) {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.shop-eyebrow {
+  margin: 0 0 12px;
+  color: var(--shop-gold);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.shop-commerce-frame,
+.shop-notice,
+.woocommerce ul.products li.product {
+  padding: 24px;
+  border: 1px solid var(--shop-line);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(16, 47, 70, 0.07);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  color: var(--shop-ink);
+  font-weight: 800;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price,
+.woocommerce ul.products li.product .price {
+  color: var(--shop-gold);
+  font-weight: 900;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit {
+  border-radius: 5px;
+  background: var(--shop-gold);
+  color: #fff;
+  font-weight: 800;
+}
+
+.woocommerce table.shop_table {
+  border-color: var(--shop-line);
+  border-radius: 8px;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--shop-line);
+  border-radius: 6px;
+}
+
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-error {
+  border-top-color: var(--shop-gold);
+  background: #fffaf0;
+}
+
+@media (max-width: 720px) {
+  .shop-commerce-frame,
+  .shop-notice {
+    padding: 18px;
+  }
+}

@@ -1,5 +1,7 @@
 # MEDIVISTA Automation Prompts
 
+> Current operating override (2026-06-19): the previous Multisite/shop-subdomain split is retired. Maintain one `wp-theme-starter` theme with an internal `/shop/` WooCommerce area. Remove `BRAND SHOP` CTA routing and restrict Korean IP visitors only on Shop/WooCommerce routes.
+
 Updated: 2026-05-12
 
 ## Primary Recurring Prompt

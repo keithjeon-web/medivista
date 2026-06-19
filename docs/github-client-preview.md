@@ -1,5 +1,7 @@
 # MEDIVISTA GitHub Client Preview Linkage
 
+> The GitHub Pages build remains a static corporate/catalog preview. Live WooCommerce Shop functionality is integrated into `wp-theme-starter` on WordPress and is not represented by the static preview.
+
 Updated: 2026-05-07
 Codex thread: 019df785-5622-7b60-b0ca-a6fcd4a9b739
 GitHub repository: https://github.com/keithjeon-web/medivista

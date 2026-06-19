@@ -1,4 +1,4 @@
-param(
+﻿param(
   [switch]$StartPreview,
   [switch]$RebuildWordPressZip,
   [switch]$PushDeploy,
@@ -11,9 +11,7 @@ $DeployRoot = Join-Path $Root ".deploy-medivista-github"
 $ReportFullPath = Join-Path $Root $ReportPath
 $PreviewUrl = "http://127.0.0.1:4173/index.html"
 $PublicBaseUrl = "https://keithjeon-web.github.io/medivista/"
-$WpZip = Join-Path $Root "dist/medivista-wp-theme-starter-20260511-wp.zip"
-$WpShopZip = Join-Path $Root "dist/medivista-wp-theme-shop-20260522-wp.zip"
-$WpNetworkThemesZip = Join-Path $Root "dist/medivista-wp-network-themes-20260525.zip"
+$WpZip = Join-Path $Root "wp-theme-starter.zip"
 $WpPagesXml = Join-Path $Root "dist/medivista-wp-pages-20260511.xml"
 $GitExe = "C:\Program Files\Git\cmd\git.exe"
 
@@ -382,17 +380,15 @@ function Test-PhpStructureFallback {
 
 if ($RebuildWordPressZip) {
   Rebuild-WordPressZip
-  Rebuild-WordPressShopZip
-  Rebuild-WordPressNetworkThemesZip
 }
 
 $node = Get-Command node -ErrorAction SilentlyContinue
 if ($node) {
   $js = Run-CommandCapture $node.Source @("--check", "assets/js/main.js")
   $wpJs = Run-CommandCapture $node.Source @("--check", "wp-theme-starter/assets/js/main.js")
-  $shopJs = Run-CommandCapture $node.Source @("--check", "wp-theme-shop/assets/js/shop.js")
+  $shopJs = Run-CommandCapture $node.Source @("--check", "wp-theme-starter/assets/js/shop.js")
   if ($js.ExitCode -eq 0 -and $wpJs.ExitCode -eq 0 -and $shopJs.ExitCode -eq 0) {
-    Add-Result "1" "JS syntax baseline" "PASS" "Static, WordPress main, and WordPress shop JS syntax checks passed." "No code change required." "Continue regular checks."
+    Add-Result "1" "JS syntax baseline" "PASS" "Static and unified WordPress theme JS syntax checks passed." "No code change required." "Continue regular checks."
   }
   else {
     Add-Result "1" "JS syntax baseline" "FAIL" "$($js.Output)`n$($wpJs.Output)`n$($shopJs.Output)" "Fix JS syntax before deployment." "Re-run this script."
@@ -494,13 +490,21 @@ $requiredZip = @(
   "wp-theme-starter/page-blogs.php",
   "wp-theme-starter/page-cellexor.php",
   "wp-theme-starter/page-contact.php",
+  "wp-theme-starter/page-shop.php",
+  "wp-theme-starter/page-cart.php",
+  "wp-theme-starter/page-checkout.php",
+  "wp-theme-starter/page-my-account.php",
+  "wp-theme-starter/woocommerce.php",
+  "wp-theme-starter/inc/shop-access-control.php",
   "wp-theme-starter/assets/css/main.css",
+  "wp-theme-starter/assets/css/shop.css",
   "wp-theme-starter/assets/js/main.js",
+  "wp-theme-starter/assets/js/shop.js",
   "wp-theme-starter/assets/images/medivista_logo_header.png"
 )
 $zipCheck = Test-ZipContains $WpZip $requiredZip
 if ($zipCheck.Ok) {
-  Add-Result "5" "WordPress ZIP readiness" "PASS" "WordPress theme ZIP contains required files." "No package change required." "Keep ZIP ready for direct live WordPress application after local/GitHub backup."
+    Add-Result "5" "WordPress ZIP readiness" "PASS" "Unified WordPress theme ZIP contains corporate, catalog, and WooCommerce Shop files." "No package change required." "Upload the single theme package after local/GitHub backup."
 }
 else {
   if ($RebuildWordPressZip) {
@@ -508,62 +512,6 @@ else {
   }
   else {
     Add-Result "5" "WordPress ZIP readiness" "WARN" "ZIP missing: $($zipCheck.Missing -join ', ')" "Run with -RebuildWordPressZip." "Re-run this script."
-  }
-}
-
-$requiredShopZip = @(
-  "wp-theme-shop/style.css",
-  "wp-theme-shop/index.php",
-  "wp-theme-shop/functions.php",
-  "wp-theme-shop/header.php",
-  "wp-theme-shop/footer.php",
-  "wp-theme-shop/front-page.php",
-  "wp-theme-shop/page-shop.php",
-  "wp-theme-shop/page-cart.php",
-  "wp-theme-shop/page-checkout.php",
-  "wp-theme-shop/page-my-account.php",
-  "wp-theme-shop/woocommerce.php",
-  "wp-theme-shop/assets/css/shop.css",
-  "wp-theme-shop/assets/js/shop.js",
-  "wp-theme-shop/assets/images/medivista_logo_header.png",
-  "wp-theme-shop/assets/images/products/cellexor-re-tone.webp"
-)
-$shopZipCheck = Test-ZipContains $WpShopZip $requiredShopZip
-if ($shopZipCheck.Ok) {
-  Add-Result "5" "WordPress shop ZIP readiness" "PASS" "WordPress shop theme ZIP contains required WooCommerce-ready files." "Upload only to shop.medivista.co.kr." "Activate WooCommerce on the shop site only and test checkout in safe test mode."
-}
-else {
-  if ($RebuildWordPressZip) {
-    Add-Result "5" "WordPress shop ZIP readiness" "FAIL" "Shop ZIP still missing: $($shopZipCheck.Missing -join ', ')" "Inspect shop package generation." "Rebuild and re-run."
-  }
-  else {
-    Add-Result "5" "WordPress shop ZIP readiness" "WARN" "Shop ZIP missing: $($shopZipCheck.Missing -join ', ')" "Run with -RebuildWordPressZip." "Re-run this script."
-  }
-}
-
-$requiredNetworkZip = @(
-  "wp-theme-starter/style.css",
-  "wp-theme-starter/functions.php",
-  "wp-theme-starter/page-brands.php",
-  "wp-theme-starter/assets/css/main.css",
-  "wp-theme-shop/style.css",
-  "wp-theme-shop/functions.php",
-  "wp-theme-shop/page-shop.php",
-  "wp-theme-shop/page-checkout.php",
-  "wp-theme-shop/woocommerce.php",
-  "wp-theme-shop/assets/css/shop.css",
-  "wp-theme-shop/assets/js/shop.js"
-)
-$networkZipCheck = Test-ZipContains $WpNetworkThemesZip $requiredNetworkZip
-if ($networkZipCheck.Ok) {
-  Add-Result "5" "WordPress network themes ZIP readiness" "PASS" "Network themes ZIP contains both main and shop theme folders at the top level." "Extract into wp-content/themes/ or upload through hosting file manager, not Appearance > Themes." "Network-enable both themes, then activate starter on www and shop on shop subdomain."
-}
-else {
-  if ($RebuildWordPressZip) {
-    Add-Result "5" "WordPress network themes ZIP readiness" "FAIL" "Network ZIP still missing: $($networkZipCheck.Missing -join ', ')" "Inspect network package generation." "Rebuild and re-run."
-  }
-  else {
-    Add-Result "5" "WordPress network themes ZIP readiness" "WARN" "Network ZIP missing: $($networkZipCheck.Missing -join ', ')" "Run with -RebuildWordPressZip." "Re-run this script."
   }
 }
 
@@ -631,3 +579,4 @@ Write-Host "Report: $ReportPath"
 foreach ($result in $results) {
   Write-Host "[$($result.Status)] $($result.Id) $($result.Name)"
 }
+

@@ -180,6 +180,16 @@
 - Push attempt: `git push origin gh-pages` failed from this environment (`Could not connect to server`).
 - Next: push `gh-pages` from a network-enabled environment (or use a GitHub connector fallback) and verify the public preview with a cache-busted URL.
 
+## 2026-06-16 - Routine cross-check: products parity BOM cleanup
+
+- Re-ran the MEDIVISTA GitHub/local cross-check routine in `C:\Users\jhj13\OneDrive\문서\New project` and re-read `AGENTS.md`, `docs/dev-log.md`, `docs/github-client-preview.md`, `docs/medivista-web-automation-cycle.md`, `docs/medivista-automation-prompts.md`, `docs/error-resolution-automation.md`, and the latest `docs/error-report-latest.md`.
+- GitHub connector state remains unchanged and still does not displace local truth: repository `keithjeon-web/medivista` default branch is `medivista`, open Issue `#11`, open Issue `#3`, and open PR `#10` remain the active remote items, while connector-visible recent default-branch commits are still older documentation commits from 2026-05-07.
+- Deploy state after closeout: `.deploy-medivista-github` remains `gh-pages...origin/gh-pages [ahead 1]` at commit `5982567 deploy: add partner action slider`, with preserved uncommitted drift in `.deploy-medivista-github/assets/css/styles.css` and `.deploy-medivista-github/wp-theme-starter/assets/css/main.css`.
+- Focused maintenance fix: removed a stray UTF-8 BOM from `products/index.html` so the root Products page now matches `.deploy-medivista-github/products/index.html` exactly by SHA-256 instead of carrying a line-1 encoding-only diff.
+- Validation: root/deploy parity now matches for homepage/static pages, shared CSS/JS, WordPress starter header/assets, and `products/index.html`; required product categories remain complete; Brand Shop links still route to `https://shop.medivista.co.kr`; catalog-only and risky-claim scans passed with expected documentation-only false positives in `wp-theme-starter/README.md`; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` passed again and refreshed `docs/error-report-latest.md`.
+- Blockers remain unchanged: direct `git ls-remote` to GitHub still fails on port `443`, the root workspace is still not a Git checkout, public preview fetch remains blocked in this environment, and the preview server started by the recovery script still does not persist after that PowerShell process exits.
+- Next run: push `.deploy-medivista-github` from a network-enabled environment, review whether the uncommitted deploy-only CSS spacing changes should be committed with the partner action slider work, then visually verify the public Home header/logo/mobile nav plus Products slider spacing.
+
 ## 2026-05-11 - Production cycle: CSS/logo cache-bust parity
 
 - Fix: bumped all static pages (root + subpages) to `assets/css/styles.css?v=20260511a` and `medivista_logo_header.png?v=20260511a` to reduce stale-cache mismatches vs JS (`assets/js/main.js?v=20260511a`).
@@ -904,3 +914,31 @@
 - Change: normalized source product names across root, WordPress starter, and deploy CSVs to match the uploaded image/product cards: Dermalax Deep Plus, EPTQ S100, Lipssom, DermArcane Implant, GC Arginine 2510, GC Arginine 1010, and DAIHAN Sterile Water.
 - Verification: all four `product-category-classification.csv` surfaces contain 116 rows with no missing or extra dropdown categories; all four product image manifests contain 114 ready images and no pending uploaded-product images.
 - Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; Products page has all 9 dropdown blocks; recovery closeout PASS with the standing WARNs for deferred deploy push and blocked public preview fetch.
+
+## 2026-06-15 - WordPress starter ZIP refresh
+
+- Focus: update the attached `wp-theme-starter.zip` package to include all local WordPress starter changes current as of 2026-06-15.
+- Finding: the existing ZIP still contained 2026-06-11 versions of key files even though `wp-theme-starter/` had 2026-06-15 updates for `front-page.php`, `assets/css/main.css`, `assets/data/medivista-products.csv`, `assets/data/product-image-manifest.csv`, and `template-parts/product-card.php`.
+- Change: regenerated `wp-theme-starter.zip` from the current `wp-theme-starter/` folder using `bsdtar`, preserving a top-level `wp-theme-starter/` folder and forward-slash ZIP paths for WordPress upload compatibility.
+- Verification: ZIP timestamp updated to 2026-06-15 21:12 KST, key updated files are present in the archive, and the ZIP contains 114 WebP product images plus the existing product-image README.
+- Checks: `node --check assets/js/main.js` PASS; `node --check wp-theme-starter/assets/js/main.js` PASS; commerce/price/cart/checkout/payment scan PASS; Brand Shop URL scan PASS; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip` PASS with standing WARNs for deferred deploy push and blocked public preview fetch.
+
+## 2026-06-19 - Routine cross-check: local parity confirmed, deploy publish still pending
+
+- Re-ran the MEDIVISTA GitHub/local cross-check routine in `C:\Users\jhj13\OneDrive\문서\New project` and re-read `AGENTS.md`, `docs/dev-log.md`, `docs/github-client-preview.md`, `docs/medivista-web-automation-cycle.md`, `docs/medivista-automation-prompts.md`, `docs/error-resolution-automation.md`, and the refreshed `docs/error-report-latest.md`.
+- GitHub refresh result: repository `keithjeon-web/medivista` still uses default branch `medivista`; direct remote branch probe confirmed `medivista` at `8ce7701` and `gh-pages` at `a749a84`; open PR `#10` remains present and mergeable with head `02049eb`; no newer remote branch state displaced the local workspace as source of truth.
+- Deploy state after closeout: `.deploy-medivista-github` still sits at `gh-pages...origin/gh-pages [ahead 1]` on local commit `5982567 deploy: add partner action slider`, with preserved uncommitted CSS drift in `.deploy-medivista-github/assets/css/styles.css` and `.deploy-medivista-github/wp-theme-starter/assets/css/main.css`; those edits already match the current local source files but are not yet committed in the deploy checkout.
+- Compatibility result: key static pages, shared CSS/JS, and WordPress starter runtime files remain byte-identical between the local source and `.deploy-medivista-github`; homepage and key subpages still share `v=20260611d` CSS/JS/logo references, mobile-nav wiring still uses `aria-controls="primary-nav"` and `id="primary-nav"`, Brand Shop links still target `https://shop.medivista.co.kr`, English-first copy remains intact, required categories remain complete, and catalog-only plus risky-claim constraints still pass.
+- Checks: deploy `status`, `remote -v`, `log`, `rev-parse`, `diff`, and `ls-remote`; root-vs-deploy SHA-256 parity checks for key static/theme runtime files; `node --check assets/js/main.js`; `node --check wp-theme-starter/assets/js/main.js`; `node --check wp-theme-shop/assets/js/shop.js`; Brand Shop URL scan; runtime commerce/risky-claim scan; category coverage scan; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip`.
+- Blockers retained: `gh` is not available in PATH in this shell; public preview fetch remains blocked here; the recovery-script preview server reports PASS inside the closeout process but does not persist after that PowerShell process exits, so browser-level local verification still cannot be completed from this shell session.
+- Next priority: from a network-enabled environment, push `.deploy-medivista-github` commit `5982567`, decide whether the pending deploy-only CSS spacing changes should be committed before publish, then visually verify the public Home header/logo/mobile nav, partner action slider spacing, and Products page anchors.
+## 2026-06-19 - Unified Shop integration
+
+- Decision: discontinue the separate `shop.medivista.co.kr` implementation and run WooCommerce inside the existing `wp-theme-starter` theme under `/shop/`.
+- Change: removed the static `BRAND SHOP` CTA/link surfaces; added an internal WordPress `SHOP` dropdown with Shop, Cart, Checkout, and My Account routes.
+- Change: integrated WooCommerce theme support, product gallery support, Shop/Cart/Checkout/My Account templates, `woocommerce.php`, Shop CSS/JS, cart count helpers, and internal Shop URLs into `wp-theme-starter`.
+- Access control: Korean IP visitors are blocked only on Shop/WooCommerce routes when a trusted country header is available; Administrator and Shop Manager users are exempt; South Korea is excluded from WooCommerce selling and shipping countries.
+- Documentation: replaced the active Multisite/subdomain instructions with the unified site model, marked `wp-theme-shop` as legacy, and updated product CSV image URLs to the `wp-theme-starter` path on `www.medivista.co.kr`.
+- Package: rebuilt `wp-theme-starter.zip`; the archive contains all integrated commerce templates and access-control assets.
+- Checks: JS syntax PASS for static, starter, and integrated Shop scripts; project PHP structural fallback lint PASS because PHP CLI is unavailable; static `BRAND SHOP`/shop-subdomain runtime scan PASS; risky-claim scan PASS; recovery report PASS for unified WordPress ZIP readiness.
+- GitHub context: reviewed open Issue #1 as the closest existing WooCommerce/Geo-IP scope. Its old subdomain assumption is superseded by this 2026-06-19 user decision.
