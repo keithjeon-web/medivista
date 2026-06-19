@@ -25,7 +25,7 @@ $product_categories = array(
       array('name' => 'Dysport 500Units', 'type' => '', 'spec' => '500Units / Vial'),
     ),
   ),  'dermal-fillers' => array(
-    'label' => 'HA Dermal Fillers',
+    'label' => 'Dermal Fillers',
     'items' => array(
       array('name' => 'The Chaeum Premium No.1', 'type' => '', 'spec' => '1.1ml x 2Syringes'),
       array('name' => 'The Chaeum Premium No.2', 'type' => '', 'spec' => '1.1ml x 2Syringes'),
@@ -162,8 +162,27 @@ if (!function_exists('medivista_product_image_slug')) {
 $product_image_slug_counts = array();
 ?>
 <?php foreach ($product_categories as $category_id => $category) : ?>
+  <?php
+    usort($category['items'], function ($left, $right) {
+      $left_pending = stripos($left['name'], 'Coming Soon') !== false;
+      $right_pending = stripos($right['name'], 'Coming Soon') !== false;
+      if ($left_pending !== $right_pending) {
+        return $left_pending ? 1 : -1;
+      }
+      return strnatcasecmp($left['name'], $right['name']);
+    });
+    $ready_count = count(array_filter($category['items'], function ($item) {
+      return stripos($item['name'], 'Coming Soon') === false;
+    }));
+  ?>
   <div id="<?php echo esc_attr($category_id); ?>" class="product-category-block">
-    <p class="eyebrow"><?php echo esc_html($category['label']); ?></p>
+    <div class="product-category-heading">
+      <div>
+        <p class="eyebrow"><?php echo esc_html($category['label']); ?></p>
+        <h2><?php echo esc_html($category['label']); ?> catalog</h2>
+      </div>
+      <span class="product-category-count"><?php echo esc_html($ready_count); ?> <?php echo $ready_count === 1 ? 'product' : 'products'; ?></span>
+    </div>
     <div class="grid grid-3">
       <?php foreach ($category['items'] as $product) : ?>
         <?php

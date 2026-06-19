@@ -942,3 +942,12 @@
 - Package: rebuilt `wp-theme-starter.zip`; the archive contains all integrated commerce templates and access-control assets.
 - Checks: JS syntax PASS for static, starter, and integrated Shop scripts; project PHP structural fallback lint PASS because PHP CLI is unavailable; static `BRAND SHOP`/shop-subdomain runtime scan PASS; risky-claim scan PASS; recovery report PASS for unified WordPress ZIP readiness.
 - GitHub context: reviewed open Issue #1 as the closest existing WooCommerce/Geo-IP scope. Its old subdomain assumption is superseded by this 2026-06-19 user decision.
+
+## 2026-06-19 - Products finished-image ordering
+
+- Reorganized the Products catalog around the 114 completed WebP assets already present in `assets/images/products` and `wp-theme-starter/assets/images/products`.
+- Sorted product cards by product name within the required category order: Botulinum Toxins, Dermal Fillers, Body Fillers, Skin Boosters, Lipolysis, Exosomes, Biostimulators, Hair Treatment, and Others.
+- Updated the static and WordPress Products views to report 116 visible cards: 114 finished-image products plus 2 clearly marked preparation-category cards.
+- Added category product counts and replaced the stale product-image placeholder notice with a completed-image status note.
+- Sorted all shared product CSV sources by the same category/product order so later imports and page rebuilds preserve the catalog organization.
+- Checks: 116 cards, 114 ready images, 2 pending preparation cards; JS syntax PASS; WordPress structural PHP lint PASS; unified WordPress ZIP readiness PASS; commerce and risky-claim scan PASS.

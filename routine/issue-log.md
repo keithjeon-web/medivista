@@ -10,6 +10,13 @@
 - Preserved drift: existing uncommitted `.deploy-medivista-github/assets/css/styles.css` and `.deploy-medivista-github/wp-theme-starter/assets/css/main.css` changes were not overwritten.
 - GitHub blocker: local commit `f731038` was created on `feature/unified-shop-integration`, but the push failed on GitHub port 443 and the elevated external upload was not approved, so no PR was opened.
 
+## 2026-06-19 - Products finished-image ordering
+
+- Result: Products now uses all 114 completed WebP product images in a consistent category and product-name order, with only Body Fillers and Hair Treatment retained as preparation cards.
+- Mirrored surfaces: static Products page, WordPress Products template/card renderer, shared CSS, and all root/WordPress product CSV sources.
+- Counts: 116 visible cards total, 114 ready product images, 2 preparation cards.
+- Checks: JS syntax PASS; structural PHP lint PASS; WordPress ZIP readiness PASS; product image count PASS; commerce and risky-claim scan PASS.
+
 ## 2026-06-12 02:39:32 +09:00
 
 - GitHub/local/deploy state checked: read `AGENTS.md`, `docs/dev-log.md`, `docs/github-client-preview.md`, `docs/medivista-web-automation-cycle.md`, `docs/medivista-automation-prompts.md`, `docs/error-resolution-automation.md`, and `docs/error-report-latest.md`; confirmed repo `keithjeon-web/medivista` default branch `medivista`; `.deploy-medivista-github` is clean against its index and remains `ahead 12` over `origin/gh-pages`; root static hashes matched deploy hashes before this run's focused edit.
