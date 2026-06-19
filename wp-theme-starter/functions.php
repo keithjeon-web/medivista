@@ -104,6 +104,17 @@ function medivista_structured_data() {
 }
 add_action('wp_head', 'medivista_structured_data', 20);
 
+function medivista_document_title_parts($title) {
+    $title['site'] = 'MEDIVISTA';
+
+    if (is_front_page()) {
+        $title['title'] = 'Global Medical Aesthetic B2B';
+    }
+
+    return $title;
+}
+add_filter('document_title_parts', 'medivista_document_title_parts');
+
 function medivista_theme_setup() {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');

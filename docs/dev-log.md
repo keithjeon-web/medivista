@@ -962,3 +962,12 @@
 - Bumped shared frontend asset cache tokens to `20260619b`, updated sitemap/theme documentation, and rebuilt `wp-theme-starter.zip`.
 - Checks: active JS syntax PASS; WordPress structural PHP lint PASS; risky-claim scan PASS; unified WordPress ZIP readiness PASS; local preview startup passed inside recovery, while persistent browser screenshot verification remained unavailable after the recovery process exited.
 - Official-reference follow-up: successfully reviewed `https://cellexor.com/cellexor/` and `https://cellexor.com/cellexor-retone/` through the MCP browser. Updated the brand hero toward the official monochrome cellular mood and revised the Re:Tone hero to the official centered, oversized ivory/gold `RE:TONE` composition with product-first staging. Strong clinical/regulatory claims visible on the source pages were intentionally not copied.
+
+## 2026-06-19 - WordPress consolidated update package
+
+- Audited all WordPress theme files against the current chat decisions: integrated Shop, temporary Korea-IP unblock, 114 finished product images, CELLEXOR official-reference styling, RUMINES Coming Soon, partner banner contrast, and uniform partner logo sizing.
+- Updated the WXR page import from 7 to 12 pages and added Rumines, Shop, Cart, Checkout, and My Account with their matching page templates.
+- Changed the WXR base URLs and WooCommerce import image URLs from `www.medivista.co.kr` to the requested primary domain `medivista.co.kr`.
+- Added a WordPress document-title filter so frontend tabs use `MEDIVISTA` instead of a temporary WordPress site identifier.
+- Updated theme instructions for primary-domain setup, Site Title, tagline, redirects, DNS record preservation, and the temporarily disabled Shop Korea-IP restriction.
+- Rebuilt `wp-theme-starter.zip`; JS, structural PHP lint, XML parsing with 12 pages, ZIP readiness, product images, commerce, and risky-claim checks passed.

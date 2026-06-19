@@ -27,6 +27,14 @@
 - Checks: JS PASS, structural PHP lint PASS, risky-claim scan PASS, WordPress ZIP PASS, product images PASS.
 - Official reference verification: MCP browser inspection succeeded for the supplied CELLEXOR brand and Re:Tone URLs; the local brand and product heroes were refined to match their monochrome cellular and oversized ivory/gold product direction while excluding risky source claims.
 
+## 2026-06-19 - WordPress consolidated update package
+
+- Updated the WordPress deployment deliverables to reflect all current decisions.
+- WXR import now contains 12 pages using `medivista.co.kr`, including Rumines and the four WooCommerce pages.
+- Theme frontend titles now force the MEDIVISTA site identity; Shop Korean-IP blocking remains temporarily disabled with a production re-enable marker.
+- Product import CSV image URLs now use `https://medivista.co.kr/wp-content/themes/wp-theme-starter/`.
+- Checks: JS PASS, structural PHP lint PASS, 12-page XML parse PASS, unified WordPress ZIP PASS, product images PASS, commerce/risky-claim scan PASS.
+
 ## 2026-06-12 02:39:32 +09:00
 
 - GitHub/local/deploy state checked: read `AGENTS.md`, `docs/dev-log.md`, `docs/github-client-preview.md`, `docs/medivista-web-automation-cycle.md`, `docs/medivista-automation-prompts.md`, `docs/error-resolution-automation.md`, and `docs/error-report-latest.md`; confirmed repo `keithjeon-web/medivista` default branch `medivista`; `.deploy-medivista-github` is clean against its index and remains `ahead 12` over `origin/gh-pages`; root static hashes matched deploy hashes before this run's focused edit.

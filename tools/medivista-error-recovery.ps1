@@ -519,7 +519,7 @@ else {
 try {
   [xml]$xml = Get-Content -LiteralPath $WpPagesXml -Raw
   $pageCount = $xml.rss.channel.item.Count
-  Add-Result "5" "WordPress page import XML" $(if ($pageCount -eq 7) { "PASS" } else { "WARN" }) "Import XML parsed with $pageCount pages." "Use during direct live WordPress application after local/GitHub backup." "Confirm Home is assigned as static front page on the live site."
+  Add-Result "5" "WordPress page import XML" $(if ($pageCount -eq 12) { "PASS" } else { "WARN" }) "Import XML parsed with $pageCount pages." "Use during direct live WordPress application after local/GitHub backup." "Confirm Home is assigned as static front page and WooCommerce pages are mapped."
 }
 catch {
   Add-Result "5" "WordPress page import XML" "FAIL" $_.Exception.Message "Fix XML syntax." "Re-run XML parse."
