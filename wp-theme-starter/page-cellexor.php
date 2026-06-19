@@ -1,77 +1,70 @@
-﻿<?php
+<?php
 /*
 Template Name: MEDIVISTA Cellexor
 */
 get_header();
+$cellexor_image = get_template_directory_uri() . '/assets/images/products/cellexor-re-tone.webp';
 ?>
-<main id="main-content">
-  <section class="page-banner">
-    <div class="container">
-      <p class="eyebrow">CELLEXOR</p>
-      <h1>Cellular reverse-aging-inspired beauty, translated for professional partners.</h1>
-      <p>CELLEXOR presents a premium vision for awakening youthful energy from within, using exosome-inspired brand storytelling and responsible beauty-science communication.</p>
-      <div class="button-row">
-        <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Brand Inquiry</a>
-        <a class="btn secondary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official CELLEXOR Site</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container grid grid-2">
-      <div class="brand-visual" data-label="CELLEXOR"></div>
-      <div>
-        <p class="eyebrow">Brand Philosophy</p>
-        <h2>Glow Beyond Expectations</h2>
-        <p>As the starting point of a reverse-aging-inspired brand vision, CELLEXOR frames youthful energy, refined radiance, and science-based beauty storytelling for professional aesthetic partners.</p>
-        <p><strong>Original brand message:</strong> 리버스 에이징의 시작점으로서, 피부 본연에 내재된 젊은 에너지를 깨우는 혁신적 비전과 과학적 솔루션.</p>
+<main id="main-content" class="cellexor-page">
+  <section class="cellexor-hero">
+    <div class="container cellexor-hero-grid">
+      <div class="cellexor-hero-copy">
+        <p class="cellexor-kicker">CELLEXOR · Re:Tone</p>
+        <h1>Glow Beyond<br><em>Expectations.</em></h1>
+        <p class="cellexor-lead">A refined professional beauty concept shaped around exosome-inspired storytelling, NAD+ positioning, and a luminous gold-on-black visual language.</p>
         <div class="button-row">
-          <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Inquiry</a>
-          <a class="btn secondary" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a>
-          <a class="btn secondary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official Site</a>
+          <a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Brand Inquiry</a>
+          <a class="btn secondary dark" href="#" data-whatsapp data-product="Cellexor Re:Tone">WhatsApp Inquiry</a>
         </div>
       </div>
+      <figure class="cellexor-product-orbit">
+        <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+        <img src="<?php echo esc_url($cellexor_image); ?>" alt="CELLEXOR Re:Tone product">
+        <figcaption>Professional aesthetic solution</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="section alt">
+  <section class="cellexor-manifesto">
+    <div class="container cellexor-manifesto-grid">
+      <p class="cellexor-index">01 · Brand Philosophy</p>
+      <div><h2>Beauty science, expressed with restraint.</h2><p>CELLEXOR brings together a premium clinical-inspired atmosphere and carefully moderated beauty language. The experience is designed for international partners seeking a distinctive own-brand story without overstated efficacy claims.</p></div>
+    </div>
+  </section>
+
+  <section class="section cellexor-formula-section">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Brand Story</p>
-          <h2>From youthful energy to premium beauty science</h2>
-        </div>
-        <p>MEDIVISTA presents the official CELLEXOR themes as brand concepts for B2B review, using careful partner-focused language.</p>
+      <div class="section-head cellexor-section-head">
+        <div><p class="eyebrow">Dual-System Concept</p><h2>Two expressions. One refined ritual.</h2></div>
+        <p>Formula information is presented as a professional product concept for partner review and source confirmation.</p>
       </div>
-      <div class="grid grid-3">
-        <article class="info-card">
-          <p class="card-meta">Brand Story</p>
-          <h3>Awakening youthful energy from within</h3>
-          <p>The brand narrative focuses on inner vitality, refined glow, and premium partner communication for global markets.</p>
-        </article>
-        <article class="info-card">
-          <p class="card-meta">Core Technology</p>
-          <h3>Exosome-inspired key concept</h3>
-          <p>The phrase "?묒냼醫, ?명룷 ?ъ깮???듭떖 ?댁뇿" is handled as official brand concept language for beauty-science storytelling.</p>
-        </article>
-        <article class="info-card">
-          <p class="card-meta">Synergy Science</p>
-          <h3>Exosome and active-ingredient synergy</h3>
-          <p>CELLEXOR's synergy theme is presented as a product-positioning concept for professional review and further inquiry.</p>
-        </article>
+      <div class="cellexor-formula-grid">
+        <article><span>V1</span><h3>Exosome-inspired powder</h3><p>A premium first-step concept designed to frame the CELLEXOR identity with precision and clarity.</p></article>
+        <article><span>V2</span><h3>NAD+ solution concept</h3><p>A complementary second-step concept positioned around vitality-inspired beauty storytelling.</p></article>
+        <article class="cellexor-formula-feature"><span>Re:Tone</span><h3>Synergy, beautifully considered</h3><p>Presented together as a polished professional ritual for global aesthetic partners.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container grid grid-4">
-      <article class="info-card"><p class="card-meta">Brand Promise</p><h3>Youth blooming from within</h3><p>?대㈃?먯꽌遺???쇱뼱?섎뒗 ?딆쓬 is presented as an emotional beauty message, supported by careful B2B wording.</p></article>
-      <article class="info-card"><p class="card-meta">Product Philosophy</p><h3>A new dimension of reverse-aging-inspired care</h3><p>The phrase 由щ쾭???먯씠吏뺤쓽 ?덈줈??李⑥썝 is used as brand positioning, not as a medical claim.</p></article>
-      <article class="info-card"><p class="card-meta">Professional Review</p><h3>Inquiry-led brand information</h3><p>Detailed product, market, and use-context materials should be reviewed through MEDIVISTA partner inquiry.</p></article>
-      <article class="info-card"><p class="card-meta">Official Link</p><h3>Continue to CELLEXOR</h3><p>Open the official CELLEXOR page for the full brand presentation and visual language.</p><a class="btn primary" href="https://cellexor.com/cellexor/" target="_blank" rel="noopener">Official CELLEXOR Site</a></article>
+  <section class="section cellexor-story-section">
+    <div class="container grid grid-2">
+      <div class="cellexor-story-visual"><img src="<?php echo esc_url($cellexor_image); ?>" alt="CELLEXOR Re:Tone package"></div>
+      <div class="cellexor-story-copy">
+        <p class="eyebrow">Product Philosophy</p>
+        <h2>Radiance begins with a clear point of view.</h2>
+        <p>Every detail—from the restrained palette to the measured product language—is designed to communicate trust, sophistication, and advanced beauty science.</p>
+        <ul class="cellexor-list"><li>English-first global presentation</li><li>Inquiry-led professional information</li><li>Premium gold, ivory, and deep-black visual system</li><li>Responsible, evidence-conscious product wording</li></ul>
+      </div>
     </div>
   </section>
 
-  <?php get_template_part('template-parts/inquiry-cta'); ?>
+  <section class="inquiry-band cellexor-cta">
+    <div class="container">
+      <p class="eyebrow">CELLEXOR Partnership</p>
+      <h2>Bring the Re:Tone story to your market.</h2>
+      <p>Request product, distribution, and brand presentation information from MEDIVISTA.</p>
+      <div class="button-row"><a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Contact MEDIVISTA</a><a class="btn secondary" href="#" data-whatsapp data-product="Cellexor Re:Tone">Inquire via WhatsApp</a></div>
+    </div>
+  </section>
 </main>
 <?php get_footer(); ?>

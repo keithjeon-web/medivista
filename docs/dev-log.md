@@ -951,3 +951,13 @@
 - Added category product counts and replaced the stale product-image placeholder notice with a completed-image status note.
 - Sorted all shared product CSV sources by the same category/product order so later imports and page rebuilds preserve the catalog organization.
 - Checks: 116 cards, 114 ready images, 2 pending preparation cards; JS syntax PASS; WordPress structural PHP lint PASS; unified WordPress ZIP readiness PASS; commerce and risky-claim scan PASS.
+
+## 2026-06-19 - CELLEXOR, RUMINES, partner banner, and temporary Shop access
+
+- Temporarily disabled the Shop Korean-IP `template_redirect` hook until site construction and Shop QA are complete; the country-detection and restriction functions remain ready for reactivation before production launch.
+- Rebuilt the CELLEXOR static and WordPress pages with a premium black, ivory, and gold presentation, product-focused hero, dual-system concept, brand manifesto, product philosophy, and inquiry CTA. Removed the previous mojibake text and kept claims carefully moderated.
+- Browser/MCP review attempted `cellexor.co.kr` and the existing official reference URL, but the requested `.co.kr` domain did not resolve and the reference site was unavailable from this environment. The implementation therefore follows the established CELLEXOR materials and MEDIVISTA visual system rather than claiming a live-site pixel match.
+- Added RUMINES to the Brands submenu, created static and WordPress Coming Soon pages, and inserted a RUMINES launch teaser on the Brands page.
+- Improved the Home partner section with a forced dark premium background, higher-contrast Trusted Brands / Our Partners heading panel, uniform logo card dimensions, and consistent logo fit.
+- Bumped shared frontend asset cache tokens to `20260619b`, updated sitemap/theme documentation, and rebuilt `wp-theme-starter.zip`.
+- Checks: active JS syntax PASS; WordPress structural PHP lint PASS; risky-claim scan PASS; unified WordPress ZIP readiness PASS; local preview startup passed inside recovery, while persistent browser screenshot verification remained unavailable after the recovery process exited.

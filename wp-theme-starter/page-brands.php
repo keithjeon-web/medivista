@@ -75,6 +75,13 @@ get_header();
     </div>
   </section>
 
+  <section class="section rumines-brand-teaser">
+    <div class="container rumines-brand-teaser-inner">
+      <div><p class="eyebrow">Next Brand</p><h2>RUMINES</h2><p>A new premium beauty identity is taking shape. Discover a first glimpse of the light, restraint, and modern elegance behind the upcoming launch.</p></div>
+      <div class="rumines-teaser-action"><span>COMING SOON</span><a class="btn primary" href="<?php echo esc_url(home_url('/rumines/')); ?>">Preview RUMINES</a></div>
+    </div>
+  </section>
+
   <section class="inquiry-band brand-cta-band">
     <div class="container">
       <p class="eyebrow">Brand Inquiry</p>

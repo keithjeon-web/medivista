@@ -35,6 +35,7 @@
         <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/brands/')); ?>" aria-haspopup="true">BRANDS</a>
         <div class="nav-dropdown-menu">
           <a href="<?php echo esc_url(home_url('/cellexor/')); ?>">Cellexor Re:Tone</a>
+          <a href="<?php echo esc_url(home_url('/rumines/')); ?>">RUMINES <span class="nav-coming-soon">Coming Soon</span></a>
         </div>
       </div>
       <a href="<?php echo esc_url(home_url('/blogs/')); ?>">BLOGS</a>

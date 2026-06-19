@@ -54,7 +54,9 @@ function medivista_shop_block_korean_ip() {
         array('response' => 403)
     );
 }
-add_action('template_redirect', 'medivista_shop_block_korean_ip', 1);
+// Temporarily disabled until the site build and Shop QA are complete.
+// Re-enable this action before production launch.
+// add_action('template_redirect', 'medivista_shop_block_korean_ip', 1);
 
 function medivista_shop_exclude_korea_from_sales($countries) {
     unset($countries['KR']);

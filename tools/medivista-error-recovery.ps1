@@ -489,6 +489,7 @@ $requiredZip = @(
   "wp-theme-starter/page-brands.php",
   "wp-theme-starter/page-blogs.php",
   "wp-theme-starter/page-cellexor.php",
+  "wp-theme-starter/page-rumines.php",
   "wp-theme-starter/page-contact.php",
   "wp-theme-starter/page-shop.php",
   "wp-theme-starter/page-cart.php",

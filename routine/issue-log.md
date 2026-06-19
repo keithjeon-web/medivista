@@ -17,6 +17,15 @@
 - Counts: 116 visible cards total, 114 ready product images, 2 preparation cards.
 - Checks: JS syntax PASS; structural PHP lint PASS; WordPress ZIP readiness PASS; product image count PASS; commerce and risky-claim scan PASS.
 
+## 2026-06-19 - Brand presentation and Shop access update
+
+- Shop access: Korean-IP blocking is temporarily disabled during site construction; reactivation is explicitly marked in `wp-theme-starter/inc/shop-access-control.php`.
+- CELLEXOR: rebuilt static and WordPress detail pages using the existing black/gold/ivory brand direction, removed broken encoded copy, and retained conservative professional beauty wording.
+- RUMINES: added the brand submenu entry, static and WordPress Coming Soon pages, Brands-page teaser, sitemap entry, and WordPress ZIP requirement.
+- Home partners: strengthened title contrast and standardized all partner logo frames and image dimensions.
+- MCP/browser limitation: `cellexor.co.kr` returned DNS resolution failure and the reference site could not be inspected from this environment; local recovery preview passed, but the browser client could not reconnect after the preview process ended.
+- Checks: JS PASS, structural PHP lint PASS, risky-claim scan PASS, WordPress ZIP PASS, product images PASS.
+
 ## 2026-06-12 02:39:32 +09:00
 
 - GitHub/local/deploy state checked: read `AGENTS.md`, `docs/dev-log.md`, `docs/github-client-preview.md`, `docs/medivista-web-automation-cycle.md`, `docs/medivista-automation-prompts.md`, `docs/error-resolution-automation.md`, and `docs/error-report-latest.md`; confirmed repo `keithjeon-web/medivista` default branch `medivista`; `.deploy-medivista-github` is clean against its index and remains `ahead 12` over `origin/gh-pages`; root static hashes matched deploy hashes before this run's focused edit.
