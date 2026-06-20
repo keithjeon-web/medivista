@@ -159,3 +159,23 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Checks run: deploy `status`, `remote -v`, `log`, `rev-parse`, `diff`, and `ls-remote`; root-vs-deploy SHA-256 parity checks for key static pages, shared CSS/JS, and WordPress starter runtime files; `node --check assets/js/main.js`; `node --check wp-theme-starter/assets/js/main.js`; `node --check wp-theme-shop/assets/js/shop.js`; Brand Shop URL scan; runtime commerce/risky-claim scan with expected hits confined to docs, tooling, README guidance, and the shop theme; product-category coverage scan; `powershell -ExecutionPolicy Bypass -File tools/medivista-error-recovery.ps1 -StartPreview -RebuildWordPressZip`.
 - Blockers or network/auth limits: direct local HTTP checks to `http://127.0.0.1:4173/` still fail after the closeout because the recovery-script preview job does not persist after that PowerShell process exits; public preview fetch remains blocked here; deploy push was not attempted, but the recovery report still shows `.deploy-medivista-github` as `gh-pages...origin/gh-pages [ahead 1]` with preserved uncommitted CSS drift in `assets/css/styles.css` and `wp-theme-starter/assets/css/main.css`; `gh` is not available in PATH in this shell.
 - Next recommended action: from a network-enabled environment, push `.deploy-medivista-github` commit `5982567`, decide whether the deploy-only CSS spacing changes should be committed before publish, then visually verify the public Home header/logo/mobile nav, partner action slider spacing, and Products page anchors after the `gh-pages` update.
+
+## 2026-06-20 - PRODUCTS image-only catalog, Cosmetic taxonomy, and RUVENIS rename
+
+- GitHub context checked: reviewed open Issue `#3` for PRODUCTS structure and Issue `#1` for product-list inquiry behavior before implementation.
+- Result: PRODUCTS now visually shows category-grouped product photos only, with 114 ready-image cards across Botulinum Toxins, Dermal Fillers, Body Fillers, Skin Boosters, Lipolysis, Exosomes, Biostimulators, Hair Treatment, Vitamin Injections, and Cosmetic.
+- Taxonomy: added `Vitamin Injections`; moved Guthion 1200mg, Jeil High B, and Vitamin C into it; renamed `Others` to `Cosmetic`.
+- Brand: changed public `RUMINES` copy to `RUVENIS`; retained the `/rumines/` compatibility route.
+- Mirrored surfaces: static site, `.deploy-medivista-github`, `wp-theme-starter`, product CSV sources, and WordPress page import XML.
+- Checks run: JS syntax; XML parse; 114 card/image count; 10-category coverage; root/deploy SHA-256 parity; commerce/claim scan; recovery closeout with WordPress ZIP rebuild.
+- Blocker: local preview server passed from PowerShell, but the in-app browser could not access that localhost process; public preview remains pending a network-enabled push.
+
+## 2026-06-20 - CELLEXOR page and Brands/Contact 404 fix
+
+- Finding: the WordPress theme templates existed, but missing WordPress page records could leave `/brands/`, `/cellexor/`, and `/contact/` returning 404 when the WXR import was not applied.
+- Fix: added automatic creation and template assignment for the three core pages on theme activation, administrator load, and early initialization.
+- CELLEXOR page: rebuilt the static and WordPress versions from a browser audit of the official reference, while excluding unsupported regulatory, patent, numerical, and efficacy claims.
+- Links: all main CELLEXOR menu and CTA paths now use the dedicated `/cellexor/` route; official product and inquiry actions use the approved CELLEXOR URLs with `noopener noreferrer`.
+- Documentation: added the page audit and design-token records.
+- Validation: clean local routes returned HTTP 200; JS, fallback PHP lint, ZIP/XML, image, commerce, and claim checks passed; root/deploy parity passed.
+- Remaining deployment action: upload/activate the rebuilt WordPress theme or deploy this branch so the live WordPress installation executes the page-provisioning hook.

@@ -1,9 +1,9 @@
 ﻿<?php
 function medivista_enqueue_assets() {
-    wp_enqueue_style('medivista-main', get_template_directory_uri() . '/assets/css/main.css', array(), '20260619b');
+    wp_enqueue_style('medivista-main', get_template_directory_uri() . '/assets/css/main.css', array(), '20260620c');
     wp_enqueue_script('medivista-d3', 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js', array(), '7.8.5', true);
     wp_enqueue_script('medivista-topojson', 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js', array('medivista-d3'), '3.0.2', true);
-    wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260619b', true);
+    wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260620c', true);
 
     if (medivista_is_shop_request()) {
         wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array('medivista-main'), '20260619a');
@@ -127,6 +127,59 @@ function medivista_theme_setup() {
     ));
 }
 add_action('after_setup_theme', 'medivista_theme_setup');
+
+function medivista_ensure_core_pages() {
+    $pages = array(
+        'brands' => array(
+            'title' => 'Brands',
+            'template' => 'page-brands.php',
+            'content' => 'MEDIVISTA brand portfolio and partner information.',
+        ),
+        'cellexor' => array(
+            'title' => 'Cellexor Re:Tone',
+            'template' => 'page-cellexor.php',
+            'content' => 'CELLEXOR Re:Tone brand and product concept page.',
+        ),
+        'contact' => array(
+            'title' => 'Contact',
+            'template' => 'page-contact.php',
+            'content' => 'MEDIVISTA global B2B inquiry page.',
+        ),
+    );
+
+    $created_page = false;
+
+    foreach ($pages as $slug => $page_data) {
+        $page = get_page_by_path($slug, OBJECT, 'page');
+
+        if (!$page) {
+            $page_id = wp_insert_post(array(
+                'post_title' => $page_data['title'],
+                'post_name' => $slug,
+                'post_content' => $page_data['content'],
+                'post_status' => 'publish',
+                'post_type' => 'page',
+            ));
+
+            if (!is_wp_error($page_id)) {
+                update_post_meta($page_id, '_wp_page_template', $page_data['template']);
+                $created_page = true;
+            }
+            continue;
+        }
+
+        if (get_page_template_slug($page->ID) !== $page_data['template']) {
+            update_post_meta($page->ID, '_wp_page_template', $page_data['template']);
+        }
+    }
+
+    if ($created_page) {
+        flush_rewrite_rules(false);
+    }
+}
+add_action('after_switch_theme', 'medivista_ensure_core_pages');
+add_action('admin_init', 'medivista_ensure_core_pages');
+add_action('init', 'medivista_ensure_core_pages', 5);
 
 function medivista_is_shop_request() {
     if (function_exists('is_woocommerce') && is_woocommerce()) {

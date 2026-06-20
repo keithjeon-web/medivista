@@ -971,3 +971,23 @@
 - Added a WordPress document-title filter so frontend tabs use `MEDIVISTA` instead of a temporary WordPress site identifier.
 - Updated theme instructions for primary-domain setup, Site Title, tagline, redirects, DNS record preservation, and the temporarily disabled Shop Korea-IP restriction.
 - Rebuilt `wp-theme-starter.zip`; JS, structural PHP lint, XML parsing with 12 pages, ZIP readiness, product images, commerce, and risky-claim checks passed.
+
+## 2026-06-20 - PRODUCTS image-only catalog and taxonomy update
+
+- Changed PRODUCTS category cards to display product photography only; product names, specifications, descriptions, and per-product WhatsApp buttons remain available in markup for filtering/accessibility but are not visually displayed.
+- Added `Vitamin Injections` as a separate category with Guthion 1200mg, Jeil High B, and Vitamin C; renamed `Others` to `Cosmetic`.
+- Removed the two preparation cards from the visible catalog, leaving 114 cards backed by 114 ready WebP images across 10 category sections.
+- Renamed all public `RUMINES` branding to `RUVENIS` while retaining the existing `/rumines/` route and template filenames for compatibility.
+- Mirrored static, WordPress starter, source CSV, WXR, and deploy-checkout surfaces.
+- Checks: JS syntax PASS; structural PHP lint PASS; XML parse PASS; 114 cards / 114 ready images PASS; root/deploy parity PASS; commerce and claim safety PASS. Local preview startup passed, but the in-app browser could not reach the shell-hosted localhost server.
+
+## 2026-06-20 - CELLEXOR page build and core-page 404 recovery
+
+- Audited the official CELLEXOR Re:Tone reference in the Codex in-app browser, including page structure, visible links, image formats, metadata, computed body/font/color values, benefit-tab styling, and source claim risk.
+- Added `docs/cellexor-page-audit.md` and `docs/cellexor-design-tokens.md`.
+- Rebuilt the static and WordPress CELLEXOR pages with Hero, seven technology themes, Exosome × NAD+, V1/V2 system, four care areas, evidence-gated verification, applications, disclaimers, and final CTAs.
+- Added WordPress core-page provisioning for `/brands/`, `/cellexor/`, and `/contact/`, including template assignment and rewrite refresh when a missing page is created.
+- Replaced static menu and CTA links with clean directory routes and changed Home/Brands CELLEXOR actions to the dedicated `/cellexor/` page.
+- External product and partnership CTAs now use `https://cellexor.com/cellexor-retone/` and `https://cellexor.com/contact/` with new-tab security attributes.
+- Local HTTP verification: `/brands/`, `/cellexor/`, and `/contact/` returned 200; CELLEXOR contained 9 sections, JSON-LD, Open Graph metadata, safe external CTAs, and explicit image dimensions.
+- Checks: JS syntax PASS; fallback PHP lint PASS; local preview PASS; WordPress ZIP/XML/images PASS; commerce and claim scan PASS. The in-app browser successfully audited the external reference but could not access the shell-hosted localhost process, so viewport behavior was validated through responsive CSS breakpoints and local HTTP structure rather than browser screenshots.

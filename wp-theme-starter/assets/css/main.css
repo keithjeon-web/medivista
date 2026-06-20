@@ -1086,6 +1086,7 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .cellexor-kicker, .cellexor-index { color: #d8b955; font-size: 12px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; }
 .cellexor-hero h1 { margin: 0; color: #c5a45a; font-size: clamp(82px, 14vw, 180px); font-weight: 300; line-height: 0.82; letter-spacing: -0.06em; }
 .cellexor-hero h1 span { color: #f5efe5; }
+.cellexor-subtitle { margin: 18px 0 0; color: #e4cc93; font-size: clamp(22px, 3vw, 36px); font-weight: 300; letter-spacing: 0.08em; }
 .cellexor-lead { max-width: 720px; margin: 12px auto 0; color: rgba(255,255,255,0.66); font-size: 18px; }
 .cellexor-hero-copy .button-row { justify-content: center; }
 .cellexor-product-orbit { position: relative; min-height: 400px; display: grid; place-items: center; margin: -20px 0 0; }
@@ -1104,6 +1105,34 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .cellexor-formula-grid h3 { margin-top: 78px; color: #fff; font-size: 26px; }.cellexor-formula-grid p { color: rgba(255,255,255,0.54); }
 .cellexor-formula-grid .cellexor-formula-feature { background: linear-gradient(150deg, #c7a84e, #765b1a); }
 .cellexor-formula-feature > span, .cellexor-formula-feature h3, .cellexor-formula-feature p { color: #fff; }
+.cellexor-technology-section, .cellexor-benefits-section, .cellexor-application-section { background: #0a0907; }
+.cellexor-key-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: rgba(228,204,147,0.24); }
+.cellexor-key-grid article { min-height: 270px; padding: 34px; background: #12110e; }
+.cellexor-key-grid article:nth-child(7) { grid-column: span 2; }
+.cellexor-key-grid span, .cellexor-benefit-grid span { color: #e4cc93; font-size: 12px; font-weight: 800; letter-spacing: 0.16em; }
+.cellexor-key-grid h3, .cellexor-benefit-grid h3, .cellexor-application-grid h3 { margin-top: 48px; color: #fff; font-size: 24px; }
+.cellexor-key-grid p, .cellexor-benefit-grid p, .cellexor-application-grid p { color: rgba(255,255,255,0.62); }
+.cellexor-synergy-section { background: #f1eadb; color: #17120b; }
+.cellexor-synergy-grid { display: grid; grid-template-columns: 1fr 0.8fr; align-items: center; gap: 70px; }
+.cellexor-synergy-grid h2 { color: #17120b; font-size: clamp(42px, 6vw, 78px); }
+.cellexor-synergy-grid p:not(.cellexor-index) { color: #685d50; font-size: 18px; }
+.cellexor-synergy-mark { min-height: 360px; display: grid; place-items: center; align-content: center; gap: 12px; border: 1px solid rgba(117,91,26,0.25); border-radius: 50%; color: #17120b; }
+.cellexor-synergy-mark span { font-size: clamp(30px, 5vw, 62px); font-weight: 300; letter-spacing: 0.08em; }
+.cellexor-synergy-mark strong { color: #9a7c31; font-size: 34px; }
+.cellexor-disclaimer, .cellexor-notice { padding: 18px 20px; border-left: 2px solid #c9a84c; background: rgba(201,168,76,0.08); font-size: 14px !important; }
+.cellexor-benefit-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.cellexor-benefit-grid article { min-height: 250px; padding: 30px; border: 1px solid rgba(228,204,147,0.2); border-radius: 12px; background: linear-gradient(150deg, #17140f, #0c0b09); }
+.cellexor-verification-section { background: #e4cc93; color: #17120b; }
+.cellexor-verification-section h2 { color: #17120b; font-size: clamp(42px, 5vw, 68px); }
+.cellexor-verification-section p:not(.cellexor-index) { color: #5e503d; font-size: 17px; }
+.cellexor-verification-list { display: grid; }
+.cellexor-verification-list div { display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(23,18,11,0.2); }
+.cellexor-verification-list span { color: #6c5b43; text-align: right; }
+.cellexor-application-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.cellexor-application-grid article { min-height: 220px; padding: 30px; border-radius: 12px; background: #14120e; }
+.cellexor-application-grid h3 { margin-top: 0; }
+.cellexor-notice { max-width: 900px; margin: 28px 0 0; color: rgba(255,255,255,0.68); }
+.cellexor-page .btn:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 .cellexor-story-section { background: #15120d; }.cellexor-story-visual { min-height: 480px; display: grid; place-items: center; background: radial-gradient(circle, rgba(201,168,76,0.16), transparent 56%); }
 .cellexor-story-visual img { width: min(480px, 90%); }.cellexor-story-copy { align-self: center; }
 .cellexor-list { display: grid; gap: 14px; padding: 0; list-style: none; }.cellexor-list li { padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); }
@@ -1118,7 +1147,9 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .rumines-brand-teaser { background: linear-gradient(120deg, #f8f3e9, #e6d6bb); }.rumines-brand-teaser-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
 .rumines-brand-teaser h2 { font-size: clamp(48px, 7vw, 88px); font-weight: 300; letter-spacing: 0.08em; }.rumines-brand-teaser p { max-width: 700px; }
 .rumines-teaser-action { display: grid; gap: 20px; justify-items: end; }.rumines-teaser-action > span { color: #8b6a29; font-size: 12px; font-weight: 900; letter-spacing: 0.22em; }
-@media (max-width: 820px) { .cellexor-hero-grid, .cellexor-manifesto-grid, .cellexor-formula-grid { grid-template-columns: 1fr; } .cellexor-hero { padding: 80px 0; } .cellexor-product-orbit { min-height: 380px; } .orbit-one { width: 320px; height: 320px; } .orbit-two { width: 390px; height: 220px; } .rumines-brand-teaser-inner { align-items: flex-start; flex-direction: column; } .rumines-teaser-action { justify-items: start; } .partners-section .section-head { padding: 22px; } }
+@media (max-width: 1024px) { .cellexor-key-grid, .cellexor-benefit-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 820px) { .cellexor-hero-grid, .cellexor-manifesto-grid, .cellexor-formula-grid, .cellexor-synergy-grid { grid-template-columns: 1fr; } .cellexor-hero { min-height: auto; padding: 80px 0 40px; } .cellexor-product-orbit { min-height: 380px; } .orbit-one { width: 320px; height: 320px; } .orbit-two { width: 390px; height: 220px; } .cellexor-synergy-mark { min-height: 300px; } .cellexor-application-grid { grid-template-columns: 1fr; } .rumines-brand-teaser-inner { align-items: flex-start; flex-direction: column; } .rumines-teaser-action { justify-items: start; } .partners-section .section-head { padding: 22px; } }
+@media (max-width: 520px) { .cellexor-hero h1 { font-size: clamp(66px, 23vw, 104px); } .cellexor-key-grid, .cellexor-benefit-grid { grid-template-columns: 1fr; } .cellexor-key-grid article:nth-child(7) { grid-column: auto; } .cellexor-key-grid article, .cellexor-benefit-grid article { min-height: 0; } .cellexor-verification-list div { align-items: flex-start; flex-direction: column; } .cellexor-verification-list span { text-align: left; } }
 @keyframes partnerLogoMarquee {
   from { transform: translateX(0); }
   to { transform: translateX(calc(-100% - var(--partner-gap))); }
