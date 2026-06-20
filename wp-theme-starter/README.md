@@ -36,7 +36,7 @@ Create pages with these slugs so WordPress can load the matching templates:
 - Brands: `/brands/`, uses `page-brands.php`
 - Blogs: `/blogs/`, uses `page-blogs.php`
 - Cellexor: `/cellexor/`, uses `page-cellexor.php`
-- Rumines: `/rumines/`, uses `page-rumines.php`
+- Ruvenis: `/rumines/`, uses `page-rumines.php`
 - Contact: `/contact/`, uses `page-contact.php`
 - Shop: `/shop/`, uses `page-shop.php`
 - Cart: `/cart/`, uses `page-cart.php`

@@ -1,4 +1,4 @@
-﻿<?php get_header(); ?>
+<?php get_header(); ?>
 <main id="main-content">
   <?php get_template_part('template-parts/hero'); ?>
 
@@ -32,7 +32,7 @@
             <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'kabelline.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Lipolysis</p><h3>Kabelline</h3><p>Organized product information for professional market review and follow-up.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Kabelline">Inquire via WhatsApp</a></article>
           </div></div>
           <div class="action-slide product-slide" data-slide><div class="grid grid-3">
-            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'liporase.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Others</p><h3>Liporase</h3><p>Supplementary product catalog information for targeted partner inquiry.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Liporase">Inquire via WhatsApp</a></article>
+            <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'liporase.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Cosmetic</p><h3>Liporase</h3><p>Supplementary product catalog information for targeted partner inquiry.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Liporase">Inquire via WhatsApp</a></article>
             <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'gouri.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Biostimulators</p><h3>Gouri</h3><p>Product overview written for careful B2B evaluation and information requests.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Gouri">Inquire via WhatsApp</a></article>
             <article class="product-card"><div class="product-image" data-image="<?php echo esc_url($img_base . 'guthion-1200mg.webp'); ?>" data-image-status="ready"></div><p class="card-meta">Vitamin Injections</p><h3>Guthion 1200mg</h3><p>Catalog entry prepared with clear naming, category context, and inquiry routing.</p><a class="btn whatsapp" href="#" data-whatsapp data-product="Guthion 1200mg">Inquire via WhatsApp</a></article>
           </div></div>
@@ -101,7 +101,7 @@
           <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt="Nabota"></span><span>Nabota</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt="The Chaeum"></span><span>The Chaeum</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt="Rejuran"></span><span>Rejuran</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#others')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt="Liporase"></span><span>Liporase</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#cosmetic')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt="Liporase"></span><span>Liporase</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/brands/')); ?>"><span class="partner-logo-mark partner-logo-wordmark">Cellexor</span><span>Cellexor</span></a>
         </div>
         <div class="partner-logo-track" aria-hidden="true">
@@ -109,7 +109,7 @@
           <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt=""></span><span>Nabota</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt=""></span><span>The Chaeum</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt=""></span><span>Rejuran</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#others')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt=""></span><span>Liporase</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#cosmetic')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt=""></span><span>Liporase</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/brands/')); ?>" tabindex="-1"><span class="partner-logo-mark partner-logo-wordmark">Cellexor</span><span>Cellexor</span></a>
         </div>
       </div>

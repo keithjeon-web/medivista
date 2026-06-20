@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /*
 Template Name: MEDIVISTA Brands
 */
@@ -77,8 +77,8 @@ get_header();
 
   <section class="section rumines-brand-teaser">
     <div class="container rumines-brand-teaser-inner">
-      <div><p class="eyebrow">Next Brand</p><h2>RUMINES</h2><p>A new premium beauty identity is taking shape. Discover a first glimpse of the light, restraint, and modern elegance behind the upcoming launch.</p></div>
-      <div class="rumines-teaser-action"><span>COMING SOON</span><a class="btn primary" href="<?php echo esc_url(home_url('/rumines/')); ?>">Preview RUMINES</a></div>
+      <div><p class="eyebrow">Next Brand</p><h2>RUVENIS</h2><p>A new premium beauty identity is taking shape. Discover a first glimpse of the light, restraint, and modern elegance behind the upcoming launch.</p></div>
+      <div class="rumines-teaser-action"><span>COMING SOON</span><a class="btn primary" href="<?php echo esc_url(home_url('/rumines/')); ?>">Preview RUVENIS</a></div>
     </div>
   </section>
 

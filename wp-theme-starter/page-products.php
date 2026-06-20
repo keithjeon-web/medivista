@@ -52,15 +52,16 @@ get_header();
             <option value="exosomes">Exosomes</option>
             <option value="biostimulators">Biostimulators</option>
             <option value="hair-treatment">Hair Treatment</option>
-            <option value="others">Others</option>
+            <option value="vitamin-injections">Vitamin Injections</option>
+            <option value="cosmetic">Cosmetic</option>
           </select>
         </label>
-        <div class="catalog-status" aria-live="polite"><strong data-product-count>116</strong><span>items shown</span></div>
+        <div class="catalog-status" aria-live="polite"><strong data-product-count>114</strong><span>items shown</span></div>
         <button class="btn secondary catalog-reset" type="button" data-product-reset>Reset</button>
       </div>
       <p class="catalog-summary" data-product-summary>Showing all MEDIVISTA catalog categories for professional partner review.</p>
       <p class="catalog-empty" data-product-empty hidden>No matching products. Try another product name, type, or category.</p>
-      <p class="catalog-note"><strong>114 finished product images</strong> are now organized by category and product name. Body Fillers and Hair Treatment remain clearly marked as preparation categories.</p>
+      <p class="catalog-note"><strong>114 product images</strong> are organized by category for visual catalog review.</p>
       <div class="catalog-tabs-bar">
         <div class="catalog-tabs-head">
           <p class="catalog-tabs-kicker">Quick jump</p>
@@ -75,7 +76,8 @@ get_header();
           <a href="#exosomes">Exosomes</a>
           <a href="#biostimulators">Biostimulators</a>
           <a href="#hair-treatment">Hair Treatment</a>
-          <a href="#others">Others</a>
+          <a href="#vitamin-injections">Vitamin Injections</a>
+          <a href="#cosmetic">Cosmetic</a>
         </div>
       </div>
       <?php get_template_part('template-parts/product-card'); ?>

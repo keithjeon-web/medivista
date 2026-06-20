@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
@@ -28,14 +28,15 @@
           <a href="<?php echo esc_url(home_url('/products/#exosomes')); ?>">Exosomes</a>
           <a href="<?php echo esc_url(home_url('/products/#biostimulators')); ?>">Biostimulators</a>
           <a href="<?php echo esc_url(home_url('/products/#hair-treatment')); ?>">Hair Treatment</a>
-          <a href="<?php echo esc_url(home_url('/products/#others')); ?>">Others</a>
+          <a href="<?php echo esc_url(home_url('/products/#vitamin-injections')); ?>">Vitamin Injections</a>
+          <a href="<?php echo esc_url(home_url('/products/#cosmetic')); ?>">Cosmetic</a>
         </div>
       </div>
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/brands/')); ?>" aria-haspopup="true">BRANDS</a>
         <div class="nav-dropdown-menu">
           <a href="<?php echo esc_url(home_url('/cellexor/')); ?>">Cellexor Re:Tone</a>
-          <a href="<?php echo esc_url(home_url('/rumines/')); ?>">RUMINES <span class="nav-coming-soon">Coming Soon</span></a>
+          <a href="<?php echo esc_url(home_url('/rumines/')); ?>">RUVENIS <span class="nav-coming-soon">Coming Soon</span></a>
         </div>
       </div>
       <a href="<?php echo esc_url(home_url('/blogs/')); ?>">BLOGS</a>

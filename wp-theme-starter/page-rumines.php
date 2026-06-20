@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: MEDIVISTA Rumines
+Template Name: MEDIVISTA Ruvenis
 */
 get_header();
 ?>
@@ -8,11 +8,11 @@ get_header();
   <section class="rumines-hero">
     <div class="container rumines-hero-inner">
       <p class="rumines-status">New Brand · Coming Soon</p>
-      <h1>RUMINES</h1>
+      <h1>RUVENIS</h1>
       <p class="rumines-tagline">A new light is approaching.</p>
       <p class="rumines-copy">MEDIVISTA is preparing a new premium beauty identity shaped by luminous simplicity, modern confidence, and global aesthetic sensibility.</p>
-      <div class="rumines-progress" aria-label="RUMINES launch preparation"><span></span></div>
-      <div class="button-row"><a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Launch Updates</a><a class="btn secondary dark" href="#" data-whatsapp data-product="RUMINES">Partner Inquiry</a></div>
+      <div class="rumines-progress" aria-label="RUVENIS launch preparation"><span></span></div>
+      <div class="button-row"><a class="btn primary" href="<?php echo esc_url(home_url('/contact/')); ?>">Request Launch Updates</a><a class="btn secondary dark" href="#" data-whatsapp data-product="RUVENIS">Partner Inquiry</a></div>
     </div>
   </section>
   <section class="section rumines-preview">

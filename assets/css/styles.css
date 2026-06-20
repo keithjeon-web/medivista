@@ -479,6 +479,18 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   box-shadow: 0 16px 40px rgba(16, 47, 70, 0.06);
 }
 .product-card { display: flex; flex-direction: column; min-height: 100%; }
+.product-category-block .product-card {
+  padding: 0;
+  overflow: hidden;
+}
+.product-category-block .product-card > :not(.product-image) {
+  display: none;
+}
+.product-category-block .product-image {
+  margin: 0;
+  border: 0;
+  border-radius: 8px;
+}
 .product-image, .blog-thumb, .brand-visual {
   position: relative;
   min-height: 178px;

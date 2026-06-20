@@ -87,12 +87,15 @@ get_header();
             <select name="product-type">
               <option value="">Select Product Type</option>
               <option>Botulinum Toxins</option>
-              <option>HA Dermal Fillers</option>
+              <option>Dermal Fillers</option>
+              <option>Body Fillers</option>
               <option>Skin Boosters</option>
               <option>Lipolysis</option>
+              <option>Exosomes</option>
               <option>Biostimulators</option>
-              <option>Cosmetics</option>
-              <option>Others</option>
+              <option>Hair Treatment</option>
+                <option>Vitamin Injections</option>
+              <option>Cosmetic</option>
             </select>
           </label>
         </div>

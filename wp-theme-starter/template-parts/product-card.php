@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $product_categories = array(
   'botulinum-toxins' => array(
     'label' => 'Botulinum Toxins',
@@ -132,24 +132,28 @@ $product_categories = array(
     'items' => array(
       array('name' => 'Hair Care Line Coming Soon', 'type' => '', 'spec' => ''),
     ),
-  ),  'others' => array(
-    'label' => 'Others',
+  ),  'vitamin-injections' => array(
+    'label' => 'Vitamin Injections',
+    'items' => array(
+      array('name' => 'Guthion 1200mg', 'type' => '', 'spec' => '10Vials'),
+      array('name' => 'Jeil High B', 'type' => '', 'spec' => '10ml x 10Vials'),
+      array('name' => 'Vitamin C', 'type' => '', 'spec' => '20ml x 10Vials'),
+    ),
+  ),  'cosmetic' => array(
+    'label' => 'Cosmetic',
     'items' => array(
       array('name' => 'H-Lido Cream', 'type' => '10.56%', 'spec' => '500mg'),
       array('name' => 'Liporase', 'type' => '', 'spec' => '10Vials'),
-      array('name' => 'Vitamin C', 'type' => '', 'spec' => '20ml x 10Vials'),
       array('name' => 'Cindella', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'Luthione 600mg', 'type' => '', 'spec' => '10Vials'),
       array('name' => 'Luthione 1200mg', 'type' => '', 'spec' => '10Vials'),
       array('name' => 'Laennec', 'type' => '', 'spec' => '2ml x 50Vials'),
       array('name' => 'Melsmon', 'type' => '', 'spec' => '2ml x 50Vials'),
-      array('name' => 'Guthion 1200mg', 'type' => '', 'spec' => '10Vials'),
       array('name' => 'Cartin', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'L-car', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'Vitamo', 'type' => '', 'spec' => '2ml x 50Vials'),
       array('name' => 'GC Arginine 2510', 'type' => '', 'spec' => '25ml x 10Vials'),
       array('name' => 'GC Arginine 1010', 'type' => '', 'spec' => '10ml x 10Vials'),
-      array('name' => 'Jeil High B', 'type' => '', 'spec' => '10ml x 10Vials'),
       array('name' => 'DAIHAN Sterile Water', 'type' => '', 'spec' => '20ml x 50Amps'),
     ),
   ),
@@ -185,6 +189,7 @@ $product_image_slug_counts = array();
     </div>
     <div class="grid grid-3">
       <?php foreach ($category['items'] as $product) : ?>
+        <?php if (stripos($product['name'], 'Coming Soon') !== false) { continue; } ?>
         <?php
           $image_slug_base = medivista_product_image_slug($product['name']);
           if (!isset($product_image_slug_counts[$image_slug_base])) {

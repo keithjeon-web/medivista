@@ -164,12 +164,12 @@ document.querySelectorAll('.contact-form').forEach((form) => {
     },
     brand: {
       businessType: 'Brand Partner',
-      productType: 'Cosmetics',
+      productType: 'Cosmetic',
       message: 'We have a CELLEXOR-related brand inquiry and would like to discuss positioning, product interest, and partner communication.'
     },
     market: {
       businessType: 'Distributor',
-      productType: 'Others',
+      productType: 'Cosmetic',
       message: 'We are exploring a new market request and would like to share our country, business model, and current product interest for review.'
     }
   };
