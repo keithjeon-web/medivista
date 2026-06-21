@@ -211,3 +211,10 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Ten category-specific child routes were added for static and WordPress output.
 - Search remains available on each child page and filters only that category.
 - Shared product dropdown and homepage product links now navigate to child routes instead of page anchors.
+
+## 2026-06-21 - ABOUT company-focused rebuild
+
+- Reference pages checked through Chrome DevTools MCP: JDBIO CEO Message, Introduction, and Global Network.
+- ABOUT now focuses on CEO Message, Introduction, Vision & Mission, Core Values, and Global Network.
+- Contact Us was removed from the ABOUT section navigation and page content.
+- Static and WordPress templates share the new layout; About page provisioning was added.

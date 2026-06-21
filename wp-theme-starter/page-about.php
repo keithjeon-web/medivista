@@ -1,53 +1,20 @@
-<?php get_header(); ?>
-<main id="main-content">
-  <section class="page-banner">
-    <div class="container">
-      <p class="eyebrow">About MEDIVISTA</p>
-      <h1>A premium global B2B aesthetic partner.</h1>
-      <p>MEDIVISTA presents company direction, product information, and inquiry support for professional partners around the world.</p>
-    </div>
-  </section>
+<?php
+/*
+Template Name: MEDIVISTA About
+*/
+get_header();
+?>
+<main id="main-content" class="about-page">
+  <section class="about-corporate-hero"><div class="container"><p class="eyebrow">About MEDIVISTA</p><h1>Connecting trusted Korean aesthetic solutions with global partners.</h1><p>MEDIVISTA is a Korea-based medical aesthetic B2B company supporting international distributors, clinics, and professional partners through organized product information and responsive market communication.</p></div></section>
 
-  <section class="section">
-    <div class="container">
-      <div class="subtabs">
-        <a href="#ceo-message">CEO Message</a>
-        <a href="#introduction">Introduction</a>
-        <a href="#vision-mission">Vision & Mission</a>
-        <a href="#global-network">Global Network</a>
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>">Contact Us</a>
-      </div>
-      <div class="grid grid-2">
-        <article class="info-card" id="ceo-message">
-          <p class="card-meta">CEO Message</p>
-          <h3>Trust through clarity</h3>
-          <p>MEDIVISTA aims to build reliable relationships with global partners through clear product communication and a professional inquiry experience.</p>
-        </article>
-        <article class="info-card" id="introduction">
-          <p class="card-meta">Introduction</p>
-          <h3>Global medical aesthetic B2B</h3>
-          <p>The main website is an English-first catalog and company platform for distributors, clinics, and brand partners.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <nav class="about-section-nav" aria-label="About page sections"><a href="#ceo-message">CEO Message</a><a href="#introduction">Introduction</a><a href="#vision-mission">Vision &amp; Mission</a><a href="#global-network">Global Network</a></nav>
 
-  <section class="section alt" id="vision-mission">
-    <div class="container grid grid-2">
-      <article class="info-card">
-        <p class="card-meta">Vision</p>
-        <h3>Global connection</h3>
-        <p>To connect premium Korean aesthetic product information with international professional partners.</p>
-      </article>
-      <article class="info-card">
-        <p class="card-meta">Mission</p>
-        <h3>Responsible beauty science</h3>
-        <p>To communicate products with careful language, organized information, and inquiry-led support.</p>
-      </article>
-    </div>
-  </section>
+  <section class="section about-ceo-section" id="ceo-message"><div class="container about-ceo-grid"><div class="about-ceo-portrait" aria-label="MEDIVISTA CEO"><span>MEDIVISTA</span><strong>WZ</strong><p>Leadership · Partnership · Trust</p></div><div class="about-ceo-copy"><p class="eyebrow">CEO Message</p><h2>Trust begins with clear communication and responsible partnership.</h2><p>MEDIVISTA was established with a clear purpose: to help global partners navigate Korea’s fast-moving aesthetic market through dependable communication, carefully organized product information, and long-term business relationships.</p><p>Our role extends beyond introducing products. We listen to the needs of each market, connect partners with suitable product categories, and support practical conversations around supply, distribution, brand development, and regional requirements.</p><p>As we grow, we will continue to value transparency over exaggeration, consistency over short-term opportunity, and partnership over simple transactions. We aim to become a reliable bridge between Korean beauty innovation and professionals around the world.</p><div class="about-ceo-signature"><span>CEO, MEDIVISTA</span><strong>WANG ZIYUE</strong></div></div></div></section>
 
-  <?php get_template_part('template-parts/global-network'); ?>
-  <?php get_template_part('template-parts/inquiry-cta'); ?>
+  <section class="section about-introduction" id="introduction"><div class="container"><div class="about-intro-lead"><p class="eyebrow">Company Introduction</p><h2>A global B2B platform built around clarity, selection, and connection.</h2><p>MEDIVISTA presents Korean medical aesthetic and professional beauty products in an English-first environment designed for international business review. Our corporate catalog remains inquiry-led, allowing partners to assess relevant categories before beginning a focused conversation.</p></div><div class="about-business-grid"><article><span>01</span><h3>Product Curation</h3><p>Structured category information and selected Korean aesthetic products for professional partner consideration.</p></article><article><span>02</span><h3>Global Distribution Support</h3><p>Market-oriented communication for distributors and professional organizations exploring Korean product supply.</p></article><article><span>03</span><h3>Brand Partnership</h3><p>Brand, export, and business-development conversations shaped around each partner’s market and operating model.</p></article><article><span>04</span><h3>Responsible Communication</h3><p>English-first product presentation that avoids unsupported claims and prioritizes approved information.</p></article></div></div></section>
+
+  <section class="section about-purpose-section" id="vision-mission"><div class="container"><div class="about-purpose-head"><p class="eyebrow">Vision &amp; Mission</p><h2>Growing through trust, knowledge, and global perspective.</h2></div><div class="about-purpose-grid"><article class="about-vision"><span>Vision</span><h3>To become a trusted global connection point for Korean medical aesthetic and professional beauty solutions.</h3></article><article><span>Mission</span><h3>Make complex product discovery clearer.</h3><p>Organize information so international partners can identify relevant categories and begin informed discussions.</p></article><article><span>Mission</span><h3>Build sustainable partnerships.</h3><p>Develop relationships through responsive communication, market awareness, and consistent follow-up.</p></article></div><div class="about-values"><article><strong>TECHNOLOGY</strong><p>Following meaningful developments in professional beauty and aesthetic product design.</p></article><article><strong>TRUST</strong><p>Communicating carefully and building relationships with transparency.</p></article><article><strong>QUALITY</strong><p>Presenting products and partners through organized, professional standards.</p></article><article><strong>BEAUTY</strong><p>Connecting science-based beauty concepts with diverse global markets.</p></article></div></div></section>
+
+  <section class="section about-network-section" id="global-network"><div class="container"><div class="about-network-head"><p class="eyebrow">Global Network</p><h2>Regional communication with a worldwide outlook.</h2><p>MEDIVISTA is developing partner relationships across the Americas, Asia, Southeast Asia, and Oceania. Each market conversation begins with local needs, appropriate product categories, and a practical review of partnership opportunities.</p></div><div class="about-region-grid"><article><span>Americas</span><strong>United States</strong><p>Professional partner and market communication.</p></article><article><span>East Asia</span><strong>China</strong><p>Regional product and distribution dialogue.</p></article><article><span>Southeast Asia</span><strong>Malaysia · Philippines<br>Thailand · Vietnam</strong><p>Growing connections across diverse aesthetic markets.</p></article><article><span>Oceania</span><strong>Australia · New Zealand</strong><p>Partner-oriented catalog and supply communication.</p></article></div></div></section>
 </main>
 <?php get_footer(); ?>

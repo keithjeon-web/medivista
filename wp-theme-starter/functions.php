@@ -130,6 +130,11 @@ add_action('after_setup_theme', 'medivista_theme_setup');
 
 function medivista_ensure_core_pages() {
     $pages = array(
+        'about' => array(
+            'title' => 'About',
+            'template' => 'page-about.php',
+            'content' => 'MEDIVISTA company profile, CEO message, vision, mission, and global network.',
+        ),
         'products' => array(
             'title' => 'Products',
             'template' => 'page-products.php',

@@ -1026,3 +1026,12 @@
 - Added a generic WordPress `page-product-category.php` template and automatic creation of ten child pages under the Products parent.
 - Updated shared static navigation, WordPress header navigation, and homepage partner links from hash anchors to category URLs.
 - Retained the three-column reference layout within category pages and kept the corporate catalog free of prices and commerce controls.
+
+## 2026-06-21 - ABOUT corporate profile redesign
+
+- Audited JDBIO CEO Message, Introduction, and Global Network pages with Chrome DevTools MCP.
+- Rebuilt MEDIVISTA ABOUT around a corporate hero, horizontal section navigation, CEO letter, company introduction, business focus, vision/mission, core values, and regional network.
+- Developed the existing trust, clarity, and global-partnership copy into a fuller English-first company narrative.
+- Removed the Contact Us subsection and final inquiry CTA from ABOUT as requested.
+- Avoided copying JDBIO text, images, proprietary components, clinical statements, or market-leadership claims.
+- Added About to WordPress core-page/template provisioning and created `docs/about-page-audit.md`.
