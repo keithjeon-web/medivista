@@ -1048,3 +1048,9 @@
 - Removed Hair Treatment from navigation, product directory, category provisioning, contact options, and catalog data.
 - Split Others from Cosmetic: the eight supplied items now use Others, while Cosmetic remains visible with no assigned products.
 - Updated the static site, WordPress starter, catalog CSV sources, and homepage Liporase links.
+# 2026-06-21 - Compact JDBIO-inspired WooCommerce shop layout
+
+- Reworked the integrated `/shop/` presentation around a compact announcement strip, category navigation, clean product shelves, and a three-part service band.
+- Reduced WooCommerce product-card padding, image height, title/price scale, and CTA height while keeping purchase functions inside the Shop.
+- Added a small WhatsApp inquiry CTA beside each Shop loop purchase button for B2B and wholesale questions.
+- Preserved WooCommerce Cart, Checkout, My Account, payment flow, and existing Shop Geo-IP access control.

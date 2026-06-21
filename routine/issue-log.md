@@ -230,3 +230,9 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Removed the unused Hair Treatment category.
 - Added Others as a dedicated category and left Cosmetic unassigned.
 - Reclassified the eight user-supplied Others products and updated mirrored navigation/data surfaces.
+# 2026-06-21 - Shop layout and compact product cards
+
+- Adapted the structural rhythm of the supplied JDBIO Shop reference without copying its source markup or assets.
+- Shop product images now use a compact fixed-height presentation.
+- Add to Cart and WhatsApp CTAs use reduced heights and widths.
+- WooCommerce commerce controls remain limited to Shop routes.

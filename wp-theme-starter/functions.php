@@ -10,8 +10,8 @@ function medivista_enqueue_assets() {
     }
 
     if (medivista_is_shop_request()) {
-        wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array('medivista-main'), '20260619a');
-        wp_enqueue_script('medivista-shop', get_template_directory_uri() . '/assets/js/shop.js', array(), '20260619a', true);
+        wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array('medivista-main'), '20260621b');
+        wp_enqueue_script('medivista-shop', get_template_directory_uri() . '/assets/js/shop.js', array(), '20260621b', true);
     }
 }
 add_action('wp_enqueue_scripts', 'medivista_enqueue_assets');
@@ -131,6 +131,18 @@ function medivista_theme_setup() {
     ));
 }
 add_action('after_setup_theme', 'medivista_theme_setup');
+
+function medivista_shop_whatsapp_cta() {
+    global $product;
+    if (!$product || !medivista_is_shop_request()) {
+        return;
+    }
+    printf(
+        '<a class="button shop-whatsapp" href="#" data-whatsapp data-product="%s">WhatsApp</a>',
+        esc_attr($product->get_name())
+    );
+}
+add_action('woocommerce_after_shop_loop_item', 'medivista_shop_whatsapp_cta', 20);
 
 function medivista_ensure_core_pages() {
     $pages = array(
