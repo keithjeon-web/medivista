@@ -236,3 +236,7 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Shop product images now use a compact fixed-height presentation.
 - Add to Cart and WhatsApp CTAs use reduced heights and widths.
 - WooCommerce commerce controls remain limited to Shop routes.
+# 2026-06-21 - World map appeared undersized
+
+- Increased the map artwork scale without enlarging the surrounding Global Network section.
+- Preserved callout cards, responsive layout, and clipped overflow inside the map frame.

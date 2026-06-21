@@ -1537,6 +1537,8 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   height: 100%;
   min-height: 500px;
   display: block;
+  transform: scale(1.16);
+  transform-origin: 50% 48%;
 }
 .world-map.is-actual-map .map-grid,
 .world-map.is-actual-map .map-land,
@@ -1976,7 +1978,7 @@ textarea { min-height: 132px; resize: vertical; }
   }
   .process-list { grid-template-columns: 1fr; }
   .world-map { min-height: 390px; }
-  .world-map svg { min-height: 390px; }
+  .world-map svg { min-height: 390px; transform: scale(1.13); }
   .map-callout { padding: 9px 12px; min-width: 112px; }
   .map-callout strong { font-size: 10px; }
   .map-callout span { font-size: 10px; }
@@ -2114,7 +2116,7 @@ textarea { min-height: 132px; resize: vertical; }
   .partner-logo img { width: 88px; max-width: 88px; height: 30px; }
   .partner-logo-wordmark { padding: 9px 14px; font-size: 19px; }
   .world-map { min-height: 300px; margin-inline: -6px; }
-  .world-map svg { min-height: 300px; }
+  .world-map svg { min-height: 300px; transform: scale(1.08); }
   .map-callout { display: none; }
   .map-legend { left: 14px; bottom: 14px; }
   .map-callouts-mobile { display: grid; }

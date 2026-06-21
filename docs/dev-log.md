@@ -1054,3 +1054,8 @@
 - Reduced WooCommerce product-card padding, image height, title/price scale, and CTA height while keeping purchase functions inside the Shop.
 - Added a small WhatsApp inquiry CTA beside each Shop loop purchase button for B2B and wholesale questions.
 - Preserved WooCommerce Cart, Checkout, My Account, payment flow, and existing Shop Geo-IP access control.
+# 2026-06-21 - Global Network map zoom
+
+- Enlarged only the world-map SVG inside the existing frame to reduce unused edge space.
+- Desktop uses a 1.16 zoom, tablet 1.13, and mobile 1.08 while preserving the section height and market callouts.
+- Mirrored the adjustment across the static site and WordPress starter theme.
