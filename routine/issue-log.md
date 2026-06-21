@@ -188,3 +188,10 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - CTA result: MEDIVISTA official-product and inquiry links point to the approved CELLEXOR URLs with `_blank` and `noopener noreferrer`.
 - Image result: 32 unique official-reference image URLs were inventoried; production copying remains blocked pending asset-use permission.
 - Evidence: updated `docs/cellexor-page-audit.md`, raw audit/inventory JSON files, and desktop/mobile screenshots.
+
+## 2026-06-21 - CELLEXOR asset-use unblock
+
+- User confirmed ownership and website-use permission for the CELLEXOR reference assets.
+- Resumed the previously blocked image-integration work across static, WordPress starter, and deploy-mirror surfaces.
+- Published only product and brand/editorial imagery; certification, microscopy, measurements, and test-result assets remain excluded pending factual review.
+- Added a durable ownership record at `docs/cellexor-asset-rights.md`.

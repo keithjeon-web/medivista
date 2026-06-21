@@ -1000,3 +1000,12 @@
 - Confirmed both documents and all observed image/network requests returned HTTP 200; neither page emitted console errors, warnings, or browser issues.
 - Inventoried 32 unique reference image URLs, predominantly WebP with SVG brand assets. No reference image was copied into the production theme because reuse rights were not confirmed.
 - Replaced `docs/cellexor-page-audit.md` with the live Chrome DevTools comparison and added raw JSON evidence plus four QA screenshots.
+
+## 2026-06-21 - CELLEXOR owned-image integration
+
+- Received owner confirmation that the CELLEXOR reference images are user-owned and approved for MEDIVISTA website use.
+- Downloaded the 32 inventoried official assets into the static, WordPress starter, and deploy-mirror asset directories.
+- Replaced the generic hero image with the official transparent V1/V2 product pair and added official V1, V2, monochrome editorial, and professional beauty visuals to the page.
+- Added responsive layouts, lazy loading, explicit image dimensions, and descriptive alt text for the newly displayed assets.
+- Kept microscopy, test-result, numerical, and certificate images unpublished because ownership permission does not replace factual and regulatory verification.
+- Added `docs/cellexor-asset-rights.md` as the project rights record.
