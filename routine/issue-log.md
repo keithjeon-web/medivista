@@ -249,3 +249,7 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Root cause: the `template_redirect` action in `inc/shop-access-control.php` was commented out.
 - Enabled the action and strengthened country detection with trusted hosting headers plus WooCommerce GeoIP fallback.
 - Kept administrator and Shop Manager exemptions intact.
+# 2026-06-21 - About page missing world map
+
+- Added the Global Network map container to `/about/#global-network`.
+- Preserved the existing regional information cards below the map.

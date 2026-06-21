@@ -1070,3 +1070,8 @@
 - Preserved Administrator, Shop Manager, WordPress admin, AJAX, cron, and login exemptions.
 - Added CloudFront, App Engine, server GeoIP, and WooCommerce geolocation fallbacks in addition to the existing Cloudflare and proxy country headers.
 - Corporate, PRODUCTS, BRANDS, BLOGS, and CONTACT routes remain publicly accessible in South Korea.
+# 2026-06-21 - About Global Network map container
+
+- Inserted the interactive world-map container between the About Global Network introduction and regional cards.
+- Reused the homepage market highlighting, zoom, callouts, legend, and responsive mobile market cards.
+- Added the required D3 and TopoJSON scripts to the static About page and a reusable WordPress map partial.

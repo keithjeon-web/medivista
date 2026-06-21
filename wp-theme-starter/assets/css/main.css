@@ -1067,6 +1067,8 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .about-values p { color: rgba(255,255,255,0.58); font-size: 13px; }
 .about-network-section { padding: 110px 0; }
 .about-network-head { max-width: 920px; margin-bottom: 62px; }
+.about-map-container { margin-bottom: 48px; }
+.about-map-container .world-map { margin-bottom: 18px; }
 .about-region-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
 .about-region-grid article { min-height: 250px; padding: 34px 26px; border-top: 1px solid #dbe1e9; border-bottom: 1px solid #dbe1e9; border-right: 1px solid #dbe1e9; }
 .about-region-grid article:first-child { border-left: 1px solid #dbe1e9; }
