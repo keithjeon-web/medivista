@@ -240,3 +240,7 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 
 - Increased the map artwork scale without enlarging the surrounding Global Network section.
 - Preserved callout cards, responsive layout, and clipped overflow inside the map frame.
+# 2026-06-21 - Partner marks too small inside capsules
+
+- Diagnosed large transparent canvas margins in the supplied partner logo PNG files.
+- Applied per-brand optical scaling without stretching the white capsule or replacing source assets.

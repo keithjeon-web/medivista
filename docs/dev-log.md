@@ -1059,3 +1059,8 @@
 - Enlarged only the world-map SVG inside the existing frame to reduce unused edge space.
 - Desktop uses a 1.16 zoom, tablet 1.13, and mobile 1.08 while preserving the section height and market callouts.
 - Mirrored the adjustment across the static site and WordPress starter theme.
+# 2026-06-21 - Partner logo optical sizing
+
+- Corrected oversized transparent padding inside the supplied partner PNG files with logo-specific CSS scaling.
+- Enlarged Botulax, Nabota, The Chaeum, Rejuran, and Liporase marks while preserving the compact white capsule dimensions.
+- Added clipped capsule overflow and responsive scaling so each logo remains centered and clearly readable.
