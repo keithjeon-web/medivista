@@ -195,3 +195,19 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Resumed the previously blocked image-integration work across static, WordPress starter, and deploy-mirror surfaces.
 - Published only product and brand/editorial imagery; certification, microscopy, measurements, and test-result assets remain excluded pending factual review.
 - Added a durable ownership record at `docs/cellexor-asset-rights.md`.
+
+## 2026-06-21 - PRODUCTS reference redesign and 404 recovery
+
+- Reference: `https://hjcorporations.kr/241`, inspected through Chrome DevTools MCP.
+- Supplied sources: spreadsheet-export HTML plus 114 finished WebP images.
+- Result: MEDIVISTA Products now uses a clean 1280px, three-column square-image gallery while preserving search and category controls.
+- Responsive result: desktop 3 columns, tablet 2 columns, mobile 1 column.
+- Live issue: `https://medivista.co.kr/products/` returned 404; the WordPress theme now provisions the Products page with `page-products.php`.
+- Commerce boundary preserved: no prices, cart, checkout, or payment controls were added.
+
+## 2026-06-21 - PRODUCTS category route split
+
+- Main `/products/` now shows category choices only.
+- Ten category-specific child routes were added for static and WordPress output.
+- Search remains available on each child page and filters only that category.
+- Shared product dropdown and homepage product links now navigate to child routes instead of page anchors.

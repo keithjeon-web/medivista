@@ -166,6 +166,7 @@ if (!function_exists('medivista_product_image_slug')) {
 $product_image_slug_counts = array();
 ?>
 <?php foreach ($product_categories as $category_id => $category) : ?>
+  <?php if (!empty($medivista_active_product_category) && $category_id !== $medivista_active_product_category) { continue; } ?>
   <?php
     usort($category['items'], function ($left, $right) {
       $left_pending = stripos($left['name'], 'Coming Soon') !== false;

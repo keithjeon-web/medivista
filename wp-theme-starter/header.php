@@ -20,16 +20,16 @@
       <div class="nav-dropdown">
         <a class="nav-dropdown-toggle" href="<?php echo esc_url(home_url('/products/')); ?>" aria-haspopup="true">PRODUCTS</a>
         <div class="nav-dropdown-menu">
-          <a href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>">Botulinum Toxins</a>
-          <a href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>">Dermal Fillers</a>
-          <a href="<?php echo esc_url(home_url('/products/#body-fillers')); ?>">Body Fillers</a>
-          <a href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>">Skin Boosters</a>
-          <a href="<?php echo esc_url(home_url('/products/#lipolysis')); ?>">Lipolysis</a>
-          <a href="<?php echo esc_url(home_url('/products/#exosomes')); ?>">Exosomes</a>
-          <a href="<?php echo esc_url(home_url('/products/#biostimulators')); ?>">Biostimulators</a>
-          <a href="<?php echo esc_url(home_url('/products/#hair-treatment')); ?>">Hair Treatment</a>
-          <a href="<?php echo esc_url(home_url('/products/#vitamin-injections')); ?>">Vitamin Injections</a>
-          <a href="<?php echo esc_url(home_url('/products/#cosmetic')); ?>">Cosmetic</a>
+          <a href="<?php echo esc_url(home_url('/products/botulinum-toxins/')); ?>">Botulinum Toxins</a>
+          <a href="<?php echo esc_url(home_url('/products/dermal-fillers/')); ?>">Dermal Fillers</a>
+          <a href="<?php echo esc_url(home_url('/products/body-fillers/')); ?>">Body Fillers</a>
+          <a href="<?php echo esc_url(home_url('/products/skin-boosters/')); ?>">Skin Boosters</a>
+          <a href="<?php echo esc_url(home_url('/products/lipolysis/')); ?>">Lipolysis</a>
+          <a href="<?php echo esc_url(home_url('/products/exosomes/')); ?>">Exosomes</a>
+          <a href="<?php echo esc_url(home_url('/products/biostimulators/')); ?>">Biostimulators</a>
+          <a href="<?php echo esc_url(home_url('/products/hair-treatment/')); ?>">Hair Treatment</a>
+          <a href="<?php echo esc_url(home_url('/products/vitamin-injections/')); ?>">Vitamin Injections</a>
+          <a href="<?php echo esc_url(home_url('/products/cosmetic/')); ?>">Cosmetic</a>
         </div>
       </div>
       <div class="nav-dropdown">

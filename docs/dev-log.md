@@ -1009,3 +1009,20 @@
 - Added responsive layouts, lazy loading, explicit image dimensions, and descriptive alt text for the newly displayed assets.
 - Kept microscopy, test-result, numerical, and certificate images unpublished because ownership permission does not replace factual and regulatory verification.
 - Added `docs/cellexor-asset-rights.md` as the project rights record.
+
+## 2026-06-21 - PRODUCTS three-column reference redesign
+
+- Audited `https://hjcorporations.kr/241` with Chrome DevTools MCP and recorded its 1280px, white-canvas, three-column square-image catalog pattern.
+- Cross-reviewed the supplied `工作表1 (1).html` product sheet and the 114 files in `완성이미지/WebP/` against the existing catalog structure and prepared assets.
+- Rebuilt the static and WordPress Products presentation around a minimal three-column desktop gallery, two-column tablet layout, and one-column mobile layout.
+- Preserved product search, category filtering, reset, live count, category quick links, hidden searchable metadata, and catalog-only behavior.
+- Added Products to WordPress core-page provisioning because the live `/products/` URL returned 404 during the audit.
+- Added `docs/products-reference-audit.md`.
+
+## 2026-06-21 - PRODUCTS category child-page navigation
+
+- Replaced the long all-products `/products/` page with a ten-card category directory.
+- Added dedicated static child routes for all ten catalog categories and preserved search plus live item count inside each category page.
+- Added a generic WordPress `page-product-category.php` template and automatic creation of ten child pages under the Products parent.
+- Updated shared static navigation, WordPress header navigation, and homepage partner links from hash anchors to category URLs.
+- Retained the three-column reference layout within category pages and kept the corporate catalog free of prices and commerce controls.

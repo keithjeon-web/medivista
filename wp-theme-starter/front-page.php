@@ -97,19 +97,19 @@
       <?php $partner_img_base = get_template_directory_uri() . '/assets/images/partners/'; ?>
       <div class="partner-action-banner" aria-label="MEDIVISTA product and brand partner logo slider">
         <div class="partner-logo-track">
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'botulax.png'); ?>" alt="Botulax"></span><span>Botulax</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt="Nabota"></span><span>Nabota</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt="The Chaeum"></span><span>The Chaeum</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt="Rejuran"></span><span>Rejuran</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#cosmetic')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt="Liporase"></span><span>Liporase</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/botulinum-toxins/')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'botulax.png'); ?>" alt="Botulax"></span><span>Botulax</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/botulinum-toxins/')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt="Nabota"></span><span>Nabota</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/dermal-fillers/')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt="The Chaeum"></span><span>The Chaeum</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/skin-boosters/')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt="Rejuran"></span><span>Rejuran</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/cosmetic/')); ?>"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt="Liporase"></span><span>Liporase</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/cellexor/')); ?>"><span class="partner-logo-mark partner-logo-wordmark">Cellexor</span><span>Cellexor</span></a>
         </div>
         <div class="partner-logo-track" aria-hidden="true">
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'botulax.png'); ?>" alt=""></span><span>Botulax</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#botulinum-toxins')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt=""></span><span>Nabota</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#dermal-fillers')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt=""></span><span>The Chaeum</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#skin-boosters')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt=""></span><span>Rejuran</span></a>
-          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/#cosmetic')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt=""></span><span>Liporase</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/botulinum-toxins/')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'botulax.png'); ?>" alt=""></span><span>Botulax</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/botulinum-toxins/')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'nabota.png'); ?>" alt=""></span><span>Nabota</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/dermal-fillers/')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'the-chaeum.png'); ?>" alt=""></span><span>The Chaeum</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/skin-boosters/')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'rejuran.png'); ?>" alt=""></span><span>Rejuran</span></a>
+          <a class="partner-logo" href="<?php echo esc_url(home_url('/products/cosmetic/')); ?>" tabindex="-1"><span class="partner-logo-mark"><img src="<?php echo esc_url($partner_img_base . 'liporase.png'); ?>" alt=""></span><span>Liporase</span></a>
           <a class="partner-logo" href="<?php echo esc_url(home_url('/cellexor/')); ?>" tabindex="-1"><span class="partner-logo-mark partner-logo-wordmark">Cellexor</span><span>Cellexor</span></a>
         </div>
       </div>

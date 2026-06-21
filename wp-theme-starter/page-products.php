@@ -3,85 +3,32 @@
 Template Name: MEDIVISTA Products
 */
 get_header();
+$product_categories = array(
+  'botulinum-toxins' => array('label' => 'Botulinum Toxins', 'image' => 'botulax-100units.webp'),
+  'dermal-fillers' => array('label' => 'Dermal Fillers', 'image' => 'revolax-deep.webp'),
+  'body-fillers' => array('label' => 'Body Fillers', 'image' => 'elasty-d-plus.webp'),
+  'skin-boosters' => array('label' => 'Skin Boosters', 'image' => 'rejuran-healer.webp'),
+  'lipolysis' => array('label' => 'Lipolysis', 'image' => 'lipo-lab.webp'),
+  'exosomes' => array('label' => 'Exosomes', 'image' => 'cellexor-re-tone.webp'),
+  'biostimulators' => array('label' => 'Biostimulators', 'image' => 'sculptra.webp'),
+  'hair-treatment' => array('label' => 'Hair Treatment', 'image' => ''),
+  'vitamin-injections' => array('label' => 'Vitamin Injections', 'image' => 'vitamin-c.webp'),
+  'cosmetic' => array('label' => 'Cosmetic', 'image' => 'cindella.webp'),
+);
 ?>
-<main id="main-content">
-  <section class="page-banner">
-    <div class="container">
-      <p class="eyebrow">Products</p>
-      <h1>Professional catalog for global aesthetic partners.</h1>
-      <p>Review MEDIVISTA product categories and send a focused inquiry.</p>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div><p class="eyebrow">Quick Answers</p><h2>Cosmetic and aesthetic product discovery</h2></div>
-        <p>Answer-ready information for partners reviewing MEDIVISTA catalog categories for global B2B inquiry.</p>
-      </div>
-      <div class="grid grid-3">
-        <article class="info-card">
-          <p class="card-meta">What categories?</p>
-          <h3>Professional cosmetic support</h3>
-          <p>MEDIVISTA organizes inquiry-ready category information for global aesthetic partners using careful catalog-only language.</p>
-        </article>
-        <article class="info-card">
-          <p class="card-meta">How to inquire?</p>
-          <h3>Catalog-only B2B flow</h3>
-          <p>The MEDIVISTA main website is a catalog-only information site. Product questions move through WhatsApp or the contact inquiry flow.</p>
-        </article>
-        <article class="info-card">
-          <p class="card-meta">How presented?</p>
-          <h3>English-first review format</h3>
-          <p>Products are presented with English names, category context, white-background imagery, and careful B2B descriptions for partner review.</p>
-        </article>
-      </div>
-      <div class="catalog-toolbar" data-product-catalog>
-        <label class="catalog-search">
-          <span>Search products</span>
-          <input type="search" data-product-search placeholder="Search by product, type, or spec" autocomplete="off">
-        </label>
-        <label class="catalog-select">
-          <span>Category</span>
-          <select data-product-filter>
-            <option value="all">All categories</option>
-            <option value="botulinum-toxins">Botulinum Toxins</option>
-            <option value="dermal-fillers">Dermal Fillers</option>
-            <option value="body-fillers">Body Fillers</option>
-            <option value="skin-boosters">Skin Boosters</option>
-            <option value="lipolysis">Lipolysis</option>
-            <option value="exosomes">Exosomes</option>
-            <option value="biostimulators">Biostimulators</option>
-            <option value="hair-treatment">Hair Treatment</option>
-            <option value="vitamin-injections">Vitamin Injections</option>
-            <option value="cosmetic">Cosmetic</option>
-          </select>
-        </label>
-        <div class="catalog-status" aria-live="polite"><strong data-product-count>114</strong><span>items shown</span></div>
-        <button class="btn secondary catalog-reset" type="button" data-product-reset>Reset</button>
-      </div>
-      <p class="catalog-summary" data-product-summary>Showing all MEDIVISTA catalog categories for professional partner review.</p>
-      <p class="catalog-empty" data-product-empty hidden>No matching products. Try another product name, type, or category.</p>
-      <p class="catalog-note"><strong>114 product images</strong> are organized by category for visual catalog review.</p>
-      <div class="catalog-tabs-bar">
-        <div class="catalog-tabs-head">
-          <p class="catalog-tabs-kicker">Quick jump</p>
-          <p class="catalog-tabs-copy">Swipe categories on mobile or use the filter menu above.</p>
-        </div>
-        <div class="category-tabs" aria-label="Product category quick links">
-          <a href="#botulinum-toxins">Botulinum Toxins</a>
-          <a href="#dermal-fillers">Dermal Fillers</a>
-          <a href="#body-fillers">Body Fillers</a>
-          <a href="#skin-boosters">Skin Boosters</a>
-          <a href="#lipolysis">Lipolysis</a>
-          <a href="#exosomes">Exosomes</a>
-          <a href="#biostimulators">Biostimulators</a>
-          <a href="#hair-treatment">Hair Treatment</a>
-          <a href="#vitamin-injections">Vitamin Injections</a>
-          <a href="#cosmetic">Cosmetic</a>
-        </div>
-      </div>
-      <?php get_template_part('template-parts/product-card'); ?>
-    </div>
-  </section>
+<main id="main-content" class="products-page">
+  <section class="page-banner products-banner"><div class="container"><p class="eyebrow">MEDIVISTA Catalog</p><h1>PRODUCTS</h1><p>Select a category to open its dedicated product catalog.</p></div></section>
+  <section class="section products-directory-section"><div class="container"><div class="product-category-directory">
+    <?php foreach ($product_categories as $slug => $category) : ?>
+      <a href="<?php echo esc_url(home_url('/products/' . $slug . '/')); ?>">
+        <?php if ($category['image']) : ?>
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/products/' . $category['image']); ?>" alt="" width="1200" height="900" loading="lazy">
+        <?php else : ?>
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/medivista_logo_gold.png'); ?>" alt="" width="500" height="125" loading="lazy">
+        <?php endif; ?>
+        <span><?php echo esc_html($category['label']); ?></span>
+      </a>
+    <?php endforeach; ?>
+  </div></div></section>
 </main>
 <?php get_footer(); ?>

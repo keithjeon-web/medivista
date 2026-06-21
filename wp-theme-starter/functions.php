@@ -130,6 +130,11 @@ add_action('after_setup_theme', 'medivista_theme_setup');
 
 function medivista_ensure_core_pages() {
     $pages = array(
+        'products' => array(
+            'title' => 'Products',
+            'template' => 'page-products.php',
+            'content' => 'MEDIVISTA professional aesthetic product catalog.',
+        ),
         'brands' => array(
             'title' => 'Brands',
             'template' => 'page-brands.php',
@@ -170,6 +175,43 @@ function medivista_ensure_core_pages() {
 
         if (get_page_template_slug($page->ID) !== $page_data['template']) {
             update_post_meta($page->ID, '_wp_page_template', $page_data['template']);
+        }
+    }
+
+    $products_page = get_page_by_path('products', OBJECT, 'page');
+    if ($products_page) {
+        $product_categories = array(
+            'botulinum-toxins' => 'Botulinum Toxins',
+            'dermal-fillers' => 'Dermal Fillers',
+            'body-fillers' => 'Body Fillers',
+            'skin-boosters' => 'Skin Boosters',
+            'lipolysis' => 'Lipolysis',
+            'exosomes' => 'Exosomes',
+            'biostimulators' => 'Biostimulators',
+            'hair-treatment' => 'Hair Treatment',
+            'vitamin-injections' => 'Vitamin Injections',
+            'cosmetic' => 'Cosmetic',
+        );
+
+        foreach ($product_categories as $category_slug => $category_title) {
+            $category_path = 'products/' . $category_slug;
+            $category_page = get_page_by_path($category_path, OBJECT, 'page');
+            if (!$category_page) {
+                $category_id = wp_insert_post(array(
+                    'post_title' => $category_title,
+                    'post_name' => $category_slug,
+                    'post_parent' => $products_page->ID,
+                    'post_content' => $category_title . ' product catalog.',
+                    'post_status' => 'publish',
+                    'post_type' => 'page',
+                ));
+                if (!is_wp_error($category_id)) {
+                    update_post_meta($category_id, '_wp_page_template', 'page-product-category.php');
+                    $created_page = true;
+                }
+            } elseif (get_page_template_slug($category_page->ID) !== 'page-product-category.php') {
+                update_post_meta($category_page->ID, '_wp_page_template', 'page-product-category.php');
+            }
         }
     }
 
