@@ -10,8 +10,8 @@ if (categoryRoot) {
     'lipolysis': 'Lipolysis',
     'exosomes': 'Exosomes',
     'biostimulators': 'Biostimulators',
-    'hair-treatment': 'Hair Treatment',
     'vitamin-injections': 'Vitamin Injections',
+    'others': 'Others',
     'cosmetic': 'Cosmetic',
   };
   const categoryLabel = categoryLabels[categoryId] || 'Products';
@@ -19,6 +19,17 @@ if (categoryRoot) {
   const countNode = categoryRoot.querySelector('[data-product-count]');
   const searchInput = categoryRoot.querySelector('[data-product-search]');
   const emptyNode = categoryRoot.querySelector('[data-product-empty]');
+  const toolbar = categoryRoot.querySelector('.catalog-toolbar');
+  let resetButton = categoryRoot.querySelector('[data-product-reset]');
+
+  if (toolbar && !resetButton) {
+    resetButton = document.createElement('button');
+    resetButton.className = 'btn secondary catalog-reset';
+    resetButton.type = 'button';
+    resetButton.dataset.productReset = '';
+    resetButton.textContent = 'Reset';
+    toolbar.appendChild(resetButton);
+  }
   document.querySelectorAll('[data-category-title]').forEach((node) => {
     node.textContent = categoryLabel;
   });
@@ -34,10 +45,19 @@ if (categoryRoot) {
       const block = source.getElementById(categoryId);
       if (!block || !target) throw new Error('Category unavailable');
 
+      const sectionHead = block.querySelector(':scope > .section-head');
+      const productGrid = block.querySelector(':scope > .grid');
       target.classList.add('product-category-block');
-      target.replaceChildren(...Array.from(block.children).map((node) => node.cloneNode(true)));
+      target.replaceChildren(
+        ...[sectionHead, productGrid]
+          .filter(Boolean)
+          .map((node) => node.cloneNode(true)),
+      );
       const cards = Array.from(target.querySelectorAll('.product-card'));
       target.querySelector('.grid')?.classList.add('category-product-grid');
+      if (cards.length === 0 && emptyNode) {
+        emptyNode.textContent = 'No products are currently assigned to this category.';
+      }
 
       cards.forEach((card) => {
         const visual = card.querySelector('.product-image');
@@ -68,6 +88,11 @@ if (categoryRoot) {
       };
 
       searchInput?.addEventListener('input', update);
+      resetButton?.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        update();
+        searchInput?.focus();
+      });
       update();
     })
     .catch(() => {

@@ -12,8 +12,8 @@ $category_labels = array(
   'lipolysis' => 'Lipolysis',
   'exosomes' => 'Exosomes',
   'biostimulators' => 'Biostimulators',
-  'hair-treatment' => 'Hair Treatment',
   'vitamin-injections' => 'Vitamin Injections',
+  'others' => 'Others',
   'cosmetic' => 'Cosmetic',
 );
 $category_label = isset($category_labels[$medivista_active_product_category]) ? $category_labels[$medivista_active_product_category] : 'Products';
@@ -28,7 +28,7 @@ $category_label = isset($category_labels[$medivista_active_product_category]) ? 
     </div>
     <p class="catalog-summary" data-product-summary>Showing <?php echo esc_html($category_label); ?>.</p>
     <p class="catalog-empty" data-product-empty hidden>No matching products.</p>
-    <?php get_template_part('template-parts/product-card'); ?>
+    <?php get_template_part('template-parts/product-card', null, array('active_category' => $medivista_active_product_category)); ?>
   </div></section>
 </main>
 <?php get_footer(); ?>

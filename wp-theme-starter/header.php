@@ -27,8 +27,8 @@
           <a href="<?php echo esc_url(home_url('/products/lipolysis/')); ?>">Lipolysis</a>
           <a href="<?php echo esc_url(home_url('/products/exosomes/')); ?>">Exosomes</a>
           <a href="<?php echo esc_url(home_url('/products/biostimulators/')); ?>">Biostimulators</a>
-          <a href="<?php echo esc_url(home_url('/products/hair-treatment/')); ?>">Hair Treatment</a>
           <a href="<?php echo esc_url(home_url('/products/vitamin-injections/')); ?>">Vitamin Injections</a>
+          <a href="<?php echo esc_url(home_url('/products/others/')); ?>">Others</a>
           <a href="<?php echo esc_url(home_url('/products/cosmetic/')); ?>">Cosmetic</a>
         </div>
       </div>

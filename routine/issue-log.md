@@ -218,3 +218,15 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - ABOUT now focuses on CEO Message, Introduction, Vision & Mission, Core Values, and Global Network.
 - Contact Us was removed from the ABOUT section navigation and page content.
 - Static and WordPress templates share the new layout; About page provisioning was added.
+
+## 2026-06-21 - PRODUCTS main-directory controls and sizing
+
+- Main Products page again exposes search, category selection, reset, result count, and category quick links.
+- Category-card imagery was shortened to remove the excessive empty vertical area shown in the supplied screenshots.
+- WordPress child category rendering now receives the active-category template argument correctly, preventing the 114-item count on a single category page.
+# 2026-06-21 - Partner logo and taxonomy follow-up
+
+- Fixed inconsistent Cellexor partner-logo frame sizing.
+- Removed the unused Hair Treatment category.
+- Added Others as a dedicated category and left Cosmetic unassigned.
+- Reclassified the eight user-supplied Others products and updated mirrored navigation/data surfaces.

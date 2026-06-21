@@ -127,35 +127,26 @@ $product_categories = array(
       array('name' => 'Olidia', 'type' => 'PLLA', 'spec' => '365mg x 1vial'),
       array('name' => 'Radiesse', 'type' => 'CaHA', 'spec' => ''),
     ),
-  ),  'hair-treatment' => array(
-    'label' => 'Hair Treatment',
-    'items' => array(
-      array('name' => 'Hair Care Line Coming Soon', 'type' => '', 'spec' => ''),
-    ),
   ),  'vitamin-injections' => array(
     'label' => 'Vitamin Injections',
     'items' => array(
-      array('name' => 'Guthion 1200mg', 'type' => '', 'spec' => '10Vials'),
-      array('name' => 'Jeil High B', 'type' => '', 'spec' => '10ml x 10Vials'),
       array('name' => 'Vitamin C', 'type' => '', 'spec' => '20ml x 10Vials'),
     ),
-  ),  'cosmetic' => array(
-    'label' => 'Cosmetic',
+  ),  'others' => array(
+    'label' => 'Others',
     'items' => array(
-      array('name' => 'H-Lido Cream', 'type' => '10.56%', 'spec' => '500mg'),
-      array('name' => 'Liporase', 'type' => '', 'spec' => '10Vials'),
-      array('name' => 'Cindella', 'type' => '', 'spec' => '5ml x 10Vials'),
-      array('name' => 'Luthione 600mg', 'type' => '', 'spec' => '10Vials'),
-      array('name' => 'Luthione 1200mg', 'type' => '', 'spec' => '10Vials'),
-      array('name' => 'Laennec', 'type' => '', 'spec' => '2ml x 50Vials'),
-      array('name' => 'Melsmon', 'type' => '', 'spec' => '2ml x 50Vials'),
+      array('name' => 'Guthion 1200mg', 'type' => '', 'spec' => '10Vials'),
       array('name' => 'Cartin', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'L-car', 'type' => '', 'spec' => '5ml x 10Vials'),
       array('name' => 'Vitamo', 'type' => '', 'spec' => '2ml x 50Vials'),
       array('name' => 'GC Arginine 2510', 'type' => '', 'spec' => '25ml x 10Vials'),
       array('name' => 'GC Arginine 1010', 'type' => '', 'spec' => '10ml x 10Vials'),
+      array('name' => 'Jeil High B', 'type' => '', 'spec' => '10ml x 10Vials'),
       array('name' => 'DAIHAN Sterile Water', 'type' => '', 'spec' => '20ml x 50Amps'),
     ),
+  ),  'cosmetic' => array(
+    'label' => 'Cosmetic',
+    'items' => array(),
   ),
 );
 if (!function_exists('medivista_product_image_slug')) {
@@ -165,8 +156,9 @@ if (!function_exists('medivista_product_image_slug')) {
 }
 $product_image_slug_counts = array();
 ?>
+<?php $medivista_active_product_category = isset($args['active_category']) ? $args['active_category'] : ''; ?>
 <?php foreach ($product_categories as $category_id => $category) : ?>
-  <?php if (!empty($medivista_active_product_category) && $category_id !== $medivista_active_product_category) { continue; } ?>
+  <?php if ($medivista_active_product_category && $category_id !== $medivista_active_product_category) { continue; } ?>
   <?php
     usort($category['items'], function ($left, $right) {
       $left_pending = stripos($left['name'], 'Coming Soon') !== false;
@@ -214,10 +206,13 @@ $product_image_slug_counts = array();
             <?php if (!empty($product['type'])) : ?><p class="product-detail"><strong>Type</strong><span><?php echo esc_html($product['type']); ?></span></p><?php endif; ?>
             <?php if (!empty($product['spec'])) : ?><p class="product-detail"><strong>Spec</strong><span><?php echo esc_html($product['spec']); ?></span></p><?php endif; ?>
           </div>
-          <p><?php echo in_array($category_id, array('body-fillers', 'hair-treatment'), true) ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
+          <p><?php echo $category_id === 'body-fillers' ? 'Category details are being prepared for catalog-only B2B review and direct partner inquiry.' : 'Catalog-only product information for professional B2B review.'; ?></p>
           <a class="btn whatsapp" href="#" data-whatsapp data-product="<?php echo esc_attr($product['name']); ?>">Inquire via WhatsApp</a>
         </article>
       <?php endforeach; ?>
     </div>
+    <?php if ($ready_count === 0) : ?>
+      <p class="catalog-empty">No products are currently assigned to this category.</p>
+    <?php endif; ?>
   </div>
 <?php endforeach; ?>

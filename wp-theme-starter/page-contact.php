@@ -93,8 +93,8 @@ get_header();
               <option>Lipolysis</option>
               <option>Exosomes</option>
               <option>Biostimulators</option>
-              <option>Hair Treatment</option>
-                <option>Vitamin Injections</option>
+              <option>Vitamin Injections</option>
+              <option>Others</option>
               <option>Cosmetic</option>
             </select>
           </label>

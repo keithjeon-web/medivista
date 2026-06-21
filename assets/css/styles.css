@@ -1145,12 +1145,19 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   text-align: center;
 }
 .products-directory-section {
-  padding-top: 0;
+  padding-top: 44px;
+}
+.products-directory-toolbar {
+  margin-bottom: 14px !important;
+}
+.products-directory-tabs {
+  justify-content: center;
+  margin: 28px 0 46px;
 }
 .product-category-directory {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 54px 22px;
+  gap: 46px 22px;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -1162,9 +1169,9 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .product-category-directory img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  padding: 20px;
-  object-fit: contain;
+  height: 265px;
+  padding: 0;
+  object-fit: cover;
   background: #f8f8f8;
   transition: transform 280ms ease;
 }
@@ -1181,7 +1188,7 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   text-transform: uppercase;
 }
 .product-category-page .catalog-toolbar {
-  grid-template-columns: minmax(280px, 1fr) auto;
+  grid-template-columns: minmax(280px, 1fr) auto auto;
 }
 .product-category-page [data-category-products] > .product-category-heading,
 .product-category-page [data-category-products] > .section-head {
@@ -1456,25 +1463,25 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   color: rgba(255,255,255,0.76) !important;
 }
 .partner-action-banner {
-  --partner-card-width: 196px;
-  --partner-card-height: 112px;
+  --partner-card-width: 132px;
+  --partner-card-height: 52px;
   padding-top: 24px;
 }
 .partner-logo-mark {
-  padding: 24px 30px;
+  padding: 10px 16px;
 }
 .partner-logo img {
-  width: 132px;
-  max-width: 132px;
-  height: 52px;
+  width: 96px;
+  max-width: 96px;
+  height: 32px;
   object-fit: contain;
   object-position: center;
 }
 .partner-logo-wordmark {
-  width: 132px;
-  max-width: 132px;
-  height: 52px;
-  padding: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  padding: 10px 16px;
   font-size: 21px;
 }
 
@@ -1590,6 +1597,7 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .rumines-teaser-action > span { color: #8b6a29; font-size: 12px; font-weight: 900; letter-spacing: 0.22em; }
 
 @media (max-width: 1024px) {
+  .product-category-directory img { height: 230px; }
   .about-business-grid,
   .about-values,
   .about-region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1626,6 +1634,9 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   .partners-section .section-head { padding: 22px; }
 }
 @media (max-width: 520px) {
+  .products-directory-section { padding-top: 28px; }
+  .products-directory-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin-bottom: 34px; }
+  .product-category-directory img { height: 230px; }
   .about-corporate-hero { min-height: 380px; }
   .about-section-nav { position: static; grid-template-columns: repeat(2, 1fr); }
   .about-section-nav a:nth-child(2) { border-right: 0; }
@@ -2353,6 +2364,7 @@ textarea { min-height: 132px; resize: vertical; }
     min-height: 360px;
   }
   .catalog-toolbar { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .product-category-page .catalog-toolbar { grid-template-columns: 1fr; }
   .catalog-status, .catalog-reset { min-height: 44px; }
   .category-showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-4, .grid-3, .grid-2, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2492,14 +2504,14 @@ textarea { min-height: 132px; resize: vertical; }
   .grid-4, .grid-3, .grid-2, .footer-grid, .form-row { grid-template-columns: 1fr; }
   .contact-presets { grid-template-columns: 1fr; }
   .partner-action-banner {
-    --partner-card-width: 146px;
-    --partner-card-height: 86px;
+    --partner-card-width: 124px;
+    --partner-card-height: 50px;
     --partner-gap: 18px;
   }
   .partner-logo { font-size: 12px; }
-  .partner-logo-mark { padding: 18px 22px; }
-  .partner-logo img { height: 42px; }
-  .partner-logo-wordmark { font-size: 19px; }
+  .partner-logo-mark { padding: 9px 14px; }
+  .partner-logo img { width: 88px; max-width: 88px; height: 30px; }
+  .partner-logo-wordmark { padding: 9px 14px; font-size: 19px; }
   .world-map { min-height: 300px; margin-inline: -6px; }
   .world-map svg { min-height: 300px; }
   .map-callout { display: none; }

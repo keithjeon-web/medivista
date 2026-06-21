@@ -1035,3 +1035,16 @@
 - Removed the Contact Us subsection and final inquiry CTA from ABOUT as requested.
 - Avoided copying JDBIO text, images, proprietary components, clinical statements, or market-leadership claims.
 - Added About to WordPress core-page/template provisioning and created `docs/about-page-audit.md`.
+
+## 2026-06-21 - PRODUCTS directory search and compact category images
+
+- Restored the product-name search, category selector, reset button, result count, and visible category links on the main `/products/` directory.
+- Added cross-category search indexing so a product query keeps only category cards containing matching products.
+- Reduced category representative images from tall square panels to consistent 265px desktop and 230px tablet/mobile frames.
+- Fixed the WordPress category template argument so child pages render and count only their selected category instead of all 114 products.
+# 2026-06-21 - Partner logo sizing and product taxonomy cleanup
+
+- Matched the Cellexor wordmark capsule to the same white logo frame used by the other partner icons.
+- Removed Hair Treatment from navigation, product directory, category provisioning, contact options, and catalog data.
+- Split Others from Cosmetic: the eight supplied items now use Others, while Cosmetic remains visible with no assigned products.
+- Updated the static site, WordPress starter, catalog CSV sources, and homepage Liporase links.

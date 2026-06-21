@@ -1001,13 +1001,15 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .products-page .product-category-block .product-image img { padding: 0; background: #f8f8f8; transition: transform 300ms ease; }
 .products-page .product-category-block .product-card:hover .product-image img { transform: scale(1.035); }
 .products-page .catalog-empty { text-align: center; }
-.products-directory-section { padding-top: 0; }
-.product-category-directory { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 54px 22px; max-width: 1280px; margin: 0 auto; }
+.products-directory-section { padding-top: 44px; }
+.products-directory-toolbar { margin-bottom: 14px !important; }
+.products-directory-tabs { justify-content: center; margin: 28px 0 46px; }
+.product-category-directory { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 22px; max-width: 1280px; margin: 0 auto; }
 .product-category-directory a { color: #333; text-decoration: none; text-align: center; }
-.product-category-directory img { display: block; width: 100%; aspect-ratio: 1 / 1; padding: 20px; object-fit: contain; background: #f8f8f8; transition: transform 280ms ease; }
+.product-category-directory img { display: block; width: 100%; height: 265px; padding: 0; object-fit: cover; background: #f8f8f8; transition: transform 280ms ease; }
 .product-category-directory a:hover img { transform: scale(1.025); }
 .product-category-directory span { display: block; margin-top: 15px; font-family: Montserrat, "Segoe UI", system-ui, sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; }
-.product-category-page .catalog-toolbar { grid-template-columns: minmax(280px, 1fr) auto; }
+.product-category-page .catalog-toolbar { grid-template-columns: minmax(280px, 1fr) auto auto; }
 .product-category-page [data-category-products] > .product-category-heading, .product-category-page [data-category-products] > .section-head { display: none; }
 .category-page-nav { display: flex; }
 .page-banner { padding: 92px 0; border-bottom: 1px solid rgba(201,168,76,0.2); }
@@ -1172,10 +1174,10 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
 .partners-section .section-head h2 { color: #fff !important; text-shadow: 0 2px 18px rgba(0,0,0,0.48); }
 .partners-section .section-head .eyebrow { color: #e1c46d !important; }
 .partners-section .section-head > p { color: rgba(255,255,255,0.76) !important; }
-.partner-action-banner { --partner-card-width: 196px; --partner-card-height: 112px; padding-top: 24px; }
-.partner-logo-mark { padding: 24px 30px; }
-.partner-logo img { width: 132px; max-width: 132px; height: 52px; object-fit: contain; object-position: center; }
-.partner-logo-wordmark { width: 132px; max-width: 132px; height: 52px; padding: 0; font-size: 21px; }
+.partner-action-banner { --partner-card-width: 132px; --partner-card-height: 52px; padding-top: 24px; }
+.partner-logo-mark { padding: 10px 16px; }
+.partner-logo img { width: 96px; max-width: 96px; height: 32px; object-fit: contain; object-position: center; }
+.partner-logo-wordmark { width: 100%; max-width: none; height: 100%; padding: 10px 16px; font-size: 21px; }
 .cellexor-page { background: #0a0907; color: rgba(255,255,255,0.78); }
 .cellexor-hero { position: relative; min-height: 760px; display: flex; align-items: center; overflow: hidden; background: radial-gradient(circle at 76% 38%, rgba(201,168,76,0.23), transparent 26%), radial-gradient(circle at 12% 82%, rgba(255,255,255,0.06), transparent 30%), linear-gradient(135deg, #050505, #15100a 58%, #090806); }
 .cellexor-hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 120px 100%; opacity: 0.4; }
@@ -1263,6 +1265,7 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   to { transform: translateX(calc(-100% - var(--partner-gap))); }
 }
 @media (max-width: 1024px) {
+  .product-category-directory img { height: 230px; }
   .about-business-grid, .about-values, .about-region-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about-business-grid article:nth-child(2), .about-values article:nth-child(2), .about-region-grid article:nth-child(2) { border-right: 0; }
   .about-purpose-grid { grid-template-columns: 1fr; }
@@ -1273,6 +1276,9 @@ h3 { margin: 0 0 10px; color: var(--navy); line-height: 1.2; }
   .about-ceo-portrait { min-height: 520px; }
 }
 @media (max-width: 520px) {
+  .products-directory-section { padding-top: 28px; }
+  .products-directory-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin-bottom: 34px; }
+  .product-category-directory img { height: 230px; }
   .about-corporate-hero { min-height: 380px; }
   .about-section-nav { position: static; grid-template-columns: repeat(2, 1fr); }
   .about-section-nav a:nth-child(2) { border-right: 0; }
@@ -1959,6 +1965,7 @@ textarea { min-height: 132px; resize: vertical; }
     min-height: 360px;
   }
   .catalog-toolbar { grid-template-columns: 1fr 1fr; align-items: stretch; }
+  .product-category-page .catalog-toolbar { grid-template-columns: 1fr; }
   .catalog-status, .catalog-reset { min-height: 44px; }
   .category-showcase { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .grid-4, .grid-3, .grid-2, .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -2098,14 +2105,14 @@ textarea { min-height: 132px; resize: vertical; }
   .grid-4, .grid-3, .grid-2, .footer-grid, .form-row { grid-template-columns: 1fr; }
   .contact-presets { grid-template-columns: 1fr; }
   .partner-action-banner {
-    --partner-card-width: 146px;
-    --partner-card-height: 86px;
+    --partner-card-width: 124px;
+    --partner-card-height: 50px;
     --partner-gap: 18px;
   }
   .partner-logo { font-size: 12px; }
-  .partner-logo-mark { padding: 18px 22px; }
-  .partner-logo img { height: 42px; }
-  .partner-logo-wordmark { font-size: 19px; }
+  .partner-logo-mark { padding: 9px 14px; }
+  .partner-logo img { width: 88px; max-width: 88px; height: 30px; }
+  .partner-logo-wordmark { padding: 9px 14px; font-size: 19px; }
   .world-map { min-height: 300px; margin-inline: -6px; }
   .world-map svg { min-height: 300px; }
   .map-callout { display: none; }

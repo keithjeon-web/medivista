@@ -1,9 +1,13 @@
 ﻿<?php
 function medivista_enqueue_assets() {
-    wp_enqueue_style('medivista-main', get_template_directory_uri() . '/assets/css/main.css', array(), '20260620c');
+    wp_enqueue_style('medivista-main', get_template_directory_uri() . '/assets/css/main.css', array(), '20260621e');
     wp_enqueue_script('medivista-d3', 'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js', array(), '7.8.5', true);
     wp_enqueue_script('medivista-topojson', 'https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js', array('medivista-d3'), '3.0.2', true);
-    wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260620c', true);
+    wp_enqueue_script('medivista-main', get_template_directory_uri() . '/assets/js/main.js', array('medivista-d3', 'medivista-topojson'), '20260621e', true);
+
+    if (is_page_template('page-products.php')) {
+        wp_enqueue_script('medivista-product-directory', get_template_directory_uri() . '/assets/js/product-directory-page.js', array(), '20260621e', true);
+    }
 
     if (medivista_is_shop_request()) {
         wp_enqueue_style('medivista-shop', get_template_directory_uri() . '/assets/css/shop.css', array('medivista-main'), '20260619a');
@@ -193,8 +197,8 @@ function medivista_ensure_core_pages() {
             'lipolysis' => 'Lipolysis',
             'exosomes' => 'Exosomes',
             'biostimulators' => 'Biostimulators',
-            'hair-treatment' => 'Hair Treatment',
             'vitamin-injections' => 'Vitamin Injections',
+            'others' => 'Others',
             'cosmetic' => 'Cosmetic',
         );
 
