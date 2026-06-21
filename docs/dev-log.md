@@ -1064,3 +1064,9 @@
 - Corrected oversized transparent padding inside the supplied partner PNG files with logo-specific CSS scaling.
 - Enlarged Botulax, Nabota, The Chaeum, Rejuran, and Liporase marks while preserving the compact white capsule dimensions.
 - Added clipped capsule overflow and responsive scaling so each logo remains centered and clearly readable.
+# 2026-06-21 - Korean Shop Geo-IP restriction activated
+
+- Activated the existing `template_redirect` restriction for Shop, product purchase, Cart, Checkout, and My Account routes.
+- Preserved Administrator, Shop Manager, WordPress admin, AJAX, cron, and login exemptions.
+- Added CloudFront, App Engine, server GeoIP, and WooCommerce geolocation fallbacks in addition to the existing Cloudflare and proxy country headers.
+- Corporate, PRODUCTS, BRANDS, BLOGS, and CONTACT routes remain publicly accessible in South Korea.

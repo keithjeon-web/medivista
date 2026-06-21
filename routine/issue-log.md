@@ -244,3 +244,8 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 
 - Diagnosed large transparent canvas margins in the supplied partner logo PNG files.
 - Applied per-brand optical scaling without stretching the white capsule or replacing source assets.
+# 2026-06-21 - Korean Shop restriction was inactive
+
+- Root cause: the `template_redirect` action in `inc/shop-access-control.php` was commented out.
+- Enabled the action and strengthened country detection with trusted hosting headers plus WooCommerce GeoIP fallback.
+- Kept administrator and Shop Manager exemptions intact.

@@ -9,6 +9,9 @@
 function medivista_shop_country_code_from_request() {
     $headers = array(
         'HTTP_CF_IPCOUNTRY',
+        'HTTP_CLOUDFRONT_VIEWER_COUNTRY',
+        'HTTP_X_APPENGINE_COUNTRY',
+        'GEOIP_COUNTRY_CODE',
         'HTTP_X_COUNTRY_CODE',
         'HTTP_X_GEOIP_COUNTRY_CODE',
         'HTTP_X_FORWARDED_COUNTRY',
@@ -16,11 +19,25 @@ function medivista_shop_country_code_from_request() {
 
     foreach ($headers as $header) {
         if (!empty($_SERVER[$header])) {
-            return strtoupper(sanitize_text_field(wp_unslash($_SERVER[$header])));
+            $header_value = sanitize_text_field(wp_unslash($_SERVER[$header]));
+            $country_code = strtoupper(trim(explode(',', $header_value)[0]));
+            if (preg_match('/^[A-Z]{2}$/', $country_code)) {
+                return apply_filters('medivista_shop_country_code', $country_code);
+            }
         }
     }
 
-    return '';
+    if (class_exists('WC_Geolocation')) {
+        $location = WC_Geolocation::geolocate_ip('', true, false);
+        if (!empty($location['country'])) {
+            return apply_filters(
+                'medivista_shop_country_code',
+                strtoupper(sanitize_text_field($location['country']))
+            );
+        }
+    }
+
+    return apply_filters('medivista_shop_country_code', '');
 }
 
 function medivista_shop_user_is_exempt() {
@@ -54,9 +71,7 @@ function medivista_shop_block_korean_ip() {
         array('response' => 403)
     );
 }
-// Temporarily disabled until the site build and Shop QA are complete.
-// Re-enable this action before production launch.
-// add_action('template_redirect', 'medivista_shop_block_korean_ip', 1);
+add_action('template_redirect', 'medivista_shop_block_korean_ip', 1);
 
 function medivista_shop_exclude_korea_from_sales($countries) {
     unset($countries['KR']);
