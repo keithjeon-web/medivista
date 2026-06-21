@@ -179,3 +179,12 @@ ode --check wp-theme-starter/assets/js/main.js; Brand Shop URL scan; runtime com
 - Documentation: added the page audit and design-token records.
 - Validation: clean local routes returned HTTP 200; JS, fallback PHP lint, ZIP/XML, image, commerce, and claim checks passed; root/deploy parity passed.
 - Remaining deployment action: upload/activate the rebuilt WordPress theme or deploy this branch so the live WordPress installation executes the page-provisioning hook.
+
+## 2026-06-21 - CELLEXOR Chrome DevTools audit
+
+- Live URLs checked: `https://medivista.co.kr/cellexor/` and `https://cellexor.com/cellexor-retone/`.
+- Result: both documents returned 200; all captured network requests returned 200; console errors, warnings, and issues were empty.
+- Responsive result: no horizontal overflow at 1440, 1024, 768, or the browser-enforced 500px effective mobile viewport.
+- CTA result: MEDIVISTA official-product and inquiry links point to the approved CELLEXOR URLs with `_blank` and `noopener noreferrer`.
+- Image result: 32 unique official-reference image URLs were inventoried; production copying remains blocked pending asset-use permission.
+- Evidence: updated `docs/cellexor-page-audit.md`, raw audit/inventory JSON files, and desktop/mobile screenshots.

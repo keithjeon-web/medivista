@@ -991,3 +991,12 @@
 - External product and partnership CTAs now use `https://cellexor.com/cellexor-retone/` and `https://cellexor.com/contact/` with new-tab security attributes.
 - Local HTTP verification: `/brands/`, `/cellexor/`, and `/contact/` returned 200; CELLEXOR contained 9 sections, JSON-LD, Open Graph metadata, safe external CTAs, and explicit image dimensions.
 - Checks: JS syntax PASS; fallback PHP lint PASS; local preview PASS; WordPress ZIP/XML/images PASS; commerce and claim scan PASS. The in-app browser successfully audited the external reference but could not access the shell-hosted localhost process, so viewport behavior was validated through responsive CSS breakpoints and local HTTP structure rather than browser screenshots.
+
+## 2026-06-21 - Chrome DevTools CELLEXOR live audit and image inventory
+
+- Connected Chrome DevTools MCP and audited the live MEDIVISTA `/cellexor/` page against `https://cellexor.com/cellexor-retone/`.
+- Captured live DOM/computed styles, CTA destinations and security attributes, metadata, console messages, network status, responsive measurements, and full-page desktop/mobile screenshots.
+- Tested 1440, 1024, 768, and requested 390px widths; this Chrome instance enforced an effective 500px minimum for the mobile capture. Neither page showed horizontal overflow.
+- Confirmed both documents and all observed image/network requests returned HTTP 200; neither page emitted console errors, warnings, or browser issues.
+- Inventoried 32 unique reference image URLs, predominantly WebP with SVG brand assets. No reference image was copied into the production theme because reuse rights were not confirmed.
+- Replaced `docs/cellexor-page-audit.md` with the live Chrome DevTools comparison and added raw JSON evidence plus four QA screenshots.
